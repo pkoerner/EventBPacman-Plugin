@@ -177,6 +177,8 @@ public class PacmanGui {
 
         tab.setClosable(false);
         tab.setContent(pane);
+
+        update();
     }
 
     public void updateScoreValue() {
@@ -263,8 +265,7 @@ public class PacmanGui {
         return pos * 10 + 40;
     }
 
-    public void update(Trace newValue) {
-        //animator.setCurrentTrace(newValue);
+    public void update() {
         updateScoreValue();
         updateGhostDots();
         updateScoreDots();

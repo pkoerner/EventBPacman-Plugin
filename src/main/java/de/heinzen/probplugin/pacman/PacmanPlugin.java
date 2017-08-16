@@ -44,7 +44,6 @@ public class PacmanPlugin extends ProBPlugin {
 
         if (currentTrace.getCurrentState() != null && currentTrace.getCurrentState().isInitialised()) {
             gui.createGui(pacmanTab);
-            gui.update(currentTrace.get());
         }
 
         currentTraceChangeListener = (observable, oldValue, newValue) -> {
@@ -53,12 +52,10 @@ public class PacmanPlugin extends ProBPlugin {
                     && newValue != null && newValue.getCurrentState() != null
                     && !oldValue.getCurrentState().isInitialised()
                     && newValue.getCurrentState().isInitialised()) {
-                //animator.setCurrentTrace(observable);
                 gui.createGui(pacmanTab);
-                gui.update(newValue);
             } else if ( newValue != null && newValue.getCurrentState() != null
                     && newValue.getCurrentState().isInitialised()) {
-                gui.update(newValue);
+                gui.update();
             }
         };
 
