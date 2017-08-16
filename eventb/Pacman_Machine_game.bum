@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.machineFile org.eventb.core.configuration="org.eventb.core.fwd;de.prob.units.mchBase" org.eventb.texttools.text_lastmodified="1489665532562" org.eventb.texttools.text_representation="machine Pacman_Machine_game refines Pacman_Machine_5  sees Pacman_Context_game&#10;&#10;variables position vorherige_position in_bewegung getunnelt bewegt score score_alt punktefelder_aktuell geister_aktuell counter_scored counter pos_geist_1 pos_geist_2 pos_geist_3 pos_geist_4 pos_geist_1_alt pos_geist_2_alt pos_geist_3_alt pos_geist_4_alt in_bewegung_geist_1 in_bewegung_geist_2 in_bewegung_geist_3 in_bewegung_geist_4 leben leben_alt gejagte_geister gameover jagd_counter geist_1_bewegt geist_2_bewegt geist_3_bewegt geist_4_bewegt&#10;&#9;geist_1_counter&#10;&#9;geist_2_counter&#10;&#9;geist_3_counter&#10;&#9;geist_4_counter&#10;&#10;events&#10;  event INITIALISATION extends INITIALISATION&#10;  end&#10;&#10;  event bewegen_oben_score extends bewegen_oben_score&#10;  end&#10;&#10;  event bewegen_unten_score extends bewegen_unten_score&#10;  end&#10;&#10;  event bewegen_rechts_score extends bewegen_rechts_score&#10;  end&#10;&#10;  event bewegen_links_score extends bewegen_links_score&#10;  end&#10;&#10;  event bewegen_oben_ghost extends bewegen_oben_ghost&#10;  end&#10;&#10;  event bewegen_unten_ghost extends bewegen_unten_ghost&#10;  end&#10;&#10;  event bewegen_rechts_ghost extends bewegen_rechts_ghost&#10;  end&#10;&#10;  event bewegen_links_ghost extends bewegen_links_ghost&#10;  end&#10;&#10;  event bewegen_oben extends bewegen_oben&#10;  end&#10;&#10;  event bewegen_unten extends bewegen_unten&#10;  end&#10;&#10;  event bewegen_rechts extends bewegen_rechts&#10;  end&#10;&#10;  event bewegen_links extends bewegen_links&#10;  end&#10;&#10;  event tunneln extends tunneln&#10;  end&#10;&#10;  event starte_geist_1 extends starte_geist_1&#10;  end&#10;&#10;  event starte_geist_2 extends starte_geist_2&#10;  end&#10;&#10;  event starte_geist_3 extends starte_geist_3&#10;  end&#10;&#10;  event starte_geist_4 extends starte_geist_4&#10;  end&#10;&#10;  event bewege_geist_1 extends bewege_geist_1&#10;  end&#10;&#10;  event bewege_geist_2 extends bewege_geist_2&#10;  end&#10;&#10;  event bewege_geist_3 extends bewege_geist_3&#10;  end&#10;&#10;  event bewege_geist_4 extends bewege_geist_4&#10;  end&#10;&#10;  event pacman_fangen extends pacman_fangen&#10;  end&#10;&#10;  event geist_1_fangen extends geist_1_fangen&#10;  end&#10;&#10;  event geist_2_fangen extends geist_2_fangen&#10;  end&#10;&#10;  event geist_3_fangen extends geist_3_fangen&#10;  end&#10;&#10;  event geist_4_fangen extends geist_4_fangen&#10;  end&#10;&#10;  event geisterjagd_abbrechen extends geisterjagd_abbrechen&#10;  end&#10;&#10;  event game_over extends game_over&#10;  end&#10;end&#10;" version="5">
+<org.eventb.core.refinesMachine name="'" org.eventb.core.target="Pacman_Machine_5"/>
+<org.eventb.core.seesContext name="_Z8E2wF_UEeaXYPIPRsfjNg" org.eventb.core.target="Pacman_Context_game"/>
+<org.eventb.core.variable name="_e4Wr4BaIEeaxlIwdP2iQDA" org.eventb.core.identifier="position"/>
+<org.eventb.core.variable name="_e4Wr4RaIEeaxlIwdP2iQDA" org.eventb.core.identifier="vorherige_position"/>
+<org.eventb.core.variable name="_e4XS8BaIEeaxlIwdP2iQDA" org.eventb.core.identifier="in_bewegung"/>
+<org.eventb.core.variable name="_26FiYhaPEea5wp6hXNOG2w" org.eventb.core.identifier="getunnelt"/>
+<org.eventb.core.variable name="_tMqDICTaEeag7rHqrVAykw" org.eventb.core.identifier="bewegt"/>
+<org.eventb.core.variable name="_tMqDISTaEeag7rHqrVAykw" org.eventb.core.identifier="score"/>
+<org.eventb.core.variable name="_tMqDIiTaEeag7rHqrVAykw" org.eventb.core.identifier="score_alt"/>
+<org.eventb.core.variable name="_UW9IAlmXEeaT0roG3wtL5w" org.eventb.core.identifier="punktefelder_aktuell"/>
+<org.eventb.core.variable name="_Ny2adFmaEeaT0roG3wtL5w" org.eventb.core.identifier="geister_aktuell"/>
+<org.eventb.core.variable name="_ezgfEFmaEeaT0roG3wtL5w" org.eventb.core.identifier="counter_scored"/>
+<org.eventb.core.variable name="_ezgfEVmaEeaT0roG3wtL5w" org.eventb.core.identifier="counter"/>
+<org.eventb.core.variable name="_ezgfElmaEeaT0roG3wtL5w" org.eventb.core.identifier="pos_geist_1"/>
+<org.eventb.core.variable name="_ezgfE1maEeaT0roG3wtL5w" org.eventb.core.identifier="pos_geist_2"/>
+<org.eventb.core.variable name="_ezgfFFmaEeaT0roG3wtL5w" org.eventb.core.identifier="pos_geist_3"/>
+<org.eventb.core.variable name="_ezgfFVmaEeaT0roG3wtL5w" org.eventb.core.identifier="pos_geist_4"/>
+<org.eventb.core.variable name="_ezgfFlmaEeaT0roG3wtL5w" org.eventb.core.identifier="pos_geist_1_alt"/>
+<org.eventb.core.variable name="_ezgfF1maEeaT0roG3wtL5w" org.eventb.core.identifier="pos_geist_2_alt"/>
+<org.eventb.core.variable name="_ezhGIFmaEeaT0roG3wtL5w" org.eventb.core.identifier="pos_geist_3_alt"/>
+<org.eventb.core.variable name="_ezhGIVmaEeaT0roG3wtL5w" org.eventb.core.identifier="pos_geist_4_alt"/>
+<org.eventb.core.variable name="_ezhGIlmaEeaT0roG3wtL5w" org.eventb.core.identifier="in_bewegung_geist_1"/>
+<org.eventb.core.variable name="_O8bPUFsTEeabeYXD7YYpQg" org.eventb.core.identifier="in_bewegung_geist_2"/>
+<org.eventb.core.variable name="_cGrNoFsUEeabeYXD7YYpQg" org.eventb.core.identifier="in_bewegung_geist_3"/>
+<org.eventb.core.variable name="_cGr0sFsUEeabeYXD7YYpQg" org.eventb.core.identifier="in_bewegung_geist_4"/>
+<org.eventb.core.variable name="_bhtVoF1UEeaH_Yn1_tt3HQ" org.eventb.core.identifier="leben"/>
+<org.eventb.core.variable name="_AUbrAF1fEeaxCuN1JcHzlA" org.eventb.core.identifier="leben_alt"/>
+<org.eventb.core.variable name="_AUbrAV1fEeaxCuN1JcHzlA" org.eventb.core.identifier="gejagte_geister"/>
+<org.eventb.core.variable name="_AUcSEF1fEeaxCuN1JcHzlA" org.eventb.core.identifier="gameover"/>
+<org.eventb.core.variable name="_AUcSEV1fEeaxCuN1JcHzlA" org.eventb.core.identifier="jagd_counter"/>
+<org.eventb.core.variable name="_SXvdIF7YEeaOhZURaCbBZA" org.eventb.core.identifier="geist_1_bewegt"/>
+<org.eventb.core.event name="_tMqDIiTaEeag7rHqrVAykx" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="INITIALISATION"/>
+<org.eventb.core.event name="_tMqDIiTaEeag7rHqrVAyky" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="bewegen_oben_score">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="bewegen_oben_score"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="_tMqDIiTaEeag7rHqrVAykz" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="bewegen_unten_score">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="bewegen_unten_score"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="_tMqDIiTaEeag7rHqrVAyk{" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="bewegen_rechts_score">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="bewegen_rechts_score"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="_tMqDIiTaEeag7rHqrVAyk|" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="bewegen_links_score">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="bewegen_links_score"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="_tMqDIiTaEeag7rHqrVAyk}" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="bewegen_oben_ghost">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="bewegen_oben_ghost"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="_tMqDIiTaEeag7rHqrVAyk~" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="bewegen_unten_ghost">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="bewegen_unten_ghost"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="_tMqDIiTaEeag7rHqrVAyl'" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="bewegen_rechts_ghost">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="bewegen_rechts_ghost"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="_tMqDIiTaEeag7rHqrVAyl(" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="bewegen_links_ghost">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="bewegen_links_ghost"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="_tMqDIiTaEeag7rHqrVAyl)" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="bewegen_oben">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="bewegen_oben"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="_tMqDIiTaEeag7rHqrVAyl*" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="bewegen_unten">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="bewegen_unten"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="_tMqDIiTaEeag7rHqrVAyl+" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="bewegen_rechts">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="bewegen_rechts"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="_tMqDIiTaEeag7rHqrVAyl," org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="bewegen_links">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="bewegen_links"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="_tMqDIiTaEeag7rHqrVAyl-" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="tunneln">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="tunneln"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="_tMqDIiTaEeag7rHqrVAyl." org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="starte_geist_1">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="starte_geist_1"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="_tMqDIiTaEeag7rHqrVAyl/" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="starte_geist_2">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="starte_geist_2"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="_tMqDIiTaEeag7rHqrVAyl0" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="starte_geist_3">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="starte_geist_3"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="_tMqDIiTaEeag7rHqrVAyl1" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="starte_geist_4">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="starte_geist_4"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="_tMqDIiTaEeag7rHqrVAyl2" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="bewege_geist_1">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="bewege_geist_1"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="_tMqDIiTaEeag7rHqrVAyl3" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="bewege_geist_2">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="bewege_geist_2"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="_tMqDIiTaEeag7rHqrVAyl4" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="bewege_geist_3">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="bewege_geist_3"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="_tMqDIiTaEeag7rHqrVAyl5" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="bewege_geist_4">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="bewege_geist_4"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="_tMqDIiTaEeag7rHqrVAyl6" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="pacman_fangen">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="pacman_fangen"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="_tMqDIiTaEeag7rHqrVAyl7" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="geist_1_fangen">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="geist_1_fangen"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="_tMqDIiTaEeag7rHqrVAyl8" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="geist_2_fangen">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="geist_2_fangen"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="_tMqDIiTaEeag7rHqrVAyl9" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="geist_3_fangen">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="geist_3_fangen"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="_tMqDIiTaEeag7rHqrVAyl:" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="geist_4_fangen">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="geist_4_fangen"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="_tMqDIiTaEeag7rHqrVAyl;" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="geisterjagd_abbrechen">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="geisterjagd_abbrechen"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="_0gyuUGLDEeaVx-LJ9XlTeg" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="game_over">
+<org.eventb.core.refinesEvent name="_0gyuUWLDEeaVx-LJ9XlTeg" org.eventb.core.target="game_over"/>
+</org.eventb.core.event>
+<org.eventb.core.variable name="_3VayEGLDEeaVx-LJ9XlTeg" org.eventb.core.identifier="geist_2_bewegt"/>
+<org.eventb.core.variable name="_h1QYMGOzEeaXFt-2KDAgKw" org.eventb.core.identifier="geist_3_bewegt"/>
+<org.eventb.core.variable name="_r0MOsGXxEeaVMYOTcIxZEA" org.eventb.core.identifier="geist_4_bewegt"/>
+<org.eventb.core.variable name="_7I9IQAo_Eeey_PnWPwczJg" org.eventb.core.identifier="geist_1_counter"/>
+<org.eventb.core.variable name="_7I9IQQo_Eeey_PnWPwczJg" org.eventb.core.identifier="geist_2_counter"/>
+<org.eventb.core.variable name="_7I9IQgo_Eeey_PnWPwczJg" org.eventb.core.identifier="geist_3_counter"/>
+<org.eventb.core.variable name="_7I9IQwo_Eeey_PnWPwczJg" org.eventb.core.identifier="geist_4_counter"/>
+</org.eventb.core.machineFile>

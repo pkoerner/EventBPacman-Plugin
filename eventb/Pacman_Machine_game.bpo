@@ -1,0 +1,887 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.poFile org.eventb.core.poStamp="3">
+<org.eventb.core.poPredicateSet name="CTXHYP" org.eventb.core.poStamp="3">
+<org.eventb.core.poIdentifier name="GEISTER" org.eventb.core.type="ℙ(GEISTER)"/>
+<org.eventb.core.poIdentifier name="begehbar" org.eventb.core.type="ℙ(ℤ×ℤ)"/>
+<org.eventb.core.poIdentifier name="breite" org.eventb.core.type="ℤ"/>
+<org.eventb.core.poIdentifier name="counter_geist_3" org.eventb.core.type="ℤ"/>
+<org.eventb.core.poIdentifier name="counter_geist_4" org.eventb.core.type="ℤ"/>
+<org.eventb.core.poIdentifier name="geist_1" org.eventb.core.type="GEISTER"/>
+<org.eventb.core.poIdentifier name="geist_2" org.eventb.core.type="GEISTER"/>
+<org.eventb.core.poIdentifier name="geist_3" org.eventb.core.type="GEISTER"/>
+<org.eventb.core.poIdentifier name="geist_4" org.eventb.core.type="GEISTER"/>
+<org.eventb.core.poIdentifier name="geister_zugang" org.eventb.core.type="ℤ×ℤ"/>
+<org.eventb.core.poIdentifier name="geisterfelder" org.eventb.core.type="ℙ(ℤ×ℤ)"/>
+<org.eventb.core.poIdentifier name="geisterhof" org.eventb.core.type="ℙ(ℤ×ℤ)"/>
+<org.eventb.core.poIdentifier name="geisterhof_zugang" org.eventb.core.type="ℙ(ℤ×ℤ)"/>
+<org.eventb.core.poIdentifier name="höhe" org.eventb.core.type="ℤ"/>
+<org.eventb.core.poIdentifier name="jagd_dauer" org.eventb.core.type="ℤ"/>
+<org.eventb.core.poIdentifier name="punktfelder" org.eventb.core.type="ℙ(ℤ×ℤ)"/>
+<org.eventb.core.poIdentifier name="spielfeld" org.eventb.core.type="ℙ(ℤ×ℤ)"/>
+<org.eventb.core.poIdentifier name="start_leben" org.eventb.core.type="ℤ"/>
+<org.eventb.core.poIdentifier name="startpos_geist_1" org.eventb.core.type="ℤ×ℤ"/>
+<org.eventb.core.poIdentifier name="startpos_geist_2" org.eventb.core.type="ℤ×ℤ"/>
+<org.eventb.core.poIdentifier name="startpos_geist_3" org.eventb.core.type="ℤ×ℤ"/>
+<org.eventb.core.poIdentifier name="startpos_geist_4" org.eventb.core.type="ℤ×ℤ"/>
+<org.eventb.core.poIdentifier name="startposition" org.eventb.core.type="ℤ×ℤ"/>
+<org.eventb.core.poIdentifier name="tunnel" org.eventb.core.type="ℙ(ℤ×ℤ)"/>
+<org.eventb.core.poPredicate name="geisterhof_zuganh" org.eventb.core.predicate="breite∈ℕ1" org.eventb.core.source="/Pacman/Pacman_Context_generic.buc|org.eventb.core.contextFile#Pacman_Context_generic|org.eventb.core.axiom#_xaIjERXaEeaxlIwdP2iQDA"/>
+<org.eventb.core.poPredicate name="geisterhof_zugani" org.eventb.core.predicate="höhe∈ℕ1" org.eventb.core.source="/Pacman/Pacman_Context_generic.buc|org.eventb.core.contextFile#Pacman_Context_generic|org.eventb.core.axiom#_xaJKIBXaEeaxlIwdP2iQDA"/>
+<org.eventb.core.poPredicate name="geisterhof_zuganj" org.eventb.core.predicate="spielfeld=0 ‥ breite × 0 ‥ höhe∧finite(spielfeld)" org.eventb.core.source="/Pacman/Pacman_Context_generic.buc|org.eventb.core.contextFile#Pacman_Context_generic|org.eventb.core.axiom#_FPAe9BXfEeaxlIwdP2iQDA"/>
+<org.eventb.core.poPredicate name="geisterhof_zugank" org.eventb.core.predicate="begehbar⊂spielfeld∧begehbar≠(∅ ⦂ ℙ(ℤ×ℤ))" org.eventb.core.source="/Pacman/Pacman_Context_generic.buc|org.eventb.core.contextFile#Pacman_Context_generic|org.eventb.core.axiom#_FPAe9RXfEeaxlIwdP2iQDA"/>
+<org.eventb.core.poPredicate name="geisterhof_zuganl" org.eventb.core.predicate="geisterfelder⊂begehbar∧geisterfelder≠(∅ ⦂ ℙ(ℤ×ℤ))" org.eventb.core.source="/Pacman/Pacman_Context_generic.buc|org.eventb.core.contextFile#Pacman_Context_generic|org.eventb.core.axiom#_rzWAEBXiEeaxlIwdP2iQDA"/>
+<org.eventb.core.poPredicate name="geisterhof_zuganm" org.eventb.core.predicate="punktfelder⊂begehbar∧punktfelder≠(∅ ⦂ ℙ(ℤ×ℤ))" org.eventb.core.source="/Pacman/Pacman_Context_generic.buc|org.eventb.core.contextFile#Pacman_Context_generic|org.eventb.core.axiom#_X1PdcBXjEeaxlIwdP2iQDA"/>
+<org.eventb.core.poPredicate name="geisterhof_zugann" org.eventb.core.predicate="punktfelder∩geisterfelder=(∅ ⦂ ℙ(ℤ×ℤ))" org.eventb.core.source="/Pacman/Pacman_Context_generic.buc|org.eventb.core.contextFile#Pacman_Context_generic|org.eventb.core.axiom#_X1PdcRXjEeaxlIwdP2iQDA"/>
+<org.eventb.core.poPredicate name="geisterhof_zugano" org.eventb.core.predicate="startposition∈begehbar" org.eventb.core.source="/Pacman/Pacman_Context_generic.buc|org.eventb.core.contextFile#Pacman_Context_generic|org.eventb.core.axiom#_AL_CQRXlEeaxlIwdP2iQDA"/>
+<org.eventb.core.poPredicate name="geisterhof_zuganp" org.eventb.core.predicate="tunnel⊂begehbar ∖ (punktfelder∪geisterfelder)∧(∃x⦂ℤ×ℤ,y⦂ℤ×ℤ·x≠y∧{x,y}⊂begehbar ∖ (punktfelder∪geisterfelder)∧tunnel={x,y})" org.eventb.core.source="/Pacman/Pacman_Context_generic.buc|org.eventb.core.contextFile#Pacman_Context_generic|org.eventb.core.axiom#_AL_CQhXlEeaxlIwdP2iQDA"/>
+<org.eventb.core.poPredicate name="geisterhof_zuganq" org.eventb.core.predicate="geisterhof⊂spielfeld" org.eventb.core.source="/Pacman/Pacman_Context_generic.buc|org.eventb.core.contextFile#Pacman_Context_generic|org.eventb.core.axiom#_X-iUYRaIEeaxlIwdP2iQDA"/>
+<org.eventb.core.poPredicate name="geisterhof_zuganr" org.eventb.core.predicate="geisterhof_zugang⊂spielfeld" org.eventb.core.source="/Pacman/Pacman_Context_generic.buc|org.eventb.core.contextFile#Pacman_Context_generic|org.eventb.core.axiom#_X-iUYhaIEeaxlIwdP2iQDA"/>
+<org.eventb.core.poPredicate name="geisterhof_zugans" org.eventb.core.predicate="geisterhof∩geisterhof_zugang=(∅ ⦂ ℙ(ℤ×ℤ))" org.eventb.core.source="/Pacman/Pacman_Context_generic.buc|org.eventb.core.contextFile#Pacman_Context_generic|org.eventb.core.axiom#_eJyq0RaKEeaxlIwdP2iQDA"/>
+<org.eventb.core.poPredicate name="geisterhof_zugant" org.eventb.core.predicate="startpos_geist_1∈spielfeld∧startpos_geist_1≠startpos_geist_2∧startpos_geist_1≠startpos_geist_3∧startpos_geist_1≠startpos_geist_4" org.eventb.core.source="/Pacman/Pacman_Context_generic.buc|org.eventb.core.contextFile#Pacman_Context_generic|org.eventb.core.axiom#_eJyq0haKEeaxlIwdP2iQDA"/>
+<org.eventb.core.poPredicate name="geisterhof_zuganu" org.eventb.core.predicate="startpos_geist_2∈geisterhof∧startpos_geist_2≠startpos_geist_3∧startpos_geist_2≠startpos_geist_4" org.eventb.core.source="/Pacman/Pacman_Context_generic.buc|org.eventb.core.contextFile#Pacman_Context_generic|org.eventb.core.axiom#_2HQMsRaOEea5wp6hXNOG2w"/>
+<org.eventb.core.poPredicate name="geisterhof_zuganv" org.eventb.core.predicate="startpos_geist_3∈geisterhof∧startpos_geist_3≠startpos_geist_4" org.eventb.core.source="/Pacman/Pacman_Context_generic.buc|org.eventb.core.contextFile#Pacman_Context_generic|org.eventb.core.axiom#_2HQMshaOEea5wp6hXNOG2w"/>
+<org.eventb.core.poPredicate name="geisterhof_zuganw" org.eventb.core.predicate="startpos_geist_4∈geisterhof" org.eventb.core.source="/Pacman/Pacman_Context_generic.buc|org.eventb.core.contextFile#Pacman_Context_generic|org.eventb.core.axiom#_NKE7clpkEeagsIJBrLdkvA"/>
+<org.eventb.core.poPredicate name="geisterhof_zuganx" org.eventb.core.predicate="geister_zugang∈begehbar" org.eventb.core.source="/Pacman/Pacman_Context_generic.buc|org.eventb.core.contextFile#Pacman_Context_generic|org.eventb.core.axiom#_BRd5QFplEeagsIJBrLdkvA"/>
+<org.eventb.core.poPredicate name="geisterhof_zugany" org.eventb.core.predicate="start_leben∈ℕ1" org.eventb.core.source="/Pacman/Pacman_Context_generic.buc|org.eventb.core.contextFile#Pacman_Context_generic|org.eventb.core.axiom#_BRd5QVplEeagsIJBrLdkvA"/>
+<org.eventb.core.poPredicate name="geisterhof_zuganz" org.eventb.core.predicate="partition(GEISTER,{geist_1},{geist_2},{geist_3},{geist_4})" org.eventb.core.source="/Pacman/Pacman_Context_generic.buc|org.eventb.core.contextFile#Pacman_Context_generic|org.eventb.core.axiom#_DhE4Gl_OEeaXYPIPRsfjNg"/>
+<org.eventb.core.poPredicate name="geisterhof_zugan{" org.eventb.core.predicate="jagd_dauer∈ℕ1" org.eventb.core.source="/Pacman/Pacman_Context_generic.buc|org.eventb.core.contextFile#Pacman_Context_generic|org.eventb.core.axiom#_DhE4G1_OEeaXYPIPRsfjNg"/>
+<org.eventb.core.poPredicate name="geisterhof_zugan|" org.eventb.core.predicate="counter_geist_3∈ℕ1" org.eventb.core.source="/Pacman/Pacman_Context_generic.buc|org.eventb.core.contextFile#Pacman_Context_generic|org.eventb.core.axiom#_p6gismYREeaVMYOTcIxZEA"/>
+<org.eventb.core.poPredicate name="geisterhof_zugan}" org.eventb.core.predicate="counter_geist_4∈ℕ1∧counter_geist_4&gt;counter_geist_3" org.eventb.core.source="/Pacman/Pacman_Context_generic.buc|org.eventb.core.contextFile#Pacman_Context_generic|org.eventb.core.axiom#_p6hJwGYREeaVMYOTcIxZEA"/>
+<org.eventb.core.poIdentifier name="begehbar_horizontal" org.eventb.core.type="ℙ(ℤ×ℤ)"/>
+<org.eventb.core.poIdentifier name="begehbar_vertikal" org.eventb.core.type="ℙ(ℤ×ℤ)"/>
+<org.eventb.core.poPredicate name="begehbar_horizontam" org.eventb.core.predicate="breite=50" org.eventb.core.source="/Pacman/Pacman_Context_game.buc|org.eventb.core.contextFile#Pacman_Context_game|org.eventb.core.axiom#_MnT2ZFmEEeaT0roG3wtL5w"/>
+<org.eventb.core.poPredicate name="begehbar_horizontan" org.eventb.core.predicate="höhe=56" org.eventb.core.source="/Pacman/Pacman_Context_game.buc|org.eventb.core.contextFile#Pacman_Context_game|org.eventb.core.axiom#_bgeDAFmEEeaT0roG3wtL5w"/>
+<org.eventb.core.poPredicate name="begehbar_horizontao" org.eventb.core.predicate="begehbar_horizontal=((0 ‥ breite ÷ 2 ∖ {12,13}) × {0,19})∪(0 ‥ breite ÷ 2 × {4,höhe ÷ 2})∪((0 ‥ breite ÷ 2 ∖ {6,7,12,13,18,19}) × {7,25})∪(8 ‥ 17 × {10,16})∪((0 ‥ 8∪17 ‥ breite ÷ 2) × {13})∪((0 ‥ breite ÷ 2 ∖ {3,4,21,22}) × {22})" org.eventb.core.source="/Pacman/Pacman_Context_game.buc|org.eventb.core.contextFile#Pacman_Context_game|org.eventb.core.axiom#_VWTXwF_PEeaXYPIPRsfjNg"/>
+<org.eventb.core.poPredicate name="begehbar_horizontap" org.eventb.core.predicate="begehbar_vertikal=({0,breite ÷ 2} × (0 ‥ 7∪19 ‥ 22∪25 ‥ höhe ÷ 2))∪({2,23} × 22 ‥ 25)∪({5,20} × 0 ‥ 25)∪({8,17} × (4 ‥ 7∪10 ‥ 19∪22 ‥ 25))∪({11,14} × (0 ‥ 4∪7 ‥ 10∪19 ‥ 22∪25 ‥ 28))" org.eventb.core.source="/Pacman/Pacman_Context_game.buc|org.eventb.core.contextFile#Pacman_Context_game|org.eventb.core.axiom#_VWTXwV_PEeaXYPIPRsfjNg"/>
+<org.eventb.core.poPredicate name="begehbar_horizontaq" org.eventb.core.predicate="geisterfelder={0,breite} × {4,44}" org.eventb.core.source="/Pacman/Pacman_Context_game.buc|org.eventb.core.contextFile#Pacman_Context_game|org.eventb.core.axiom#_VWTXwl_PEeaXYPIPRsfjNg"/>
+<org.eventb.core.poPredicate name="begehbar_horizontar" org.eventb.core.predicate="begehbar={x⦂ℤ×ℤ·x∈begehbar_horizontal∪begehbar_vertikal ∣ 2∗(prj1 ⦂ ℙ(ℤ×ℤ×ℤ))(x) ↦ 2∗(prj2 ⦂ ℙ(ℤ×ℤ×ℤ))(x)}" org.eventb.core.source="/Pacman/Pacman_Context_game.buc|org.eventb.core.contextFile#Pacman_Context_game|org.eventb.core.axiom#_tcmpYF_PEeaXYPIPRsfjNg"/>
+<org.eventb.core.poPredicate name="begehbar_horizontas" org.eventb.core.predicate="punktfelder=begehbar ∖ ((12 ‥ 38 × 16 ‥ 36)∪geisterfelder∪((0 ‥ 8∪42 ‥ breite) × {26})∪({24,26} × {44}))" org.eventb.core.source="/Pacman/Pacman_Context_game.buc|org.eventb.core.contextFile#Pacman_Context_game|org.eventb.core.axiom#_tcmpYV_PEeaXYPIPRsfjNg"/>
+<org.eventb.core.poPredicate name="begehbar_horizontat" org.eventb.core.predicate="startposition=26 ↦ 44" org.eventb.core.source="/Pacman/Pacman_Context_game.buc|org.eventb.core.contextFile#Pacman_Context_game|org.eventb.core.axiom#_tcmpYl_PEeaXYPIPRsfjNg"/>
+<org.eventb.core.poPredicate name="begehbar_horizontau" org.eventb.core.predicate="tunnel={0 ↦ 26,breite ↦ 26}" org.eventb.core.source="/Pacman/Pacman_Context_game.buc|org.eventb.core.contextFile#Pacman_Context_game|org.eventb.core.axiom#_2ZbacF_PEeaXYPIPRsfjNg"/>
+<org.eventb.core.poPredicate name="begehbar_horizontav" org.eventb.core.predicate="geisterhof=22 ‥ 28 × {26}" org.eventb.core.source="/Pacman/Pacman_Context_game.buc|org.eventb.core.contextFile#Pacman_Context_game|org.eventb.core.axiom#_2ZbacV_PEeaXYPIPRsfjNg"/>
+<org.eventb.core.poPredicate name="begehbar_horizontaw" org.eventb.core.predicate="geisterhof_zugang=24 ‥ 26 × 22 ‥ 24" org.eventb.core.source="/Pacman/Pacman_Context_game.buc|org.eventb.core.contextFile#Pacman_Context_game|org.eventb.core.axiom#_D0yzYF_QEeaXYPIPRsfjNg"/>
+<org.eventb.core.poPredicate name="begehbar_horizontax" org.eventb.core.predicate="startpos_geist_1=25 ↦ 20" org.eventb.core.source="/Pacman/Pacman_Context_game.buc|org.eventb.core.contextFile#Pacman_Context_game|org.eventb.core.axiom#_D0yzYV_QEeaXYPIPRsfjNg"/>
+<org.eventb.core.poPredicate name="begehbar_horizontay" org.eventb.core.predicate="startpos_geist_2=22 ↦ 26" org.eventb.core.source="/Pacman/Pacman_Context_game.buc|org.eventb.core.contextFile#Pacman_Context_game|org.eventb.core.axiom#_D0yzYl_QEeaXYPIPRsfjNg"/>
+<org.eventb.core.poPredicate name="begehbar_horizontaz" org.eventb.core.predicate="startpos_geist_3=25 ↦ 26" org.eventb.core.source="/Pacman/Pacman_Context_game.buc|org.eventb.core.contextFile#Pacman_Context_game|org.eventb.core.axiom#_D0yzY1_QEeaXYPIPRsfjNg"/>
+<org.eventb.core.poPredicate name="begehbar_horizonta{" org.eventb.core.predicate="startpos_geist_4=28 ↦ 26" org.eventb.core.source="/Pacman/Pacman_Context_game.buc|org.eventb.core.contextFile#Pacman_Context_game|org.eventb.core.axiom#_JiJ-0F_QEeaXYPIPRsfjNg"/>
+<org.eventb.core.poPredicate name="begehbar_horizonta|" org.eventb.core.predicate="geister_zugang=24 ↦ 20" org.eventb.core.source="/Pacman/Pacman_Context_game.buc|org.eventb.core.contextFile#Pacman_Context_game|org.eventb.core.axiom#_Ocw3oF_QEeaXYPIPRsfjNg"/>
+<org.eventb.core.poPredicate name="begehbar_horizonta}" org.eventb.core.predicate="start_leben=3" org.eventb.core.source="/Pacman/Pacman_Context_game.buc|org.eventb.core.contextFile#Pacman_Context_game|org.eventb.core.axiom#_Ocw3oV_QEeaXYPIPRsfjNg"/>
+<org.eventb.core.poPredicate name="begehbar_horizonta~" org.eventb.core.predicate="jagd_dauer=10" org.eventb.core.source="/Pacman/Pacman_Context_game.buc|org.eventb.core.contextFile#Pacman_Context_game|org.eventb.core.axiom#_Ocw3ol_QEeaXYPIPRsfjNg"/>
+<org.eventb.core.poPredicate name="begehbar_horizontb'" org.eventb.core.predicate="counter_geist_3=30" org.eventb.core.source="/Pacman/Pacman_Context_game.buc|org.eventb.core.contextFile#Pacman_Context_game|org.eventb.core.axiom#_wg19gGYREeaVMYOTcIxZEA"/>
+<org.eventb.core.poPredicate name="begehbar_horizontb(" org.eventb.core.predicate="counter_geist_4=180" org.eventb.core.source="/Pacman/Pacman_Context_game.buc|org.eventb.core.contextFile#Pacman_Context_game|org.eventb.core.axiom#_wg19gWYREeaVMYOTcIxZEA"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="ABSHYP" org.eventb.core.parentSet="/Pacman/Pacman_Machine_game.bpo|org.eventb.core.poFile#Pacman_Machine_game|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poStamp="3">
+<org.eventb.core.poIdentifier name="bewegt" org.eventb.core.type="BOOL"/>
+<org.eventb.core.poIdentifier name="counter" org.eventb.core.type="ℤ"/>
+<org.eventb.core.poIdentifier name="counter_scored" org.eventb.core.type="ℤ"/>
+<org.eventb.core.poIdentifier name="gameover" org.eventb.core.type="BOOL"/>
+<org.eventb.core.poIdentifier name="geist_1_bewegt" org.eventb.core.type="BOOL"/>
+<org.eventb.core.poIdentifier name="geist_1_counter" org.eventb.core.type="ℤ"/>
+<org.eventb.core.poIdentifier name="geist_2_bewegt" org.eventb.core.type="BOOL"/>
+<org.eventb.core.poIdentifier name="geist_2_counter" org.eventb.core.type="ℤ"/>
+<org.eventb.core.poIdentifier name="geist_3_bewegt" org.eventb.core.type="BOOL"/>
+<org.eventb.core.poIdentifier name="geist_3_counter" org.eventb.core.type="ℤ"/>
+<org.eventb.core.poIdentifier name="geist_4_bewegt" org.eventb.core.type="BOOL"/>
+<org.eventb.core.poIdentifier name="geist_4_counter" org.eventb.core.type="ℤ"/>
+<org.eventb.core.poIdentifier name="geister_aktuell" org.eventb.core.type="ℙ(ℤ×ℤ)"/>
+<org.eventb.core.poIdentifier name="gejagte_geister" org.eventb.core.type="ℙ(GEISTER)"/>
+<org.eventb.core.poIdentifier name="getunnelt" org.eventb.core.type="BOOL"/>
+<org.eventb.core.poIdentifier name="in_bewegung" org.eventb.core.type="BOOL"/>
+<org.eventb.core.poIdentifier name="in_bewegung_geist_1" org.eventb.core.type="BOOL"/>
+<org.eventb.core.poIdentifier name="in_bewegung_geist_2" org.eventb.core.type="BOOL"/>
+<org.eventb.core.poIdentifier name="in_bewegung_geist_3" org.eventb.core.type="BOOL"/>
+<org.eventb.core.poIdentifier name="in_bewegung_geist_4" org.eventb.core.type="BOOL"/>
+<org.eventb.core.poIdentifier name="jagd_counter" org.eventb.core.type="ℤ"/>
+<org.eventb.core.poIdentifier name="leben" org.eventb.core.type="ℤ"/>
+<org.eventb.core.poIdentifier name="leben_alt" org.eventb.core.type="ℤ"/>
+<org.eventb.core.poIdentifier name="pos_geist_1" org.eventb.core.type="ℤ×ℤ"/>
+<org.eventb.core.poIdentifier name="pos_geist_1_alt" org.eventb.core.type="ℤ×ℤ"/>
+<org.eventb.core.poIdentifier name="pos_geist_2" org.eventb.core.type="ℤ×ℤ"/>
+<org.eventb.core.poIdentifier name="pos_geist_2_alt" org.eventb.core.type="ℤ×ℤ"/>
+<org.eventb.core.poIdentifier name="pos_geist_3" org.eventb.core.type="ℤ×ℤ"/>
+<org.eventb.core.poIdentifier name="pos_geist_3_alt" org.eventb.core.type="ℤ×ℤ"/>
+<org.eventb.core.poIdentifier name="pos_geist_4" org.eventb.core.type="ℤ×ℤ"/>
+<org.eventb.core.poIdentifier name="pos_geist_4_alt" org.eventb.core.type="ℤ×ℤ"/>
+<org.eventb.core.poIdentifier name="position" org.eventb.core.type="ℤ×ℤ"/>
+<org.eventb.core.poIdentifier name="punktefelder_aktuell" org.eventb.core.type="ℙ(ℤ×ℤ)"/>
+<org.eventb.core.poIdentifier name="score" org.eventb.core.type="ℤ"/>
+<org.eventb.core.poIdentifier name="score_alt" org.eventb.core.type="ℤ"/>
+<org.eventb.core.poIdentifier name="vorherige_position" org.eventb.core.type="ℤ×ℤ"/>
+<org.eventb.core.poPredicate name="punktefelder_aktuelm" org.eventb.core.predicate="position∈begehbar" org.eventb.core.source="/Pacman/Pacman_Machine_1.bum|org.eventb.core.machineFile#Pacman_Machine_1|org.eventb.core.invariant#_6zBfoBaLEea5wp6hXNOG2w"/>
+<org.eventb.core.poPredicate name="punktefelder_aktueln" org.eventb.core.predicate="vorherige_position∈begehbar" org.eventb.core.source="/Pacman/Pacman_Machine_1.bum|org.eventb.core.machineFile#Pacman_Machine_1|org.eventb.core.invariant#_6zCGsBaLEea5wp6hXNOG2w"/>
+<org.eventb.core.poPredicate name="punktefelder_aktuelo" org.eventb.core.predicate="in_bewegung∈BOOL" org.eventb.core.source="/Pacman/Pacman_Machine_1.bum|org.eventb.core.machineFile#Pacman_Machine_1|org.eventb.core.invariant#_6zCGsRaLEea5wp6hXNOG2w"/>
+<org.eventb.core.poPredicate name="punktefelder_aktuelp" org.eventb.core.predicate="in_bewegung=FALSE∧getunnelt=FALSE⇒position=startposition∧vorherige_position=startposition" org.eventb.core.source="/Pacman/Pacman_Machine_1.bum|org.eventb.core.machineFile#Pacman_Machine_1|org.eventb.core.invariant#_6zCtwBaLEea5wp6hXNOG2w"/>
+<org.eventb.core.poPredicate name="punktefelder_aktuelq" org.eventb.core.predicate="in_bewegung=TRUE∧getunnelt=FALSE⇒((prj1 ⦂ ℙ(ℤ×ℤ×ℤ))(position) − (prj1 ⦂ ℙ(ℤ×ℤ×ℤ))(vorherige_position)∈{2,−2}∧(prj2 ⦂ ℙ(ℤ×ℤ×ℤ))(position)=(prj2 ⦂ ℙ(ℤ×ℤ×ℤ))(vorherige_position))∨((prj2 ⦂ ℙ(ℤ×ℤ×ℤ))(position) − (prj2 ⦂ ℙ(ℤ×ℤ×ℤ))(vorherige_position)∈{2,−2}∧(prj1 ⦂ ℙ(ℤ×ℤ×ℤ))(position)=(prj1 ⦂ ℙ(ℤ×ℤ×ℤ))(vorherige_position))" org.eventb.core.source="/Pacman/Pacman_Machine_1.bum|org.eventb.core.machineFile#Pacman_Machine_1|org.eventb.core.invariant#_6zCtwRaLEea5wp6hXNOG2w"/>
+<org.eventb.core.poPredicate name="punktefelder_aktuelr" org.eventb.core.predicate="getunnelt∈BOOL" org.eventb.core.source="/Pacman/Pacman_Machine_1.bum|org.eventb.core.machineFile#Pacman_Machine_1|org.eventb.core.invariant#_26GJcBaPEea5wp6hXNOG2w"/>
+<org.eventb.core.poPredicate name="punktefelder_aktuels" org.eventb.core.predicate="getunnelt=TRUE⇔{position,vorherige_position}=tunnel" org.eventb.core.source="/Pacman/Pacman_Machine_1.bum|org.eventb.core.machineFile#Pacman_Machine_1|org.eventb.core.invariant#_26GJcRaPEea5wp6hXNOG2w"/>
+<org.eventb.core.poPredicate name="punktefelder_aktuelt" org.eventb.core.predicate="getunnelt=TRUE⇒in_bewegung=TRUE" org.eventb.core.source="/Pacman/Pacman_Machine_1.bum|org.eventb.core.machineFile#Pacman_Machine_1|org.eventb.core.invariant#_m1AFJGOyEeaXFt-2KDAgKw"/>
+<org.eventb.core.poPredicate name="punktefelder_aktuelu" org.eventb.core.predicate="bewegt∈BOOL" org.eventb.core.source="/Pacman/Pacman_Machine_1.bum|org.eventb.core.machineFile#Pacman_Machine_1|org.eventb.core.invariant#_jDpS8GkOEeabpYv7sQK2OA"/>
+<org.eventb.core.poPredicate name="punktefelder_aktuelv" org.eventb.core.predicate="in_bewegung=FALSE⇒bewegt=FALSE" org.eventb.core.source="/Pacman/Pacman_Machine_1.bum|org.eventb.core.machineFile#Pacman_Machine_1|org.eventb.core.invariant#_jDpS8WkOEeabpYv7sQK2OA"/>
+<org.eventb.core.poPredicate name="punktefelder_aktuelw" org.eventb.core.predicate="score∈ℕ" org.eventb.core.source="/Pacman/Pacman_Machine_2.bum|org.eventb.core.machineFile#Pacman_Machine_2|org.eventb.core.invariant#_YcKaQCTbEeag7rHqrVAykw"/>
+<org.eventb.core.poPredicate name="punktefelder_aktuelx" org.eventb.core.predicate="score_alt∈ℕ" org.eventb.core.source="/Pacman/Pacman_Machine_2.bum|org.eventb.core.machineFile#Pacman_Machine_2|org.eventb.core.invariant#_sZqDcCTbEeag7rHqrVAykw"/>
+<org.eventb.core.poPredicate name="punktefelder_aktuely" org.eventb.core.predicate="score − score_alt∈{0,10,200}" org.eventb.core.source="/Pacman/Pacman_Machine_2.bum|org.eventb.core.machineFile#Pacman_Machine_2|org.eventb.core.invariant#_sZqDcSTbEeag7rHqrVAykw"/>
+<org.eventb.core.poPredicate name="punktefelder_aktuelz" org.eventb.core.predicate="punktefelder_aktuell∈ℙ(punktfelder)" org.eventb.core.source="/Pacman/Pacman_Machine_2.bum|org.eventb.core.machineFile#Pacman_Machine_2|org.eventb.core.invariant#_nkNQUF7XEeaOhZURaCbBZA"/>
+<org.eventb.core.poPredicate name="punktefelder_aktuel{" org.eventb.core.predicate="geister_aktuell∈ℙ(geisterfelder)" org.eventb.core.source="/Pacman/Pacman_Machine_2.bum|org.eventb.core.machineFile#Pacman_Machine_2|org.eventb.core.invariant#_nkNQUV7XEeaOhZURaCbBZA"/>
+<org.eventb.core.poPredicate name="punktefelder_aktuel|" org.eventb.core.predicate="counter_scored=card(punktfelder) − card(punktefelder_aktuell)" org.eventb.core.source="/Pacman/Pacman_Machine_2.bum|org.eventb.core.machineFile#Pacman_Machine_2|org.eventb.core.invariant#_aBbKJWYREeaVMYOTcIxZEA"/>
+<org.eventb.core.poPredicate name="punktefelder_aktuel}" org.eventb.core.predicate="score≥counter_scored∗10" org.eventb.core.source="/Pacman/Pacman_Machine_2.bum|org.eventb.core.machineFile#Pacman_Machine_2|org.eventb.core.invariant#_PL1BsGkTEeabpYv7sQK2OA"/>
+<org.eventb.core.poPredicate name="punktefelder_aktuel~" org.eventb.core.predicate="counter∈ℕ" org.eventb.core.source="/Pacman/Pacman_Machine_3.bum|org.eventb.core.machineFile#Pacman_Machine_3|org.eventb.core.invariant#_UW9vEFmXEeaT0roG3wtL5w"/>
+<org.eventb.core.poPredicate name="punktefelder_aktuem'" org.eventb.core.predicate="pos_geist_1∈begehbar∪geisterhof∪{startpos_geist_1}" org.eventb.core.source="/Pacman/Pacman_Machine_3.bum|org.eventb.core.machineFile#Pacman_Machine_3|org.eventb.core.invariant#_Ny2adVmaEeaT0roG3wtL5w"/>
+<org.eventb.core.poPredicate name="punktefelder_aktuem(" org.eventb.core.predicate="pos_geist_2∈begehbar∪geisterhof" org.eventb.core.source="/Pacman/Pacman_Machine_3.bum|org.eventb.core.machineFile#Pacman_Machine_3|org.eventb.core.invariant#_Ny3BgFmaEeaT0roG3wtL5w"/>
+<org.eventb.core.poPredicate name="punktefelder_aktuem)" org.eventb.core.predicate="pos_geist_3∈begehbar∪geisterhof" org.eventb.core.source="/Pacman/Pacman_Machine_3.bum|org.eventb.core.machineFile#Pacman_Machine_3|org.eventb.core.invariant#_Ny3BgVmaEeaT0roG3wtL5w"/>
+<org.eventb.core.poPredicate name="punktefelder_aktuem*" org.eventb.core.predicate="pos_geist_4∈begehbar∪geisterhof" org.eventb.core.source="/Pacman/Pacman_Machine_3.bum|org.eventb.core.machineFile#Pacman_Machine_3|org.eventb.core.invariant#_Ny3BglmaEeaT0roG3wtL5w"/>
+<org.eventb.core.poPredicate name="punktefelder_aktuem+" org.eventb.core.predicate="pos_geist_1_alt∈begehbar∪geisterhof∪{startpos_geist_1}" org.eventb.core.source="/Pacman/Pacman_Machine_3.bum|org.eventb.core.machineFile#Pacman_Machine_3|org.eventb.core.invariant#_Ny3Bg1maEeaT0roG3wtL5w"/>
+<org.eventb.core.poPredicate name="punktefelder_aktuem," org.eventb.core.predicate="pos_geist_2_alt∈begehbar∪geisterhof" org.eventb.core.source="/Pacman/Pacman_Machine_3.bum|org.eventb.core.machineFile#Pacman_Machine_3|org.eventb.core.invariant#_Ny3BhFmaEeaT0roG3wtL5w"/>
+<org.eventb.core.poPredicate name="punktefelder_aktuem-" org.eventb.core.predicate="pos_geist_3_alt∈begehbar∪geisterhof" org.eventb.core.source="/Pacman/Pacman_Machine_3.bum|org.eventb.core.machineFile#Pacman_Machine_3|org.eventb.core.invariant#_Ny3BhVmaEeaT0roG3wtL5w"/>
+<org.eventb.core.poPredicate name="punktefelder_aktuem." org.eventb.core.predicate="pos_geist_4_alt∈begehbar∪geisterhof" org.eventb.core.source="/Pacman/Pacman_Machine_3.bum|org.eventb.core.machineFile#Pacman_Machine_3|org.eventb.core.invariant#_Ny3okFmaEeaT0roG3wtL5w"/>
+<org.eventb.core.poPredicate name="punktefelder_aktuem/" org.eventb.core.predicate="in_bewegung_geist_1∈BOOL" org.eventb.core.source="/Pacman/Pacman_Machine_3.bum|org.eventb.core.machineFile#Pacman_Machine_3|org.eventb.core.invariant#_Ny3okVmaEeaT0roG3wtL5w"/>
+<org.eventb.core.poPredicate name="punktefelder_aktuem0" org.eventb.core.predicate="in_bewegung_geist_2∈BOOL" org.eventb.core.source="/Pacman/Pacman_Machine_3.bum|org.eventb.core.machineFile#Pacman_Machine_3|org.eventb.core.invariant#_Ny3oklmaEeaT0roG3wtL5w"/>
+<org.eventb.core.poPredicate name="punktefelder_aktuem1" org.eventb.core.predicate="in_bewegung_geist_3∈BOOL" org.eventb.core.source="/Pacman/Pacman_Machine_3.bum|org.eventb.core.machineFile#Pacman_Machine_3|org.eventb.core.invariant#_Ny3ok1maEeaT0roG3wtL5w"/>
+<org.eventb.core.poPredicate name="punktefelder_aktuem2" org.eventb.core.predicate="in_bewegung_geist_4∈BOOL" org.eventb.core.source="/Pacman/Pacman_Machine_3.bum|org.eventb.core.machineFile#Pacman_Machine_3|org.eventb.core.invariant#_Ny3olFmaEeaT0roG3wtL5w"/>
+<org.eventb.core.poPredicate name="punktefelder_aktuem3" org.eventb.core.predicate="in_bewegung_geist_1=TRUE∧pos_geist_1=geister_zugang⇒pos_geist_1_alt∈geisterhof∪{startpos_geist_1}∨((prj1 ⦂ ℙ(ℤ×ℤ×ℤ))(pos_geist_1) − (prj1 ⦂ ℙ(ℤ×ℤ×ℤ))(pos_geist_1_alt)∈{2,−2}∧(prj2 ⦂ ℙ(ℤ×ℤ×ℤ))(pos_geist_1)=(prj2 ⦂ ℙ(ℤ×ℤ×ℤ))(pos_geist_1_alt))∨((prj2 ⦂ ℙ(ℤ×ℤ×ℤ))(pos_geist_1) − (prj2 ⦂ ℙ(ℤ×ℤ×ℤ))(pos_geist_1_alt)∈{2,−2}∧(prj1 ⦂ ℙ(ℤ×ℤ×ℤ))(pos_geist_1)=(prj1 ⦂ ℙ(ℤ×ℤ×ℤ))(pos_geist_1_alt))" org.eventb.core.source="/Pacman/Pacman_Machine_3.bum|org.eventb.core.machineFile#Pacman_Machine_3|org.eventb.core.invariant#_zMTwgFokEea3RJy38zLyQw"/>
+<org.eventb.core.poPredicate name="punktefelder_aktuem4" org.eventb.core.predicate="in_bewegung_geist_1=TRUE∧pos_geist_1∈begehbar ∖ {geister_zugang}⇒((prj1 ⦂ ℙ(ℤ×ℤ×ℤ))(pos_geist_1) − (prj1 ⦂ ℙ(ℤ×ℤ×ℤ))(pos_geist_1_alt)∈{2,−2}∧(prj2 ⦂ ℙ(ℤ×ℤ×ℤ))(pos_geist_1)=(prj2 ⦂ ℙ(ℤ×ℤ×ℤ))(pos_geist_1_alt))∨((prj2 ⦂ ℙ(ℤ×ℤ×ℤ))(pos_geist_1) − (prj2 ⦂ ℙ(ℤ×ℤ×ℤ))(pos_geist_1_alt)∈{2,−2}∧(prj1 ⦂ ℙ(ℤ×ℤ×ℤ))(pos_geist_1)=(prj1 ⦂ ℙ(ℤ×ℤ×ℤ))(pos_geist_1_alt))" org.eventb.core.source="/Pacman/Pacman_Machine_3.bum|org.eventb.core.machineFile#Pacman_Machine_3|org.eventb.core.invariant#_zMTwgVokEea3RJy38zLyQw"/>
+<org.eventb.core.poPredicate name="punktefelder_aktuem5" org.eventb.core.predicate="in_bewegung_geist_1=TRUE∧pos_geist_1_alt∈geisterhof⇒pos_geist_1=geister_zugang" org.eventb.core.source="/Pacman/Pacman_Machine_3.bum|org.eventb.core.machineFile#Pacman_Machine_3|org.eventb.core.invariant#_wDbMoFonEea3RJy38zLyQw"/>
+<org.eventb.core.poPredicate name="punktefelder_aktuem6" org.eventb.core.predicate="in_bewegung_geist_2=TRUE∧pos_geist_2=geister_zugang⇒pos_geist_2_alt∈geisterhof∨((prj1 ⦂ ℙ(ℤ×ℤ×ℤ))(pos_geist_2) − (prj1 ⦂ ℙ(ℤ×ℤ×ℤ))(pos_geist_2_alt)∈{2,−2}∧(prj2 ⦂ ℙ(ℤ×ℤ×ℤ))(pos_geist_2)=(prj2 ⦂ ℙ(ℤ×ℤ×ℤ))(pos_geist_2_alt))∨((prj2 ⦂ ℙ(ℤ×ℤ×ℤ))(pos_geist_2) − (prj2 ⦂ ℙ(ℤ×ℤ×ℤ))(pos_geist_2_alt)∈{2,−2}∧(prj1 ⦂ ℙ(ℤ×ℤ×ℤ))(pos_geist_2)=(prj1 ⦂ ℙ(ℤ×ℤ×ℤ))(pos_geist_2_alt))" org.eventb.core.source="/Pacman/Pacman_Machine_3.bum|org.eventb.core.machineFile#Pacman_Machine_3|org.eventb.core.invariant#_wDbMoVonEea3RJy38zLyQw"/>
+<org.eventb.core.poPredicate name="punktefelder_aktuem7" org.eventb.core.predicate="in_bewegung_geist_2=TRUE∧pos_geist_2∈begehbar ∖ {geister_zugang}⇒((prj1 ⦂ ℙ(ℤ×ℤ×ℤ))(pos_geist_2) − (prj1 ⦂ ℙ(ℤ×ℤ×ℤ))(pos_geist_2_alt)∈{2,−2}∧(prj2 ⦂ ℙ(ℤ×ℤ×ℤ))(pos_geist_2)=(prj2 ⦂ ℙ(ℤ×ℤ×ℤ))(pos_geist_2_alt))∨((prj2 ⦂ ℙ(ℤ×ℤ×ℤ))(pos_geist_2) − (prj2 ⦂ ℙ(ℤ×ℤ×ℤ))(pos_geist_2_alt)∈{2,−2}∧(prj1 ⦂ ℙ(ℤ×ℤ×ℤ))(pos_geist_2)=(prj1 ⦂ ℙ(ℤ×ℤ×ℤ))(pos_geist_2_alt))" org.eventb.core.source="/Pacman/Pacman_Machine_3.bum|org.eventb.core.machineFile#Pacman_Machine_3|org.eventb.core.invariant#_wDbMolonEea3RJy38zLyQw"/>
+<org.eventb.core.poPredicate name="punktefelder_aktuem8" org.eventb.core.predicate="in_bewegung_geist_2=TRUE∧pos_geist_2_alt∈geisterhof⇒pos_geist_2=geister_zugang" org.eventb.core.source="/Pacman/Pacman_Machine_3.bum|org.eventb.core.machineFile#Pacman_Machine_3|org.eventb.core.invariant#_z59HYFopEea3RJy38zLyQw"/>
+<org.eventb.core.poPredicate name="punktefelder_aktuem9" org.eventb.core.predicate="in_bewegung_geist_3=TRUE∧pos_geist_3=geister_zugang⇒pos_geist_3_alt∈geisterhof∨((prj1 ⦂ ℙ(ℤ×ℤ×ℤ))(pos_geist_3) − (prj1 ⦂ ℙ(ℤ×ℤ×ℤ))(pos_geist_3_alt)∈{2,−2}∧(prj2 ⦂ ℙ(ℤ×ℤ×ℤ))(pos_geist_3)=(prj2 ⦂ ℙ(ℤ×ℤ×ℤ))(pos_geist_3_alt))∨((prj2 ⦂ ℙ(ℤ×ℤ×ℤ))(pos_geist_3) − (prj2 ⦂ ℙ(ℤ×ℤ×ℤ))(pos_geist_3_alt)∈{2,−2}∧(prj1 ⦂ ℙ(ℤ×ℤ×ℤ))(pos_geist_3)=(prj1 ⦂ ℙ(ℤ×ℤ×ℤ))(pos_geist_3_alt))" org.eventb.core.source="/Pacman/Pacman_Machine_3.bum|org.eventb.core.machineFile#Pacman_Machine_3|org.eventb.core.invariant#_z59HYVopEea3RJy38zLyQw"/>
+<org.eventb.core.poPredicate name="punktefelder_aktuem:" org.eventb.core.predicate="in_bewegung_geist_3=TRUE∧pos_geist_3∈begehbar ∖ {geister_zugang}⇒((prj1 ⦂ ℙ(ℤ×ℤ×ℤ))(pos_geist_3) − (prj1 ⦂ ℙ(ℤ×ℤ×ℤ))(pos_geist_3_alt)∈{2,−2}∧(prj2 ⦂ ℙ(ℤ×ℤ×ℤ))(pos_geist_3)=(prj2 ⦂ ℙ(ℤ×ℤ×ℤ))(pos_geist_3_alt))∨((prj2 ⦂ ℙ(ℤ×ℤ×ℤ))(pos_geist_3) − (prj2 ⦂ ℙ(ℤ×ℤ×ℤ))(pos_geist_3_alt)∈{2,−2}∧(prj1 ⦂ ℙ(ℤ×ℤ×ℤ))(pos_geist_3)=(prj1 ⦂ ℙ(ℤ×ℤ×ℤ))(pos_geist_3_alt))" org.eventb.core.source="/Pacman/Pacman_Machine_3.bum|org.eventb.core.machineFile#Pacman_Machine_3|org.eventb.core.invariant#_z59HYlopEea3RJy38zLyQw"/>
+<org.eventb.core.poPredicate name="punktefelder_aktuem;" org.eventb.core.predicate="in_bewegung_geist_3=TRUE∧pos_geist_3_alt∈geisterhof⇒pos_geist_3=geister_zugang" org.eventb.core.source="/Pacman/Pacman_Machine_3.bum|org.eventb.core.machineFile#Pacman_Machine_3|org.eventb.core.invariant#_z59HY1opEea3RJy38zLyQw"/>
+<org.eventb.core.poPredicate name="punktefelder_aktuem=" org.eventb.core.predicate="in_bewegung_geist_4=TRUE∧pos_geist_4=geister_zugang⇒pos_geist_4_alt∈geisterhof∨((prj1 ⦂ ℙ(ℤ×ℤ×ℤ))(pos_geist_4) − (prj1 ⦂ ℙ(ℤ×ℤ×ℤ))(pos_geist_4_alt)∈{2,−2}∧(prj2 ⦂ ℙ(ℤ×ℤ×ℤ))(pos_geist_4)=(prj2 ⦂ ℙ(ℤ×ℤ×ℤ))(pos_geist_4_alt))∨((prj2 ⦂ ℙ(ℤ×ℤ×ℤ))(pos_geist_4) − (prj2 ⦂ ℙ(ℤ×ℤ×ℤ))(pos_geist_4_alt)∈{2,−2}∧(prj1 ⦂ ℙ(ℤ×ℤ×ℤ))(pos_geist_4)=(prj1 ⦂ ℙ(ℤ×ℤ×ℤ))(pos_geist_4_alt))" org.eventb.core.source="/Pacman/Pacman_Machine_3.bum|org.eventb.core.machineFile#Pacman_Machine_3|org.eventb.core.invariant#_z59HZFopEea3RJy38zLyQw"/>
+<org.eventb.core.poPredicate name="punktefelder_aktuem&gt;" org.eventb.core.predicate="in_bewegung_geist_4=TRUE∧pos_geist_4∈begehbar ∖ {geister_zugang}⇒((prj1 ⦂ ℙ(ℤ×ℤ×ℤ))(pos_geist_4) − (prj1 ⦂ ℙ(ℤ×ℤ×ℤ))(pos_geist_4_alt)∈{2,−2}∧(prj2 ⦂ ℙ(ℤ×ℤ×ℤ))(pos_geist_4)=(prj2 ⦂ ℙ(ℤ×ℤ×ℤ))(pos_geist_4_alt))∨((prj2 ⦂ ℙ(ℤ×ℤ×ℤ))(pos_geist_4) − (prj2 ⦂ ℙ(ℤ×ℤ×ℤ))(pos_geist_4_alt)∈{2,−2}∧(prj1 ⦂ ℙ(ℤ×ℤ×ℤ))(pos_geist_4)=(prj1 ⦂ ℙ(ℤ×ℤ×ℤ))(pos_geist_4_alt))" org.eventb.core.source="/Pacman/Pacman_Machine_3.bum|org.eventb.core.machineFile#Pacman_Machine_3|org.eventb.core.invariant#_z59HZVopEea3RJy38zLyQw"/>
+<org.eventb.core.poPredicate name="punktefelder_aktuem?" org.eventb.core.predicate="in_bewegung_geist_4=TRUE∧pos_geist_4_alt∈geisterhof⇒pos_geist_4=geister_zugang" org.eventb.core.source="/Pacman/Pacman_Machine_3.bum|org.eventb.core.machineFile#Pacman_Machine_3|org.eventb.core.invariant#_5Gr74FoyEea3RJy38zLyQw"/>
+<org.eventb.core.poPredicate name="punktefelder_aktuem@" org.eventb.core.predicate="counter_scored&lt;counter_geist_3⇒in_bewegung_geist_3=FALSE" org.eventb.core.source="/Pacman/Pacman_Machine_3.bum|org.eventb.core.machineFile#Pacman_Machine_3|org.eventb.core.invariant#_9SIWsFo0Eea3RJy38zLyQw"/>
+<org.eventb.core.poPredicate name="punktefelder_aktuemA" org.eventb.core.predicate="counter_scored&lt;counter_geist_4⇒in_bewegung_geist_4=FALSE" org.eventb.core.source="/Pacman/Pacman_Machine_3.bum|org.eventb.core.machineFile#Pacman_Machine_3|org.eventb.core.invariant#_9SIWsVo0Eea3RJy38zLyQw"/>
+<org.eventb.core.poPredicate name="punktefelder_aktuemB" org.eventb.core.predicate="in_bewegung_geist_1=FALSE⇒(pos_geist_1=startpos_geist_1∧pos_geist_1_alt=startpos_geist_1)∨(pos_geist_1=startpos_geist_3∧pos_geist_1_alt=startpos_geist_3)" org.eventb.core.source="/Pacman/Pacman_Machine_3.bum|org.eventb.core.machineFile#Pacman_Machine_3|org.eventb.core.invariant#_9SIWslo0Eea3RJy38zLyQw"/>
+<org.eventb.core.poPredicate name="punktefelder_aktuemC" org.eventb.core.predicate="in_bewegung_geist_2=FALSE⇒(pos_geist_2=startpos_geist_2∧pos_geist_2_alt=startpos_geist_2)∨(pos_geist_2=startpos_geist_3∧pos_geist_2_alt=startpos_geist_3)" org.eventb.core.source="/Pacman/Pacman_Machine_3.bum|org.eventb.core.machineFile#Pacman_Machine_3|org.eventb.core.invariant#_66yxQFpHEea3RJy38zLyQw"/>
+<org.eventb.core.poPredicate name="punktefelder_aktuemD" org.eventb.core.predicate="in_bewegung_geist_3=FALSE⇒pos_geist_3=startpos_geist_3∧pos_geist_3_alt=startpos_geist_3" org.eventb.core.source="/Pacman/Pacman_Machine_3.bum|org.eventb.core.machineFile#Pacman_Machine_3|org.eventb.core.invariant#_66yxQVpHEea3RJy38zLyQw"/>
+<org.eventb.core.poPredicate name="punktefelder_aktuemE" org.eventb.core.predicate="in_bewegung_geist_4=FALSE⇒(pos_geist_4=startpos_geist_4∧pos_geist_4_alt=startpos_geist_4)∨(pos_geist_4=startpos_geist_3∧pos_geist_4_alt=startpos_geist_3)" org.eventb.core.source="/Pacman/Pacman_Machine_3.bum|org.eventb.core.machineFile#Pacman_Machine_3|org.eventb.core.invariant#_66yxQlpHEea3RJy38zLyQw"/>
+<org.eventb.core.poPredicate name="punktefelder_aktuemF" org.eventb.core.predicate="in_bewegung_geist_3=TRUE⇒counter_scored≥counter_geist_3" org.eventb.core.source="/Pacman/Pacman_Machine_3.bum|org.eventb.core.machineFile#Pacman_Machine_3|org.eventb.core.invariant#_66yxQ1pHEea3RJy38zLyQw"/>
+<org.eventb.core.poPredicate name="punktefelder_aktuemG" org.eventb.core.predicate="in_bewegung_geist_4=TRUE⇒counter_scored≥counter_geist_4" org.eventb.core.source="/Pacman/Pacman_Machine_3.bum|org.eventb.core.machineFile#Pacman_Machine_3|org.eventb.core.invariant#_cgr84F71EeaOhZURaCbBZA"/>
+<org.eventb.core.poPredicate name="punktefelder_aktuemH" org.eventb.core.predicate="counter_scored&gt;counter_geist_3∧in_bewegung=TRUE∧pos_geist_3≠pos_geist_3_alt⇒in_bewegung_geist_3=TRUE" org.eventb.core.source="/Pacman/Pacman_Machine_3.bum|org.eventb.core.machineFile#Pacman_Machine_3|org.eventb.core.invariant#_aOSx8GkFEeabpYv7sQK2OA"/>
+<org.eventb.core.poPredicate name="punktefelder_aktuemI" org.eventb.core.predicate="counter_scored&gt;counter_geist_4∧in_bewegung=TRUE∧pos_geist_4≠pos_geist_4_alt⇒in_bewegung_geist_4=TRUE" org.eventb.core.source="/Pacman/Pacman_Machine_3.bum|org.eventb.core.machineFile#Pacman_Machine_3|org.eventb.core.invariant#_z-gnsGkFEeabpYv7sQK2OA"/>
+<org.eventb.core.poPredicate name="punktefelder_aktuemJ" org.eventb.core.predicate="leben∈ℕ" org.eventb.core.source="/Pacman/Pacman_Machine_4.bum|org.eventb.core.machineFile#Pacman_Machine_4|org.eventb.core.invariant#_cGr0sVsUEeabeYXD7YYpQg"/>
+<org.eventb.core.poPredicate name="punktefelder_aktuemK" org.eventb.core.predicate="leben≤start_leben" org.eventb.core.source="/Pacman/Pacman_Machine_4.bum|org.eventb.core.machineFile#Pacman_Machine_4|org.eventb.core.invariant#_cGr0slsUEeabeYXD7YYpQg"/>
+<org.eventb.core.poPredicate name="punktefelder_aktuemL" org.eventb.core.predicate="leben_alt∈ℕ" org.eventb.core.source="/Pacman/Pacman_Machine_4.bum|org.eventb.core.machineFile#Pacman_Machine_4|org.eventb.core.invariant#_cGr0s1sUEeabeYXD7YYpQg"/>
+<org.eventb.core.poPredicate name="punktefelder_aktuemM" org.eventb.core.predicate="leben_alt≤start_leben" org.eventb.core.source="/Pacman/Pacman_Machine_4.bum|org.eventb.core.machineFile#Pacman_Machine_4|org.eventb.core.invariant#_cGr0tFsUEeabeYXD7YYpQg"/>
+<org.eventb.core.poPredicate name="punktefelder_aktuemN" org.eventb.core.predicate="leben_alt − leben∈{0,1}" org.eventb.core.source="/Pacman/Pacman_Machine_4.bum|org.eventb.core.machineFile#Pacman_Machine_4|org.eventb.core.invariant#_-iF48FsUEeabeYXD7YYpQg"/>
+<org.eventb.core.poPredicate name="punktefelder_aktuemO" org.eventb.core.predicate="gejagte_geister∈ℙ({geist_1,geist_2,geist_3,geist_4})" org.eventb.core.source="/Pacman/Pacman_Machine_4.bum|org.eventb.core.machineFile#Pacman_Machine_4|org.eventb.core.invariant#_msp4YVsVEeabeYXD7YYpQg"/>
+<org.eventb.core.poPredicate name="punktefelder_aktuemP" org.eventb.core.predicate="gameover∈BOOL" org.eventb.core.source="/Pacman/Pacman_Machine_4.bum|org.eventb.core.machineFile#Pacman_Machine_4|org.eventb.core.invariant#_a_CyYGLDEeaVx-LJ9XlTeg"/>
+<org.eventb.core.poPredicate name="punktefelder_aktuemQ" org.eventb.core.predicate="jagd_counter∈ℕ" org.eventb.core.source="/Pacman/Pacman_Machine_5.bum|org.eventb.core.machineFile#Pacman_Machine_5|org.eventb.core.invariant#_bhtVoV1UEeaH_Yn1_tt3HQ"/>
+<org.eventb.core.poPredicate name="punktefelder_aktuemR" org.eventb.core.predicate="jagd_counter=0∨jagd_counter≥counter" org.eventb.core.source="/Pacman/Pacman_Machine_5.bum|org.eventb.core.machineFile#Pacman_Machine_5|org.eventb.core.invariant#_stkksF1UEeaH_Yn1_tt3HQ"/>
+<org.eventb.core.poPredicate name="punktefelder_aktuemS" org.eventb.core.predicate="jagd_counter − counter≤jagd_dauer" org.eventb.core.source="/Pacman/Pacman_Machine_5.bum|org.eventb.core.machineFile#Pacman_Machine_5|org.eventb.core.invariant#_AUcSEl1fEeaxCuN1JcHzlA"/>
+<org.eventb.core.poPredicate name="punktefelder_aktuemT" org.eventb.core.predicate="geist_1_bewegt∈BOOL" org.eventb.core.source="/Pacman/Pacman_Machine_5.bum|org.eventb.core.machineFile#Pacman_Machine_5|org.eventb.core.invariant#_AUc5IF1fEeaxCuN1JcHzlA"/>
+<org.eventb.core.poPredicate name="punktefelder_aktuemU" org.eventb.core.predicate="geist_2_bewegt∈BOOL" org.eventb.core.source="/Pacman/Pacman_Machine_5.bum|org.eventb.core.machineFile#Pacman_Machine_5|org.eventb.core.invariant#_AUc5IV1fEeaxCuN1JcHzlA"/>
+<org.eventb.core.poPredicate name="punktefelder_aktuemV" org.eventb.core.predicate="geist_3_bewegt∈BOOL" org.eventb.core.source="/Pacman/Pacman_Machine_5.bum|org.eventb.core.machineFile#Pacman_Machine_5|org.eventb.core.invariant#_AUdgMF1fEeaxCuN1JcHzlA"/>
+<org.eventb.core.poPredicate name="punktefelder_aktuemW" org.eventb.core.predicate="geist_4_bewegt∈BOOL" org.eventb.core.source="/Pacman/Pacman_Machine_5.bum|org.eventb.core.machineFile#Pacman_Machine_5|org.eventb.core.invariant#_bTHCgF1gEeaxCuN1JcHzlA"/>
+<org.eventb.core.poPredicate name="punktefelder_aktuemX" org.eventb.core.predicate="geist_1_bewegt=TRUE⇒in_bewegung_geist_1=TRUE" org.eventb.core.source="/Pacman/Pacman_Machine_5.bum|org.eventb.core.machineFile#Pacman_Machine_5|org.eventb.core.invariant#_bTHCgV1gEeaxCuN1JcHzlA"/>
+<org.eventb.core.poPredicate name="punktefelder_aktuemY" org.eventb.core.predicate="geist_2_bewegt=TRUE⇒in_bewegung_geist_2=TRUE" org.eventb.core.source="/Pacman/Pacman_Machine_5.bum|org.eventb.core.machineFile#Pacman_Machine_5|org.eventb.core.invariant#_bTHCgl1gEeaxCuN1JcHzlA"/>
+<org.eventb.core.poPredicate name="punktefelder_aktuemZ" org.eventb.core.predicate="geist_3_bewegt=TRUE⇒in_bewegung_geist_3=TRUE" org.eventb.core.source="/Pacman/Pacman_Machine_5.bum|org.eventb.core.machineFile#Pacman_Machine_5|org.eventb.core.invariant#_bTHCg11gEeaxCuN1JcHzlA"/>
+<org.eventb.core.poPredicate name="punktefelder_aktuem[" org.eventb.core.predicate="geist_4_bewegt=TRUE⇒in_bewegung_geist_4=TRUE" org.eventb.core.source="/Pacman/Pacman_Machine_5.bum|org.eventb.core.machineFile#Pacman_Machine_5|org.eventb.core.invariant#_NUbqkF70EeaOhZURaCbBZA"/>
+<org.eventb.core.poPredicate name="punktefelder_aktuem\" org.eventb.core.predicate="in_bewegung_geist_1=FALSE⇒geist_1_bewegt=FALSE" org.eventb.core.source="/Pacman/Pacman_Machine_5.bum|org.eventb.core.machineFile#Pacman_Machine_5|org.eventb.core.invariant#_HdszQWXwEeaVMYOTcIxZEA"/>
+<org.eventb.core.poPredicate name="punktefelder_aktuem]" org.eventb.core.predicate="in_bewegung_geist_2=FALSE⇒geist_2_bewegt=FALSE" org.eventb.core.source="/Pacman/Pacman_Machine_5.bum|org.eventb.core.machineFile#Pacman_Machine_5|org.eventb.core.invariant#_HdszQmXwEeaVMYOTcIxZEA"/>
+<org.eventb.core.poPredicate name="punktefelder_aktuem^" org.eventb.core.predicate="in_bewegung_geist_3=FALSE⇒geist_3_bewegt=FALSE" org.eventb.core.source="/Pacman/Pacman_Machine_5.bum|org.eventb.core.machineFile#Pacman_Machine_5|org.eventb.core.invariant#_HdszQ2XwEeaVMYOTcIxZEA"/>
+<org.eventb.core.poPredicate name="punktefelder_aktuem_" org.eventb.core.predicate="in_bewegung_geist_4=FALSE⇒geist_4_bewegt=FALSE" org.eventb.core.source="/Pacman/Pacman_Machine_5.bum|org.eventb.core.machineFile#Pacman_Machine_5|org.eventb.core.invariant#_HdtaUGXwEeaVMYOTcIxZEA"/>
+<org.eventb.core.poPredicate name="punktefelder_aktuem`" org.eventb.core.predicate="geist_1_counter∈ℕ" org.eventb.core.source="/Pacman/Pacman_Machine_5.bum|org.eventb.core.machineFile#Pacman_Machine_5|org.eventb.core.invariant#_16IS8Ao_Eeey_PnWPwczJg"/>
+<org.eventb.core.poPredicate name="punktefelder_aktuema" org.eventb.core.predicate="geist_2_counter∈ℕ" org.eventb.core.source="/Pacman/Pacman_Machine_5.bum|org.eventb.core.machineFile#Pacman_Machine_5|org.eventb.core.invariant#_16IS8Qo_Eeey_PnWPwczJg"/>
+<org.eventb.core.poPredicate name="punktefelder_aktuemb" org.eventb.core.predicate="geist_3_counter∈ℕ" org.eventb.core.source="/Pacman/Pacman_Machine_5.bum|org.eventb.core.machineFile#Pacman_Machine_5|org.eventb.core.invariant#_16IS8go_Eeey_PnWPwczJg"/>
+<org.eventb.core.poPredicate name="punktefelder_aktuemc" org.eventb.core.predicate="geist_4_counter∈ℕ" org.eventb.core.source="/Pacman/Pacman_Machine_5.bum|org.eventb.core.machineFile#Pacman_Machine_5|org.eventb.core.invariant#_16I6AAo_Eeey_PnWPwczJg"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTIDENTPacman_Context_generj[" org.eventb.core.parentSet="/Pacman/Pacman_Machine_game.bpo|org.eventb.core.poFile#Pacman_Machine_game|org.eventb.core.poPredicateSet#CTXHYP" org.eventb.core.poStamp="3">
+<org.eventb.core.poIdentifier name="geist_3_counter'" org.eventb.core.type="ℤ"/>
+<org.eventb.core.poIdentifier name="in_bewegung_geist_4'" org.eventb.core.type="BOOL"/>
+<org.eventb.core.poIdentifier name="pos_geist_1_alt'" org.eventb.core.type="ℤ×ℤ"/>
+<org.eventb.core.poIdentifier name="leben_alt'" org.eventb.core.type="ℤ"/>
+<org.eventb.core.poIdentifier name="gameover'" org.eventb.core.type="BOOL"/>
+<org.eventb.core.poIdentifier name="geist_1_bewegt'" org.eventb.core.type="BOOL"/>
+<org.eventb.core.poIdentifier name="pos_geist_2_alt'" org.eventb.core.type="ℤ×ℤ"/>
+<org.eventb.core.poIdentifier name="score'" org.eventb.core.type="ℤ"/>
+<org.eventb.core.poIdentifier name="score_alt'" org.eventb.core.type="ℤ"/>
+<org.eventb.core.poIdentifier name="punktefelder_aktuell'" org.eventb.core.type="ℙ(ℤ×ℤ)"/>
+<org.eventb.core.poIdentifier name="getunnelt'" org.eventb.core.type="BOOL"/>
+<org.eventb.core.poIdentifier name="pos_geist_1'" org.eventb.core.type="ℤ×ℤ"/>
+<org.eventb.core.poIdentifier name="leben'" org.eventb.core.type="ℤ"/>
+<org.eventb.core.poIdentifier name="geister_aktuell'" org.eventb.core.type="ℙ(ℤ×ℤ)"/>
+<org.eventb.core.poIdentifier name="counter_scored'" org.eventb.core.type="ℤ"/>
+<org.eventb.core.poIdentifier name="geist_2_counter'" org.eventb.core.type="ℤ"/>
+<org.eventb.core.poIdentifier name="geist_2_bewegt'" org.eventb.core.type="BOOL"/>
+<org.eventb.core.poIdentifier name="counter'" org.eventb.core.type="ℤ"/>
+<org.eventb.core.poIdentifier name="in_bewegung_geist_1'" org.eventb.core.type="BOOL"/>
+<org.eventb.core.poIdentifier name="jagd_counter'" org.eventb.core.type="ℤ"/>
+<org.eventb.core.poIdentifier name="in_bewegung'" org.eventb.core.type="BOOL"/>
+<org.eventb.core.poIdentifier name="pos_geist_4'" org.eventb.core.type="ℤ×ℤ"/>
+<org.eventb.core.poIdentifier name="geist_4_bewegt'" org.eventb.core.type="BOOL"/>
+<org.eventb.core.poIdentifier name="vorherige_position'" org.eventb.core.type="ℤ×ℤ"/>
+<org.eventb.core.poIdentifier name="geist_1_counter'" org.eventb.core.type="ℤ"/>
+<org.eventb.core.poIdentifier name="in_bewegung_geist_2'" org.eventb.core.type="BOOL"/>
+<org.eventb.core.poIdentifier name="geist_4_counter'" org.eventb.core.type="ℤ"/>
+<org.eventb.core.poIdentifier name="pos_geist_3'" org.eventb.core.type="ℤ×ℤ"/>
+<org.eventb.core.poIdentifier name="pos_geist_4_alt'" org.eventb.core.type="ℤ×ℤ"/>
+<org.eventb.core.poIdentifier name="geist_3_bewegt'" org.eventb.core.type="BOOL"/>
+<org.eventb.core.poIdentifier name="in_bewegung_geist_3'" org.eventb.core.type="BOOL"/>
+<org.eventb.core.poIdentifier name="position'" org.eventb.core.type="ℤ×ℤ"/>
+<org.eventb.core.poIdentifier name="bewegt'" org.eventb.core.type="BOOL"/>
+<org.eventb.core.poIdentifier name="pos_geist_2'" org.eventb.core.type="ℤ×ℤ"/>
+<org.eventb.core.poIdentifier name="pos_geist_3_alt'" org.eventb.core.type="ℤ×ℤ"/>
+<org.eventb.core.poIdentifier name="gejagte_geister'" org.eventb.core.type="ℙ(GEISTER)"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTALLHYPPacman_Context_generj[" org.eventb.core.parentSet="/Pacman/Pacman_Machine_game.bpo|org.eventb.core.poFile#Pacman_Machine_game|org.eventb.core.poPredicateSet#EVTIDENTPacman_Context_generj[" org.eventb.core.poStamp="3"/>
+<org.eventb.core.poPredicateSet name="EVTIDENTPacman_Context_generj\" org.eventb.core.parentSet="/Pacman/Pacman_Machine_game.bpo|org.eventb.core.poFile#Pacman_Machine_game|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="3">
+<org.eventb.core.poIdentifier name="geist_1_bewegt'" org.eventb.core.type="BOOL"/>
+<org.eventb.core.poIdentifier name="score'" org.eventb.core.type="ℤ"/>
+<org.eventb.core.poIdentifier name="score_alt'" org.eventb.core.type="ℤ"/>
+<org.eventb.core.poIdentifier name="getunnelt'" org.eventb.core.type="BOOL"/>
+<org.eventb.core.poIdentifier name="punktefelder_aktuell'" org.eventb.core.type="ℙ(ℤ×ℤ)"/>
+<org.eventb.core.poIdentifier name="counter_scored'" org.eventb.core.type="ℤ"/>
+<org.eventb.core.poIdentifier name="counter'" org.eventb.core.type="ℤ"/>
+<org.eventb.core.poIdentifier name="geist_2_bewegt'" org.eventb.core.type="BOOL"/>
+<org.eventb.core.poIdentifier name="in_bewegung'" org.eventb.core.type="BOOL"/>
+<org.eventb.core.poIdentifier name="geist_4_bewegt'" org.eventb.core.type="BOOL"/>
+<org.eventb.core.poIdentifier name="vorherige_position'" org.eventb.core.type="ℤ×ℤ"/>
+<org.eventb.core.poIdentifier name="p" org.eventb.core.type="ℤ×ℤ"/>
+<org.eventb.core.poIdentifier name="geist_3_bewegt'" org.eventb.core.type="BOOL"/>
+<org.eventb.core.poIdentifier name="position'" org.eventb.core.type="ℤ×ℤ"/>
+<org.eventb.core.poIdentifier name="bewegt'" org.eventb.core.type="BOOL"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTALLHYPPacman_Context_generj\" org.eventb.core.parentSet="/Pacman/Pacman_Machine_game.bpo|org.eventb.core.poFile#Pacman_Machine_game|org.eventb.core.poPredicateSet#EVTIDENTPacman_Context_generj\\" org.eventb.core.poStamp="3">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="p∈begehbar" org.eventb.core.source="/Pacman/Pacman_Machine_1.bum|org.eventb.core.machineFile#Pacman_Machine_1|org.eventb.core.event#_6zCtwhaLEea5wp6hXNOG2w|org.eventb.core.guard#_6zDU0RaLEea5wp6hXNOG2w"/>
+<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="(prj1 ⦂ ℙ(ℤ×ℤ×ℤ))(position)=(prj1 ⦂ ℙ(ℤ×ℤ×ℤ))(p)∧(prj2 ⦂ ℙ(ℤ×ℤ×ℤ))(position) − (prj2 ⦂ ℙ(ℤ×ℤ×ℤ))(p)=2" org.eventb.core.source="/Pacman/Pacman_Machine_1.bum|org.eventb.core.machineFile#Pacman_Machine_1|org.eventb.core.event#_6zCtwhaLEea5wp6hXNOG2w|org.eventb.core.guard#_EK4m4BaMEea5wp6hXNOG2w"/>
+<org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="position∈tunnel⇒p∉tunnel" org.eventb.core.source="/Pacman/Pacman_Machine_1.bum|org.eventb.core.machineFile#Pacman_Machine_1|org.eventb.core.event#_6zCtwhaLEea5wp6hXNOG2w|org.eventb.core.guard#_26GJdBaPEea5wp6hXNOG2w"/>
+<org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="p∈punktefelder_aktuell" org.eventb.core.source="/Pacman/Pacman_Machine_2.bum|org.eventb.core.machineFile#Pacman_Machine_2|org.eventb.core.event#_wkFjQBaHEeaxlIwdP2iQDC|org.eventb.core.guard#_tMpcEiTaEeag7rHqrVAykw"/>
+<org.eventb.core.poPredicate name="PRD4" org.eventb.core.predicate="card(punktefelder_aktuell) − card(punktefelder_aktuell ∖ {p})=1" org.eventb.core.source="/Pacman/Pacman_Machine_2.bum|org.eventb.core.machineFile#Pacman_Machine_2|org.eventb.core.event#_wkFjQBaHEeaxlIwdP2iQDC|org.eventb.core.guard#_Svqc8DPuEeaRKqOaTiky4g"/>
+<org.eventb.core.poPredicate name="PRD5" org.eventb.core.predicate="counter_scored≥counter_geist_3⇒in_bewegung_geist_3=TRUE" org.eventb.core.source="/Pacman/Pacman_Machine_3.bum|org.eventb.core.machineFile#Pacman_Machine_3|org.eventb.core.event#_wkFjQBaHEeaxlIwdP2iQDC|org.eventb.core.guard#_QsWvcFmgEeaT0roG3wtL5w"/>
+<org.eventb.core.poPredicate name="PRD6" org.eventb.core.predicate="counter_scored≥counter_geist_4⇒in_bewegung_geist_4=TRUE" org.eventb.core.source="/Pacman/Pacman_Machine_3.bum|org.eventb.core.machineFile#Pacman_Machine_3|org.eventb.core.event#_wkFjQBaHEeaxlIwdP2iQDC|org.eventb.core.guard#_QsXWglmgEeaT0roG3wtL5w"/>
+<org.eventb.core.poPredicate name="PRD7" org.eventb.core.predicate="position∉{pos_geist_1,pos_geist_2,pos_geist_3,pos_geist_4}" org.eventb.core.source="/Pacman/Pacman_Machine_3.bum|org.eventb.core.machineFile#Pacman_Machine_3|org.eventb.core.event#_wkFjQBaHEeaxlIwdP2iQDC|org.eventb.core.guard#_QsXWgVmgEeaT0roG3wtL5w"/>
+<org.eventb.core.poPredicate name="PRD8" org.eventb.core.predicate="leben&gt;0" org.eventb.core.source="/Pacman/Pacman_Machine_4.bum|org.eventb.core.machineFile#Pacman_Machine_4|org.eventb.core.event#_tMqDIiTaEeag7rHqrVAyky|org.eventb.core.guard#_jiAdIFscEeabeYXD7YYpQg"/>
+<org.eventb.core.poPredicate name="PRD9" org.eventb.core.predicate="jagd_counter≠0⇒jagd_counter≠counter" org.eventb.core.source="/Pacman/Pacman_Machine_5.bum|org.eventb.core.machineFile#Pacman_Machine_5|org.eventb.core.event#_tMqDIiTaEeag7rHqrVAyky|org.eventb.core.guard#_HK1GoV1VEeaH_Yn1_tt3HQ"/>
+<org.eventb.core.poPredicate name="PRD10" org.eventb.core.predicate="geist_1_bewegt=TRUE" org.eventb.core.source="/Pacman/Pacman_Machine_5.bum|org.eventb.core.machineFile#Pacman_Machine_5|org.eventb.core.event#_tMqDIiTaEeag7rHqrVAyky|org.eventb.core.guard#_bOI8kF1YEeaH_Yn1_tt3HQ"/>
+<org.eventb.core.poPredicate name="PRD11" org.eventb.core.predicate="geist_2_bewegt=TRUE" org.eventb.core.source="/Pacman/Pacman_Machine_5.bum|org.eventb.core.machineFile#Pacman_Machine_5|org.eventb.core.event#_tMqDIiTaEeag7rHqrVAyky|org.eventb.core.guard#_bOI8kV1YEeaH_Yn1_tt3HQ"/>
+<org.eventb.core.poPredicate name="PRD12" org.eventb.core.predicate="counter_scored≥counter_geist_3⇒geist_3_bewegt=TRUE" org.eventb.core.source="/Pacman/Pacman_Machine_5.bum|org.eventb.core.machineFile#Pacman_Machine_5|org.eventb.core.event#_tMqDIiTaEeag7rHqrVAyky|org.eventb.core.guard#_bOJjoF1YEeaH_Yn1_tt3HQ"/>
+<org.eventb.core.poPredicate name="PRD13" org.eventb.core.predicate="counter_scored≥counter_geist_4⇒geist_4_bewegt=TRUE" org.eventb.core.source="/Pacman/Pacman_Machine_5.bum|org.eventb.core.machineFile#Pacman_Machine_5|org.eventb.core.event#_tMqDIiTaEeag7rHqrVAyky|org.eventb.core.guard#_bOJjol1YEeaH_Yn1_tt3HQ"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTIDENTPacman_Context_generj]" org.eventb.core.parentSet="/Pacman/Pacman_Machine_game.bpo|org.eventb.core.poFile#Pacman_Machine_game|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="3">
+<org.eventb.core.poIdentifier name="geist_1_bewegt'" org.eventb.core.type="BOOL"/>
+<org.eventb.core.poIdentifier name="score'" org.eventb.core.type="ℤ"/>
+<org.eventb.core.poIdentifier name="score_alt'" org.eventb.core.type="ℤ"/>
+<org.eventb.core.poIdentifier name="getunnelt'" org.eventb.core.type="BOOL"/>
+<org.eventb.core.poIdentifier name="punktefelder_aktuell'" org.eventb.core.type="ℙ(ℤ×ℤ)"/>
+<org.eventb.core.poIdentifier name="counter_scored'" org.eventb.core.type="ℤ"/>
+<org.eventb.core.poIdentifier name="counter'" org.eventb.core.type="ℤ"/>
+<org.eventb.core.poIdentifier name="geist_2_bewegt'" org.eventb.core.type="BOOL"/>
+<org.eventb.core.poIdentifier name="in_bewegung'" org.eventb.core.type="BOOL"/>
+<org.eventb.core.poIdentifier name="geist_4_bewegt'" org.eventb.core.type="BOOL"/>
+<org.eventb.core.poIdentifier name="vorherige_position'" org.eventb.core.type="ℤ×ℤ"/>
+<org.eventb.core.poIdentifier name="p" org.eventb.core.type="ℤ×ℤ"/>
+<org.eventb.core.poIdentifier name="geist_3_bewegt'" org.eventb.core.type="BOOL"/>
+<org.eventb.core.poIdentifier name="position'" org.eventb.core.type="ℤ×ℤ"/>
+<org.eventb.core.poIdentifier name="bewegt'" org.eventb.core.type="BOOL"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTALLHYPPacman_Context_generj]" org.eventb.core.parentSet="/Pacman/Pacman_Machine_game.bpo|org.eventb.core.poFile#Pacman_Machine_game|org.eventb.core.poPredicateSet#EVTIDENTPacman_Context_generj]" org.eventb.core.poStamp="3">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="p∈begehbar" org.eventb.core.source="/Pacman/Pacman_Machine_1.bum|org.eventb.core.machineFile#Pacman_Machine_1|org.eventb.core.event#_26GJchaPEea5wp6hXNOG2w|org.eventb.core.guard#_26GJdRaPEea5wp6hXNOG2w"/>
+<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="(prj1 ⦂ ℙ(ℤ×ℤ×ℤ))(position)=(prj1 ⦂ ℙ(ℤ×ℤ×ℤ))(p)∧(prj2 ⦂ ℙ(ℤ×ℤ×ℤ))(position) − (prj2 ⦂ ℙ(ℤ×ℤ×ℤ))(p)=−2" org.eventb.core.source="/Pacman/Pacman_Machine_1.bum|org.eventb.core.machineFile#Pacman_Machine_1|org.eventb.core.event#_26GJchaPEea5wp6hXNOG2w|org.eventb.core.guard#_26GJdhaPEea5wp6hXNOG2w"/>
+<org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="position∈tunnel⇒p∉tunnel" org.eventb.core.source="/Pacman/Pacman_Machine_1.bum|org.eventb.core.machineFile#Pacman_Machine_1|org.eventb.core.event#_26GJchaPEea5wp6hXNOG2w|org.eventb.core.guard#_R-vXc1lrEeawGt8rLp0IIg"/>
+<org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="p∈punktefelder_aktuell" org.eventb.core.source="/Pacman/Pacman_Machine_2.bum|org.eventb.core.machineFile#Pacman_Machine_2|org.eventb.core.event#_wkFjQBaHEeaxlIwdP2iQDD|org.eventb.core.guard#_SvrEADPuEeaRKqOaTiky4g"/>
+<org.eventb.core.poPredicate name="PRD4" org.eventb.core.predicate="card(punktefelder_aktuell) − card(punktefelder_aktuell ∖ {p})=1" org.eventb.core.source="/Pacman/Pacman_Machine_2.bum|org.eventb.core.machineFile#Pacman_Machine_2|org.eventb.core.event#_wkFjQBaHEeaxlIwdP2iQDD|org.eventb.core.guard#_dqkrUTPuEeaRKqOaTiky4g"/>
+<org.eventb.core.poPredicate name="PRD5" org.eventb.core.predicate="counter_scored≥counter_geist_3⇒in_bewegung_geist_3=TRUE" org.eventb.core.source="/Pacman/Pacman_Machine_3.bum|org.eventb.core.machineFile#Pacman_Machine_3|org.eventb.core.event#_wkFjQBaHEeaxlIwdP2iQDD|org.eventb.core.guard#_zMTJclokEea3RJy38zLyQw"/>
+<org.eventb.core.poPredicate name="PRD6" org.eventb.core.predicate="counter_scored≥counter_geist_4⇒in_bewegung_geist_4=TRUE" org.eventb.core.source="/Pacman/Pacman_Machine_3.bum|org.eventb.core.machineFile#Pacman_Machine_3|org.eventb.core.event#_wkFjQBaHEeaxlIwdP2iQDD|org.eventb.core.guard#_QsXWgFmgEeaT0roG3wtL5w"/>
+<org.eventb.core.poPredicate name="PRD7" org.eventb.core.predicate="position∉{pos_geist_1,pos_geist_2,pos_geist_3,pos_geist_4}" org.eventb.core.source="/Pacman/Pacman_Machine_3.bum|org.eventb.core.machineFile#Pacman_Machine_3|org.eventb.core.event#_wkFjQBaHEeaxlIwdP2iQDD|org.eventb.core.guard#_CycbElopEea3RJy38zLyQw"/>
+<org.eventb.core.poPredicate name="PRD8" org.eventb.core.predicate="leben&gt;0" org.eventb.core.source="/Pacman/Pacman_Machine_4.bum|org.eventb.core.machineFile#Pacman_Machine_4|org.eventb.core.event#_tMqDIiTaEeag7rHqrVAykz|org.eventb.core.guard#_jiAdIVscEeabeYXD7YYpQg"/>
+<org.eventb.core.poPredicate name="PRD9" org.eventb.core.predicate="jagd_counter≠0⇒jagd_counter≠counter" org.eventb.core.source="/Pacman/Pacman_Machine_5.bum|org.eventb.core.machineFile#Pacman_Machine_5|org.eventb.core.event#_tMqDIiTaEeag7rHqrVAykz|org.eventb.core.guard#_bOJjo11YEeaH_Yn1_tt3HQ"/>
+<org.eventb.core.poPredicate name="PRD10" org.eventb.core.predicate="geist_1_bewegt=TRUE" org.eventb.core.source="/Pacman/Pacman_Machine_5.bum|org.eventb.core.machineFile#Pacman_Machine_5|org.eventb.core.event#_tMqDIiTaEeag7rHqrVAykz|org.eventb.core.guard#_bOKKsF1YEeaH_Yn1_tt3HQ"/>
+<org.eventb.core.poPredicate name="PRD11" org.eventb.core.predicate="geist_2_bewegt=TRUE" org.eventb.core.source="/Pacman/Pacman_Machine_5.bum|org.eventb.core.machineFile#Pacman_Machine_5|org.eventb.core.event#_tMqDIiTaEeag7rHqrVAykz|org.eventb.core.guard#_bOKKsV1YEeaH_Yn1_tt3HQ"/>
+<org.eventb.core.poPredicate name="PRD12" org.eventb.core.predicate="counter_scored≥counter_geist_3⇒geist_3_bewegt=TRUE" org.eventb.core.source="/Pacman/Pacman_Machine_5.bum|org.eventb.core.machineFile#Pacman_Machine_5|org.eventb.core.event#_tMqDIiTaEeag7rHqrVAykz|org.eventb.core.guard#_bOJjoV1YEeaH_Yn1_tt3HQ"/>
+<org.eventb.core.poPredicate name="PRD13" org.eventb.core.predicate="counter_scored≥counter_geist_4⇒geist_4_bewegt=TRUE" org.eventb.core.source="/Pacman/Pacman_Machine_5.bum|org.eventb.core.machineFile#Pacman_Machine_5|org.eventb.core.event#_tMqDIiTaEeag7rHqrVAykz|org.eventb.core.guard#_bOKKs11YEeaH_Yn1_tt3HQ"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTIDENTPacman_Context_generj^" org.eventb.core.parentSet="/Pacman/Pacman_Machine_game.bpo|org.eventb.core.poFile#Pacman_Machine_game|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="3">
+<org.eventb.core.poIdentifier name="geist_1_bewegt'" org.eventb.core.type="BOOL"/>
+<org.eventb.core.poIdentifier name="score'" org.eventb.core.type="ℤ"/>
+<org.eventb.core.poIdentifier name="score_alt'" org.eventb.core.type="ℤ"/>
+<org.eventb.core.poIdentifier name="getunnelt'" org.eventb.core.type="BOOL"/>
+<org.eventb.core.poIdentifier name="punktefelder_aktuell'" org.eventb.core.type="ℙ(ℤ×ℤ)"/>
+<org.eventb.core.poIdentifier name="counter_scored'" org.eventb.core.type="ℤ"/>
+<org.eventb.core.poIdentifier name="counter'" org.eventb.core.type="ℤ"/>
+<org.eventb.core.poIdentifier name="geist_2_bewegt'" org.eventb.core.type="BOOL"/>
+<org.eventb.core.poIdentifier name="in_bewegung'" org.eventb.core.type="BOOL"/>
+<org.eventb.core.poIdentifier name="geist_4_bewegt'" org.eventb.core.type="BOOL"/>
+<org.eventb.core.poIdentifier name="vorherige_position'" org.eventb.core.type="ℤ×ℤ"/>
+<org.eventb.core.poIdentifier name="p" org.eventb.core.type="ℤ×ℤ"/>
+<org.eventb.core.poIdentifier name="geist_3_bewegt'" org.eventb.core.type="BOOL"/>
+<org.eventb.core.poIdentifier name="position'" org.eventb.core.type="ℤ×ℤ"/>
+<org.eventb.core.poIdentifier name="bewegt'" org.eventb.core.type="BOOL"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTALLHYPPacman_Context_generj^" org.eventb.core.parentSet="/Pacman/Pacman_Machine_game.bpo|org.eventb.core.poFile#Pacman_Machine_game|org.eventb.core.poPredicateSet#EVTIDENTPacman_Context_generj^" org.eventb.core.poStamp="3">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="p∈begehbar" org.eventb.core.source="/Pacman/Pacman_Machine_1.bum|org.eventb.core.machineFile#Pacman_Machine_1|org.eventb.core.event#_R-vXcVlrEeawGt8rLp0IIg|org.eventb.core.guard#_R-wlkVlrEeawGt8rLp0IIg"/>
+<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="(prj1 ⦂ ℙ(ℤ×ℤ×ℤ))(position) − (prj1 ⦂ ℙ(ℤ×ℤ×ℤ))(p)=−2∧(prj2 ⦂ ℙ(ℤ×ℤ×ℤ))(position)=(prj2 ⦂ ℙ(ℤ×ℤ×ℤ))(p)" org.eventb.core.source="/Pacman/Pacman_Machine_1.bum|org.eventb.core.machineFile#Pacman_Machine_1|org.eventb.core.event#_R-vXcVlrEeawGt8rLp0IIg|org.eventb.core.guard#_R-wlkllrEeawGt8rLp0IIg"/>
+<org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="position∈tunnel⇒p∉tunnel" org.eventb.core.source="/Pacman/Pacman_Machine_1.bum|org.eventb.core.machineFile#Pacman_Machine_1|org.eventb.core.event#_R-vXcVlrEeawGt8rLp0IIg|org.eventb.core.guard#_R-xMollrEeawGt8rLp0IIg"/>
+<org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="p∈punktefelder_aktuell" org.eventb.core.source="/Pacman/Pacman_Machine_2.bum|org.eventb.core.machineFile#Pacman_Machine_2|org.eventb.core.event#_SvrrEDPuEeaRKqOaTiky4g|org.eventb.core.guard#_79ZxwllrEeawGt8rLp0IIg"/>
+<org.eventb.core.poPredicate name="PRD4" org.eventb.core.predicate="card(punktefelder_aktuell) − card(punktefelder_aktuell ∖ {p})=1" org.eventb.core.source="/Pacman/Pacman_Machine_2.bum|org.eventb.core.machineFile#Pacman_Machine_2|org.eventb.core.event#_SvrrEDPuEeaRKqOaTiky4g|org.eventb.core.guard#_79ZxxllrEeawGt8rLp0IIg"/>
+<org.eventb.core.poPredicate name="PRD5" org.eventb.core.predicate="counter_scored≥counter_geist_3⇒in_bewegung_geist_3=TRUE" org.eventb.core.source="/Pacman/Pacman_Machine_3.bum|org.eventb.core.machineFile#Pacman_Machine_3|org.eventb.core.event#_wkFjQBaHEeaxlIwdP2iQDE|org.eventb.core.guard#_zMTJcFokEea3RJy38zLyQw"/>
+<org.eventb.core.poPredicate name="PRD6" org.eventb.core.predicate="counter_scored≥counter_geist_4⇒in_bewegung_geist_4=TRUE" org.eventb.core.source="/Pacman/Pacman_Machine_3.bum|org.eventb.core.machineFile#Pacman_Machine_3|org.eventb.core.event#_wkFjQBaHEeaxlIwdP2iQDE|org.eventb.core.guard#_CycbEVopEea3RJy38zLyQw"/>
+<org.eventb.core.poPredicate name="PRD7" org.eventb.core.predicate="position∉{pos_geist_1,pos_geist_2,pos_geist_3,pos_geist_4}" org.eventb.core.source="/Pacman/Pacman_Machine_3.bum|org.eventb.core.machineFile#Pacman_Machine_3|org.eventb.core.event#_wkFjQBaHEeaxlIwdP2iQDE|org.eventb.core.guard#_UnZmQVowEea3RJy38zLyQw"/>
+<org.eventb.core.poPredicate name="PRD8" org.eventb.core.predicate="leben&gt;0" org.eventb.core.source="/Pacman/Pacman_Machine_4.bum|org.eventb.core.machineFile#Pacman_Machine_4|org.eventb.core.event#_tMqDIiTaEeag7rHqrVAyk{|org.eventb.core.guard#_nPSSAFveEeabeYXD7YYpQg"/>
+<org.eventb.core.poPredicate name="PRD9" org.eventb.core.predicate="jagd_counter≠0⇒jagd_counter≠counter" org.eventb.core.source="/Pacman/Pacman_Machine_5.bum|org.eventb.core.machineFile#Pacman_Machine_5|org.eventb.core.event#_tMqDIiTaEeag7rHqrVAyk{|org.eventb.core.guard#_bOKKtF1YEeaH_Yn1_tt3HQ"/>
+<org.eventb.core.poPredicate name="PRD10" org.eventb.core.predicate="geist_1_bewegt=TRUE" org.eventb.core.source="/Pacman/Pacman_Machine_5.bum|org.eventb.core.machineFile#Pacman_Machine_5|org.eventb.core.event#_tMqDIiTaEeag7rHqrVAyk{|org.eventb.core.guard#_bOKxwF1YEeaH_Yn1_tt3HQ"/>
+<org.eventb.core.poPredicate name="PRD11" org.eventb.core.predicate="geist_2_bewegt=TRUE" org.eventb.core.source="/Pacman/Pacman_Machine_5.bum|org.eventb.core.machineFile#Pacman_Machine_5|org.eventb.core.event#_tMqDIiTaEeag7rHqrVAyk{|org.eventb.core.guard#_bOL_4F1YEeaH_Yn1_tt3HQ"/>
+<org.eventb.core.poPredicate name="PRD12" org.eventb.core.predicate="counter_scored≥counter_geist_3⇒geist_3_bewegt=TRUE" org.eventb.core.source="/Pacman/Pacman_Machine_5.bum|org.eventb.core.machineFile#Pacman_Machine_5|org.eventb.core.event#_tMqDIiTaEeag7rHqrVAyk{|org.eventb.core.guard#_bOKKsl1YEeaH_Yn1_tt3HQ"/>
+<org.eventb.core.poPredicate name="PRD13" org.eventb.core.predicate="counter_scored≥counter_geist_4⇒geist_4_bewegt=TRUE" org.eventb.core.source="/Pacman/Pacman_Machine_5.bum|org.eventb.core.machineFile#Pacman_Machine_5|org.eventb.core.event#_tMqDIiTaEeag7rHqrVAyk{|org.eventb.core.guard#_eMjjkF1aEeaH_Yn1_tt3HQ"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTIDENTPacman_Context_generj_" org.eventb.core.parentSet="/Pacman/Pacman_Machine_game.bpo|org.eventb.core.poFile#Pacman_Machine_game|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="3">
+<org.eventb.core.poIdentifier name="geist_1_bewegt'" org.eventb.core.type="BOOL"/>
+<org.eventb.core.poIdentifier name="score'" org.eventb.core.type="ℤ"/>
+<org.eventb.core.poIdentifier name="score_alt'" org.eventb.core.type="ℤ"/>
+<org.eventb.core.poIdentifier name="getunnelt'" org.eventb.core.type="BOOL"/>
+<org.eventb.core.poIdentifier name="punktefelder_aktuell'" org.eventb.core.type="ℙ(ℤ×ℤ)"/>
+<org.eventb.core.poIdentifier name="counter_scored'" org.eventb.core.type="ℤ"/>
+<org.eventb.core.poIdentifier name="counter'" org.eventb.core.type="ℤ"/>
+<org.eventb.core.poIdentifier name="geist_2_bewegt'" org.eventb.core.type="BOOL"/>
+<org.eventb.core.poIdentifier name="in_bewegung'" org.eventb.core.type="BOOL"/>
+<org.eventb.core.poIdentifier name="geist_4_bewegt'" org.eventb.core.type="BOOL"/>
+<org.eventb.core.poIdentifier name="vorherige_position'" org.eventb.core.type="ℤ×ℤ"/>
+<org.eventb.core.poIdentifier name="p" org.eventb.core.type="ℤ×ℤ"/>
+<org.eventb.core.poIdentifier name="geist_3_bewegt'" org.eventb.core.type="BOOL"/>
+<org.eventb.core.poIdentifier name="position'" org.eventb.core.type="ℤ×ℤ"/>
+<org.eventb.core.poIdentifier name="bewegt'" org.eventb.core.type="BOOL"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTALLHYPPacman_Context_generj_" org.eventb.core.parentSet="/Pacman/Pacman_Machine_game.bpo|org.eventb.core.poFile#Pacman_Machine_game|org.eventb.core.poPredicateSet#EVTIDENTPacman_Context_generj_" org.eventb.core.poStamp="3">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="p∈begehbar" org.eventb.core.source="/Pacman/Pacman_Machine_1.bum|org.eventb.core.machineFile#Pacman_Machine_1|org.eventb.core.event#_R-v-hFlrEeawGt8rLp0IIg|org.eventb.core.guard#_R-xMo1lrEeawGt8rLp0IIg"/>
+<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="(prj1 ⦂ ℙ(ℤ×ℤ×ℤ))(position) − (prj1 ⦂ ℙ(ℤ×ℤ×ℤ))(p)=2∧(prj2 ⦂ ℙ(ℤ×ℤ×ℤ))(position)=(prj2 ⦂ ℙ(ℤ×ℤ×ℤ))(p)" org.eventb.core.source="/Pacman/Pacman_Machine_1.bum|org.eventb.core.machineFile#Pacman_Machine_1|org.eventb.core.event#_R-v-hFlrEeawGt8rLp0IIg|org.eventb.core.guard#_R-xzsFlrEeawGt8rLp0IIg"/>
+<org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="position∈tunnel⇒p∉tunnel" org.eventb.core.source="/Pacman/Pacman_Machine_1.bum|org.eventb.core.machineFile#Pacman_Machine_1|org.eventb.core.event#_R-v-hFlrEeawGt8rLp0IIg|org.eventb.core.guard#_9PVHQGkPEeabpYv7sQK2OA"/>
+<org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="p∈punktefelder_aktuell" org.eventb.core.source="/Pacman/Pacman_Machine_2.bum|org.eventb.core.machineFile#Pacman_Machine_2|org.eventb.core.event#_dqkrUjPuEeaRKqOaTiky4g|org.eventb.core.guard#_79aY0FlrEeawGt8rLp0IIg"/>
+<org.eventb.core.poPredicate name="PRD4" org.eventb.core.predicate="card(punktefelder_aktuell) − card(punktefelder_aktuell ∖ {p})=1" org.eventb.core.source="/Pacman/Pacman_Machine_2.bum|org.eventb.core.machineFile#Pacman_Machine_2|org.eventb.core.event#_dqkrUjPuEeaRKqOaTiky4g|org.eventb.core.guard#_79a_4VlrEeawGt8rLp0IIg"/>
+<org.eventb.core.poPredicate name="PRD5" org.eventb.core.predicate="counter_scored≥counter_geist_3⇒in_bewegung_geist_3=TRUE" org.eventb.core.source="/Pacman/Pacman_Machine_3.bum|org.eventb.core.machineFile#Pacman_Machine_3|org.eventb.core.event#_wkFjQBaHEeaxlIwdP2iQDF|org.eventb.core.guard#_HYQIkFopEea3RJy38zLyQw"/>
+<org.eventb.core.poPredicate name="PRD6" org.eventb.core.predicate="counter_scored≥counter_geist_4⇒in_bewegung_geist_4=TRUE" org.eventb.core.source="/Pacman/Pacman_Machine_3.bum|org.eventb.core.machineFile#Pacman_Machine_3|org.eventb.core.event#_wkFjQBaHEeaxlIwdP2iQDF|org.eventb.core.guard#_zMTJcVokEea3RJy38zLyQw"/>
+<org.eventb.core.poPredicate name="PRD7" org.eventb.core.predicate="position∉{pos_geist_1,pos_geist_2,pos_geist_3,pos_geist_4}" org.eventb.core.source="/Pacman/Pacman_Machine_3.bum|org.eventb.core.machineFile#Pacman_Machine_3|org.eventb.core.event#_wkFjQBaHEeaxlIwdP2iQDF|org.eventb.core.guard#_UnZmQFowEea3RJy38zLyQw"/>
+<org.eventb.core.poPredicate name="PRD8" org.eventb.core.predicate="leben&gt;0" org.eventb.core.source="/Pacman/Pacman_Machine_4.bum|org.eventb.core.machineFile#Pacman_Machine_4|org.eventb.core.event#_tMqDIiTaEeag7rHqrVAyk\||org.eventb.core.guard#_nPS5EFveEeabeYXD7YYpQg"/>
+<org.eventb.core.poPredicate name="PRD9" org.eventb.core.predicate="jagd_counter≠0⇒jagd_counter≠counter" org.eventb.core.source="/Pacman/Pacman_Machine_5.bum|org.eventb.core.machineFile#Pacman_Machine_5|org.eventb.core.event#_tMqDIiTaEeag7rHqrVAyk\||org.eventb.core.guard#_eNCrwF1aEeaH_Yn1_tt3HQ"/>
+<org.eventb.core.poPredicate name="PRD10" org.eventb.core.predicate="geist_1_bewegt=TRUE" org.eventb.core.source="/Pacman/Pacman_Machine_5.bum|org.eventb.core.machineFile#Pacman_Machine_5|org.eventb.core.event#_tMqDIiTaEeag7rHqrVAyk\||org.eventb.core.guard#_eNCrwV1aEeaH_Yn1_tt3HQ"/>
+<org.eventb.core.poPredicate name="PRD11" org.eventb.core.predicate="geist_2_bewegt=TRUE" org.eventb.core.source="/Pacman/Pacman_Machine_5.bum|org.eventb.core.machineFile#Pacman_Machine_5|org.eventb.core.event#_tMqDIiTaEeag7rHqrVAyk\||org.eventb.core.guard#_VFL58F1bEeaH_Yn1_tt3HQ"/>
+<org.eventb.core.poPredicate name="PRD12" org.eventb.core.predicate="counter_scored≥counter_geist_3⇒geist_3_bewegt=TRUE" org.eventb.core.source="/Pacman/Pacman_Machine_5.bum|org.eventb.core.machineFile#Pacman_Machine_5|org.eventb.core.event#_tMqDIiTaEeag7rHqrVAyk\||org.eventb.core.guard#_eMi8gF1aEeaH_Yn1_tt3HQ"/>
+<org.eventb.core.poPredicate name="PRD13" org.eventb.core.predicate="counter_scored≥counter_geist_4⇒geist_4_bewegt=TRUE" org.eventb.core.source="/Pacman/Pacman_Machine_5.bum|org.eventb.core.machineFile#Pacman_Machine_5|org.eventb.core.event#_tMqDIiTaEeag7rHqrVAyk\||org.eventb.core.guard#_VFMhAF1bEeaH_Yn1_tt3HQ"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTIDENTPacman_Context_generj`" org.eventb.core.parentSet="/Pacman/Pacman_Machine_game.bpo|org.eventb.core.poFile#Pacman_Machine_game|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="3">
+<org.eventb.core.poIdentifier name="geist_1_bewegt'" org.eventb.core.type="BOOL"/>
+<org.eventb.core.poIdentifier name="getunnelt'" org.eventb.core.type="BOOL"/>
+<org.eventb.core.poIdentifier name="geister_aktuell'" org.eventb.core.type="ℙ(ℤ×ℤ)"/>
+<org.eventb.core.poIdentifier name="counter'" org.eventb.core.type="ℤ"/>
+<org.eventb.core.poIdentifier name="geist_2_bewegt'" org.eventb.core.type="BOOL"/>
+<org.eventb.core.poIdentifier name="jagd_counter'" org.eventb.core.type="ℤ"/>
+<org.eventb.core.poIdentifier name="in_bewegung'" org.eventb.core.type="BOOL"/>
+<org.eventb.core.poIdentifier name="geist_4_bewegt'" org.eventb.core.type="BOOL"/>
+<org.eventb.core.poIdentifier name="vorherige_position'" org.eventb.core.type="ℤ×ℤ"/>
+<org.eventb.core.poIdentifier name="p" org.eventb.core.type="ℤ×ℤ"/>
+<org.eventb.core.poIdentifier name="geist_3_bewegt'" org.eventb.core.type="BOOL"/>
+<org.eventb.core.poIdentifier name="position'" org.eventb.core.type="ℤ×ℤ"/>
+<org.eventb.core.poIdentifier name="bewegt'" org.eventb.core.type="BOOL"/>
+<org.eventb.core.poIdentifier name="gejagte_geister'" org.eventb.core.type="ℙ(GEISTER)"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTALLHYPPacman_Context_generj`" org.eventb.core.parentSet="/Pacman/Pacman_Machine_game.bpo|org.eventb.core.poFile#Pacman_Machine_game|org.eventb.core.poPredicateSet#EVTIDENTPacman_Context_generj`" org.eventb.core.poStamp="3">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="p∈begehbar" org.eventb.core.source="/Pacman/Pacman_Machine_1.bum|org.eventb.core.machineFile#Pacman_Machine_1|org.eventb.core.event#_6zCtwhaLEea5wp6hXNOG2w|org.eventb.core.guard#_6zDU0RaLEea5wp6hXNOG2w"/>
+<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="(prj1 ⦂ ℙ(ℤ×ℤ×ℤ))(position)=(prj1 ⦂ ℙ(ℤ×ℤ×ℤ))(p)∧(prj2 ⦂ ℙ(ℤ×ℤ×ℤ))(position) − (prj2 ⦂ ℙ(ℤ×ℤ×ℤ))(p)=2" org.eventb.core.source="/Pacman/Pacman_Machine_1.bum|org.eventb.core.machineFile#Pacman_Machine_1|org.eventb.core.event#_6zCtwhaLEea5wp6hXNOG2w|org.eventb.core.guard#_EK4m4BaMEea5wp6hXNOG2w"/>
+<org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="position∈tunnel⇒p∉tunnel" org.eventb.core.source="/Pacman/Pacman_Machine_1.bum|org.eventb.core.machineFile#Pacman_Machine_1|org.eventb.core.event#_6zCtwhaLEea5wp6hXNOG2w|org.eventb.core.guard#_26GJdBaPEea5wp6hXNOG2w"/>
+<org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="p∈geister_aktuell" org.eventb.core.source="/Pacman/Pacman_Machine_2.bum|org.eventb.core.machineFile#Pacman_Machine_2|org.eventb.core.event#_79ZxwFlrEeawGt8rLp0IIg|org.eventb.core.guard#_79bm8VlrEeawGt8rLp0IIg"/>
+<org.eventb.core.poPredicate name="PRD4" org.eventb.core.predicate="counter_scored≥counter_geist_3⇒in_bewegung_geist_3=TRUE" org.eventb.core.source="/Pacman/Pacman_Machine_3.bum|org.eventb.core.machineFile#Pacman_Machine_3|org.eventb.core.event#_wkFjQBaHEeaxlIwdP2iQDG|org.eventb.core.guard#_A41UdVoxEea3RJy38zLyQw"/>
+<org.eventb.core.poPredicate name="PRD5" org.eventb.core.predicate="counter_scored≥counter_geist_4⇒in_bewegung_geist_4=TRUE" org.eventb.core.source="/Pacman/Pacman_Machine_3.bum|org.eventb.core.machineFile#Pacman_Machine_3|org.eventb.core.event#_wkFjQBaHEeaxlIwdP2iQDG|org.eventb.core.guard#_nBNPIFowEea3RJy38zLyQw"/>
+<org.eventb.core.poPredicate name="PRD6" org.eventb.core.predicate="position∉{pos_geist_1,pos_geist_2,pos_geist_3,pos_geist_4}" org.eventb.core.source="/Pacman/Pacman_Machine_3.bum|org.eventb.core.machineFile#Pacman_Machine_3|org.eventb.core.event#_wkFjQBaHEeaxlIwdP2iQDG|org.eventb.core.guard#_UnY_MlowEea3RJy38zLyQw"/>
+<org.eventb.core.poPredicate name="PRD7" org.eventb.core.predicate="leben&gt;0" org.eventb.core.source="/Pacman/Pacman_Machine_4.bum|org.eventb.core.machineFile#Pacman_Machine_4|org.eventb.core.event#_tMqDIiTaEeag7rHqrVAyk}|org.eventb.core.guard#_nPS5EVveEeabeYXD7YYpQg"/>
+<org.eventb.core.poPredicate name="PRD8" org.eventb.core.predicate="jagd_counter≠0⇒jagd_counter≠counter" org.eventb.core.source="/Pacman/Pacman_Machine_5.bum|org.eventb.core.machineFile#Pacman_Machine_5|org.eventb.core.event#_tMqDIiTaEeag7rHqrVAyk}|org.eventb.core.guard#_VFMhAV1bEeaH_Yn1_tt3HQ"/>
+<org.eventb.core.poPredicate name="PRD9" org.eventb.core.predicate="geist_1_bewegt=TRUE" org.eventb.core.source="/Pacman/Pacman_Machine_5.bum|org.eventb.core.machineFile#Pacman_Machine_5|org.eventb.core.event#_tMqDIiTaEeag7rHqrVAyk}|org.eventb.core.guard#_vA0_wF1fEeaxCuN1JcHzlA"/>
+<org.eventb.core.poPredicate name="PRD10" org.eventb.core.predicate="geist_2_bewegt=TRUE" org.eventb.core.source="/Pacman/Pacman_Machine_5.bum|org.eventb.core.machineFile#Pacman_Machine_5|org.eventb.core.event#_tMqDIiTaEeag7rHqrVAyk}|org.eventb.core.guard#_vA1m0F1fEeaxCuN1JcHzlA"/>
+<org.eventb.core.poPredicate name="PRD11" org.eventb.core.predicate="counter_scored≥counter_geist_3⇒geist_3_bewegt=TRUE" org.eventb.core.source="/Pacman/Pacman_Machine_5.bum|org.eventb.core.machineFile#Pacman_Machine_5|org.eventb.core.event#_tMqDIiTaEeag7rHqrVAyk}|org.eventb.core.guard#_VFL58V1bEeaH_Yn1_tt3HQ"/>
+<org.eventb.core.poPredicate name="PRD12" org.eventb.core.predicate="counter_scored≥counter_geist_4⇒geist_4_bewegt=TRUE" org.eventb.core.source="/Pacman/Pacman_Machine_5.bum|org.eventb.core.machineFile#Pacman_Machine_5|org.eventb.core.event#_tMqDIiTaEeag7rHqrVAyk}|org.eventb.core.guard#_bTAU0F1gEeaxCuN1JcHzlA"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTIDENTPacman_Context_generja" org.eventb.core.parentSet="/Pacman/Pacman_Machine_game.bpo|org.eventb.core.poFile#Pacman_Machine_game|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="3">
+<org.eventb.core.poIdentifier name="geist_1_bewegt'" org.eventb.core.type="BOOL"/>
+<org.eventb.core.poIdentifier name="getunnelt'" org.eventb.core.type="BOOL"/>
+<org.eventb.core.poIdentifier name="geister_aktuell'" org.eventb.core.type="ℙ(ℤ×ℤ)"/>
+<org.eventb.core.poIdentifier name="counter'" org.eventb.core.type="ℤ"/>
+<org.eventb.core.poIdentifier name="geist_2_bewegt'" org.eventb.core.type="BOOL"/>
+<org.eventb.core.poIdentifier name="jagd_counter'" org.eventb.core.type="ℤ"/>
+<org.eventb.core.poIdentifier name="in_bewegung'" org.eventb.core.type="BOOL"/>
+<org.eventb.core.poIdentifier name="geist_4_bewegt'" org.eventb.core.type="BOOL"/>
+<org.eventb.core.poIdentifier name="vorherige_position'" org.eventb.core.type="ℤ×ℤ"/>
+<org.eventb.core.poIdentifier name="p" org.eventb.core.type="ℤ×ℤ"/>
+<org.eventb.core.poIdentifier name="geist_3_bewegt'" org.eventb.core.type="BOOL"/>
+<org.eventb.core.poIdentifier name="position'" org.eventb.core.type="ℤ×ℤ"/>
+<org.eventb.core.poIdentifier name="bewegt'" org.eventb.core.type="BOOL"/>
+<org.eventb.core.poIdentifier name="gejagte_geister'" org.eventb.core.type="ℙ(GEISTER)"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTALLHYPPacman_Context_generja" org.eventb.core.parentSet="/Pacman/Pacman_Machine_game.bpo|org.eventb.core.poFile#Pacman_Machine_game|org.eventb.core.poPredicateSet#EVTIDENTPacman_Context_generja" org.eventb.core.poStamp="3">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="p∈begehbar" org.eventb.core.source="/Pacman/Pacman_Machine_1.bum|org.eventb.core.machineFile#Pacman_Machine_1|org.eventb.core.event#_26GJchaPEea5wp6hXNOG2w|org.eventb.core.guard#_26GJdRaPEea5wp6hXNOG2w"/>
+<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="(prj1 ⦂ ℙ(ℤ×ℤ×ℤ))(position)=(prj1 ⦂ ℙ(ℤ×ℤ×ℤ))(p)∧(prj2 ⦂ ℙ(ℤ×ℤ×ℤ))(position) − (prj2 ⦂ ℙ(ℤ×ℤ×ℤ))(p)=−2" org.eventb.core.source="/Pacman/Pacman_Machine_1.bum|org.eventb.core.machineFile#Pacman_Machine_1|org.eventb.core.event#_26GJchaPEea5wp6hXNOG2w|org.eventb.core.guard#_26GJdhaPEea5wp6hXNOG2w"/>
+<org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="position∈tunnel⇒p∉tunnel" org.eventb.core.source="/Pacman/Pacman_Machine_1.bum|org.eventb.core.machineFile#Pacman_Machine_1|org.eventb.core.event#_26GJchaPEea5wp6hXNOG2w|org.eventb.core.guard#_R-vXc1lrEeawGt8rLp0IIg"/>
+<org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="p∈geister_aktuell" org.eventb.core.source="/Pacman/Pacman_Machine_2.bum|org.eventb.core.machineFile#Pacman_Machine_2|org.eventb.core.event#_79ZxxFlrEeawGt8rLp0IIg|org.eventb.core.guard#_79bm8llrEeawGt8rLp0IIg"/>
+<org.eventb.core.poPredicate name="PRD4" org.eventb.core.predicate="counter_scored≥counter_geist_3⇒in_bewegung_geist_3=TRUE" org.eventb.core.source="/Pacman/Pacman_Machine_3.bum|org.eventb.core.machineFile#Pacman_Machine_3|org.eventb.core.event#_wkFjQBaHEeaxlIwdP2iQDH|org.eventb.core.guard#_A41UdFoxEea3RJy38zLyQw"/>
+<org.eventb.core.poPredicate name="PRD5" org.eventb.core.predicate="counter_scored≥counter_geist_4⇒in_bewegung_geist_4=TRUE" org.eventb.core.source="/Pacman/Pacman_Machine_3.bum|org.eventb.core.machineFile#Pacman_Machine_3|org.eventb.core.event#_wkFjQBaHEeaxlIwdP2iQDH|org.eventb.core.guard#_3uu1AFozEea3RJy38zLyQw"/>
+<org.eventb.core.poPredicate name="PRD6" org.eventb.core.predicate="position∉{pos_geist_1,pos_geist_2,pos_geist_3,pos_geist_4}" org.eventb.core.source="/Pacman/Pacman_Machine_3.bum|org.eventb.core.machineFile#Pacman_Machine_3|org.eventb.core.event#_wkFjQBaHEeaxlIwdP2iQDH|org.eventb.core.guard#_EkaOUloxEea3RJy38zLyQw"/>
+<org.eventb.core.poPredicate name="PRD7" org.eventb.core.predicate="leben&gt;0" org.eventb.core.source="/Pacman/Pacman_Machine_4.bum|org.eventb.core.machineFile#Pacman_Machine_4|org.eventb.core.event#_tMqDIiTaEeag7rHqrVAyk~|org.eventb.core.guard#_nPS5ElveEeabeYXD7YYpQg"/>
+<org.eventb.core.poPredicate name="PRD8" org.eventb.core.predicate="jagd_counter≠0⇒jagd_counter≠counter" org.eventb.core.source="/Pacman/Pacman_Machine_5.bum|org.eventb.core.machineFile#Pacman_Machine_5|org.eventb.core.event#_tMqDIiTaEeag7rHqrVAyk~|org.eventb.core.guard#_bTAU0V1gEeaxCuN1JcHzlA"/>
+<org.eventb.core.poPredicate name="PRD9" org.eventb.core.predicate="geist_1_bewegt=TRUE" org.eventb.core.source="/Pacman/Pacman_Machine_5.bum|org.eventb.core.machineFile#Pacman_Machine_5|org.eventb.core.event#_tMqDIiTaEeag7rHqrVAyk~|org.eventb.core.guard#_bTAU0l1gEeaxCuN1JcHzlA"/>
+<org.eventb.core.poPredicate name="PRD10" org.eventb.core.predicate="geist_2_bewegt=TRUE" org.eventb.core.source="/Pacman/Pacman_Machine_5.bum|org.eventb.core.machineFile#Pacman_Machine_5|org.eventb.core.event#_tMqDIiTaEeag7rHqrVAyk~|org.eventb.core.guard#_bTAU011gEeaxCuN1JcHzlA"/>
+<org.eventb.core.poPredicate name="PRD11" org.eventb.core.predicate="counter_scored≥counter_geist_3⇒geist_3_bewegt=TRUE" org.eventb.core.source="/Pacman/Pacman_Machine_5.bum|org.eventb.core.machineFile#Pacman_Machine_5|org.eventb.core.event#_tMqDIiTaEeag7rHqrVAyk~|org.eventb.core.guard#_vA1m0V1fEeaxCuN1JcHzlA"/>
+<org.eventb.core.poPredicate name="PRD12" org.eventb.core.predicate="counter_scored≥counter_geist_4⇒geist_4_bewegt=TRUE" org.eventb.core.source="/Pacman/Pacman_Machine_5.bum|org.eventb.core.machineFile#Pacman_Machine_5|org.eventb.core.event#_tMqDIiTaEeag7rHqrVAyk~|org.eventb.core.guard#_bTAU1F1gEeaxCuN1JcHzlA"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTIDENTPacman_Context_generjb" org.eventb.core.parentSet="/Pacman/Pacman_Machine_game.bpo|org.eventb.core.poFile#Pacman_Machine_game|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="3">
+<org.eventb.core.poIdentifier name="geist_1_bewegt'" org.eventb.core.type="BOOL"/>
+<org.eventb.core.poIdentifier name="getunnelt'" org.eventb.core.type="BOOL"/>
+<org.eventb.core.poIdentifier name="geister_aktuell'" org.eventb.core.type="ℙ(ℤ×ℤ)"/>
+<org.eventb.core.poIdentifier name="counter'" org.eventb.core.type="ℤ"/>
+<org.eventb.core.poIdentifier name="geist_2_bewegt'" org.eventb.core.type="BOOL"/>
+<org.eventb.core.poIdentifier name="jagd_counter'" org.eventb.core.type="ℤ"/>
+<org.eventb.core.poIdentifier name="in_bewegung'" org.eventb.core.type="BOOL"/>
+<org.eventb.core.poIdentifier name="geist_4_bewegt'" org.eventb.core.type="BOOL"/>
+<org.eventb.core.poIdentifier name="vorherige_position'" org.eventb.core.type="ℤ×ℤ"/>
+<org.eventb.core.poIdentifier name="p" org.eventb.core.type="ℤ×ℤ"/>
+<org.eventb.core.poIdentifier name="geist_3_bewegt'" org.eventb.core.type="BOOL"/>
+<org.eventb.core.poIdentifier name="position'" org.eventb.core.type="ℤ×ℤ"/>
+<org.eventb.core.poIdentifier name="bewegt'" org.eventb.core.type="BOOL"/>
+<org.eventb.core.poIdentifier name="gejagte_geister'" org.eventb.core.type="ℙ(GEISTER)"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTALLHYPPacman_Context_generjb" org.eventb.core.parentSet="/Pacman/Pacman_Machine_game.bpo|org.eventb.core.poFile#Pacman_Machine_game|org.eventb.core.poPredicateSet#EVTIDENTPacman_Context_generjb" org.eventb.core.poStamp="3">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="p∈begehbar" org.eventb.core.source="/Pacman/Pacman_Machine_1.bum|org.eventb.core.machineFile#Pacman_Machine_1|org.eventb.core.event#_R-vXcVlrEeawGt8rLp0IIg|org.eventb.core.guard#_R-wlkVlrEeawGt8rLp0IIg"/>
+<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="(prj1 ⦂ ℙ(ℤ×ℤ×ℤ))(position) − (prj1 ⦂ ℙ(ℤ×ℤ×ℤ))(p)=−2∧(prj2 ⦂ ℙ(ℤ×ℤ×ℤ))(position)=(prj2 ⦂ ℙ(ℤ×ℤ×ℤ))(p)" org.eventb.core.source="/Pacman/Pacman_Machine_1.bum|org.eventb.core.machineFile#Pacman_Machine_1|org.eventb.core.event#_R-vXcVlrEeawGt8rLp0IIg|org.eventb.core.guard#_R-wlkllrEeawGt8rLp0IIg"/>
+<org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="position∈tunnel⇒p∉tunnel" org.eventb.core.source="/Pacman/Pacman_Machine_1.bum|org.eventb.core.machineFile#Pacman_Machine_1|org.eventb.core.event#_R-vXcVlrEeawGt8rLp0IIg|org.eventb.core.guard#_R-xMollrEeawGt8rLp0IIg"/>
+<org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="p∈geister_aktuell" org.eventb.core.source="/Pacman/Pacman_Machine_2.bum|org.eventb.core.machineFile#Pacman_Machine_2|org.eventb.core.event#_79ZxyFlrEeawGt8rLp0IIg|org.eventb.core.guard#_79dcIFlrEeawGt8rLp0IIg"/>
+<org.eventb.core.poPredicate name="PRD4" org.eventb.core.predicate="counter_scored≥counter_geist_3⇒in_bewegung_geist_3=TRUE" org.eventb.core.source="/Pacman/Pacman_Machine_3.bum|org.eventb.core.machineFile#Pacman_Machine_3|org.eventb.core.event#_wkFjQBaHEeaxlIwdP2iQDI|org.eventb.core.guard#_EkaOU1oxEea3RJy38zLyQw"/>
+<org.eventb.core.poPredicate name="PRD5" org.eventb.core.predicate="counter_scored≥counter_geist_4⇒in_bewegung_geist_4=TRUE" org.eventb.core.source="/Pacman/Pacman_Machine_3.bum|org.eventb.core.machineFile#Pacman_Machine_3|org.eventb.core.event#_wkFjQBaHEeaxlIwdP2iQDI|org.eventb.core.guard#_A41UcloxEea3RJy38zLyQw"/>
+<org.eventb.core.poPredicate name="PRD6" org.eventb.core.predicate="position∉{pos_geist_1,pos_geist_2,pos_geist_3,pos_geist_4}" org.eventb.core.source="/Pacman/Pacman_Machine_3.bum|org.eventb.core.machineFile#Pacman_Machine_3|org.eventb.core.event#_wkFjQBaHEeaxlIwdP2iQDI|org.eventb.core.guard#_EkaOVVoxEea3RJy38zLyQw"/>
+<org.eventb.core.poPredicate name="PRD7" org.eventb.core.predicate="leben&gt;0" org.eventb.core.source="/Pacman/Pacman_Machine_4.bum|org.eventb.core.machineFile#Pacman_Machine_4|org.eventb.core.event#_tMqDIiTaEeag7rHqrVAyl'|org.eventb.core.guard#_3q83YFvXEeabeYXD7YYpQg"/>
+<org.eventb.core.poPredicate name="PRD8" org.eventb.core.predicate="jagd_counter≠0⇒jagd_counter≠counter" org.eventb.core.source="/Pacman/Pacman_Machine_5.bum|org.eventb.core.machineFile#Pacman_Machine_5|org.eventb.core.event#_tMqDIiTaEeag7rHqrVAyl'|org.eventb.core.guard#_bTAU1V1gEeaxCuN1JcHzlA"/>
+<org.eventb.core.poPredicate name="PRD9" org.eventb.core.predicate="geist_1_bewegt=TRUE" org.eventb.core.source="/Pacman/Pacman_Machine_5.bum|org.eventb.core.machineFile#Pacman_Machine_5|org.eventb.core.event#_tMqDIiTaEeag7rHqrVAyl'|org.eventb.core.guard#_bTA74F1gEeaxCuN1JcHzlA"/>
+<org.eventb.core.poPredicate name="PRD10" org.eventb.core.predicate="geist_2_bewegt=TRUE" org.eventb.core.source="/Pacman/Pacman_Machine_5.bum|org.eventb.core.machineFile#Pacman_Machine_5|org.eventb.core.event#_tMqDIiTaEeag7rHqrVAyl'|org.eventb.core.guard#_bTA74V1gEeaxCuN1JcHzlA"/>
+<org.eventb.core.poPredicate name="PRD11" org.eventb.core.predicate="counter_scored≥counter_geist_3⇒geist_3_bewegt=TRUE" org.eventb.core.source="/Pacman/Pacman_Machine_5.bum|org.eventb.core.machineFile#Pacman_Machine_5|org.eventb.core.event#_tMqDIiTaEeag7rHqrVAyl'|org.eventb.core.guard#_vA2N4F1fEeaxCuN1JcHzlA"/>
+<org.eventb.core.poPredicate name="PRD12" org.eventb.core.predicate="counter_scored≥counter_geist_4⇒geist_4_bewegt=TRUE" org.eventb.core.source="/Pacman/Pacman_Machine_5.bum|org.eventb.core.machineFile#Pacman_Machine_5|org.eventb.core.event#_tMqDIiTaEeag7rHqrVAyl'|org.eventb.core.guard#_bTA7411gEeaxCuN1JcHzlA"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTIDENTPacman_Context_generjc" org.eventb.core.parentSet="/Pacman/Pacman_Machine_game.bpo|org.eventb.core.poFile#Pacman_Machine_game|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="3">
+<org.eventb.core.poIdentifier name="geist_1_bewegt'" org.eventb.core.type="BOOL"/>
+<org.eventb.core.poIdentifier name="getunnelt'" org.eventb.core.type="BOOL"/>
+<org.eventb.core.poIdentifier name="geister_aktuell'" org.eventb.core.type="ℙ(ℤ×ℤ)"/>
+<org.eventb.core.poIdentifier name="counter'" org.eventb.core.type="ℤ"/>
+<org.eventb.core.poIdentifier name="geist_2_bewegt'" org.eventb.core.type="BOOL"/>
+<org.eventb.core.poIdentifier name="jagd_counter'" org.eventb.core.type="ℤ"/>
+<org.eventb.core.poIdentifier name="in_bewegung'" org.eventb.core.type="BOOL"/>
+<org.eventb.core.poIdentifier name="geist_4_bewegt'" org.eventb.core.type="BOOL"/>
+<org.eventb.core.poIdentifier name="vorherige_position'" org.eventb.core.type="ℤ×ℤ"/>
+<org.eventb.core.poIdentifier name="p" org.eventb.core.type="ℤ×ℤ"/>
+<org.eventb.core.poIdentifier name="geist_3_bewegt'" org.eventb.core.type="BOOL"/>
+<org.eventb.core.poIdentifier name="position'" org.eventb.core.type="ℤ×ℤ"/>
+<org.eventb.core.poIdentifier name="bewegt'" org.eventb.core.type="BOOL"/>
+<org.eventb.core.poIdentifier name="gejagte_geister'" org.eventb.core.type="ℙ(GEISTER)"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTALLHYPPacman_Context_generjc" org.eventb.core.parentSet="/Pacman/Pacman_Machine_game.bpo|org.eventb.core.poFile#Pacman_Machine_game|org.eventb.core.poPredicateSet#EVTIDENTPacman_Context_generjc" org.eventb.core.poStamp="3">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="p∈begehbar" org.eventb.core.source="/Pacman/Pacman_Machine_1.bum|org.eventb.core.machineFile#Pacman_Machine_1|org.eventb.core.event#_R-v-hFlrEeawGt8rLp0IIg|org.eventb.core.guard#_R-xMo1lrEeawGt8rLp0IIg"/>
+<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="(prj1 ⦂ ℙ(ℤ×ℤ×ℤ))(position) − (prj1 ⦂ ℙ(ℤ×ℤ×ℤ))(p)=2∧(prj2 ⦂ ℙ(ℤ×ℤ×ℤ))(position)=(prj2 ⦂ ℙ(ℤ×ℤ×ℤ))(p)" org.eventb.core.source="/Pacman/Pacman_Machine_1.bum|org.eventb.core.machineFile#Pacman_Machine_1|org.eventb.core.event#_R-v-hFlrEeawGt8rLp0IIg|org.eventb.core.guard#_R-xzsFlrEeawGt8rLp0IIg"/>
+<org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="position∈tunnel⇒p∉tunnel" org.eventb.core.source="/Pacman/Pacman_Machine_1.bum|org.eventb.core.machineFile#Pacman_Machine_1|org.eventb.core.event#_R-v-hFlrEeawGt8rLp0IIg|org.eventb.core.guard#_9PVHQGkPEeabpYv7sQK2OA"/>
+<org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="p∈geister_aktuell" org.eventb.core.source="/Pacman/Pacman_Machine_2.bum|org.eventb.core.machineFile#Pacman_Machine_2|org.eventb.core.event#_79aY0llrEeawGt8rLp0IIg|org.eventb.core.guard#_79dcIVlrEeawGt8rLp0IIg"/>
+<org.eventb.core.poPredicate name="PRD4" org.eventb.core.predicate="counter_scored≥counter_geist_3⇒in_bewegung_geist_3=TRUE" org.eventb.core.source="/Pacman/Pacman_Machine_3.bum|org.eventb.core.machineFile#Pacman_Machine_3|org.eventb.core.event#_wkFjQBaHEeaxlIwdP2iQDJ|org.eventb.core.guard#_8UUgElozEea3RJy38zLyQw"/>
+<org.eventb.core.poPredicate name="PRD5" org.eventb.core.predicate="counter_scored≥counter_geist_4⇒in_bewegung_geist_4=TRUE" org.eventb.core.source="/Pacman/Pacman_Machine_3.bum|org.eventb.core.machineFile#Pacman_Machine_3|org.eventb.core.event#_wkFjQBaHEeaxlIwdP2iQDJ|org.eventb.core.guard#_8UUgEFozEea3RJy38zLyQw"/>
+<org.eventb.core.poPredicate name="PRD6" org.eventb.core.predicate="position∉{pos_geist_1,pos_geist_2,pos_geist_3,pos_geist_4}" org.eventb.core.source="/Pacman/Pacman_Machine_3.bum|org.eventb.core.machineFile#Pacman_Machine_3|org.eventb.core.event#_wkFjQBaHEeaxlIwdP2iQDJ|org.eventb.core.guard#_8UUgEVozEea3RJy38zLyQw"/>
+<org.eventb.core.poPredicate name="PRD7" org.eventb.core.predicate="leben&gt;0" org.eventb.core.source="/Pacman/Pacman_Machine_4.bum|org.eventb.core.machineFile#Pacman_Machine_4|org.eventb.core.event#_tMqDIiTaEeag7rHqrVAyl(|org.eventb.core.guard#_nPS5FFveEeabeYXD7YYpQg"/>
+<org.eventb.core.poPredicate name="PRD8" org.eventb.core.predicate="jagd_counter≠0⇒jagd_counter≠counter" org.eventb.core.source="/Pacman/Pacman_Machine_5.bum|org.eventb.core.machineFile#Pacman_Machine_5|org.eventb.core.event#_tMqDIiTaEeag7rHqrVAyl(|org.eventb.core.guard#_bTA75F1gEeaxCuN1JcHzlA"/>
+<org.eventb.core.poPredicate name="PRD9" org.eventb.core.predicate="geist_1_bewegt=TRUE" org.eventb.core.source="/Pacman/Pacman_Machine_5.bum|org.eventb.core.machineFile#Pacman_Machine_5|org.eventb.core.event#_tMqDIiTaEeag7rHqrVAyl(|org.eventb.core.guard#_bTA75V1gEeaxCuN1JcHzlA"/>
+<org.eventb.core.poPredicate name="PRD10" org.eventb.core.predicate="geist_2_bewegt=TRUE" org.eventb.core.source="/Pacman/Pacman_Machine_5.bum|org.eventb.core.machineFile#Pacman_Machine_5|org.eventb.core.event#_tMqDIiTaEeag7rHqrVAyl(|org.eventb.core.guard#_bTA75l1gEeaxCuN1JcHzlA"/>
+<org.eventb.core.poPredicate name="PRD11" org.eventb.core.predicate="counter_scored≥counter_geist_3⇒geist_3_bewegt=TRUE" org.eventb.core.source="/Pacman/Pacman_Machine_5.bum|org.eventb.core.machineFile#Pacman_Machine_5|org.eventb.core.event#_tMqDIiTaEeag7rHqrVAyl(|org.eventb.core.guard#_bTA74l1gEeaxCuN1JcHzlA"/>
+<org.eventb.core.poPredicate name="PRD12" org.eventb.core.predicate="counter_scored≥counter_geist_4⇒geist_4_bewegt=TRUE" org.eventb.core.source="/Pacman/Pacman_Machine_5.bum|org.eventb.core.machineFile#Pacman_Machine_5|org.eventb.core.event#_tMqDIiTaEeag7rHqrVAyl(|org.eventb.core.guard#_bTBi8F1gEeaxCuN1JcHzlA"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTIDENTPacman_Context_generjd" org.eventb.core.parentSet="/Pacman/Pacman_Machine_game.bpo|org.eventb.core.poFile#Pacman_Machine_game|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="3">
+<org.eventb.core.poIdentifier name="geist_1_bewegt'" org.eventb.core.type="BOOL"/>
+<org.eventb.core.poIdentifier name="getunnelt'" org.eventb.core.type="BOOL"/>
+<org.eventb.core.poIdentifier name="counter'" org.eventb.core.type="ℤ"/>
+<org.eventb.core.poIdentifier name="geist_2_bewegt'" org.eventb.core.type="BOOL"/>
+<org.eventb.core.poIdentifier name="in_bewegung'" org.eventb.core.type="BOOL"/>
+<org.eventb.core.poIdentifier name="geist_4_bewegt'" org.eventb.core.type="BOOL"/>
+<org.eventb.core.poIdentifier name="vorherige_position'" org.eventb.core.type="ℤ×ℤ"/>
+<org.eventb.core.poIdentifier name="p" org.eventb.core.type="ℤ×ℤ"/>
+<org.eventb.core.poIdentifier name="geist_3_bewegt'" org.eventb.core.type="BOOL"/>
+<org.eventb.core.poIdentifier name="position'" org.eventb.core.type="ℤ×ℤ"/>
+<org.eventb.core.poIdentifier name="bewegt'" org.eventb.core.type="BOOL"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTALLHYPPacman_Context_generjd" org.eventb.core.parentSet="/Pacman/Pacman_Machine_game.bpo|org.eventb.core.poFile#Pacman_Machine_game|org.eventb.core.poPredicateSet#EVTIDENTPacman_Context_generjd" org.eventb.core.poStamp="3">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="p∈begehbar" org.eventb.core.source="/Pacman/Pacman_Machine_1.bum|org.eventb.core.machineFile#Pacman_Machine_1|org.eventb.core.event#_6zCtwhaLEea5wp6hXNOG2w|org.eventb.core.guard#_6zDU0RaLEea5wp6hXNOG2w"/>
+<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="(prj1 ⦂ ℙ(ℤ×ℤ×ℤ))(position)=(prj1 ⦂ ℙ(ℤ×ℤ×ℤ))(p)∧(prj2 ⦂ ℙ(ℤ×ℤ×ℤ))(position) − (prj2 ⦂ ℙ(ℤ×ℤ×ℤ))(p)=2" org.eventb.core.source="/Pacman/Pacman_Machine_1.bum|org.eventb.core.machineFile#Pacman_Machine_1|org.eventb.core.event#_6zCtwhaLEea5wp6hXNOG2w|org.eventb.core.guard#_EK4m4BaMEea5wp6hXNOG2w"/>
+<org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="position∈tunnel⇒p∉tunnel" org.eventb.core.source="/Pacman/Pacman_Machine_1.bum|org.eventb.core.machineFile#Pacman_Machine_1|org.eventb.core.event#_6zCtwhaLEea5wp6hXNOG2w|org.eventb.core.guard#_26GJdBaPEea5wp6hXNOG2w"/>
+<org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="p∉punktefelder_aktuell" org.eventb.core.source="/Pacman/Pacman_Machine_2.bum|org.eventb.core.machineFile#Pacman_Machine_2|org.eventb.core.event#_79a_41lrEeawGt8rLp0IIg|org.eventb.core.guard#_79eDMllrEeawGt8rLp0IIg"/>
+<org.eventb.core.poPredicate name="PRD4" org.eventb.core.predicate="p∉geister_aktuell" org.eventb.core.source="/Pacman/Pacman_Machine_2.bum|org.eventb.core.machineFile#Pacman_Machine_2|org.eventb.core.event#_79a_41lrEeawGt8rLp0IIg|org.eventb.core.guard#_79eqQFlrEeawGt8rLp0IIg"/>
+<org.eventb.core.poPredicate name="PRD5" org.eventb.core.predicate="counter_scored≥counter_geist_3⇒in_bewegung_geist_3=TRUE" org.eventb.core.source="/Pacman/Pacman_Machine_3.bum|org.eventb.core.machineFile#Pacman_Machine_3|org.eventb.core.event#_wkFjQBaHEeaxlIwdP2iQDK|org.eventb.core.guard#_A41Uc1oxEea3RJy38zLyQw"/>
+<org.eventb.core.poPredicate name="PRD6" org.eventb.core.predicate="counter_scored≥counter_geist_4⇒in_bewegung_geist_4=TRUE" org.eventb.core.source="/Pacman/Pacman_Machine_3.bum|org.eventb.core.machineFile#Pacman_Machine_3|org.eventb.core.event#_wkFjQBaHEeaxlIwdP2iQDK|org.eventb.core.guard#_EkaOVFoxEea3RJy38zLyQw"/>
+<org.eventb.core.poPredicate name="PRD7" org.eventb.core.predicate="position∉{pos_geist_1,pos_geist_2,pos_geist_3,pos_geist_4}" org.eventb.core.source="/Pacman/Pacman_Machine_3.bum|org.eventb.core.machineFile#Pacman_Machine_3|org.eventb.core.event#_wkFjQBaHEeaxlIwdP2iQDK|org.eventb.core.guard#_--4bAlu2EeabeYXD7YYpQg"/>
+<org.eventb.core.poPredicate name="PRD8" org.eventb.core.predicate="leben&gt;0" org.eventb.core.source="/Pacman/Pacman_Machine_4.bum|org.eventb.core.machineFile#Pacman_Machine_4|org.eventb.core.event#_tMqDIiTaEeag7rHqrVAyl)|org.eventb.core.guard#_nPS5E1veEeabeYXD7YYpQg"/>
+<org.eventb.core.poPredicate name="PRD9" org.eventb.core.predicate="jagd_counter≠0⇒jagd_counter≠counter" org.eventb.core.source="/Pacman/Pacman_Machine_5.bum|org.eventb.core.machineFile#Pacman_Machine_5|org.eventb.core.event#_tMqDIiTaEeag7rHqrVAyl)|org.eventb.core.guard#_bTBi8V1gEeaxCuN1JcHzlA"/>
+<org.eventb.core.poPredicate name="PRD10" org.eventb.core.predicate="geist_1_bewegt=TRUE" org.eventb.core.source="/Pacman/Pacman_Machine_5.bum|org.eventb.core.machineFile#Pacman_Machine_5|org.eventb.core.event#_tMqDIiTaEeag7rHqrVAyl)|org.eventb.core.guard#_bTBi8l1gEeaxCuN1JcHzlA"/>
+<org.eventb.core.poPredicate name="PRD11" org.eventb.core.predicate="geist_2_bewegt=TRUE" org.eventb.core.source="/Pacman/Pacman_Machine_5.bum|org.eventb.core.machineFile#Pacman_Machine_5|org.eventb.core.event#_tMqDIiTaEeag7rHqrVAyl)|org.eventb.core.guard#_bTBi811gEeaxCuN1JcHzlA"/>
+<org.eventb.core.poPredicate name="PRD12" org.eventb.core.predicate="counter_scored≥counter_geist_3⇒geist_3_bewegt=TRUE" org.eventb.core.source="/Pacman/Pacman_Machine_5.bum|org.eventb.core.machineFile#Pacman_Machine_5|org.eventb.core.event#_tMqDIiTaEeag7rHqrVAyl)|org.eventb.core.guard#_bTA7511gEeaxCuN1JcHzlA"/>
+<org.eventb.core.poPredicate name="PRD13" org.eventb.core.predicate="counter_scored≥counter_geist_4⇒geist_4_bewegt=TRUE" org.eventb.core.source="/Pacman/Pacman_Machine_5.bum|org.eventb.core.machineFile#Pacman_Machine_5|org.eventb.core.event#_tMqDIiTaEeag7rHqrVAyl)|org.eventb.core.guard#_bTBi9V1gEeaxCuN1JcHzlA"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTIDENTPacman_Context_generje" org.eventb.core.parentSet="/Pacman/Pacman_Machine_game.bpo|org.eventb.core.poFile#Pacman_Machine_game|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="3">
+<org.eventb.core.poIdentifier name="geist_1_bewegt'" org.eventb.core.type="BOOL"/>
+<org.eventb.core.poIdentifier name="getunnelt'" org.eventb.core.type="BOOL"/>
+<org.eventb.core.poIdentifier name="counter'" org.eventb.core.type="ℤ"/>
+<org.eventb.core.poIdentifier name="geist_2_bewegt'" org.eventb.core.type="BOOL"/>
+<org.eventb.core.poIdentifier name="in_bewegung'" org.eventb.core.type="BOOL"/>
+<org.eventb.core.poIdentifier name="geist_4_bewegt'" org.eventb.core.type="BOOL"/>
+<org.eventb.core.poIdentifier name="vorherige_position'" org.eventb.core.type="ℤ×ℤ"/>
+<org.eventb.core.poIdentifier name="p" org.eventb.core.type="ℤ×ℤ"/>
+<org.eventb.core.poIdentifier name="geist_3_bewegt'" org.eventb.core.type="BOOL"/>
+<org.eventb.core.poIdentifier name="position'" org.eventb.core.type="ℤ×ℤ"/>
+<org.eventb.core.poIdentifier name="bewegt'" org.eventb.core.type="BOOL"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTALLHYPPacman_Context_generje" org.eventb.core.parentSet="/Pacman/Pacman_Machine_game.bpo|org.eventb.core.poFile#Pacman_Machine_game|org.eventb.core.poPredicateSet#EVTIDENTPacman_Context_generje" org.eventb.core.poStamp="3">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="p∈begehbar" org.eventb.core.source="/Pacman/Pacman_Machine_1.bum|org.eventb.core.machineFile#Pacman_Machine_1|org.eventb.core.event#_26GJchaPEea5wp6hXNOG2w|org.eventb.core.guard#_26GJdRaPEea5wp6hXNOG2w"/>
+<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="(prj1 ⦂ ℙ(ℤ×ℤ×ℤ))(position)=(prj1 ⦂ ℙ(ℤ×ℤ×ℤ))(p)∧(prj2 ⦂ ℙ(ℤ×ℤ×ℤ))(position) − (prj2 ⦂ ℙ(ℤ×ℤ×ℤ))(p)=−2" org.eventb.core.source="/Pacman/Pacman_Machine_1.bum|org.eventb.core.machineFile#Pacman_Machine_1|org.eventb.core.event#_26GJchaPEea5wp6hXNOG2w|org.eventb.core.guard#_26GJdhaPEea5wp6hXNOG2w"/>
+<org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="position∈tunnel⇒p∉tunnel" org.eventb.core.source="/Pacman/Pacman_Machine_1.bum|org.eventb.core.machineFile#Pacman_Machine_1|org.eventb.core.event#_26GJchaPEea5wp6hXNOG2w|org.eventb.core.guard#_R-vXc1lrEeawGt8rLp0IIg"/>
+<org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="p∉punktefelder_aktuell" org.eventb.core.source="/Pacman/Pacman_Machine_2.bum|org.eventb.core.machineFile#Pacman_Machine_2|org.eventb.core.event#_79bm81lrEeawGt8rLp0IIg|org.eventb.core.guard#_79eqQ1lrEeawGt8rLp0IIg"/>
+<org.eventb.core.poPredicate name="PRD4" org.eventb.core.predicate="p∉geister_aktuell" org.eventb.core.source="/Pacman/Pacman_Machine_2.bum|org.eventb.core.machineFile#Pacman_Machine_2|org.eventb.core.event#_79bm81lrEeawGt8rLp0IIg|org.eventb.core.guard#_79fRUFlrEeawGt8rLp0IIg"/>
+<org.eventb.core.poPredicate name="PRD5" org.eventb.core.predicate="counter_scored≥counter_geist_3⇒in_bewegung_geist_3=TRUE" org.eventb.core.source="/Pacman/Pacman_Machine_3.bum|org.eventb.core.machineFile#Pacman_Machine_3|org.eventb.core.event#_wkFjQBaHEeaxlIwdP2iQDL|org.eventb.core.guard#_ah2ecFvQEeabeYXD7YYpQg"/>
+<org.eventb.core.poPredicate name="PRD6" org.eventb.core.predicate="counter_scored≥counter_geist_4⇒in_bewegung_geist_4=TRUE" org.eventb.core.source="/Pacman/Pacman_Machine_3.bum|org.eventb.core.machineFile#Pacman_Machine_3|org.eventb.core.event#_wkFjQBaHEeaxlIwdP2iQDL|org.eventb.core.guard#_Bf7jAFvZEeabeYXD7YYpQg"/>
+<org.eventb.core.poPredicate name="PRD7" org.eventb.core.predicate="position∉{pos_geist_1,pos_geist_2,pos_geist_3,pos_geist_4}" org.eventb.core.source="/Pacman/Pacman_Machine_3.bum|org.eventb.core.machineFile#Pacman_Machine_3|org.eventb.core.event#_wkFjQBaHEeaxlIwdP2iQDL|org.eventb.core.guard#_Bf7jBFvZEeabeYXD7YYpQg"/>
+<org.eventb.core.poPredicate name="PRD8" org.eventb.core.predicate="leben&gt;0" org.eventb.core.source="/Pacman/Pacman_Machine_4.bum|org.eventb.core.machineFile#Pacman_Machine_4|org.eventb.core.event#_tMqDIiTaEeag7rHqrVAyl*|org.eventb.core.guard#_nPTgIFveEeabeYXD7YYpQg"/>
+<org.eventb.core.poPredicate name="PRD9" org.eventb.core.predicate="jagd_counter≠0⇒jagd_counter≠counter" org.eventb.core.source="/Pacman/Pacman_Machine_5.bum|org.eventb.core.machineFile#Pacman_Machine_5|org.eventb.core.event#_tMqDIiTaEeag7rHqrVAyl*|org.eventb.core.guard#_bTCKAF1gEeaxCuN1JcHzlA"/>
+<org.eventb.core.poPredicate name="PRD10" org.eventb.core.predicate="geist_1_bewegt=TRUE" org.eventb.core.source="/Pacman/Pacman_Machine_5.bum|org.eventb.core.machineFile#Pacman_Machine_5|org.eventb.core.event#_tMqDIiTaEeag7rHqrVAyl*|org.eventb.core.guard#_bTCKAV1gEeaxCuN1JcHzlA"/>
+<org.eventb.core.poPredicate name="PRD11" org.eventb.core.predicate="geist_2_bewegt=TRUE" org.eventb.core.source="/Pacman/Pacman_Machine_5.bum|org.eventb.core.machineFile#Pacman_Machine_5|org.eventb.core.event#_tMqDIiTaEeag7rHqrVAyl*|org.eventb.core.guard#_bTCKAl1gEeaxCuN1JcHzlA"/>
+<org.eventb.core.poPredicate name="PRD12" org.eventb.core.predicate="counter_scored≥counter_geist_3⇒geist_3_bewegt=TRUE" org.eventb.core.source="/Pacman/Pacman_Machine_5.bum|org.eventb.core.machineFile#Pacman_Machine_5|org.eventb.core.event#_tMqDIiTaEeag7rHqrVAyl*|org.eventb.core.guard#_bTBi9F1gEeaxCuN1JcHzlA"/>
+<org.eventb.core.poPredicate name="PRD13" org.eventb.core.predicate="counter_scored≥counter_geist_4⇒geist_4_bewegt=TRUE" org.eventb.core.source="/Pacman/Pacman_Machine_5.bum|org.eventb.core.machineFile#Pacman_Machine_5|org.eventb.core.event#_tMqDIiTaEeag7rHqrVAyl*|org.eventb.core.guard#_bTCKBF1gEeaxCuN1JcHzlA"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTIDENTPacman_Context_generjf" org.eventb.core.parentSet="/Pacman/Pacman_Machine_game.bpo|org.eventb.core.poFile#Pacman_Machine_game|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="3">
+<org.eventb.core.poIdentifier name="geist_1_bewegt'" org.eventb.core.type="BOOL"/>
+<org.eventb.core.poIdentifier name="getunnelt'" org.eventb.core.type="BOOL"/>
+<org.eventb.core.poIdentifier name="counter'" org.eventb.core.type="ℤ"/>
+<org.eventb.core.poIdentifier name="geist_2_bewegt'" org.eventb.core.type="BOOL"/>
+<org.eventb.core.poIdentifier name="in_bewegung'" org.eventb.core.type="BOOL"/>
+<org.eventb.core.poIdentifier name="geist_4_bewegt'" org.eventb.core.type="BOOL"/>
+<org.eventb.core.poIdentifier name="vorherige_position'" org.eventb.core.type="ℤ×ℤ"/>
+<org.eventb.core.poIdentifier name="p" org.eventb.core.type="ℤ×ℤ"/>
+<org.eventb.core.poIdentifier name="geist_3_bewegt'" org.eventb.core.type="BOOL"/>
+<org.eventb.core.poIdentifier name="position'" org.eventb.core.type="ℤ×ℤ"/>
+<org.eventb.core.poIdentifier name="bewegt'" org.eventb.core.type="BOOL"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTALLHYPPacman_Context_generjf" org.eventb.core.parentSet="/Pacman/Pacman_Machine_game.bpo|org.eventb.core.poFile#Pacman_Machine_game|org.eventb.core.poPredicateSet#EVTIDENTPacman_Context_generjf" org.eventb.core.poStamp="3">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="p∈begehbar" org.eventb.core.source="/Pacman/Pacman_Machine_1.bum|org.eventb.core.machineFile#Pacman_Machine_1|org.eventb.core.event#_R-vXcVlrEeawGt8rLp0IIg|org.eventb.core.guard#_R-wlkVlrEeawGt8rLp0IIg"/>
+<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="(prj1 ⦂ ℙ(ℤ×ℤ×ℤ))(position) − (prj1 ⦂ ℙ(ℤ×ℤ×ℤ))(p)=−2∧(prj2 ⦂ ℙ(ℤ×ℤ×ℤ))(position)=(prj2 ⦂ ℙ(ℤ×ℤ×ℤ))(p)" org.eventb.core.source="/Pacman/Pacman_Machine_1.bum|org.eventb.core.machineFile#Pacman_Machine_1|org.eventb.core.event#_R-vXcVlrEeawGt8rLp0IIg|org.eventb.core.guard#_R-wlkllrEeawGt8rLp0IIg"/>
+<org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="position∈tunnel⇒p∉tunnel" org.eventb.core.source="/Pacman/Pacman_Machine_1.bum|org.eventb.core.machineFile#Pacman_Machine_1|org.eventb.core.event#_R-vXcVlrEeawGt8rLp0IIg|org.eventb.core.guard#_R-xMollrEeawGt8rLp0IIg"/>
+<org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="p∉punktefelder_aktuell" org.eventb.core.source="/Pacman/Pacman_Machine_2.bum|org.eventb.core.machineFile#Pacman_Machine_2|org.eventb.core.event#_79eDMFlrEeawGt8rLp0IIg|org.eventb.core.guard#_l7iO4GYVEeaVMYOTcIxZEA"/>
+<org.eventb.core.poPredicate name="PRD4" org.eventb.core.predicate="p∉geister_aktuell" org.eventb.core.source="/Pacman/Pacman_Machine_2.bum|org.eventb.core.machineFile#Pacman_Machine_2|org.eventb.core.event#_79eDMFlrEeawGt8rLp0IIg|org.eventb.core.guard#_g1p6MGYVEeaVMYOTcIxZEA"/>
+<org.eventb.core.poPredicate name="PRD5" org.eventb.core.predicate="counter_scored≥counter_geist_3⇒in_bewegung_geist_3=TRUE" org.eventb.core.source="/Pacman/Pacman_Machine_3.bum|org.eventb.core.machineFile#Pacman_Machine_3|org.eventb.core.event#_wkFjQBaHEeaxlIwdP2iQDM|org.eventb.core.guard#_z-c9UGkFEeabpYv7sQK2OA"/>
+<org.eventb.core.poPredicate name="PRD6" org.eventb.core.predicate="counter_scored≥counter_geist_4⇒in_bewegung_geist_4=TRUE" org.eventb.core.source="/Pacman/Pacman_Machine_3.bum|org.eventb.core.machineFile#Pacman_Machine_3|org.eventb.core.event#_wkFjQBaHEeaxlIwdP2iQDM|org.eventb.core.guard#_z-c9UWkFEeabpYv7sQK2OA"/>
+<org.eventb.core.poPredicate name="PRD7" org.eventb.core.predicate="position∉{pos_geist_1,pos_geist_2,pos_geist_3,pos_geist_4}" org.eventb.core.source="/Pacman/Pacman_Machine_3.bum|org.eventb.core.machineFile#Pacman_Machine_3|org.eventb.core.event#_wkFjQBaHEeaxlIwdP2iQDM|org.eventb.core.guard#_Y4inkGhjEea9OYFzDboMmw"/>
+<org.eventb.core.poPredicate name="PRD8" org.eventb.core.predicate="leben&gt;0" org.eventb.core.source="/Pacman/Pacman_Machine_4.bum|org.eventb.core.machineFile#Pacman_Machine_4|org.eventb.core.event#_tMqDIiTaEeag7rHqrVAyl+|org.eventb.core.guard#_nPS5FVveEeabeYXD7YYpQg"/>
+<org.eventb.core.poPredicate name="PRD9" org.eventb.core.predicate="jagd_counter≠0⇒jagd_counter≠counter" org.eventb.core.source="/Pacman/Pacman_Machine_5.bum|org.eventb.core.machineFile#Pacman_Machine_5|org.eventb.core.event#_tMqDIiTaEeag7rHqrVAyl+|org.eventb.core.guard#_bTCKBV1gEeaxCuN1JcHzlA"/>
+<org.eventb.core.poPredicate name="PRD10" org.eventb.core.predicate="geist_1_bewegt=TRUE" org.eventb.core.source="/Pacman/Pacman_Machine_5.bum|org.eventb.core.machineFile#Pacman_Machine_5|org.eventb.core.event#_tMqDIiTaEeag7rHqrVAyl+|org.eventb.core.guard#_bTCxEF1gEeaxCuN1JcHzlA"/>
+<org.eventb.core.poPredicate name="PRD11" org.eventb.core.predicate="geist_2_bewegt=TRUE" org.eventb.core.source="/Pacman/Pacman_Machine_5.bum|org.eventb.core.machineFile#Pacman_Machine_5|org.eventb.core.event#_tMqDIiTaEeag7rHqrVAyl+|org.eventb.core.guard#_bTCxEV1gEeaxCuN1JcHzlA"/>
+<org.eventb.core.poPredicate name="PRD12" org.eventb.core.predicate="counter_scored≥counter_geist_3⇒geist_3_bewegt=TRUE" org.eventb.core.source="/Pacman/Pacman_Machine_5.bum|org.eventb.core.machineFile#Pacman_Machine_5|org.eventb.core.event#_tMqDIiTaEeag7rHqrVAyl+|org.eventb.core.guard#_bTCKA11gEeaxCuN1JcHzlA"/>
+<org.eventb.core.poPredicate name="PRD13" org.eventb.core.predicate="counter_scored≥counter_geist_4⇒geist_4_bewegt=TRUE" org.eventb.core.source="/Pacman/Pacman_Machine_5.bum|org.eventb.core.machineFile#Pacman_Machine_5|org.eventb.core.event#_tMqDIiTaEeag7rHqrVAyl+|org.eventb.core.guard#_bTCxE11gEeaxCuN1JcHzlA"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTIDENTPacman_Context_generjg" org.eventb.core.parentSet="/Pacman/Pacman_Machine_game.bpo|org.eventb.core.poFile#Pacman_Machine_game|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="3">
+<org.eventb.core.poIdentifier name="geist_1_bewegt'" org.eventb.core.type="BOOL"/>
+<org.eventb.core.poIdentifier name="getunnelt'" org.eventb.core.type="BOOL"/>
+<org.eventb.core.poIdentifier name="counter'" org.eventb.core.type="ℤ"/>
+<org.eventb.core.poIdentifier name="geist_2_bewegt'" org.eventb.core.type="BOOL"/>
+<org.eventb.core.poIdentifier name="in_bewegung'" org.eventb.core.type="BOOL"/>
+<org.eventb.core.poIdentifier name="geist_4_bewegt'" org.eventb.core.type="BOOL"/>
+<org.eventb.core.poIdentifier name="vorherige_position'" org.eventb.core.type="ℤ×ℤ"/>
+<org.eventb.core.poIdentifier name="p" org.eventb.core.type="ℤ×ℤ"/>
+<org.eventb.core.poIdentifier name="geist_3_bewegt'" org.eventb.core.type="BOOL"/>
+<org.eventb.core.poIdentifier name="position'" org.eventb.core.type="ℤ×ℤ"/>
+<org.eventb.core.poIdentifier name="bewegt'" org.eventb.core.type="BOOL"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTALLHYPPacman_Context_generjg" org.eventb.core.parentSet="/Pacman/Pacman_Machine_game.bpo|org.eventb.core.poFile#Pacman_Machine_game|org.eventb.core.poPredicateSet#EVTIDENTPacman_Context_generjg" org.eventb.core.poStamp="3">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="p∈begehbar" org.eventb.core.source="/Pacman/Pacman_Machine_1.bum|org.eventb.core.machineFile#Pacman_Machine_1|org.eventb.core.event#_R-v-hFlrEeawGt8rLp0IIg|org.eventb.core.guard#_R-xMo1lrEeawGt8rLp0IIg"/>
+<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="(prj1 ⦂ ℙ(ℤ×ℤ×ℤ))(position) − (prj1 ⦂ ℙ(ℤ×ℤ×ℤ))(p)=2∧(prj2 ⦂ ℙ(ℤ×ℤ×ℤ))(position)=(prj2 ⦂ ℙ(ℤ×ℤ×ℤ))(p)" org.eventb.core.source="/Pacman/Pacman_Machine_1.bum|org.eventb.core.machineFile#Pacman_Machine_1|org.eventb.core.event#_R-v-hFlrEeawGt8rLp0IIg|org.eventb.core.guard#_R-xzsFlrEeawGt8rLp0IIg"/>
+<org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="position∈tunnel⇒p∉tunnel" org.eventb.core.source="/Pacman/Pacman_Machine_1.bum|org.eventb.core.machineFile#Pacman_Machine_1|org.eventb.core.event#_R-v-hFlrEeawGt8rLp0IIg|org.eventb.core.guard#_9PVHQGkPEeabpYv7sQK2OA"/>
+<org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="p∉punktefelder_aktuell" org.eventb.core.source="/Pacman/Pacman_Machine_2.bum|org.eventb.core.machineFile#Pacman_Machine_2|org.eventb.core.event#_79eqQVlrEeawGt8rLp0IIg|org.eventb.core.guard#_l7iO4WYVEeaVMYOTcIxZEA"/>
+<org.eventb.core.poPredicate name="PRD4" org.eventb.core.predicate="p∉geister_aktuell" org.eventb.core.source="/Pacman/Pacman_Machine_2.bum|org.eventb.core.machineFile#Pacman_Machine_2|org.eventb.core.event#_79eqQVlrEeawGt8rLp0IIg|org.eventb.core.guard#_l7iO4mYVEeaVMYOTcIxZEA"/>
+<org.eventb.core.poPredicate name="PRD5" org.eventb.core.predicate="counter_scored≥counter_geist_3⇒in_bewegung_geist_3=TRUE" org.eventb.core.source="/Pacman/Pacman_Machine_3.bum|org.eventb.core.machineFile#Pacman_Machine_3|org.eventb.core.event#_wkFjQBaHEeaxlIwdP2iQDN|org.eventb.core.guard#_Y4inkWhjEea9OYFzDboMmw"/>
+<org.eventb.core.poPredicate name="PRD6" org.eventb.core.predicate="counter_scored≥counter_geist_4⇒in_bewegung_geist_4=TRUE" org.eventb.core.source="/Pacman/Pacman_Machine_3.bum|org.eventb.core.machineFile#Pacman_Machine_3|org.eventb.core.event#_wkFjQBaHEeaxlIwdP2iQDN|org.eventb.core.guard#_kmeGsGkFEeabpYv7sQK2OA"/>
+<org.eventb.core.poPredicate name="PRD7" org.eventb.core.predicate="position∉{pos_geist_1,pos_geist_2,pos_geist_3,pos_geist_4}" org.eventb.core.source="/Pacman/Pacman_Machine_3.bum|org.eventb.core.machineFile#Pacman_Machine_3|org.eventb.core.event#_wkFjQBaHEeaxlIwdP2iQDN|org.eventb.core.guard#_z-eygGkFEeabpYv7sQK2OA"/>
+<org.eventb.core.poPredicate name="PRD8" org.eventb.core.predicate="leben&gt;0" org.eventb.core.source="/Pacman/Pacman_Machine_4.bum|org.eventb.core.machineFile#Pacman_Machine_4|org.eventb.core.event#_tMqDIiTaEeag7rHqrVAyl,|org.eventb.core.guard#_nPTgIlveEeabeYXD7YYpQg"/>
+<org.eventb.core.poPredicate name="PRD9" org.eventb.core.predicate="jagd_counter≠0⇒jagd_counter≠counter" org.eventb.core.source="/Pacman/Pacman_Machine_5.bum|org.eventb.core.machineFile#Pacman_Machine_5|org.eventb.core.event#_tMqDIiTaEeag7rHqrVAyl,|org.eventb.core.guard#_bTCxFF1gEeaxCuN1JcHzlA"/>
+<org.eventb.core.poPredicate name="PRD10" org.eventb.core.predicate="geist_1_bewegt=TRUE" org.eventb.core.source="/Pacman/Pacman_Machine_5.bum|org.eventb.core.machineFile#Pacman_Machine_5|org.eventb.core.event#_tMqDIiTaEeag7rHqrVAyl,|org.eventb.core.guard#_bTCxFV1gEeaxCuN1JcHzlA"/>
+<org.eventb.core.poPredicate name="PRD11" org.eventb.core.predicate="geist_2_bewegt=TRUE" org.eventb.core.source="/Pacman/Pacman_Machine_5.bum|org.eventb.core.machineFile#Pacman_Machine_5|org.eventb.core.event#_tMqDIiTaEeag7rHqrVAyl,|org.eventb.core.guard#_bTCxFl1gEeaxCuN1JcHzlA"/>
+<org.eventb.core.poPredicate name="PRD12" org.eventb.core.predicate="counter_scored≥counter_geist_3⇒geist_3_bewegt=TRUE" org.eventb.core.source="/Pacman/Pacman_Machine_5.bum|org.eventb.core.machineFile#Pacman_Machine_5|org.eventb.core.event#_tMqDIiTaEeag7rHqrVAyl,|org.eventb.core.guard#_bTCxEl1gEeaxCuN1JcHzlA"/>
+<org.eventb.core.poPredicate name="PRD13" org.eventb.core.predicate="counter_scored≥counter_geist_4⇒geist_4_bewegt=TRUE" org.eventb.core.source="/Pacman/Pacman_Machine_5.bum|org.eventb.core.machineFile#Pacman_Machine_5|org.eventb.core.event#_tMqDIiTaEeag7rHqrVAyl,|org.eventb.core.guard#_bTDYIF1gEeaxCuN1JcHzlA"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTIDENTPacman_Context_generjh" org.eventb.core.parentSet="/Pacman/Pacman_Machine_game.bpo|org.eventb.core.poFile#Pacman_Machine_game|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="3">
+<org.eventb.core.poIdentifier name="geist_1_bewegt'" org.eventb.core.type="BOOL"/>
+<org.eventb.core.poIdentifier name="getunnelt'" org.eventb.core.type="BOOL"/>
+<org.eventb.core.poIdentifier name="counter'" org.eventb.core.type="ℤ"/>
+<org.eventb.core.poIdentifier name="geist_2_bewegt'" org.eventb.core.type="BOOL"/>
+<org.eventb.core.poIdentifier name="in_bewegung'" org.eventb.core.type="BOOL"/>
+<org.eventb.core.poIdentifier name="geist_4_bewegt'" org.eventb.core.type="BOOL"/>
+<org.eventb.core.poIdentifier name="vorherige_position'" org.eventb.core.type="ℤ×ℤ"/>
+<org.eventb.core.poIdentifier name="p" org.eventb.core.type="ℤ×ℤ"/>
+<org.eventb.core.poIdentifier name="geist_3_bewegt'" org.eventb.core.type="BOOL"/>
+<org.eventb.core.poIdentifier name="position'" org.eventb.core.type="ℤ×ℤ"/>
+<org.eventb.core.poIdentifier name="bewegt'" org.eventb.core.type="BOOL"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTALLHYPPacman_Context_generjh" org.eventb.core.parentSet="/Pacman/Pacman_Machine_game.bpo|org.eventb.core.poFile#Pacman_Machine_game|org.eventb.core.poPredicateSet#EVTIDENTPacman_Context_generjh" org.eventb.core.poStamp="3">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="p∈tunnel" org.eventb.core.source="/Pacman/Pacman_Machine_1.bum|org.eventb.core.machineFile#Pacman_Machine_1|org.eventb.core.event#_R-xMoFlrEeawGt8rLp0IIg|org.eventb.core.guard#_S4JCwGkQEeabpYv7sQK2OA"/>
+<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="position∈tunnel" org.eventb.core.source="/Pacman/Pacman_Machine_1.bum|org.eventb.core.machineFile#Pacman_Machine_1|org.eventb.core.event#_R-xMoFlrEeawGt8rLp0IIg|org.eventb.core.guard#_S4JCwWkQEeabpYv7sQK2OA"/>
+<org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="p≠position" org.eventb.core.source="/Pacman/Pacman_Machine_1.bum|org.eventb.core.machineFile#Pacman_Machine_1|org.eventb.core.event#_R-xMoFlrEeawGt8rLp0IIg|org.eventb.core.guard#_S4JCwmkQEeabpYv7sQK2OA"/>
+<org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="counter_scored≥counter_geist_3⇒in_bewegung_geist_3=TRUE" org.eventb.core.source="/Pacman/Pacman_Machine_3.bum|org.eventb.core.machineFile#Pacman_Machine_3|org.eventb.core.event#_wkFjQBaHEeaxlIwdP2iQDO|org.eventb.core.guard#_z-eygWkFEeabpYv7sQK2OA"/>
+<org.eventb.core.poPredicate name="PRD4" org.eventb.core.predicate="counter_scored≥counter_geist_4⇒in_bewegung_geist_4=TRUE" org.eventb.core.source="/Pacman/Pacman_Machine_3.bum|org.eventb.core.machineFile#Pacman_Machine_3|org.eventb.core.event#_wkFjQBaHEeaxlIwdP2iQDO|org.eventb.core.guard#_gO50EGkGEeabpYv7sQK2OA"/>
+<org.eventb.core.poPredicate name="PRD5" org.eventb.core.predicate="position∉{pos_geist_1,pos_geist_2,pos_geist_3,pos_geist_4}" org.eventb.core.source="/Pacman/Pacman_Machine_3.bum|org.eventb.core.machineFile#Pacman_Machine_3|org.eventb.core.event#_wkFjQBaHEeaxlIwdP2iQDO|org.eventb.core.guard#_z-fZkGkFEeabpYv7sQK2OA"/>
+<org.eventb.core.poPredicate name="PRD6" org.eventb.core.predicate="leben&gt;0" org.eventb.core.source="/Pacman/Pacman_Machine_4.bum|org.eventb.core.machineFile#Pacman_Machine_4|org.eventb.core.event#_tMqDIiTaEeag7rHqrVAyl-|org.eventb.core.guard#_nPTgIVveEeabeYXD7YYpQg"/>
+<org.eventb.core.poPredicate name="PRD7" org.eventb.core.predicate="jagd_counter≠0⇒jagd_counter≠counter" org.eventb.core.source="/Pacman/Pacman_Machine_5.bum|org.eventb.core.machineFile#Pacman_Machine_5|org.eventb.core.event#_tMqDIiTaEeag7rHqrVAyl-|org.eventb.core.guard#_bTDYIV1gEeaxCuN1JcHzlA"/>
+<org.eventb.core.poPredicate name="PRD8" org.eventb.core.predicate="geist_1_bewegt=TRUE" org.eventb.core.source="/Pacman/Pacman_Machine_5.bum|org.eventb.core.machineFile#Pacman_Machine_5|org.eventb.core.event#_tMqDIiTaEeag7rHqrVAyl-|org.eventb.core.guard#_bTDYIl1gEeaxCuN1JcHzlA"/>
+<org.eventb.core.poPredicate name="PRD9" org.eventb.core.predicate="geist_2_bewegt=TRUE" org.eventb.core.source="/Pacman/Pacman_Machine_5.bum|org.eventb.core.machineFile#Pacman_Machine_5|org.eventb.core.event#_tMqDIiTaEeag7rHqrVAyl-|org.eventb.core.guard#_bTDYI11gEeaxCuN1JcHzlA"/>
+<org.eventb.core.poPredicate name="PRD10" org.eventb.core.predicate="counter_scored≥counter_geist_3⇒geist_3_bewegt=TRUE" org.eventb.core.source="/Pacman/Pacman_Machine_5.bum|org.eventb.core.machineFile#Pacman_Machine_5|org.eventb.core.event#_tMqDIiTaEeag7rHqrVAyl-|org.eventb.core.guard#_bTCxF11gEeaxCuN1JcHzlA"/>
+<org.eventb.core.poPredicate name="PRD11" org.eventb.core.predicate="counter_scored≥counter_geist_4⇒geist_4_bewegt=TRUE" org.eventb.core.source="/Pacman/Pacman_Machine_5.bum|org.eventb.core.machineFile#Pacman_Machine_5|org.eventb.core.event#_tMqDIiTaEeag7rHqrVAyl-|org.eventb.core.guard#_bTDYJF1gEeaxCuN1JcHzlA"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTIDENTPacman_Context_generji" org.eventb.core.parentSet="/Pacman/Pacman_Machine_game.bpo|org.eventb.core.poFile#Pacman_Machine_game|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="3">
+<org.eventb.core.poIdentifier name="pos_geist_1_alt'" org.eventb.core.type="ℤ×ℤ"/>
+<org.eventb.core.poIdentifier name="pos_geist_1'" org.eventb.core.type="ℤ×ℤ"/>
+<org.eventb.core.poIdentifier name="in_bewegung_geist_1'" org.eventb.core.type="BOOL"/>
+<org.eventb.core.poIdentifier name="bewegt'" org.eventb.core.type="BOOL"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTALLHYPPacman_Context_generji" org.eventb.core.parentSet="/Pacman/Pacman_Machine_game.bpo|org.eventb.core.poFile#Pacman_Machine_game|org.eventb.core.poPredicateSet#EVTIDENTPacman_Context_generji" org.eventb.core.poStamp="3">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="pos_geist_1∈geisterhof∪{startpos_geist_1}" org.eventb.core.source="/Pacman/Pacman_Machine_3.bum|org.eventb.core.machineFile#Pacman_Machine_3|org.eventb.core.event#_vWH70FmlEeaT0roG3wtL5w|org.eventb.core.guard#_z-fZkWkFEeabpYv7sQK2OA"/>
+<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="position∉{pos_geist_1,pos_geist_2,pos_geist_3,pos_geist_4}" org.eventb.core.source="/Pacman/Pacman_Machine_3.bum|org.eventb.core.machineFile#Pacman_Machine_3|org.eventb.core.event#_vWH70FmlEeaT0roG3wtL5w|org.eventb.core.guard#_z-fZkmkFEeabpYv7sQK2OA"/>
+<org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="leben&gt;0" org.eventb.core.source="/Pacman/Pacman_Machine_4.bum|org.eventb.core.machineFile#Pacman_Machine_4|org.eventb.core.event#_tMqDIiTaEeag7rHqrVAyl.|org.eventb.core.guard#_aimIYF1cEeaH_Yn1_tt3HQ"/>
+<org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="jagd_counter≠0⇒jagd_counter≠counter" org.eventb.core.source="/Pacman/Pacman_Machine_5.bum|org.eventb.core.machineFile#Pacman_Machine_5|org.eventb.core.event#_tMqDIiTaEeag7rHqrVAyl.|org.eventb.core.guard#_bTDYJV1gEeaxCuN1JcHzlA"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTIDENTPacman_Context_generjj" org.eventb.core.parentSet="/Pacman/Pacman_Machine_game.bpo|org.eventb.core.poFile#Pacman_Machine_game|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="3">
+<org.eventb.core.poIdentifier name="pos_geist_2_alt'" org.eventb.core.type="ℤ×ℤ"/>
+<org.eventb.core.poIdentifier name="in_bewegung_geist_2'" org.eventb.core.type="BOOL"/>
+<org.eventb.core.poIdentifier name="bewegt'" org.eventb.core.type="BOOL"/>
+<org.eventb.core.poIdentifier name="pos_geist_2'" org.eventb.core.type="ℤ×ℤ"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTALLHYPPacman_Context_generjj" org.eventb.core.parentSet="/Pacman/Pacman_Machine_game.bpo|org.eventb.core.poFile#Pacman_Machine_game|org.eventb.core.poPredicateSet#EVTIDENTPacman_Context_generjj" org.eventb.core.poStamp="3">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="pos_geist_2∈geisterhof" org.eventb.core.source="/Pacman/Pacman_Machine_3.bum|org.eventb.core.machineFile#Pacman_Machine_3|org.eventb.core.event#_jZgjYFmmEeaT0roG3wtL5w|org.eventb.core.guard#_gO50EWkGEeabpYv7sQK2OA"/>
+<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="in_bewegung_geist_1=TRUE" org.eventb.core.source="/Pacman/Pacman_Machine_3.bum|org.eventb.core.machineFile#Pacman_Machine_3|org.eventb.core.event#_jZgjYFmmEeaT0roG3wtL5w|org.eventb.core.guard#_gO50EmkGEeabpYv7sQK2OA"/>
+<org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="position∉{pos_geist_1,pos_geist_2,pos_geist_3,pos_geist_4}" org.eventb.core.source="/Pacman/Pacman_Machine_3.bum|org.eventb.core.machineFile#Pacman_Machine_3|org.eventb.core.event#_jZgjYFmmEeaT0roG3wtL5w|org.eventb.core.guard#_gO50E2kGEeabpYv7sQK2OA"/>
+<org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="leben&gt;0" org.eventb.core.source="/Pacman/Pacman_Machine_4.bum|org.eventb.core.machineFile#Pacman_Machine_4|org.eventb.core.event#_tMqDIiTaEeag7rHqrVAyl\/|org.eventb.core.guard#_a-9S0GLDEeaVx-LJ9XlTeg"/>
+<org.eventb.core.poPredicate name="PRD4" org.eventb.core.predicate="jagd_counter≠0⇒jagd_counter≠counter" org.eventb.core.source="/Pacman/Pacman_Machine_5.bum|org.eventb.core.machineFile#Pacman_Machine_5|org.eventb.core.event#_tMqDIiTaEeag7rHqrVAyl\/|org.eventb.core.guard#_bTD_MF1gEeaxCuN1JcHzlA"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTIDENTPacman_Context_generjk" org.eventb.core.parentSet="/Pacman/Pacman_Machine_game.bpo|org.eventb.core.poFile#Pacman_Machine_game|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="3">
+<org.eventb.core.poIdentifier name="pos_geist_3'" org.eventb.core.type="ℤ×ℤ"/>
+<org.eventb.core.poIdentifier name="in_bewegung_geist_3'" org.eventb.core.type="BOOL"/>
+<org.eventb.core.poIdentifier name="bewegt'" org.eventb.core.type="BOOL"/>
+<org.eventb.core.poIdentifier name="pos_geist_3_alt'" org.eventb.core.type="ℤ×ℤ"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTALLHYPPacman_Context_generjk" org.eventb.core.parentSet="/Pacman/Pacman_Machine_game.bpo|org.eventb.core.poFile#Pacman_Machine_game|org.eventb.core.poPredicateSet#EVTIDENTPacman_Context_generjk" org.eventb.core.poStamp="3">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="pos_geist_3∈geisterhof" org.eventb.core.source="/Pacman/Pacman_Machine_3.bum|org.eventb.core.machineFile#Pacman_Machine_3|org.eventb.core.event#_N-RUYFmnEeaT0roG3wtL5w|org.eventb.core.guard#_gO50FGkGEeabpYv7sQK2OA"/>
+<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="counter_scored≥counter_geist_3" org.eventb.core.source="/Pacman/Pacman_Machine_3.bum|org.eventb.core.machineFile#Pacman_Machine_3|org.eventb.core.event#_N-RUYFmnEeaT0roG3wtL5w|org.eventb.core.guard#_gO50FWkGEeabpYv7sQK2OA"/>
+<org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="in_bewegung_geist_2=TRUE" org.eventb.core.source="/Pacman/Pacman_Machine_3.bum|org.eventb.core.machineFile#Pacman_Machine_3|org.eventb.core.event#_N-RUYFmnEeaT0roG3wtL5w|org.eventb.core.guard#_gO6bIGkGEeabpYv7sQK2OA"/>
+<org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="position∉{pos_geist_1,pos_geist_2,pos_geist_3,pos_geist_4}" org.eventb.core.source="/Pacman/Pacman_Machine_3.bum|org.eventb.core.machineFile#Pacman_Machine_3|org.eventb.core.event#_N-RUYFmnEeaT0roG3wtL5w|org.eventb.core.guard#_gO6bIWkGEeabpYv7sQK2OA"/>
+<org.eventb.core.poPredicate name="PRD4" org.eventb.core.predicate="leben&gt;0" org.eventb.core.source="/Pacman/Pacman_Machine_4.bum|org.eventb.core.machineFile#Pacman_Machine_4|org.eventb.core.event#_tMqDIiTaEeag7rHqrVAyl0|org.eventb.core.guard#_a-9S0WLDEeaVx-LJ9XlTeg"/>
+<org.eventb.core.poPredicate name="PRD5" org.eventb.core.predicate="jagd_counter≠0⇒jagd_counter≠counter" org.eventb.core.source="/Pacman/Pacman_Machine_5.bum|org.eventb.core.machineFile#Pacman_Machine_5|org.eventb.core.event#_tMqDIiTaEeag7rHqrVAyl0|org.eventb.core.guard#_bTD_MV1gEeaxCuN1JcHzlA"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTIDENTPacman_Context_generjl" org.eventb.core.parentSet="/Pacman/Pacman_Machine_game.bpo|org.eventb.core.poFile#Pacman_Machine_game|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="3">
+<org.eventb.core.poIdentifier name="in_bewegung_geist_4'" org.eventb.core.type="BOOL"/>
+<org.eventb.core.poIdentifier name="pos_geist_4'" org.eventb.core.type="ℤ×ℤ"/>
+<org.eventb.core.poIdentifier name="pos_geist_4_alt'" org.eventb.core.type="ℤ×ℤ"/>
+<org.eventb.core.poIdentifier name="bewegt'" org.eventb.core.type="BOOL"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTALLHYPPacman_Context_generjl" org.eventb.core.parentSet="/Pacman/Pacman_Machine_game.bpo|org.eventb.core.poFile#Pacman_Machine_game|org.eventb.core.poPredicateSet#EVTIDENTPacman_Context_generjl" org.eventb.core.poStamp="3">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="pos_geist_4∈geisterhof" org.eventb.core.source="/Pacman/Pacman_Machine_3.bum|org.eventb.core.machineFile#Pacman_Machine_3|org.eventb.core.event#_N-R7dVmnEeaT0roG3wtL5w|org.eventb.core.guard#_gO6bImkGEeabpYv7sQK2OA"/>
+<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="counter_scored≥counter_geist_4" org.eventb.core.source="/Pacman/Pacman_Machine_3.bum|org.eventb.core.machineFile#Pacman_Machine_3|org.eventb.core.event#_N-R7dVmnEeaT0roG3wtL5w|org.eventb.core.guard#_gO6bI2kGEeabpYv7sQK2OA"/>
+<org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="in_bewegung_geist_3=TRUE" org.eventb.core.source="/Pacman/Pacman_Machine_3.bum|org.eventb.core.machineFile#Pacman_Machine_3|org.eventb.core.event#_N-R7dVmnEeaT0roG3wtL5w|org.eventb.core.guard#_gO6bJGkGEeabpYv7sQK2OA"/>
+<org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="position∉{pos_geist_1,pos_geist_2,pos_geist_3,pos_geist_4}" org.eventb.core.source="/Pacman/Pacman_Machine_3.bum|org.eventb.core.machineFile#Pacman_Machine_3|org.eventb.core.event#_N-R7dVmnEeaT0roG3wtL5w|org.eventb.core.guard#_gO7CMGkGEeabpYv7sQK2OA"/>
+<org.eventb.core.poPredicate name="PRD4" org.eventb.core.predicate="leben&gt;0" org.eventb.core.source="/Pacman/Pacman_Machine_4.bum|org.eventb.core.machineFile#Pacman_Machine_4|org.eventb.core.event#_tMqDIiTaEeag7rHqrVAyl1|org.eventb.core.guard#_a-9S0mLDEeaVx-LJ9XlTeg"/>
+<org.eventb.core.poPredicate name="PRD5" org.eventb.core.predicate="jagd_counter≠0⇒jagd_counter≠counter" org.eventb.core.source="/Pacman/Pacman_Machine_5.bum|org.eventb.core.machineFile#Pacman_Machine_5|org.eventb.core.event#_tMqDIiTaEeag7rHqrVAyl1|org.eventb.core.guard#_bTEmQF1gEeaxCuN1JcHzlA"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTIDENTPacman_Context_generjm" org.eventb.core.parentSet="/Pacman/Pacman_Machine_game.bpo|org.eventb.core.poFile#Pacman_Machine_game|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="3">
+<org.eventb.core.poIdentifier name="pos_geist_1_alt'" org.eventb.core.type="ℤ×ℤ"/>
+<org.eventb.core.poIdentifier name="geist_1_bewegt'" org.eventb.core.type="BOOL"/>
+<org.eventb.core.poIdentifier name="pos" org.eventb.core.type="ℤ×ℤ"/>
+<org.eventb.core.poIdentifier name="pos_geist_1'" org.eventb.core.type="ℤ×ℤ"/>
+<org.eventb.core.poIdentifier name="in_bewegung_geist_1'" org.eventb.core.type="BOOL"/>
+<org.eventb.core.poIdentifier name="geist_1_counter'" org.eventb.core.type="ℤ"/>
+<org.eventb.core.poIdentifier name="pc" org.eventb.core.type="ℤ"/>
+<org.eventb.core.poIdentifier name="bewegt'" org.eventb.core.type="BOOL"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTALLHYPPacman_Context_generjm" org.eventb.core.parentSet="/Pacman/Pacman_Machine_game.bpo|org.eventb.core.poFile#Pacman_Machine_game|org.eventb.core.poPredicateSet#EVTIDENTPacman_Context_generjm" org.eventb.core.poStamp="3">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="pos∈begehbar" org.eventb.core.source="/Pacman/Pacman_Machine_3.bum|org.eventb.core.machineFile#Pacman_Machine_3|org.eventb.core.event#_Cyb0AFopEea3RJy38zLyQw|org.eventb.core.guard#_gO7CMWkGEeabpYv7sQK2OA"/>
+<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="((prj1 ⦂ ℙ(ℤ×ℤ×ℤ))(pos) − (prj1 ⦂ ℙ(ℤ×ℤ×ℤ))(pos_geist_1)∈{2,−2}∧(prj2 ⦂ ℙ(ℤ×ℤ×ℤ))(pos)=(prj2 ⦂ ℙ(ℤ×ℤ×ℤ))(pos_geist_1))∨((prj2 ⦂ ℙ(ℤ×ℤ×ℤ))(pos) − (prj2 ⦂ ℙ(ℤ×ℤ×ℤ))(pos_geist_1)∈{2,−2}∧(prj1 ⦂ ℙ(ℤ×ℤ×ℤ))(pos)=(prj1 ⦂ ℙ(ℤ×ℤ×ℤ))(pos_geist_1))" org.eventb.core.source="/Pacman/Pacman_Machine_3.bum|org.eventb.core.machineFile#Pacman_Machine_3|org.eventb.core.event#_Cyb0AFopEea3RJy38zLyQw|org.eventb.core.guard#_gO7CMmkGEeabpYv7sQK2OA"/>
+<org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="pos_geist_1∈begehbar" org.eventb.core.source="/Pacman/Pacman_Machine_3.bum|org.eventb.core.machineFile#Pacman_Machine_3|org.eventb.core.event#_Cyb0AFopEea3RJy38zLyQw|org.eventb.core.guard#_gO7CM2kGEeabpYv7sQK2OA"/>
+<org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="pos_geist_1∉geisterhof" org.eventb.core.source="/Pacman/Pacman_Machine_3.bum|org.eventb.core.machineFile#Pacman_Machine_3|org.eventb.core.event#_Cyb0AFopEea3RJy38zLyQw|org.eventb.core.guard#_gO7pQGkGEeabpYv7sQK2OA"/>
+<org.eventb.core.poPredicate name="PRD4" org.eventb.core.predicate="position∉{pos_geist_1,pos_geist_2,pos_geist_3,pos_geist_4}" org.eventb.core.source="/Pacman/Pacman_Machine_3.bum|org.eventb.core.machineFile#Pacman_Machine_3|org.eventb.core.event#_Cyb0AFopEea3RJy38zLyQw|org.eventb.core.guard#_0p4_oGkIEeabpYv7sQK2OA"/>
+<org.eventb.core.poPredicate name="PRD5" org.eventb.core.predicate="leben&gt;0" org.eventb.core.source="/Pacman/Pacman_Machine_4.bum|org.eventb.core.machineFile#Pacman_Machine_4|org.eventb.core.event#_tMqDIiTaEeag7rHqrVAyl2|org.eventb.core.guard#_a-954GLDEeaVx-LJ9XlTeg"/>
+<org.eventb.core.poPredicate name="PRD6" org.eventb.core.predicate="jagd_counter≠0⇒jagd_counter≠counter" org.eventb.core.source="/Pacman/Pacman_Machine_5.bum|org.eventb.core.machineFile#Pacman_Machine_5|org.eventb.core.event#_tMqDIiTaEeag7rHqrVAyl2|org.eventb.core.guard#_bTEmQV1gEeaxCuN1JcHzlA"/>
+<org.eventb.core.poPredicate name="PRD7" org.eventb.core.predicate="geist_1∈gejagte_geister⇒pc=0" org.eventb.core.source="/Pacman/Pacman_Machine_5.bum|org.eventb.core.machineFile#Pacman_Machine_5|org.eventb.core.event#_tMqDIiTaEeag7rHqrVAyl2|org.eventb.core.guard#_bTEmQl1gEeaxCuN1JcHzlA"/>
+<org.eventb.core.poPredicate name="PRD8" org.eventb.core.predicate="geist_1∉gejagte_geister⇒pc=1" org.eventb.core.source="/Pacman/Pacman_Machine_5.bum|org.eventb.core.machineFile#Pacman_Machine_5|org.eventb.core.event#_tMqDIiTaEeag7rHqrVAyl2|org.eventb.core.guard#_bTD_Ml1gEeaxCuN1JcHzlA"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTIDENTPacman_Context_generjn" org.eventb.core.parentSet="/Pacman/Pacman_Machine_game.bpo|org.eventb.core.poFile#Pacman_Machine_game|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="3">
+<org.eventb.core.poIdentifier name="pos_geist_2_alt'" org.eventb.core.type="ℤ×ℤ"/>
+<org.eventb.core.poIdentifier name="pos" org.eventb.core.type="ℤ×ℤ"/>
+<org.eventb.core.poIdentifier name="geist_2_counter'" org.eventb.core.type="ℤ"/>
+<org.eventb.core.poIdentifier name="geist_2_bewegt'" org.eventb.core.type="BOOL"/>
+<org.eventb.core.poIdentifier name="pc" org.eventb.core.type="ℤ"/>
+<org.eventb.core.poIdentifier name="in_bewegung_geist_2'" org.eventb.core.type="BOOL"/>
+<org.eventb.core.poIdentifier name="bewegt'" org.eventb.core.type="BOOL"/>
+<org.eventb.core.poIdentifier name="pos_geist_2'" org.eventb.core.type="ℤ×ℤ"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTALLHYPPacman_Context_generjn" org.eventb.core.parentSet="/Pacman/Pacman_Machine_game.bpo|org.eventb.core.poFile#Pacman_Machine_game|org.eventb.core.poPredicateSet#EVTIDENTPacman_Context_generjn" org.eventb.core.poStamp="3">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="pos∈begehbar" org.eventb.core.source="/Pacman/Pacman_Machine_3.bum|org.eventb.core.machineFile#Pacman_Machine_3|org.eventb.core.event#_UnY_MFowEea3RJy38zLyQw|org.eventb.core.guard#_ZZByYGq8EeavsYvVdDsPuA"/>
+<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="((prj1 ⦂ ℙ(ℤ×ℤ×ℤ))(pos) − (prj1 ⦂ ℙ(ℤ×ℤ×ℤ))(pos_geist_2)∈{2,−2}∧(prj2 ⦂ ℙ(ℤ×ℤ×ℤ))(pos)=(prj2 ⦂ ℙ(ℤ×ℤ×ℤ))(pos_geist_2))∨((prj2 ⦂ ℙ(ℤ×ℤ×ℤ))(pos) − (prj2 ⦂ ℙ(ℤ×ℤ×ℤ))(pos_geist_2)∈{2,−2}∧(prj1 ⦂ ℙ(ℤ×ℤ×ℤ))(pos)=(prj1 ⦂ ℙ(ℤ×ℤ×ℤ))(pos_geist_2))" org.eventb.core.source="/Pacman/Pacman_Machine_3.bum|org.eventb.core.machineFile#Pacman_Machine_3|org.eventb.core.event#_UnY_MFowEea3RJy38zLyQw|org.eventb.core.guard#_ZZByYWq8EeavsYvVdDsPuA"/>
+<org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="pos_geist_2∈begehbar" org.eventb.core.source="/Pacman/Pacman_Machine_3.bum|org.eventb.core.machineFile#Pacman_Machine_3|org.eventb.core.event#_UnY_MFowEea3RJy38zLyQw|org.eventb.core.guard#_ZZByYmq8EeavsYvVdDsPuA"/>
+<org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="pos_geist_2∉geisterhof" org.eventb.core.source="/Pacman/Pacman_Machine_3.bum|org.eventb.core.machineFile#Pacman_Machine_3|org.eventb.core.event#_UnY_MFowEea3RJy38zLyQw|org.eventb.core.guard#_ZZByY2q8EeavsYvVdDsPuA"/>
+<org.eventb.core.poPredicate name="PRD4" org.eventb.core.predicate="position∉{pos_geist_1,pos_geist_2,pos_geist_3,pos_geist_4}" org.eventb.core.source="/Pacman/Pacman_Machine_3.bum|org.eventb.core.machineFile#Pacman_Machine_3|org.eventb.core.event#_UnY_MFowEea3RJy38zLyQw|org.eventb.core.guard#_0p5msGkIEeabpYv7sQK2OA"/>
+<org.eventb.core.poPredicate name="PRD5" org.eventb.core.predicate="leben&gt;0" org.eventb.core.source="/Pacman/Pacman_Machine_4.bum|org.eventb.core.machineFile#Pacman_Machine_4|org.eventb.core.event#_tMqDIiTaEeag7rHqrVAyl3|org.eventb.core.guard#_a-954WLDEeaVx-LJ9XlTeg"/>
+<org.eventb.core.poPredicate name="PRD6" org.eventb.core.predicate="jagd_counter≠0⇒jagd_counter≠counter" org.eventb.core.source="/Pacman/Pacman_Machine_5.bum|org.eventb.core.machineFile#Pacman_Machine_5|org.eventb.core.event#_tMqDIiTaEeag7rHqrVAyl3|org.eventb.core.guard#_LoEFcWXxEeaVMYOTcIxZEA"/>
+<org.eventb.core.poPredicate name="PRD7" org.eventb.core.predicate="geist_2∈gejagte_geister⇒pc=0" org.eventb.core.source="/Pacman/Pacman_Machine_5.bum|org.eventb.core.machineFile#Pacman_Machine_5|org.eventb.core.event#_tMqDIiTaEeag7rHqrVAyl3|org.eventb.core.guard#_LoEFcmXxEeaVMYOTcIxZEA"/>
+<org.eventb.core.poPredicate name="PRD8" org.eventb.core.predicate="geist_2∉gejagte_geister⇒pc=1" org.eventb.core.source="/Pacman/Pacman_Machine_5.bum|org.eventb.core.machineFile#Pacman_Machine_5|org.eventb.core.event#_tMqDIiTaEeag7rHqrVAyl3|org.eventb.core.guard#_LoEFc2XxEeaVMYOTcIxZEA"/>
+<org.eventb.core.poPredicate name="PRD9" org.eventb.core.predicate="geist_1_bewegt=TRUE" org.eventb.core.source="/Pacman/Pacman_Machine_5.bum|org.eventb.core.machineFile#Pacman_Machine_5|org.eventb.core.event#_tMqDIiTaEeag7rHqrVAyl3|org.eventb.core.guard#_bTFNUF1gEeaxCuN1JcHzlA"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTIDENTPacman_Context_generjo" org.eventb.core.parentSet="/Pacman/Pacman_Machine_game.bpo|org.eventb.core.poFile#Pacman_Machine_game|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="3">
+<org.eventb.core.poIdentifier name="geist_3_counter'" org.eventb.core.type="ℤ"/>
+<org.eventb.core.poIdentifier name="pos" org.eventb.core.type="ℤ×ℤ"/>
+<org.eventb.core.poIdentifier name="pc" org.eventb.core.type="ℤ"/>
+<org.eventb.core.poIdentifier name="pos_geist_3'" org.eventb.core.type="ℤ×ℤ"/>
+<org.eventb.core.poIdentifier name="geist_3_bewegt'" org.eventb.core.type="BOOL"/>
+<org.eventb.core.poIdentifier name="in_bewegung_geist_3'" org.eventb.core.type="BOOL"/>
+<org.eventb.core.poIdentifier name="bewegt'" org.eventb.core.type="BOOL"/>
+<org.eventb.core.poIdentifier name="pos_geist_3_alt'" org.eventb.core.type="ℤ×ℤ"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTALLHYPPacman_Context_generjo" org.eventb.core.parentSet="/Pacman/Pacman_Machine_game.bpo|org.eventb.core.poFile#Pacman_Machine_game|org.eventb.core.poPredicateSet#EVTIDENTPacman_Context_generjo" org.eventb.core.poStamp="3">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="pos∈begehbar" org.eventb.core.source="/Pacman/Pacman_Machine_3.bum|org.eventb.core.machineFile#Pacman_Machine_3|org.eventb.core.event#_A41UcFoxEea3RJy38zLyQw|org.eventb.core.guard#_ZZDAgGq8EeavsYvVdDsPuA"/>
+<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="((prj1 ⦂ ℙ(ℤ×ℤ×ℤ))(pos) − (prj1 ⦂ ℙ(ℤ×ℤ×ℤ))(pos_geist_3)∈{2,−2}∧(prj2 ⦂ ℙ(ℤ×ℤ×ℤ))(pos)=(prj2 ⦂ ℙ(ℤ×ℤ×ℤ))(pos_geist_3))∨((prj2 ⦂ ℙ(ℤ×ℤ×ℤ))(pos) − (prj2 ⦂ ℙ(ℤ×ℤ×ℤ))(pos_geist_3)∈{2,−2}∧(prj1 ⦂ ℙ(ℤ×ℤ×ℤ))(pos)=(prj1 ⦂ ℙ(ℤ×ℤ×ℤ))(pos_geist_3))" org.eventb.core.source="/Pacman/Pacman_Machine_3.bum|org.eventb.core.machineFile#Pacman_Machine_3|org.eventb.core.event#_A41UcFoxEea3RJy38zLyQw|org.eventb.core.guard#_ZZDAgWq8EeavsYvVdDsPuA"/>
+<org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="pos_geist_3∈begehbar" org.eventb.core.source="/Pacman/Pacman_Machine_3.bum|org.eventb.core.machineFile#Pacman_Machine_3|org.eventb.core.event#_A41UcFoxEea3RJy38zLyQw|org.eventb.core.guard#_ZZDAgmq8EeavsYvVdDsPuA"/>
+<org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="pos_geist_3∉geisterhof" org.eventb.core.source="/Pacman/Pacman_Machine_3.bum|org.eventb.core.machineFile#Pacman_Machine_3|org.eventb.core.event#_A41UcFoxEea3RJy38zLyQw|org.eventb.core.guard#_ZZDAg2q8EeavsYvVdDsPuA"/>
+<org.eventb.core.poPredicate name="PRD4" org.eventb.core.predicate="counter_scored≥counter_geist_3" org.eventb.core.source="/Pacman/Pacman_Machine_3.bum|org.eventb.core.machineFile#Pacman_Machine_3|org.eventb.core.event#_A41UcFoxEea3RJy38zLyQw|org.eventb.core.guard#_ZZDAhGq8EeavsYvVdDsPuA"/>
+<org.eventb.core.poPredicate name="PRD5" org.eventb.core.predicate="position∉{pos_geist_1,pos_geist_2,pos_geist_3,pos_geist_4}" org.eventb.core.source="/Pacman/Pacman_Machine_3.bum|org.eventb.core.machineFile#Pacman_Machine_3|org.eventb.core.event#_A41UcFoxEea3RJy38zLyQw|org.eventb.core.guard#_ZZDAhWq8EeavsYvVdDsPuA"/>
+<org.eventb.core.poPredicate name="PRD6" org.eventb.core.predicate="leben&gt;0" org.eventb.core.source="/Pacman/Pacman_Machine_4.bum|org.eventb.core.machineFile#Pacman_Machine_4|org.eventb.core.event#_tMqDIiTaEeag7rHqrVAyl4|org.eventb.core.guard#_a-954mLDEeaVx-LJ9XlTeg"/>
+<org.eventb.core.poPredicate name="PRD7" org.eventb.core.predicate="geist_3∈gejagte_geister⇒pc=0" org.eventb.core.source="/Pacman/Pacman_Machine_5.bum|org.eventb.core.machineFile#Pacman_Machine_5|org.eventb.core.event#_tMqDIiTaEeag7rHqrVAyl4|org.eventb.core.guard#_sn6rQQpAEeey_PnWPwczJg"/>
+<org.eventb.core.poPredicate name="PRD8" org.eventb.core.predicate="geist_3∉gejagte_geister⇒pc=1" org.eventb.core.source="/Pacman/Pacman_Machine_5.bum|org.eventb.core.machineFile#Pacman_Machine_5|org.eventb.core.event#_tMqDIiTaEeag7rHqrVAyl4|org.eventb.core.guard#_sn6rQgpAEeey_PnWPwczJg"/>
+<org.eventb.core.poPredicate name="PRD9" org.eventb.core.predicate="geist_1_bewegt=TRUE∧geist_2_bewegt=TRUE" org.eventb.core.source="/Pacman/Pacman_Machine_5.bum|org.eventb.core.machineFile#Pacman_Machine_5|org.eventb.core.event#_tMqDIiTaEeag7rHqrVAyl4|org.eventb.core.guard#_sn6rQwpAEeey_PnWPwczJg"/>
+<org.eventb.core.poPredicate name="PRD10" org.eventb.core.predicate="jagd_counter≠0⇒jagd_counter≠counter" org.eventb.core.source="/Pacman/Pacman_Machine_5.bum|org.eventb.core.machineFile#Pacman_Machine_5|org.eventb.core.event#_tMqDIiTaEeag7rHqrVAyl4|org.eventb.core.guard#_LoEFdWXxEeaVMYOTcIxZEA"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTIDENTPacman_Context_generjp" org.eventb.core.parentSet="/Pacman/Pacman_Machine_game.bpo|org.eventb.core.poFile#Pacman_Machine_game|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="3">
+<org.eventb.core.poIdentifier name="in_bewegung_geist_4'" org.eventb.core.type="BOOL"/>
+<org.eventb.core.poIdentifier name="pos" org.eventb.core.type="ℤ×ℤ"/>
+<org.eventb.core.poIdentifier name="pos_geist_4'" org.eventb.core.type="ℤ×ℤ"/>
+<org.eventb.core.poIdentifier name="geist_4_bewegt'" org.eventb.core.type="BOOL"/>
+<org.eventb.core.poIdentifier name="pc" org.eventb.core.type="ℤ"/>
+<org.eventb.core.poIdentifier name="geist_4_counter'" org.eventb.core.type="ℤ"/>
+<org.eventb.core.poIdentifier name="pos_geist_4_alt'" org.eventb.core.type="ℤ×ℤ"/>
+<org.eventb.core.poIdentifier name="bewegt'" org.eventb.core.type="BOOL"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTALLHYPPacman_Context_generjp" org.eventb.core.parentSet="/Pacman/Pacman_Machine_game.bpo|org.eventb.core.poFile#Pacman_Machine_game|org.eventb.core.poPredicateSet#EVTIDENTPacman_Context_generjp" org.eventb.core.poStamp="3">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="pos∈begehbar" org.eventb.core.source="/Pacman/Pacman_Machine_3.bum|org.eventb.core.machineFile#Pacman_Machine_3|org.eventb.core.event#_EkaOUFoxEea3RJy38zLyQw|org.eventb.core.guard#_ZZEOoGq8EeavsYvVdDsPuA"/>
+<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="((prj1 ⦂ ℙ(ℤ×ℤ×ℤ))(pos) − (prj1 ⦂ ℙ(ℤ×ℤ×ℤ))(pos_geist_4)∈{2,−2}∧(prj2 ⦂ ℙ(ℤ×ℤ×ℤ))(pos)=(prj2 ⦂ ℙ(ℤ×ℤ×ℤ))(pos_geist_4))∨((prj2 ⦂ ℙ(ℤ×ℤ×ℤ))(pos) − (prj2 ⦂ ℙ(ℤ×ℤ×ℤ))(pos_geist_4)∈{2,−2}∧(prj1 ⦂ ℙ(ℤ×ℤ×ℤ))(pos)=(prj1 ⦂ ℙ(ℤ×ℤ×ℤ))(pos_geist_4))" org.eventb.core.source="/Pacman/Pacman_Machine_3.bum|org.eventb.core.machineFile#Pacman_Machine_3|org.eventb.core.event#_EkaOUFoxEea3RJy38zLyQw|org.eventb.core.guard#_ZZEOoWq8EeavsYvVdDsPuA"/>
+<org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="pos_geist_4∈begehbar" org.eventb.core.source="/Pacman/Pacman_Machine_3.bum|org.eventb.core.machineFile#Pacman_Machine_3|org.eventb.core.event#_EkaOUFoxEea3RJy38zLyQw|org.eventb.core.guard#_ZZEOomq8EeavsYvVdDsPuA"/>
+<org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="pos_geist_4∉geisterhof" org.eventb.core.source="/Pacman/Pacman_Machine_3.bum|org.eventb.core.machineFile#Pacman_Machine_3|org.eventb.core.event#_EkaOUFoxEea3RJy38zLyQw|org.eventb.core.guard#_ZZEOo2q8EeavsYvVdDsPuA"/>
+<org.eventb.core.poPredicate name="PRD4" org.eventb.core.predicate="counter_scored≥counter_geist_4" org.eventb.core.source="/Pacman/Pacman_Machine_3.bum|org.eventb.core.machineFile#Pacman_Machine_3|org.eventb.core.event#_EkaOUFoxEea3RJy38zLyQw|org.eventb.core.guard#_ZZEOpGq8EeavsYvVdDsPuA"/>
+<org.eventb.core.poPredicate name="PRD5" org.eventb.core.predicate="position∉{pos_geist_1,pos_geist_2,pos_geist_3,pos_geist_4}" org.eventb.core.source="/Pacman/Pacman_Machine_3.bum|org.eventb.core.machineFile#Pacman_Machine_3|org.eventb.core.event#_EkaOUFoxEea3RJy38zLyQw|org.eventb.core.guard#_ZZEOpWq8EeavsYvVdDsPuA"/>
+<org.eventb.core.poPredicate name="PRD6" org.eventb.core.predicate="leben&gt;0" org.eventb.core.source="/Pacman/Pacman_Machine_4.bum|org.eventb.core.machineFile#Pacman_Machine_4|org.eventb.core.event#_tMqDIiTaEeag7rHqrVAyl5|org.eventb.core.guard#_a-9542LDEeaVx-LJ9XlTeg"/>
+<org.eventb.core.poPredicate name="PRD7" org.eventb.core.predicate="jagd_counter≠0⇒jagd_counter≠counter" org.eventb.core.source="/Pacman/Pacman_Machine_5.bum|org.eventb.core.machineFile#Pacman_Machine_5|org.eventb.core.event#_tMqDIiTaEeag7rHqrVAyl5|org.eventb.core.guard#_sn7SUQpAEeey_PnWPwczJg"/>
+<org.eventb.core.poPredicate name="PRD8" org.eventb.core.predicate="geist_4∈gejagte_geister⇒pc=0" org.eventb.core.source="/Pacman/Pacman_Machine_5.bum|org.eventb.core.machineFile#Pacman_Machine_5|org.eventb.core.event#_tMqDIiTaEeag7rHqrVAyl5|org.eventb.core.guard#_sn7SUgpAEeey_PnWPwczJg"/>
+<org.eventb.core.poPredicate name="PRD9" org.eventb.core.predicate="geist_4∉gejagte_geister⇒pc=1" org.eventb.core.source="/Pacman/Pacman_Machine_5.bum|org.eventb.core.machineFile#Pacman_Machine_5|org.eventb.core.event#_tMqDIiTaEeag7rHqrVAyl5|org.eventb.core.guard#_sn7SUwpAEeey_PnWPwczJg"/>
+<org.eventb.core.poPredicate name="PRD10" org.eventb.core.predicate="geist_1_bewegt=TRUE∧geist_2_bewegt=TRUE∧geist_3_bewegt=TRUE" org.eventb.core.source="/Pacman/Pacman_Machine_5.bum|org.eventb.core.machineFile#Pacman_Machine_5|org.eventb.core.event#_tMqDIiTaEeag7rHqrVAyl5|org.eventb.core.guard#_sn7SVApAEeey_PnWPwczJg"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTIDENTPacman_Context_generjq" org.eventb.core.parentSet="/Pacman/Pacman_Machine_game.bpo|org.eventb.core.poFile#Pacman_Machine_game|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="3">
+<org.eventb.core.poIdentifier name="in_bewegung_geist_4'" org.eventb.core.type="BOOL"/>
+<org.eventb.core.poIdentifier name="pos_geist_1_alt'" org.eventb.core.type="ℤ×ℤ"/>
+<org.eventb.core.poIdentifier name="leben_alt'" org.eventb.core.type="ℤ"/>
+<org.eventb.core.poIdentifier name="pos_geist_2_alt'" org.eventb.core.type="ℤ×ℤ"/>
+<org.eventb.core.poIdentifier name="geist_1_bewegt'" org.eventb.core.type="BOOL"/>
+<org.eventb.core.poIdentifier name="getunnelt'" org.eventb.core.type="BOOL"/>
+<org.eventb.core.poIdentifier name="pos_geist_1'" org.eventb.core.type="ℤ×ℤ"/>
+<org.eventb.core.poIdentifier name="leben'" org.eventb.core.type="ℤ"/>
+<org.eventb.core.poIdentifier name="geist_2_bewegt'" org.eventb.core.type="BOOL"/>
+<org.eventb.core.poIdentifier name="counter'" org.eventb.core.type="ℤ"/>
+<org.eventb.core.poIdentifier name="in_bewegung_geist_1'" org.eventb.core.type="BOOL"/>
+<org.eventb.core.poIdentifier name="jagd_counter'" org.eventb.core.type="ℤ"/>
+<org.eventb.core.poIdentifier name="in_bewegung'" org.eventb.core.type="BOOL"/>
+<org.eventb.core.poIdentifier name="pos_geist_4'" org.eventb.core.type="ℤ×ℤ"/>
+<org.eventb.core.poIdentifier name="geist_4_bewegt'" org.eventb.core.type="BOOL"/>
+<org.eventb.core.poIdentifier name="vorherige_position'" org.eventb.core.type="ℤ×ℤ"/>
+<org.eventb.core.poIdentifier name="in_bewegung_geist_2'" org.eventb.core.type="BOOL"/>
+<org.eventb.core.poIdentifier name="pos_geist_3'" org.eventb.core.type="ℤ×ℤ"/>
+<org.eventb.core.poIdentifier name="pos_geist_4_alt'" org.eventb.core.type="ℤ×ℤ"/>
+<org.eventb.core.poIdentifier name="geist_3_bewegt'" org.eventb.core.type="BOOL"/>
+<org.eventb.core.poIdentifier name="in_bewegung_geist_3'" org.eventb.core.type="BOOL"/>
+<org.eventb.core.poIdentifier name="position'" org.eventb.core.type="ℤ×ℤ"/>
+<org.eventb.core.poIdentifier name="bewegt'" org.eventb.core.type="BOOL"/>
+<org.eventb.core.poIdentifier name="pos_geist_2'" org.eventb.core.type="ℤ×ℤ"/>
+<org.eventb.core.poIdentifier name="pos_geist_3_alt'" org.eventb.core.type="ℤ×ℤ"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTALLHYPPacman_Context_generjq" org.eventb.core.parentSet="/Pacman/Pacman_Machine_game.bpo|org.eventb.core.poFile#Pacman_Machine_game|org.eventb.core.poPredicateSet#EVTIDENTPacman_Context_generjq" org.eventb.core.poStamp="3">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="position=pos_geist_1∨position=pos_geist_2∨position=pos_geist_3∨position=pos_geist_4" org.eventb.core.source="/Pacman/Pacman_Machine_3.bum|org.eventb.core.machineFile#Pacman_Machine_3|org.eventb.core.event#_--4bAFu2EeabeYXD7YYpQg|org.eventb.core.guard#_ZZGq4Gq8EeavsYvVdDsPuA"/>
+<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="leben≥1" org.eventb.core.source="/Pacman/Pacman_Machine_4.bum|org.eventb.core.machineFile#Pacman_Machine_4|org.eventb.core.event#_jh_2EFscEeabeYXD7YYpQg|org.eventb.core.guard#_a-_vEGLDEeaVx-LJ9XlTeg"/>
+<org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="pos_geist_1=position⇒geist_1∉gejagte_geister" org.eventb.core.source="/Pacman/Pacman_Machine_4.bum|org.eventb.core.machineFile#Pacman_Machine_4|org.eventb.core.event#_jh_2EFscEeabeYXD7YYpQg|org.eventb.core.guard#_a-_vEWLDEeaVx-LJ9XlTeg"/>
+<org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="pos_geist_2=position⇒geist_2∉gejagte_geister" org.eventb.core.source="/Pacman/Pacman_Machine_4.bum|org.eventb.core.machineFile#Pacman_Machine_4|org.eventb.core.event#_jh_2EFscEeabeYXD7YYpQg|org.eventb.core.guard#_a-_vEmLDEeaVx-LJ9XlTeg"/>
+<org.eventb.core.poPredicate name="PRD4" org.eventb.core.predicate="pos_geist_3=position⇒geist_3∉gejagte_geister" org.eventb.core.source="/Pacman/Pacman_Machine_4.bum|org.eventb.core.machineFile#Pacman_Machine_4|org.eventb.core.event#_jh_2EFscEeabeYXD7YYpQg|org.eventb.core.guard#_a-_vE2LDEeaVx-LJ9XlTeg"/>
+<org.eventb.core.poPredicate name="PRD5" org.eventb.core.predicate="pos_geist_4=position⇒geist_4∉gejagte_geister" org.eventb.core.source="/Pacman/Pacman_Machine_4.bum|org.eventb.core.machineFile#Pacman_Machine_4|org.eventb.core.event#_jh_2EFscEeabeYXD7YYpQg|org.eventb.core.guard#_a-_vFGLDEeaVx-LJ9XlTeg"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTIDENTPacman_Context_generjr" org.eventb.core.parentSet="/Pacman/Pacman_Machine_game.bpo|org.eventb.core.poFile#Pacman_Machine_game|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="3">
+<org.eventb.core.poIdentifier name="pos_geist_1_alt'" org.eventb.core.type="ℤ×ℤ"/>
+<org.eventb.core.poIdentifier name="geist_1_bewegt'" org.eventb.core.type="BOOL"/>
+<org.eventb.core.poIdentifier name="score'" org.eventb.core.type="ℤ"/>
+<org.eventb.core.poIdentifier name="score_alt'" org.eventb.core.type="ℤ"/>
+<org.eventb.core.poIdentifier name="pos_geist_1'" org.eventb.core.type="ℤ×ℤ"/>
+<org.eventb.core.poIdentifier name="in_bewegung_geist_1'" org.eventb.core.type="BOOL"/>
+<org.eventb.core.poIdentifier name="bewegt'" org.eventb.core.type="BOOL"/>
+<org.eventb.core.poIdentifier name="gejagte_geister'" org.eventb.core.type="ℙ(GEISTER)"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTALLHYPPacman_Context_generjr" org.eventb.core.parentSet="/Pacman/Pacman_Machine_game.bpo|org.eventb.core.poFile#Pacman_Machine_game|org.eventb.core.poPredicateSet#EVTIDENTPacman_Context_generjr" org.eventb.core.poStamp="3">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="position=pos_geist_1" org.eventb.core.source="/Pacman/Pacman_Machine_3.bum|org.eventb.core.machineFile#Pacman_Machine_3|org.eventb.core.event#_FqNBgFvNEeabeYXD7YYpQg|org.eventb.core.guard#_ZZHR8Gq8EeavsYvVdDsPuA"/>
+<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="geist_1∈gejagte_geister" org.eventb.core.source="/Pacman/Pacman_Machine_4.bum|org.eventb.core.machineFile#Pacman_Machine_4|org.eventb.core.event#_jiBEMFscEeabeYXD7YYpQg|org.eventb.core.guard#_a_AWIGLDEeaVx-LJ9XlTeg"/>
+<org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="pos_geist_1=position" org.eventb.core.source="/Pacman/Pacman_Machine_4.bum|org.eventb.core.machineFile#Pacman_Machine_4|org.eventb.core.event#_jiBEMFscEeabeYXD7YYpQg|org.eventb.core.guard#_a_AWIWLDEeaVx-LJ9XlTeg"/>
+<org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="leben&gt;0" org.eventb.core.source="/Pacman/Pacman_Machine_4.bum|org.eventb.core.machineFile#Pacman_Machine_4|org.eventb.core.event#_jiBEMFscEeabeYXD7YYpQg|org.eventb.core.guard#_a_AWImLDEeaVx-LJ9XlTeg"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTIDENTPacman_Context_generjs" org.eventb.core.parentSet="/Pacman/Pacman_Machine_game.bpo|org.eventb.core.poFile#Pacman_Machine_game|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="3">
+<org.eventb.core.poIdentifier name="pos_geist_2_alt'" org.eventb.core.type="ℤ×ℤ"/>
+<org.eventb.core.poIdentifier name="score'" org.eventb.core.type="ℤ"/>
+<org.eventb.core.poIdentifier name="score_alt'" org.eventb.core.type="ℤ"/>
+<org.eventb.core.poIdentifier name="geist_2_bewegt'" org.eventb.core.type="BOOL"/>
+<org.eventb.core.poIdentifier name="in_bewegung_geist_2'" org.eventb.core.type="BOOL"/>
+<org.eventb.core.poIdentifier name="bewegt'" org.eventb.core.type="BOOL"/>
+<org.eventb.core.poIdentifier name="pos_geist_2'" org.eventb.core.type="ℤ×ℤ"/>
+<org.eventb.core.poIdentifier name="gejagte_geister'" org.eventb.core.type="ℙ(GEISTER)"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTALLHYPPacman_Context_generjs" org.eventb.core.parentSet="/Pacman/Pacman_Machine_game.bpo|org.eventb.core.poFile#Pacman_Machine_game|org.eventb.core.poPredicateSet#EVTIDENTPacman_Context_generjs" org.eventb.core.poStamp="3">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="position=pos_geist_2" org.eventb.core.source="/Pacman/Pacman_Machine_3.bum|org.eventb.core.machineFile#Pacman_Machine_3|org.eventb.core.event#_FqNBgVvNEeabeYXD7YYpQg|org.eventb.core.guard#_ZZH5AGq8EeavsYvVdDsPuA"/>
+<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="geist_2∈gejagte_geister" org.eventb.core.source="/Pacman/Pacman_Machine_4.bum|org.eventb.core.machineFile#Pacman_Machine_4|org.eventb.core.event#_jiBEMVscEeabeYXD7YYpQg|org.eventb.core.guard#_a_A9MGLDEeaVx-LJ9XlTeg"/>
+<org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="pos_geist_2=position" org.eventb.core.source="/Pacman/Pacman_Machine_4.bum|org.eventb.core.machineFile#Pacman_Machine_4|org.eventb.core.event#_jiBEMVscEeabeYXD7YYpQg|org.eventb.core.guard#_a_A9MWLDEeaVx-LJ9XlTeg"/>
+<org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="leben&gt;0" org.eventb.core.source="/Pacman/Pacman_Machine_4.bum|org.eventb.core.machineFile#Pacman_Machine_4|org.eventb.core.event#_jiBEMVscEeabeYXD7YYpQg|org.eventb.core.guard#_a_A9MmLDEeaVx-LJ9XlTeg"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTIDENTPacman_Context_generjt" org.eventb.core.parentSet="/Pacman/Pacman_Machine_game.bpo|org.eventb.core.poFile#Pacman_Machine_game|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="3">
+<org.eventb.core.poIdentifier name="score'" org.eventb.core.type="ℤ"/>
+<org.eventb.core.poIdentifier name="score_alt'" org.eventb.core.type="ℤ"/>
+<org.eventb.core.poIdentifier name="pos_geist_3'" org.eventb.core.type="ℤ×ℤ"/>
+<org.eventb.core.poIdentifier name="geist_3_bewegt'" org.eventb.core.type="BOOL"/>
+<org.eventb.core.poIdentifier name="in_bewegung_geist_3'" org.eventb.core.type="BOOL"/>
+<org.eventb.core.poIdentifier name="bewegt'" org.eventb.core.type="BOOL"/>
+<org.eventb.core.poIdentifier name="pos_geist_3_alt'" org.eventb.core.type="ℤ×ℤ"/>
+<org.eventb.core.poIdentifier name="gejagte_geister'" org.eventb.core.type="ℙ(GEISTER)"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTALLHYPPacman_Context_generjt" org.eventb.core.parentSet="/Pacman/Pacman_Machine_game.bpo|org.eventb.core.poFile#Pacman_Machine_game|org.eventb.core.poPredicateSet#EVTIDENTPacman_Context_generjt" org.eventb.core.poStamp="3">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="position=pos_geist_3" org.eventb.core.source="/Pacman/Pacman_Machine_3.bum|org.eventb.core.machineFile#Pacman_Machine_3|org.eventb.core.event#_FqNBglvNEeabeYXD7YYpQg|org.eventb.core.guard#_ZZIgEGq8EeavsYvVdDsPuA"/>
+<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="geist_3∈gejagte_geister" org.eventb.core.source="/Pacman/Pacman_Machine_4.bum|org.eventb.core.machineFile#Pacman_Machine_4|org.eventb.core.event#_jiBEMlscEeabeYXD7YYpQg|org.eventb.core.guard#_a_BkQGLDEeaVx-LJ9XlTeg"/>
+<org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="pos_geist_3=position" org.eventb.core.source="/Pacman/Pacman_Machine_4.bum|org.eventb.core.machineFile#Pacman_Machine_4|org.eventb.core.event#_jiBEMlscEeabeYXD7YYpQg|org.eventb.core.guard#_a_BkQWLDEeaVx-LJ9XlTeg"/>
+<org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="leben&gt;0" org.eventb.core.source="/Pacman/Pacman_Machine_4.bum|org.eventb.core.machineFile#Pacman_Machine_4|org.eventb.core.event#_jiBEMlscEeabeYXD7YYpQg|org.eventb.core.guard#_a_BkQmLDEeaVx-LJ9XlTeg"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTIDENTPacman_Context_generju" org.eventb.core.parentSet="/Pacman/Pacman_Machine_game.bpo|org.eventb.core.poFile#Pacman_Machine_game|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="3">
+<org.eventb.core.poIdentifier name="in_bewegung_geist_4'" org.eventb.core.type="BOOL"/>
+<org.eventb.core.poIdentifier name="score'" org.eventb.core.type="ℤ"/>
+<org.eventb.core.poIdentifier name="score_alt'" org.eventb.core.type="ℤ"/>
+<org.eventb.core.poIdentifier name="pos_geist_4'" org.eventb.core.type="ℤ×ℤ"/>
+<org.eventb.core.poIdentifier name="geist_4_bewegt'" org.eventb.core.type="BOOL"/>
+<org.eventb.core.poIdentifier name="pos_geist_4_alt'" org.eventb.core.type="ℤ×ℤ"/>
+<org.eventb.core.poIdentifier name="bewegt'" org.eventb.core.type="BOOL"/>
+<org.eventb.core.poIdentifier name="gejagte_geister'" org.eventb.core.type="ℙ(GEISTER)"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTALLHYPPacman_Context_generju" org.eventb.core.parentSet="/Pacman/Pacman_Machine_game.bpo|org.eventb.core.poFile#Pacman_Machine_game|org.eventb.core.poPredicateSet#EVTIDENTPacman_Context_generju" org.eventb.core.poStamp="3">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="position=pos_geist_4" org.eventb.core.source="/Pacman/Pacman_Machine_3.bum|org.eventb.core.machineFile#Pacman_Machine_3|org.eventb.core.event#_FqNBg1vNEeabeYXD7YYpQg|org.eventb.core.guard#_ZZJHIGq8EeavsYvVdDsPuA"/>
+<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="geist_4∈gejagte_geister" org.eventb.core.source="/Pacman/Pacman_Machine_4.bum|org.eventb.core.machineFile#Pacman_Machine_4|org.eventb.core.event#_jiBEM1scEeabeYXD7YYpQg|org.eventb.core.guard#_a_BkQ2LDEeaVx-LJ9XlTeg"/>
+<org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="pos_geist_4=position" org.eventb.core.source="/Pacman/Pacman_Machine_4.bum|org.eventb.core.machineFile#Pacman_Machine_4|org.eventb.core.event#_jiBEM1scEeabeYXD7YYpQg|org.eventb.core.guard#_a_BkRGLDEeaVx-LJ9XlTeg"/>
+<org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="leben&gt;0" org.eventb.core.source="/Pacman/Pacman_Machine_4.bum|org.eventb.core.machineFile#Pacman_Machine_4|org.eventb.core.event#_jiBEM1scEeabeYXD7YYpQg|org.eventb.core.guard#_a_BkRWLDEeaVx-LJ9XlTeg"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTIDENTPacman_Context_generjv" org.eventb.core.parentSet="/Pacman/Pacman_Machine_game.bpo|org.eventb.core.poFile#Pacman_Machine_game|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="3">
+<org.eventb.core.poIdentifier name="jagd_counter'" org.eventb.core.type="ℤ"/>
+<org.eventb.core.poIdentifier name="bewegt'" org.eventb.core.type="BOOL"/>
+<org.eventb.core.poIdentifier name="gejagte_geister'" org.eventb.core.type="ℙ(GEISTER)"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTALLHYPPacman_Context_generjv" org.eventb.core.parentSet="/Pacman/Pacman_Machine_game.bpo|org.eventb.core.poFile#Pacman_Machine_game|org.eventb.core.poPredicateSet#EVTIDENTPacman_Context_generjv" org.eventb.core.poStamp="3">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="in_bewegung=TRUE" org.eventb.core.source="/Pacman/Pacman_Machine_4.bum|org.eventb.core.machineFile#Pacman_Machine_4|org.eventb.core.event#_tFy6oF1YEeaH_Yn1_tt3HQ|org.eventb.core.guard#_a_CLUGLDEeaVx-LJ9XlTeg"/>
+<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="leben&gt;0" org.eventb.core.source="/Pacman/Pacman_Machine_4.bum|org.eventb.core.machineFile#Pacman_Machine_4|org.eventb.core.event#_tFy6oF1YEeaH_Yn1_tt3HQ|org.eventb.core.guard#_a_CLUWLDEeaVx-LJ9XlTeg"/>
+<org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="jagd_counter=counter" org.eventb.core.source="/Pacman/Pacman_Machine_5.bum|org.eventb.core.machineFile#Pacman_Machine_5|org.eventb.core.event#_HK1GoF1VEeaH_Yn1_tt3HQ|org.eventb.core.guard#_sn75YwpAEeey_PnWPwczJg"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTIDENTPacman_Context_generjw" org.eventb.core.parentSet="/Pacman/Pacman_Machine_game.bpo|org.eventb.core.poFile#Pacman_Machine_game|org.eventb.core.poPredicateSet#ALLHYP" org.eventb.core.poStamp="3">
+<org.eventb.core.poIdentifier name="gameover'" org.eventb.core.type="BOOL"/>
+<org.eventb.core.poIdentifier name="bewegt'" org.eventb.core.type="BOOL"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="EVTALLHYPPacman_Context_generjw" org.eventb.core.parentSet="/Pacman/Pacman_Machine_game.bpo|org.eventb.core.poFile#Pacman_Machine_game|org.eventb.core.poPredicateSet#EVTIDENTPacman_Context_generjw" org.eventb.core.poStamp="3">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="leben=0" org.eventb.core.source="/Pacman/Pacman_Machine_4.bum|org.eventb.core.machineFile#Pacman_Machine_4|org.eventb.core.event#_a_CyYWLDEeaVx-LJ9XlTeg|org.eventb.core.guard#_a_CyYmLDEeaVx-LJ9XlTeg"/>
+<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="gameover=FALSE" org.eventb.core.source="/Pacman/Pacman_Machine_4.bum|org.eventb.core.machineFile#Pacman_Machine_4|org.eventb.core.event#_a_CyYWLDEeaVx-LJ9XlTeg|org.eventb.core.guard#_6mvC8GLxEeauotEjyF6fig"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="ALLHYP" org.eventb.core.parentSet="/Pacman/Pacman_Machine_game.bpo|org.eventb.core.poFile#Pacman_Machine_game|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poStamp="3"/>
+</org.eventb.core.poFile>

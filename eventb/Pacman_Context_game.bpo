@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.poFile org.eventb.core.poStamp="3">
+<org.eventb.core.poPredicateSet name="ABSHYP" org.eventb.core.poStamp="0">
+<org.eventb.core.poIdentifier name="GEISTER" org.eventb.core.type="ℙ(GEISTER)"/>
+<org.eventb.core.poIdentifier name="begehbar" org.eventb.core.type="ℙ(ℤ×ℤ)"/>
+<org.eventb.core.poIdentifier name="breite" org.eventb.core.type="ℤ"/>
+<org.eventb.core.poIdentifier name="counter_geist_3" org.eventb.core.type="ℤ"/>
+<org.eventb.core.poIdentifier name="counter_geist_4" org.eventb.core.type="ℤ"/>
+<org.eventb.core.poIdentifier name="geist_1" org.eventb.core.type="GEISTER"/>
+<org.eventb.core.poIdentifier name="geist_2" org.eventb.core.type="GEISTER"/>
+<org.eventb.core.poIdentifier name="geist_3" org.eventb.core.type="GEISTER"/>
+<org.eventb.core.poIdentifier name="geist_4" org.eventb.core.type="GEISTER"/>
+<org.eventb.core.poIdentifier name="geister_zugang" org.eventb.core.type="ℤ×ℤ"/>
+<org.eventb.core.poIdentifier name="geisterfelder" org.eventb.core.type="ℙ(ℤ×ℤ)"/>
+<org.eventb.core.poIdentifier name="geisterhof" org.eventb.core.type="ℙ(ℤ×ℤ)"/>
+<org.eventb.core.poIdentifier name="geisterhof_zugang" org.eventb.core.type="ℙ(ℤ×ℤ)"/>
+<org.eventb.core.poIdentifier name="höhe" org.eventb.core.type="ℤ"/>
+<org.eventb.core.poIdentifier name="jagd_dauer" org.eventb.core.type="ℤ"/>
+<org.eventb.core.poIdentifier name="punktfelder" org.eventb.core.type="ℙ(ℤ×ℤ)"/>
+<org.eventb.core.poIdentifier name="spielfeld" org.eventb.core.type="ℙ(ℤ×ℤ)"/>
+<org.eventb.core.poIdentifier name="start_leben" org.eventb.core.type="ℤ"/>
+<org.eventb.core.poIdentifier name="startpos_geist_1" org.eventb.core.type="ℤ×ℤ"/>
+<org.eventb.core.poIdentifier name="startpos_geist_2" org.eventb.core.type="ℤ×ℤ"/>
+<org.eventb.core.poIdentifier name="startpos_geist_3" org.eventb.core.type="ℤ×ℤ"/>
+<org.eventb.core.poIdentifier name="startpos_geist_4" org.eventb.core.type="ℤ×ℤ"/>
+<org.eventb.core.poIdentifier name="startposition" org.eventb.core.type="ℤ×ℤ"/>
+<org.eventb.core.poIdentifier name="tunnel" org.eventb.core.type="ℙ(ℤ×ℤ)"/>
+<org.eventb.core.poPredicate name="geisterhof_zuganh" org.eventb.core.predicate="breite∈ℕ1" org.eventb.core.source="/Pacman/Pacman_Context_generic.buc|org.eventb.core.contextFile#Pacman_Context_generic|org.eventb.core.axiom#_xaIjERXaEeaxlIwdP2iQDA"/>
+<org.eventb.core.poPredicate name="geisterhof_zugani" org.eventb.core.predicate="höhe∈ℕ1" org.eventb.core.source="/Pacman/Pacman_Context_generic.buc|org.eventb.core.contextFile#Pacman_Context_generic|org.eventb.core.axiom#_xaJKIBXaEeaxlIwdP2iQDA"/>
+<org.eventb.core.poPredicate name="geisterhof_zuganj" org.eventb.core.predicate="spielfeld=0 ‥ breite × 0 ‥ höhe∧finite(spielfeld)" org.eventb.core.source="/Pacman/Pacman_Context_generic.buc|org.eventb.core.contextFile#Pacman_Context_generic|org.eventb.core.axiom#_FPAe9BXfEeaxlIwdP2iQDA"/>
+<org.eventb.core.poPredicate name="geisterhof_zugank" org.eventb.core.predicate="begehbar⊂spielfeld∧begehbar≠(∅ ⦂ ℙ(ℤ×ℤ))" org.eventb.core.source="/Pacman/Pacman_Context_generic.buc|org.eventb.core.contextFile#Pacman_Context_generic|org.eventb.core.axiom#_FPAe9RXfEeaxlIwdP2iQDA"/>
+<org.eventb.core.poPredicate name="geisterhof_zuganl" org.eventb.core.predicate="geisterfelder⊂begehbar∧geisterfelder≠(∅ ⦂ ℙ(ℤ×ℤ))" org.eventb.core.source="/Pacman/Pacman_Context_generic.buc|org.eventb.core.contextFile#Pacman_Context_generic|org.eventb.core.axiom#_rzWAEBXiEeaxlIwdP2iQDA"/>
+<org.eventb.core.poPredicate name="geisterhof_zuganm" org.eventb.core.predicate="punktfelder⊂begehbar∧punktfelder≠(∅ ⦂ ℙ(ℤ×ℤ))" org.eventb.core.source="/Pacman/Pacman_Context_generic.buc|org.eventb.core.contextFile#Pacman_Context_generic|org.eventb.core.axiom#_X1PdcBXjEeaxlIwdP2iQDA"/>
+<org.eventb.core.poPredicate name="geisterhof_zugann" org.eventb.core.predicate="punktfelder∩geisterfelder=(∅ ⦂ ℙ(ℤ×ℤ))" org.eventb.core.source="/Pacman/Pacman_Context_generic.buc|org.eventb.core.contextFile#Pacman_Context_generic|org.eventb.core.axiom#_X1PdcRXjEeaxlIwdP2iQDA"/>
+<org.eventb.core.poPredicate name="geisterhof_zugano" org.eventb.core.predicate="startposition∈begehbar" org.eventb.core.source="/Pacman/Pacman_Context_generic.buc|org.eventb.core.contextFile#Pacman_Context_generic|org.eventb.core.axiom#_AL_CQRXlEeaxlIwdP2iQDA"/>
+<org.eventb.core.poPredicate name="geisterhof_zuganp" org.eventb.core.predicate="tunnel⊂begehbar ∖ (punktfelder∪geisterfelder)∧(∃x⦂ℤ×ℤ,y⦂ℤ×ℤ·x≠y∧{x,y}⊂begehbar ∖ (punktfelder∪geisterfelder)∧tunnel={x,y})" org.eventb.core.source="/Pacman/Pacman_Context_generic.buc|org.eventb.core.contextFile#Pacman_Context_generic|org.eventb.core.axiom#_AL_CQhXlEeaxlIwdP2iQDA"/>
+<org.eventb.core.poPredicate name="geisterhof_zuganq" org.eventb.core.predicate="geisterhof⊂spielfeld" org.eventb.core.source="/Pacman/Pacman_Context_generic.buc|org.eventb.core.contextFile#Pacman_Context_generic|org.eventb.core.axiom#_X-iUYRaIEeaxlIwdP2iQDA"/>
+<org.eventb.core.poPredicate name="geisterhof_zuganr" org.eventb.core.predicate="geisterhof_zugang⊂spielfeld" org.eventb.core.source="/Pacman/Pacman_Context_generic.buc|org.eventb.core.contextFile#Pacman_Context_generic|org.eventb.core.axiom#_X-iUYhaIEeaxlIwdP2iQDA"/>
+<org.eventb.core.poPredicate name="geisterhof_zugans" org.eventb.core.predicate="geisterhof∩geisterhof_zugang=(∅ ⦂ ℙ(ℤ×ℤ))" org.eventb.core.source="/Pacman/Pacman_Context_generic.buc|org.eventb.core.contextFile#Pacman_Context_generic|org.eventb.core.axiom#_eJyq0RaKEeaxlIwdP2iQDA"/>
+<org.eventb.core.poPredicate name="geisterhof_zugant" org.eventb.core.predicate="startpos_geist_1∈spielfeld∧startpos_geist_1≠startpos_geist_2∧startpos_geist_1≠startpos_geist_3∧startpos_geist_1≠startpos_geist_4" org.eventb.core.source="/Pacman/Pacman_Context_generic.buc|org.eventb.core.contextFile#Pacman_Context_generic|org.eventb.core.axiom#_eJyq0haKEeaxlIwdP2iQDA"/>
+<org.eventb.core.poPredicate name="geisterhof_zuganu" org.eventb.core.predicate="startpos_geist_2∈geisterhof∧startpos_geist_2≠startpos_geist_3∧startpos_geist_2≠startpos_geist_4" org.eventb.core.source="/Pacman/Pacman_Context_generic.buc|org.eventb.core.contextFile#Pacman_Context_generic|org.eventb.core.axiom#_2HQMsRaOEea5wp6hXNOG2w"/>
+<org.eventb.core.poPredicate name="geisterhof_zuganv" org.eventb.core.predicate="startpos_geist_3∈geisterhof∧startpos_geist_3≠startpos_geist_4" org.eventb.core.source="/Pacman/Pacman_Context_generic.buc|org.eventb.core.contextFile#Pacman_Context_generic|org.eventb.core.axiom#_2HQMshaOEea5wp6hXNOG2w"/>
+<org.eventb.core.poPredicate name="geisterhof_zuganw" org.eventb.core.predicate="startpos_geist_4∈geisterhof" org.eventb.core.source="/Pacman/Pacman_Context_generic.buc|org.eventb.core.contextFile#Pacman_Context_generic|org.eventb.core.axiom#_NKE7clpkEeagsIJBrLdkvA"/>
+<org.eventb.core.poPredicate name="geisterhof_zuganx" org.eventb.core.predicate="geister_zugang∈begehbar" org.eventb.core.source="/Pacman/Pacman_Context_generic.buc|org.eventb.core.contextFile#Pacman_Context_generic|org.eventb.core.axiom#_BRd5QFplEeagsIJBrLdkvA"/>
+<org.eventb.core.poPredicate name="geisterhof_zugany" org.eventb.core.predicate="start_leben∈ℕ1" org.eventb.core.source="/Pacman/Pacman_Context_generic.buc|org.eventb.core.contextFile#Pacman_Context_generic|org.eventb.core.axiom#_BRd5QVplEeagsIJBrLdkvA"/>
+<org.eventb.core.poPredicate name="geisterhof_zuganz" org.eventb.core.predicate="partition(GEISTER,{geist_1},{geist_2},{geist_3},{geist_4})" org.eventb.core.source="/Pacman/Pacman_Context_generic.buc|org.eventb.core.contextFile#Pacman_Context_generic|org.eventb.core.axiom#_DhE4Gl_OEeaXYPIPRsfjNg"/>
+<org.eventb.core.poPredicate name="geisterhof_zugan{" org.eventb.core.predicate="jagd_dauer∈ℕ1" org.eventb.core.source="/Pacman/Pacman_Context_generic.buc|org.eventb.core.contextFile#Pacman_Context_generic|org.eventb.core.axiom#_DhE4G1_OEeaXYPIPRsfjNg"/>
+<org.eventb.core.poPredicate name="geisterhof_zugan|" org.eventb.core.predicate="counter_geist_3∈ℕ1" org.eventb.core.source="/Pacman/Pacman_Context_generic.buc|org.eventb.core.contextFile#Pacman_Context_generic|org.eventb.core.axiom#_p6gismYREeaVMYOTcIxZEA"/>
+<org.eventb.core.poPredicate name="geisterhof_zugan}" org.eventb.core.predicate="counter_geist_4∈ℕ1∧counter_geist_4&gt;counter_geist_3" org.eventb.core.source="/Pacman/Pacman_Context_generic.buc|org.eventb.core.contextFile#Pacman_Context_generic|org.eventb.core.axiom#_p6hJwGYREeaVMYOTcIxZEA"/>
+<org.eventb.core.poIdentifier name="begehbar_horizontal" org.eventb.core.type="ℙ(ℤ×ℤ)"/>
+<org.eventb.core.poIdentifier name="begehbar_vertikal" org.eventb.core.type="ℙ(ℤ×ℤ)"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poSequent name="axm_game03/WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-definedness of Axiom" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Pacman/Pacman_Context_game.bpo|org.eventb.core.poFile#Pacman_Context_game|org.eventb.core.poPredicateSet#HYPPacman_Context_generie"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="2≠0" org.eventb.core.source="/Pacman/Pacman_Context_game.buc|org.eventb.core.contextFile#Pacman_Context_game|org.eventb.core.axiom#_VWTXwF_PEeaXYPIPRsfjNg"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Pacman/Pacman_Context_game.buc|org.eventb.core.contextFile#Pacman_Context_game|org.eventb.core.axiom#_VWTXwF_PEeaXYPIPRsfjNg"/>
+<org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/Pacman/Pacman_Context_game.bpo|org.eventb.core.poFile#Pacman_Context_game|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poSelHintSnd="/Pacman/Pacman_Context_game.bpo|org.eventb.core.poFile#Pacman_Context_game|org.eventb.core.poPredicateSet#HYPPacman_Context_generie"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="axm_game04/WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-definedness of Axiom" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Pacman/Pacman_Context_game.bpo|org.eventb.core.poFile#Pacman_Context_game|org.eventb.core.poPredicateSet#HYPPacman_Context_generif"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="2≠0" org.eventb.core.source="/Pacman/Pacman_Context_game.buc|org.eventb.core.contextFile#Pacman_Context_game|org.eventb.core.axiom#_VWTXwV_PEeaXYPIPRsfjNg"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Pacman/Pacman_Context_game.buc|org.eventb.core.contextFile#Pacman_Context_game|org.eventb.core.axiom#_VWTXwV_PEeaXYPIPRsfjNg"/>
+<org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/Pacman/Pacman_Context_game.bpo|org.eventb.core.poFile#Pacman_Context_game|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poSelHintSnd="/Pacman/Pacman_Context_game.bpo|org.eventb.core.poFile#Pacman_Context_game|org.eventb.core.poPredicateSet#HYPPacman_Context_generif"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poSequent name="axm_game06/WD" org.eventb.core.accurate="true" org.eventb.core.poDesc="Well-definedness of Axiom" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/Pacman/Pacman_Context_game.bpo|org.eventb.core.poFile#Pacman_Context_game|org.eventb.core.poPredicateSet#HYPPacman_Context_generih"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="∀x⦂ℤ×ℤ·x∈begehbar_horizontal∪begehbar_vertikal⇒x∈dom(prj1 ⦂ ℙ(ℤ×ℤ×ℤ))∧(prj1 ⦂ ℙ(ℤ×ℤ×ℤ))∈ℤ × ℤ ⇸ ℤ∧x∈dom(prj2 ⦂ ℙ(ℤ×ℤ×ℤ))∧(prj2 ⦂ ℙ(ℤ×ℤ×ℤ))∈ℤ × ℤ ⇸ ℤ" org.eventb.core.source="/Pacman/Pacman_Context_game.buc|org.eventb.core.contextFile#Pacman_Context_game|org.eventb.core.axiom#_tcmpYF_PEeaXYPIPRsfjNg"/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/Pacman/Pacman_Context_game.buc|org.eventb.core.contextFile#Pacman_Context_game|org.eventb.core.axiom#_tcmpYF_PEeaXYPIPRsfjNg"/>
+<org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/Pacman/Pacman_Context_game.bpo|org.eventb.core.poFile#Pacman_Context_game|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poSelHintSnd="/Pacman/Pacman_Context_game.bpo|org.eventb.core.poFile#Pacman_Context_game|org.eventb.core.poPredicateSet#HYPPacman_Context_generih"/>
+</org.eventb.core.poSequent>
+<org.eventb.core.poPredicateSet name="HYPPacman_Context_generie" org.eventb.core.parentSet="/Pacman/Pacman_Context_game.bpo|org.eventb.core.poFile#Pacman_Context_game|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="breite=50" org.eventb.core.source="/Pacman/Pacman_Context_game.buc|org.eventb.core.contextFile#Pacman_Context_game|org.eventb.core.axiom#_MnT2ZFmEEeaT0roG3wtL5w"/>
+<org.eventb.core.poPredicate name="PRD1" org.eventb.core.predicate="höhe=56" org.eventb.core.source="/Pacman/Pacman_Context_game.buc|org.eventb.core.contextFile#Pacman_Context_game|org.eventb.core.axiom#_bgeDAFmEEeaT0roG3wtL5w"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="HYPPacman_Context_generif" org.eventb.core.parentSet="/Pacman/Pacman_Context_game.bpo|org.eventb.core.poFile#Pacman_Context_game|org.eventb.core.poPredicateSet#HYPPacman_Context_generie" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicate name="PRD2" org.eventb.core.predicate="begehbar_horizontal=((0 ‥ breite ÷ 2 ∖ {12,13}) × {0,19})∪(0 ‥ breite ÷ 2 × {4,höhe ÷ 2})∪((0 ‥ breite ÷ 2 ∖ {6,7,12,13,18,19}) × {7,25})∪(8 ‥ 17 × {10,16})∪((0 ‥ 8∪17 ‥ breite ÷ 2) × {13})∪((0 ‥ breite ÷ 2 ∖ {3,4,21,22}) × {22})" org.eventb.core.source="/Pacman/Pacman_Context_game.buc|org.eventb.core.contextFile#Pacman_Context_game|org.eventb.core.axiom#_VWTXwF_PEeaXYPIPRsfjNg"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="HYPPacman_Context_generih" org.eventb.core.parentSet="/Pacman/Pacman_Context_game.bpo|org.eventb.core.poFile#Pacman_Context_game|org.eventb.core.poPredicateSet#HYPPacman_Context_generif" org.eventb.core.poStamp="0">
+<org.eventb.core.poPredicate name="PRD3" org.eventb.core.predicate="begehbar_vertikal=({0,breite ÷ 2} × (0 ‥ 7∪19 ‥ 22∪25 ‥ höhe ÷ 2))∪({2,23} × 22 ‥ 25)∪({5,20} × 0 ‥ 25)∪({8,17} × (4 ‥ 7∪10 ‥ 19∪22 ‥ 25))∪({11,14} × (0 ‥ 4∪7 ‥ 10∪19 ‥ 22∪25 ‥ 28))" org.eventb.core.source="/Pacman/Pacman_Context_game.buc|org.eventb.core.contextFile#Pacman_Context_game|org.eventb.core.axiom#_VWTXwV_PEeaXYPIPRsfjNg"/>
+<org.eventb.core.poPredicate name="PRD4" org.eventb.core.predicate="geisterfelder={0,breite} × {4,44}" org.eventb.core.source="/Pacman/Pacman_Context_game.buc|org.eventb.core.contextFile#Pacman_Context_game|org.eventb.core.axiom#_VWTXwl_PEeaXYPIPRsfjNg"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="ALLHYP" org.eventb.core.parentSet="/Pacman/Pacman_Context_game.bpo|org.eventb.core.poFile#Pacman_Context_game|org.eventb.core.poPredicateSet#HYPPacman_Context_generih" org.eventb.core.poStamp="3">
+<org.eventb.core.poPredicate name="PRD5" org.eventb.core.predicate="begehbar={x⦂ℤ×ℤ·x∈begehbar_horizontal∪begehbar_vertikal ∣ 2∗(prj1 ⦂ ℙ(ℤ×ℤ×ℤ))(x) ↦ 2∗(prj2 ⦂ ℙ(ℤ×ℤ×ℤ))(x)}" org.eventb.core.source="/Pacman/Pacman_Context_game.buc|org.eventb.core.contextFile#Pacman_Context_game|org.eventb.core.axiom#_tcmpYF_PEeaXYPIPRsfjNg"/>
+<org.eventb.core.poPredicate name="PRD6" org.eventb.core.predicate="punktfelder=begehbar ∖ ((12 ‥ 38 × 16 ‥ 36)∪geisterfelder∪((0 ‥ 8∪42 ‥ breite) × {26})∪({24,26} × {44}))" org.eventb.core.source="/Pacman/Pacman_Context_game.buc|org.eventb.core.contextFile#Pacman_Context_game|org.eventb.core.axiom#_tcmpYV_PEeaXYPIPRsfjNg"/>
+<org.eventb.core.poPredicate name="PRD7" org.eventb.core.predicate="startposition=26 ↦ 44" org.eventb.core.source="/Pacman/Pacman_Context_game.buc|org.eventb.core.contextFile#Pacman_Context_game|org.eventb.core.axiom#_tcmpYl_PEeaXYPIPRsfjNg"/>
+<org.eventb.core.poPredicate name="PRD8" org.eventb.core.predicate="tunnel={0 ↦ 26,breite ↦ 26}" org.eventb.core.source="/Pacman/Pacman_Context_game.buc|org.eventb.core.contextFile#Pacman_Context_game|org.eventb.core.axiom#_2ZbacF_PEeaXYPIPRsfjNg"/>
+<org.eventb.core.poPredicate name="PRD9" org.eventb.core.predicate="geisterhof=22 ‥ 28 × {26}" org.eventb.core.source="/Pacman/Pacman_Context_game.buc|org.eventb.core.contextFile#Pacman_Context_game|org.eventb.core.axiom#_2ZbacV_PEeaXYPIPRsfjNg"/>
+<org.eventb.core.poPredicate name="PRD10" org.eventb.core.predicate="geisterhof_zugang=24 ‥ 26 × 22 ‥ 24" org.eventb.core.source="/Pacman/Pacman_Context_game.buc|org.eventb.core.contextFile#Pacman_Context_game|org.eventb.core.axiom#_D0yzYF_QEeaXYPIPRsfjNg"/>
+<org.eventb.core.poPredicate name="PRD11" org.eventb.core.predicate="startpos_geist_1=25 ↦ 20" org.eventb.core.source="/Pacman/Pacman_Context_game.buc|org.eventb.core.contextFile#Pacman_Context_game|org.eventb.core.axiom#_D0yzYV_QEeaXYPIPRsfjNg"/>
+<org.eventb.core.poPredicate name="PRD12" org.eventb.core.predicate="startpos_geist_2=22 ↦ 26" org.eventb.core.source="/Pacman/Pacman_Context_game.buc|org.eventb.core.contextFile#Pacman_Context_game|org.eventb.core.axiom#_D0yzYl_QEeaXYPIPRsfjNg"/>
+<org.eventb.core.poPredicate name="PRD13" org.eventb.core.predicate="startpos_geist_3=25 ↦ 26" org.eventb.core.source="/Pacman/Pacman_Context_game.buc|org.eventb.core.contextFile#Pacman_Context_game|org.eventb.core.axiom#_D0yzY1_QEeaXYPIPRsfjNg"/>
+<org.eventb.core.poPredicate name="PRD14" org.eventb.core.predicate="startpos_geist_4=28 ↦ 26" org.eventb.core.source="/Pacman/Pacman_Context_game.buc|org.eventb.core.contextFile#Pacman_Context_game|org.eventb.core.axiom#_JiJ-0F_QEeaXYPIPRsfjNg"/>
+<org.eventb.core.poPredicate name="PRD15" org.eventb.core.predicate="geister_zugang=24 ↦ 20" org.eventb.core.source="/Pacman/Pacman_Context_game.buc|org.eventb.core.contextFile#Pacman_Context_game|org.eventb.core.axiom#_Ocw3oF_QEeaXYPIPRsfjNg"/>
+<org.eventb.core.poPredicate name="PRD16" org.eventb.core.predicate="start_leben=3" org.eventb.core.source="/Pacman/Pacman_Context_game.buc|org.eventb.core.contextFile#Pacman_Context_game|org.eventb.core.axiom#_Ocw3oV_QEeaXYPIPRsfjNg"/>
+<org.eventb.core.poPredicate name="PRD17" org.eventb.core.predicate="jagd_dauer=10" org.eventb.core.source="/Pacman/Pacman_Context_game.buc|org.eventb.core.contextFile#Pacman_Context_game|org.eventb.core.axiom#_Ocw3ol_QEeaXYPIPRsfjNg"/>
+<org.eventb.core.poPredicate name="PRD18" org.eventb.core.predicate="counter_geist_3=30" org.eventb.core.source="/Pacman/Pacman_Context_game.buc|org.eventb.core.contextFile#Pacman_Context_game|org.eventb.core.axiom#_wg19gGYREeaVMYOTcIxZEA"/>
+<org.eventb.core.poPredicate name="PRD19" org.eventb.core.predicate="counter_geist_4=180" org.eventb.core.source="/Pacman/Pacman_Context_game.buc|org.eventb.core.contextFile#Pacman_Context_game|org.eventb.core.axiom#_wg19gWYREeaVMYOTcIxZEA"/>
+</org.eventb.core.poPredicateSet>
+</org.eventb.core.poFile>

@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.machineFile org.eventb.core.configuration="org.eventb.core.fwd;de.prob.units.mchBase" org.eventb.texttools.text_lastmodified="1489497949509" org.eventb.texttools.text_representation="machine Pacman_Machine_2 refines Pacman_Machine_1  sees Pacman_Context_generic&#10;&#10;variables&#10;&#9;position&#9;&#9;&#9;&#9;&#9;//repräsentiert die aktuelle Position des Pacman&#10;&#9;vorherige_position&#9;&#9;&#9;//repräsentiert die letzte Position des Pacman&#10;&#9;in_bewegung&#9;&#9;&#9;&#9;&#9;//gibt an, ob der Pacman sich bereits bewegt hat&#10;&#9;getunnelt &#9;&#9;&#9;&#9;&#9;//gibt an, ob die letzte Bewegung durch den Tunnel war&#10;&#9;bewegt&#9;&#9;&#9;&#9;&#9;&#9;//gibt an, ob der Pacman sich im letzten Event bewegt hat&#10;&#9;score&#9;&#9;&#9;&#9;&#9;&#9;//aktueller Punktestand&#10;&#9;score_alt&#9;&#9;&#9;&#9;&#9;//letzter Punktestand&#10;&#9;punktefelder_aktuell&#9;&#9;//Punktefelder, die bisher noch nicht betreten wurden&#10;&#9;geister_aktuell&#9;&#9;&#9;&#9;//Geisterfelder, die bisher noch nicht betreten wurden&#10;&#9;counter_scored&#9;&#9;&#9;&#9;//Anzahl gesammlter Score-Punkte&#10;&#10;invariants&#10;  @inv201 score ∈ ℕ&#10;  @inv202 score_alt ∈ ℕ&#10;  @inv203 score − score_alt ∈ {0,10,200}&#10;  @inv204 punktefelder_aktuell ∈ ℙ(punktfelder)&#10;  @inv205 geister_aktuell ∈ ℙ(geisterfelder)&#10;  @inv206 counter_scored = card(punktfelder)−card(punktefelder_aktuell)&#10;  @inv207 score ≥ counter_scored∗10&#10;&#10;events&#10;  event INITIALISATION extends INITIALISATION&#10;    then&#10;      @act201 score ≔ 0&#10;      @act202 score_alt ≔ 0&#10;      @act203 punktefelder_aktuell ≔  punktfelder&#10;      @act204 geister_aktuell ≔  geisterfelder&#10;      @act205 counter_scored ≔ 0&#10;  end&#10;&#10;  event bewegen_oben_score extends bewegen_oben&#10;    where&#10;      @grd201 p ∈ punktefelder_aktuell&#10;      @grd202 card(punktefelder_aktuell)−card(punktefelder_aktuell∖{p}) = 1&#10;    then&#10;      @act201 score_alt ≔ score&#10;      @act202 score ≔ score + 10&#10;      @act203 punktefelder_aktuell ≔  punktefelder_aktuell∖{p}&#10;      @act204 counter_scored ≔  counter_scored + 1&#10;  end&#10;&#10;  event bewegen_unten_score extends bewegen_unten&#10;    where&#10;      @grd201 p ∈ punktefelder_aktuell&#10;      @grd202 card(punktefelder_aktuell)−card(punktefelder_aktuell∖{p}) = 1&#10;    then&#10;      @act201 score_alt ≔ score&#10;      @act202 score ≔ score + 10&#10;      @act203 punktefelder_aktuell ≔  punktefelder_aktuell∖{p}&#10;      @act204 counter_scored ≔  counter_scored + 1&#10;  end&#10;&#10;  event bewegen_rechts_score extends bewegen_rechts&#10;    where&#10;      @grd201 p ∈ punktefelder_aktuell&#10;      @grd202 card(punktefelder_aktuell)−card(punktefelder_aktuell∖{p}) = 1&#10;    then&#10;      @act201 score_alt ≔ score&#10;      @act202 score ≔ score + 10&#10;      @act203 punktefelder_aktuell ≔  punktefelder_aktuell∖{p}&#10;      @act204 counter_scored ≔  counter_scored + 1&#10;  end&#10;&#10;  event bewegen_links_score extends bewegen_links&#10;    where&#10;      @grd201 p ∈ punktefelder_aktuell&#10;      @grd202 card(punktefelder_aktuell)−card(punktefelder_aktuell∖{p}) = 1&#10;    then&#10;      @act201 score_alt ≔ score&#10;      @act202 score ≔ score + 10&#10;      @act203 punktefelder_aktuell ≔  punktefelder_aktuell∖{p}&#10;      @act204 counter_scored ≔  counter_scored + 1&#10;  end&#10;&#10;  event bewegen_oben_ghost extends bewegen_oben&#10;    where&#10;      @grd201 p ∈ geister_aktuell&#10;    then&#10;      @act202 geister_aktuell ≔ geister_aktuell∖{p}&#10;  end&#10;&#10;  event bewegen_unten_ghost extends bewegen_unten&#10;    where&#10;      @grd201 p ∈ geister_aktuell&#10;    then&#10;      @act202 geister_aktuell ≔ geister_aktuell∖{p}&#10;  end&#10;&#10;  event bewegen_rechts_ghost extends bewegen_rechts&#10;    where&#10;      @grd201 p ∈ geister_aktuell&#10;    then&#10;      @act202 geister_aktuell ≔ geister_aktuell∖{p}&#10;  end&#10;&#10;  event bewegen_links_ghost extends bewegen_links&#10;    where&#10;      @grd201 p ∈ geister_aktuell&#10;    then&#10;      @act202 geister_aktuell ≔ geister_aktuell∖{p}&#10;  end&#10;&#10;  event bewegen_oben extends bewegen_oben&#10;    where&#10;      @grd201 p ∉ punktefelder_aktuell&#10;      @grd202 p ∉ geister_aktuell&#10;  end&#10;&#10;  event bewegen_unten extends bewegen_unten&#10;    where&#10;      @grd201 p ∉ punktefelder_aktuell&#10;      @grd202 p ∉ geister_aktuell&#10;  end&#10;&#10;  event bewegen_rechts extends bewegen_rechts&#10;    where&#10;      @grd201 p ∉ punktefelder_aktuell&#10;      @grd202 p ∉ geister_aktuell&#10;  end&#10;&#10;  event bewegen_links extends bewegen_links&#10;    where&#10;      @grd201 p ∉ punktefelder_aktuell&#10;      @grd202 p ∉ geister_aktuell&#10;  end&#10;&#10;  event tunneln extends tunneln&#10;  end&#10;&#10;  event starte_geist_1 extends starte_geist_1&#10;  end&#10;&#10;  event starte_geist_2 extends starte_geist_2&#10;  end&#10;&#10;  event starte_geist_3 extends starte_geist_3&#10;  end&#10;&#10;  event starte_geist_4 extends starte_geist_4&#10;  end&#10;&#10;  event bewege_geist_1 extends bewege_geist_1&#10;  end&#10;&#10;  event bewege_geist_2 extends bewege_geist_2&#10;  end&#10;&#10;  event bewege_geist_3 extends bewege_geist_3&#10;  end&#10;&#10;  event bewege_geist_4 extends bewege_geist_4&#10;  end&#10;&#10;  event pacman_fangen extends pacman_fangen&#10;  end&#10;&#10;  event geist_1_fangen extends geist_1_fangen&#10;    then&#10;      @act201 score_alt ≔ score&#10;      @act202 score ≔  score + 200&#10;  end&#10;&#10;  event geist_2_fangen extends geist_2_fangen&#10;    then&#10;      @act201 score_alt ≔ score&#10;      @act202 score ≔  score + 200&#10;  end&#10;&#10;  event geist_3_fangen extends geist_3_fangen&#10;    then&#10;      @act201 score_alt ≔ score&#10;      @act202 score ≔  score + 200&#10;  end&#10;&#10;  event geist_4_fangen extends geist_4_fangen&#10;    then&#10;      @act201 score_alt ≔ score&#10;      @act202 score ≔  score + 200&#10;  end&#10;&#10;  event geisterjagd_abbrechen extends geisterjagd_abbrechen&#10;  end&#10;&#10;  event game_over extends game_over&#10;  end&#10;end&#10;" version="5">
+<org.eventb.core.refinesMachine name="'" org.eventb.core.target="Pacman_Machine_1"/>
+<org.eventb.core.seesContext name="_wkFjQBaHEeaxlIwdP2iQDA" org.eventb.core.target="Pacman_Context_generic"/>
+<org.eventb.core.variable name="_e4Wr4BaIEeaxlIwdP2iQDA" org.eventb.core.comment="repräsentiert die aktuelle Position des Pacman" org.eventb.core.identifier="position"/>
+<org.eventb.core.variable name="_e4Wr4RaIEeaxlIwdP2iQDA" org.eventb.core.comment="repräsentiert die letzte Position des Pacman" org.eventb.core.identifier="vorherige_position"/>
+<org.eventb.core.variable name="_e4XS8BaIEeaxlIwdP2iQDA" org.eventb.core.comment="gibt an, ob der Pacman sich bereits bewegt hat" org.eventb.core.identifier="in_bewegung"/>
+<org.eventb.core.variable name="_26FiYhaPEea5wp6hXNOG2w" org.eventb.core.comment="gibt an, ob die letzte Bewegung durch den Tunnel war" org.eventb.core.identifier="getunnelt"/>
+<org.eventb.core.event name="_wkFjQBaHEeaxlIwdP2iQDB" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="INITIALISATION">
+<org.eventb.core.action name="_tMo1ACTaEeag7rHqrVAykw" org.eventb.core.assignment="score ≔ 0" org.eventb.core.label="act201"/>
+<org.eventb.core.action name="_tMpcECTaEeag7rHqrVAykw" org.eventb.core.assignment="score_alt ≔ 0" org.eventb.core.label="act202"/>
+<org.eventb.core.action name="_tMpcESTaEeag7rHqrVAykw" org.eventb.core.assignment="punktefelder_aktuell ≔  punktfelder" org.eventb.core.label="act203"/>
+<org.eventb.core.action name="_tMpcEyTaEeag7rHqrVAykw" org.eventb.core.assignment="geister_aktuell ≔  geisterfelder" org.eventb.core.label="act204"/>
+<org.eventb.core.action name="_tMpcFCTaEeag7rHqrVAykw" org.eventb.core.assignment="counter_scored ≔ 0" org.eventb.core.label="act205"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="_wkFjQBaHEeaxlIwdP2iQDC" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="bewegen_oben_score">
+<org.eventb.core.refinesEvent name="_79X8kFlrEeawGt8rLp0IIg" org.eventb.core.target="bewegen_oben"/>
+<org.eventb.core.guard name="_tMpcEiTaEeag7rHqrVAykw" org.eventb.core.label="grd201" org.eventb.core.predicate="p ∈ punktefelder_aktuell"/>
+<org.eventb.core.action name="_9_VEwDPxEeaRKqOaTiky4g" org.eventb.core.assignment="score_alt ≔ score" org.eventb.core.label="act201"/>
+<org.eventb.core.action name="_79YjoVlrEeawGt8rLp0IIg" org.eventb.core.assignment="score ≔ score + 10" org.eventb.core.label="act202"/>
+<org.eventb.core.action name="_79ZKsVlrEeawGt8rLp0IIg" org.eventb.core.assignment="punktefelder_aktuell ≔  punktefelder_aktuell∖{p}" org.eventb.core.label="act203"/>
+<org.eventb.core.action name="_79ZKsllrEeawGt8rLp0IIg" org.eventb.core.assignment="counter_scored ≔  counter_scored + 1" org.eventb.core.label="act204"/>
+<org.eventb.core.guard name="_Svqc8DPuEeaRKqOaTiky4g" org.eventb.core.label="grd202" org.eventb.core.predicate="card(punktefelder_aktuell)−card(punktefelder_aktuell∖{p}) = 1"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="_wkFjQBaHEeaxlIwdP2iQDD" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="bewegen_unten_score">
+<org.eventb.core.refinesEvent name="_79YjoFlrEeawGt8rLp0IIg" org.eventb.core.target="bewegen_unten"/>
+<org.eventb.core.action name="_79ZKtFlrEeawGt8rLp0IIg" org.eventb.core.assignment="score_alt ≔ score" org.eventb.core.label="act201"/>
+<org.eventb.core.action name="_79ZKtVlrEeawGt8rLp0IIg" org.eventb.core.assignment="score ≔ score + 10" org.eventb.core.label="act202"/>
+<org.eventb.core.action name="_79Zxw1lrEeawGt8rLp0IIg" org.eventb.core.assignment="punktefelder_aktuell ≔  punktefelder_aktuell∖{p}" org.eventb.core.label="act203"/>
+<org.eventb.core.action name="_79Zxx1lrEeawGt8rLp0IIg" org.eventb.core.assignment="counter_scored ≔  counter_scored + 1" org.eventb.core.label="act204"/>
+<org.eventb.core.guard name="_SvrEADPuEeaRKqOaTiky4g" org.eventb.core.label="grd201" org.eventb.core.predicate="p ∈ punktefelder_aktuell"/>
+<org.eventb.core.guard name="_dqkrUTPuEeaRKqOaTiky4g" org.eventb.core.label="grd202" org.eventb.core.predicate="card(punktefelder_aktuell)−card(punktefelder_aktuell∖{p}) = 1"/>
+</org.eventb.core.event>
+<org.eventb.core.variable name="_tMqDICTaEeag7rHqrVAykw" org.eventb.core.comment="gibt an, ob der Pacman sich im letzten Event bewegt hat" org.eventb.core.identifier="bewegt"/>
+<org.eventb.core.variable name="_tMqDISTaEeag7rHqrVAykw" org.eventb.core.comment="aktueller Punktestand" org.eventb.core.identifier="score"/>
+<org.eventb.core.variable name="_tMqDIiTaEeag7rHqrVAykw" org.eventb.core.comment="letzter Punktestand" org.eventb.core.identifier="score_alt"/>
+<org.eventb.core.invariant name="_YcKaQCTbEeag7rHqrVAykw" org.eventb.core.label="inv201" org.eventb.core.predicate="score ∈ ℕ"/>
+<org.eventb.core.invariant name="_sZqDcCTbEeag7rHqrVAykw" org.eventb.core.label="inv202" org.eventb.core.predicate="score_alt ∈ ℕ"/>
+<org.eventb.core.invariant name="_sZqDcSTbEeag7rHqrVAykw" org.eventb.core.label="inv203" org.eventb.core.predicate="score − score_alt ∈ {0,10,200}"/>
+<org.eventb.core.event name="_SvrrEDPuEeaRKqOaTiky4g" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="bewegen_rechts_score">
+<org.eventb.core.refinesEvent name="_79ZKsFlrEeawGt8rLp0IIg" org.eventb.core.target="bewegen_rechts"/>
+<org.eventb.core.action name="_79aY0VlrEeawGt8rLp0IIg" org.eventb.core.assignment="score_alt ≔ score" org.eventb.core.label="act201"/>
+<org.eventb.core.action name="_79a_4llrEeawGt8rLp0IIg" org.eventb.core.assignment="score ≔ score + 10" org.eventb.core.label="act202"/>
+<org.eventb.core.action name="_3oIz8VvXEeabeYXD7YYpQg" org.eventb.core.assignment="punktefelder_aktuell ≔  punktefelder_aktuell∖{p}" org.eventb.core.label="act203"/>
+<org.eventb.core.action name="_3oIz81vXEeabeYXD7YYpQg" org.eventb.core.assignment="counter_scored ≔  counter_scored + 1" org.eventb.core.label="act204"/>
+<org.eventb.core.guard name="_79ZxwllrEeawGt8rLp0IIg" org.eventb.core.label="grd201" org.eventb.core.predicate="p ∈ punktefelder_aktuell"/>
+<org.eventb.core.guard name="_79ZxxllrEeawGt8rLp0IIg" org.eventb.core.label="grd202" org.eventb.core.predicate="card(punktefelder_aktuell)−card(punktefelder_aktuell∖{p}) = 1"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="_dqkrUjPuEeaRKqOaTiky4g" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="bewegen_links_score">
+<org.eventb.core.refinesEvent name="_79ZKs1lrEeawGt8rLp0IIg" org.eventb.core.target="bewegen_links"/>
+<org.eventb.core.action name="_3oIz9VvXEeabeYXD7YYpQg" org.eventb.core.assignment="score_alt ≔ score" org.eventb.core.label="act201"/>
+<org.eventb.core.action name="_3oIz91vXEeabeYXD7YYpQg" org.eventb.core.assignment="score ≔ score + 10" org.eventb.core.label="act202"/>
+<org.eventb.core.action name="_tAWv8F7XEeaOhZURaCbBZA" org.eventb.core.assignment="punktefelder_aktuell ≔  punktefelder_aktuell∖{p}" org.eventb.core.label="act203"/>
+<org.eventb.core.action name="_15EdEF7XEeaOhZURaCbBZA" org.eventb.core.assignment="counter_scored ≔  counter_scored + 1" org.eventb.core.label="act204"/>
+<org.eventb.core.guard name="_79aY0FlrEeawGt8rLp0IIg" org.eventb.core.label="grd201" org.eventb.core.predicate="p ∈ punktefelder_aktuell"/>
+<org.eventb.core.guard name="_79a_4VlrEeawGt8rLp0IIg" org.eventb.core.label="grd202" org.eventb.core.predicate="card(punktefelder_aktuell)−card(punktefelder_aktuell∖{p}) = 1"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="_79ZxwFlrEeawGt8rLp0IIg" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="bewegen_oben_ghost">
+<org.eventb.core.refinesEvent name="_79ZxwVlrEeawGt8rLp0IIg" org.eventb.core.target="bewegen_oben"/>
+<org.eventb.core.action name="_15FEIF7XEeaOhZURaCbBZA" org.eventb.core.assignment="geister_aktuell ≔ geister_aktuell∖{p}" org.eventb.core.label="act202"/>
+<org.eventb.core.guard name="_79bm8VlrEeawGt8rLp0IIg" org.eventb.core.label="grd201" org.eventb.core.predicate="p ∈ geister_aktuell"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="_79ZxxFlrEeawGt8rLp0IIg" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="bewegen_unten_ghost">
+<org.eventb.core.refinesEvent name="_79ZxxVlrEeawGt8rLp0IIg" org.eventb.core.target="bewegen_unten"/>
+<org.eventb.core.action name="_15FEIV7XEeaOhZURaCbBZA" org.eventb.core.assignment="geister_aktuell ≔ geister_aktuell∖{p}" org.eventb.core.label="act202"/>
+<org.eventb.core.guard name="_79bm8llrEeawGt8rLp0IIg" org.eventb.core.label="grd201" org.eventb.core.predicate="p ∈ geister_aktuell"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="_79ZxyFlrEeawGt8rLp0IIg" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="bewegen_rechts_ghost">
+<org.eventb.core.refinesEvent name="_79ZxyVlrEeawGt8rLp0IIg" org.eventb.core.target="bewegen_rechts"/>
+<org.eventb.core.action name="_15FEIl7XEeaOhZURaCbBZA" org.eventb.core.assignment="geister_aktuell ≔ geister_aktuell∖{p}" org.eventb.core.label="act202"/>
+<org.eventb.core.guard name="_79dcIFlrEeawGt8rLp0IIg" org.eventb.core.label="grd201" org.eventb.core.predicate="p ∈ geister_aktuell"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="_79aY0llrEeawGt8rLp0IIg" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="bewegen_links_ghost">
+<org.eventb.core.refinesEvent name="_79a_4FlrEeawGt8rLp0IIg" org.eventb.core.target="bewegen_links"/>
+<org.eventb.core.action name="_15FEI17XEeaOhZURaCbBZA" org.eventb.core.assignment="geister_aktuell ≔ geister_aktuell∖{p}" org.eventb.core.label="act202"/>
+<org.eventb.core.guard name="_79dcIVlrEeawGt8rLp0IIg" org.eventb.core.label="grd201" org.eventb.core.predicate="p ∈ geister_aktuell"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="_79a_41lrEeawGt8rLp0IIg" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="bewegen_oben">
+<org.eventb.core.refinesEvent name="_79bm8FlrEeawGt8rLp0IIg" org.eventb.core.target="bewegen_oben"/>
+<org.eventb.core.guard name="_79eDMllrEeawGt8rLp0IIg" org.eventb.core.label="grd201" org.eventb.core.predicate="p ∉ punktefelder_aktuell"/>
+<org.eventb.core.guard name="_79eqQFlrEeawGt8rLp0IIg" org.eventb.core.label="grd202" org.eventb.core.predicate="p ∉ geister_aktuell"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="_79bm81lrEeawGt8rLp0IIg" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="bewegen_unten">
+<org.eventb.core.refinesEvent name="_79c1EFlrEeawGt8rLp0IIg" org.eventb.core.target="bewegen_unten"/>
+<org.eventb.core.guard name="_79eqQ1lrEeawGt8rLp0IIg" org.eventb.core.label="grd201" org.eventb.core.predicate="p ∉ punktefelder_aktuell"/>
+<org.eventb.core.guard name="_79fRUFlrEeawGt8rLp0IIg" org.eventb.core.label="grd202" org.eventb.core.predicate="p ∉ geister_aktuell"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="_79eDMFlrEeawGt8rLp0IIg" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="bewegen_rechts">
+<org.eventb.core.refinesEvent name="_79eDMVlrEeawGt8rLp0IIg" org.eventb.core.target="bewegen_rechts"/>
+<org.eventb.core.guard name="_l7iO4GYVEeaVMYOTcIxZEA" org.eventb.core.label="grd201" org.eventb.core.predicate="p ∉ punktefelder_aktuell"/>
+<org.eventb.core.guard name="_g1p6MGYVEeaVMYOTcIxZEA" org.eventb.core.label="grd202" org.eventb.core.predicate="p ∉ geister_aktuell"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="_79eqQVlrEeawGt8rLp0IIg" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="bewegen_links">
+<org.eventb.core.refinesEvent name="_79eqQllrEeawGt8rLp0IIg" org.eventb.core.target="bewegen_links"/>
+<org.eventb.core.guard name="_l7iO4WYVEeaVMYOTcIxZEA" org.eventb.core.label="grd201" org.eventb.core.predicate="p ∉ punktefelder_aktuell"/>
+<org.eventb.core.guard name="_l7iO4mYVEeaVMYOTcIxZEA" org.eventb.core.label="grd202" org.eventb.core.predicate="p ∉ geister_aktuell"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="_79fRUVlrEeawGt8rLp0IIg" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="tunneln">
+<org.eventb.core.refinesEvent name="_79fRUllrEeawGt8rLp0IIg" org.eventb.core.target="tunneln"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="_8RF_EFu2EeabeYXD7YYpQg" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="starte_geist_1">
+<org.eventb.core.refinesEvent name="_yp0sIGO0EeaXFt-2KDAgKw" org.eventb.core.target="starte_geist_1"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="_3oIz8FvXEeabeYXD7YYpQg" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="starte_geist_2">
+<org.eventb.core.refinesEvent name="_yp0sIWO0EeaXFt-2KDAgKw" org.eventb.core.target="starte_geist_2"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="_3oIz8lvXEeabeYXD7YYpQg" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="starte_geist_3">
+<org.eventb.core.refinesEvent name="_yp0sImO0EeaXFt-2KDAgKw" org.eventb.core.target="starte_geist_3"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="_3oIz9FvXEeabeYXD7YYpQg" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="starte_geist_4">
+<org.eventb.core.refinesEvent name="_yp1TMGO0EeaXFt-2KDAgKw" org.eventb.core.target="starte_geist_4"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="_3oIz9lvXEeabeYXD7YYpQg" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="bewege_geist_1">
+<org.eventb.core.refinesEvent name="_yp1TMWO0EeaXFt-2KDAgKw" org.eventb.core.target="bewege_geist_1"/>
+</org.eventb.core.event>
+<org.eventb.core.variable name="_aeNDYF7XEeaOhZURaCbBZA" org.eventb.core.comment="Punktefelder, die bisher noch nicht betreten wurden" org.eventb.core.identifier="punktefelder_aktuell"/>
+<org.eventb.core.invariant name="_nkNQUF7XEeaOhZURaCbBZA" org.eventb.core.label="inv204" org.eventb.core.predicate="punktefelder_aktuell ∈ ℙ(punktfelder)"/>
+<org.eventb.core.invariant name="_nkNQUV7XEeaOhZURaCbBZA" org.eventb.core.label="inv205" org.eventb.core.predicate="geister_aktuell ∈ ℙ(geisterfelder)"/>
+<org.eventb.core.variable name="_3_2AgGOyEeaXFt-2KDAgKw" org.eventb.core.comment="Geisterfelder, die bisher noch nicht betreten wurden" org.eventb.core.identifier="geister_aktuell"/>
+<org.eventb.core.event name="_U-F4gGOzEeaXFt-2KDAgKw" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="bewege_geist_2">
+<org.eventb.core.refinesEvent name="_yp1TMmO0EeaXFt-2KDAgKw" org.eventb.core.target="bewege_geist_2"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="_U-F4gmOzEeaXFt-2KDAgKw" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="bewege_geist_3">
+<org.eventb.core.refinesEvent name="_yp1TM2O0EeaXFt-2KDAgKw" org.eventb.core.target="bewege_geist_3"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="_yp1TNGO0EeaXFt-2KDAgKw" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="bewege_geist_4">
+<org.eventb.core.refinesEvent name="_yp16QGO0EeaXFt-2KDAgKw" org.eventb.core.target="bewege_geist_4"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="_yp16QWO0EeaXFt-2KDAgKw" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="pacman_fangen">
+<org.eventb.core.refinesEvent name="_yp16QmO0EeaXFt-2KDAgKw" org.eventb.core.target="pacman_fangen"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="_yp16Q2O0EeaXFt-2KDAgKw" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="geist_1_fangen">
+<org.eventb.core.refinesEvent name="_yp16RGO0EeaXFt-2KDAgKw" org.eventb.core.target="geist_1_fangen"/>
+<org.eventb.core.action name="_15FEJF7XEeaOhZURaCbBZA" org.eventb.core.assignment="score_alt ≔ score" org.eventb.core.label="act201"/>
+<org.eventb.core.action name="_15FEJV7XEeaOhZURaCbBZA" org.eventb.core.assignment="score ≔  score + 200" org.eventb.core.label="act202"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="_yp16RWO0EeaXFt-2KDAgKw" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="geist_2_fangen">
+<org.eventb.core.refinesEvent name="_yp16RmO0EeaXFt-2KDAgKw" org.eventb.core.target="geist_2_fangen"/>
+<org.eventb.core.action name="_aBajEGYREeaVMYOTcIxZEA" org.eventb.core.assignment="score_alt ≔ score" org.eventb.core.label="act201"/>
+<org.eventb.core.action name="_15FEJl7XEeaOhZURaCbBZA" org.eventb.core.assignment="score ≔  score + 200" org.eventb.core.label="act202"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="_yp16R2O0EeaXFt-2KDAgKw" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="geist_3_fangen">
+<org.eventb.core.refinesEvent name="_yp16SGO0EeaXFt-2KDAgKw" org.eventb.core.target="geist_3_fangen"/>
+<org.eventb.core.action name="_aBbKIGYREeaVMYOTcIxZEA" org.eventb.core.assignment="score_alt ≔ score" org.eventb.core.label="act201"/>
+<org.eventb.core.action name="_aBbKIWYREeaVMYOTcIxZEA" org.eventb.core.assignment="score ≔  score + 200" org.eventb.core.label="act202"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="_yp16SWO0EeaXFt-2KDAgKw" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="geist_4_fangen">
+<org.eventb.core.refinesEvent name="_yp2hUGO0EeaXFt-2KDAgKw" org.eventb.core.target="geist_4_fangen"/>
+<org.eventb.core.action name="_aBbKImYREeaVMYOTcIxZEA" org.eventb.core.assignment="score_alt ≔ score" org.eventb.core.label="act201"/>
+<org.eventb.core.action name="_aBbKI2YREeaVMYOTcIxZEA" org.eventb.core.assignment="score ≔  score + 200" org.eventb.core.label="act202"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="_yp2hUWO0EeaXFt-2KDAgKw" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="geisterjagd_abbrechen">
+<org.eventb.core.refinesEvent name="_yp2hUmO0EeaXFt-2KDAgKw" org.eventb.core.target="geisterjagd_abbrechen"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="_yp2hU2O0EeaXFt-2KDAgKw" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="game_over">
+<org.eventb.core.refinesEvent name="_yp2hVGO0EeaXFt-2KDAgKw" org.eventb.core.target="game_over"/>
+</org.eventb.core.event>
+<org.eventb.core.variable name="_aBbKJGYREeaVMYOTcIxZEA" org.eventb.core.comment="Anzahl gesammlter Score-Punkte" org.eventb.core.identifier="counter_scored"/>
+<org.eventb.core.invariant name="_aBbKJWYREeaVMYOTcIxZEA" org.eventb.core.label="inv206" org.eventb.core.predicate="counter_scored = card(punktfelder)−card(punktefelder_aktuell)"/>
+<org.eventb.core.invariant name="_PL1BsGkTEeabpYv7sQK2OA" org.eventb.core.label="inv207" org.eventb.core.predicate="score ≥ counter_scored∗10"/>
+</org.eventb.core.machineFile>

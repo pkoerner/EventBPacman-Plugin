@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.machineFile org.eventb.core.configuration="org.eventb.core.fwd;de.prob.units.mchBase" org.eventb.texttools.text_lastmodified="1471867800685" org.eventb.texttools.text_representation="machine Pacman_Machine_4 refines Pacman_Machine_3  sees Pacman_Context_generic&#10;&#10;variables&#10;&#9;position&#9;&#9;&#9;&#9;&#9;//repräsentiert die aktuelle Position des Pacman&#10;&#9;vorherige_position&#9;&#9;&#9;//repräsentiert die letzte Position des Pacman&#10;&#9;in_bewegung&#9;&#9;&#9;&#9;&#9;//gibt an, ob der Pacman sich bereits bewegt hat&#10;&#9;getunnelt &#9;&#9;&#9;&#9;&#9;//gibt an, ob die letzte Bewegung durch den Tunnel war&#10;&#9;bewegt&#9;&#9;&#9;&#9;&#9;&#9;//gibt an, ob der Pacman sich im letzten Event bewegt hat&#10;&#9;score&#9;&#9;&#9;&#9;&#9;&#9;//aktueller Punktestand&#10;&#9;score_alt&#9;&#9;&#9;&#9;&#9;//letzter Punktestand&#10;&#9;punktefelder_aktuell&#9;&#9;//Punktefelder, die bisher noch nicht betreten wurden&#10;&#9;geister_aktuell&#9;&#9;&#9;&#9;//Geisterfelder, die bisher noch nicht betreten wurden&#10;&#9;counter_scored&#9;&#9;&#9;&#9;//Anzahl gesammlter Score-Punkte&#10;&#9;counter &#9;&#9;&#9;&#9;&#9;//zählt die Anzahl Bewegungen des Pacmans in der aktuellen Runde&#10;&#9;pos_geist_1 &#9;&#9;&#9;&#9;//aktuelle Position des ersten Geistes&#10;&#9;pos_geist_2 &#9;&#9;&#9;&#9;//aktuelle Position des zweiten Geistes&#10;&#9;pos_geist_3 &#9;&#9;&#9;&#9;//aktuelle Position des dritten Geistes&#10;&#9;pos_geist_4 &#9;&#9;&#9;&#9;//aktuelle Position des vierten Geistes&#10;&#9;pos_geist_1_alt &#9;&#9;&#9;//letzte Position des ersten Geistes&#10;&#9;pos_geist_2_alt &#9;&#9;&#9;//letzte Position des zweiten Geistes&#10;&#9;pos_geist_3_alt &#9;&#9;&#9;//letzte Position des dritten Geistes&#10;&#9;pos_geist_4_alt &#9;&#9;&#9;//letzte Position des vierten Geistes&#10;&#9;in_bewegung_geist_1&#9;&#9;&#9;//gibt an, ob der erste Geist sich bereits bewegt hat&#10;&#9;in_bewegung_geist_2&#9;&#9;&#9;//gibt an, ob der zweite Geist sich bereits bewegt hat&#10;&#9;in_bewegung_geist_3&#9;&#9;&#9;//gibt an, ob der dritte Geist sich bereits bewegt hat&#10;&#9;in_bewegung_geist_4&#9;&#9;&#9;//gibt an, ob der vierte Geist sich bereits bewegt hat&#10;&#9;leben&#9;&#9;&#9;&#9;&#9;&#9;//aktuelle Anzahl übriger Leben&#10;&#9;leben_alt&#9;&#9;&#9;&#9;&#9;//letzte Anzahl übriger Leben&#10;&#9;gejagte_geister&#9;&#9;&#9;&#9;//Menge der gejagten Geister&#10;&#9;gameover&#9;&#9;&#9;&#9;&#9;//gibt an, ob das Spiel verloren ist oder nicht&#10;&#10;invariants&#10;  @inv401 leben ∈ ℕ&#10;  @inv402 leben ≤ start_leben&#10;  @inv403 leben_alt ∈ ℕ&#10;  @inv404 leben_alt ≤ start_leben&#10;  @inv405 leben_alt − leben ∈ {0,1}&#10;  @inv406 gejagte_geister ∈ ℙ({geist_1, geist_2, geist_3, geist_4})&#10;  @inv407 gameover ∈ BOOL&#10;&#10;events&#10;  event INITIALISATION extends INITIALISATION&#10;    then&#10;      @act401 leben ≔  start_leben&#10;      @act402 leben_alt ≔ start_leben&#10;      @act403 gejagte_geister ≔ ∅&#10;      @act404 gameover ≔ FALSE&#10;  end&#10;&#10;  event bewegen_oben_score extends bewegen_oben_score&#10;  &#9;when&#10;  &#9;&#9;@grd401 leben &gt; 0&#10;  end&#10;&#10;  event bewegen_unten_score extends bewegen_unten_score&#10;  &#9;when&#10;  &#9;&#9;@grd401 leben &gt; 0&#10;  end&#10;&#10;  event bewegen_rechts_score extends bewegen_rechts_score&#10;  &#9;when&#10;  &#9;&#9;@grd401 leben &gt; 0&#10;  end&#10;&#10;  event bewegen_links_score extends bewegen_links_score&#10;  &#9;when&#10;  &#9;&#9;@grd401 leben &gt; 0&#10;  end&#10;&#10;  event bewegen_oben_ghost extends bewegen_oben_ghost&#10;  &#9;when&#10;  &#9;&#9;@grd401 leben &gt; 0&#10;    then&#10;      @act401 gejagte_geister ≔ {geist_1, geist_2, geist_3, geist_4}&#10;  end&#10;&#10;  event bewegen_unten_ghost extends bewegen_unten_ghost&#10;  &#9;when&#10;  &#9;&#9;@grd401 leben &gt; 0&#10;    then&#10;      @act401 gejagte_geister ≔ {geist_1, geist_2, geist_3, geist_4}&#10;  end&#10;&#10;  event bewegen_rechts_ghost extends bewegen_rechts_ghost&#10;  &#9;when&#10;  &#9;&#9;@grd401 leben &gt; 0&#10;    then&#10;      @act401 gejagte_geister ≔ {geist_1, geist_2, geist_3, geist_4}&#10;  end&#10;&#10;  event bewegen_links_ghost extends bewegen_links_ghost&#10;  &#9;when&#10;  &#9;&#9;@grd401 leben &gt; 0&#10;    then&#10;      @act401 gejagte_geister ≔ {geist_1, geist_2, geist_3, geist_4}&#10;  end&#10;&#10;  event bewegen_oben extends bewegen_oben&#10;  &#9;when&#10;  &#9;&#9;@grd401 leben &gt; 0&#10;  end&#10;&#10;  event bewegen_unten extends bewegen_unten&#10;  &#9;when&#10;  &#9;&#9;@grd401 leben &gt; 0&#10;  end&#10;&#10;  event bewegen_rechts extends bewegen_rechts&#10;  &#9;when&#10;  &#9;&#9;@grd401 leben &gt; 0&#10;  end&#10;&#10;  event bewegen_links extends bewegen_links&#10;  &#9;when&#10;  &#9;&#9;@grd401 leben &gt; 0&#10;  end&#10;&#10;  event tunneln extends tunneln&#10;  &#9;when&#10;  &#9;&#9;@grd401 leben &gt; 0&#10;  end&#10;&#10;  event starte_geist_1 extends starte_geist_1&#10;  &#9;when&#10;  &#9;&#9;@grd401 leben &gt; 0&#10;  end&#10;&#10;  event starte_geist_2 extends starte_geist_2&#10;  &#9;when&#10;  &#9;&#9;@grd401 leben &gt; 0&#10;  end&#10;&#10;  event starte_geist_3 extends starte_geist_3&#10;  &#9;when&#10;  &#9;&#9;@grd401 leben &gt; 0&#10;  end&#10;&#10;  event starte_geist_4 extends starte_geist_4&#10;  &#9;when&#10;  &#9;&#9;@grd401 leben &gt; 0&#10;  end&#10;&#10;  event bewege_geist_1 extends bewege_geist_1&#10;  &#9;when&#10;  &#9;&#9;@grd401 leben &gt; 0&#10;  end&#10;&#10;  event bewege_geist_2 extends bewege_geist_2&#10;  &#9;when&#10;  &#9;&#9;@grd401 leben &gt; 0&#10;  end&#10;&#10;  event bewege_geist_3 extends bewege_geist_3&#10;  &#9;when&#10;  &#9;&#9;@grd401 leben &gt; 0&#10;  end&#10;&#10;  event bewege_geist_4 extends bewege_geist_4&#10;  &#9;when&#10;  &#9;&#9;@grd401 leben &gt; 0&#10;  end&#10;&#10;  event pacman_fangen extends pacman_fangen&#10;    where&#10;      @grd401 leben ≥ 1&#10;      @grd402 (pos_geist_1 = position) ⇒ (geist_1 ∉ gejagte_geister)&#10;      @grd403 (pos_geist_2 = position) ⇒ (geist_2 ∉ gejagte_geister)&#10;      @grd404 (pos_geist_3 = position) ⇒ (geist_3 ∉ gejagte_geister)&#10;      @grd405 (pos_geist_4 = position) ⇒ (geist_4 ∉ gejagte_geister)&#10;    then&#10;      @act401 leben_alt ≔ leben&#10;      @act402 leben ≔ leben − 1&#10;  end&#10;&#10;  event geist_1_fangen extends geist_1_fangen&#10;    where&#10;      @grd401 geist_1 ∈ gejagte_geister&#10;      @grd402 pos_geist_1 = position&#10;      @grd403 leben &gt; 0&#10;    then&#10;      @act401 gejagte_geister ≔  gejagte_geister∖{geist_1}&#10;  end&#10;&#10;  event geist_2_fangen extends geist_2_fangen&#10;    where&#10;      @grd401 geist_2 ∈ gejagte_geister&#10;      @grd402 pos_geist_2 = position&#10;      @grd403 leben &gt; 0&#10;    then&#10;      @act401 gejagte_geister ≔  gejagte_geister∖{geist_2}&#10;  end&#10;&#10;  event geist_3_fangen extends geist_3_fangen&#10;    where&#10;      @grd401 geist_3 ∈ gejagte_geister&#10;      @grd402 pos_geist_3 = position&#10;      @grd403 leben &gt; 0&#10;    then&#10;      @act401 gejagte_geister ≔  gejagte_geister∖{geist_3}&#10;  end&#10;&#10;  event geist_4_fangen extends geist_4_fangen&#10;    where&#10;      @grd401 geist_4 ∈ gejagte_geister&#10;      @grd402 pos_geist_4 = position&#10;      @grd403 leben &gt; 0&#10;    then&#10;      @act401 gejagte_geister ≔  gejagte_geister∖{geist_4}&#10;  end&#10;&#10;  event geisterjagd_abbrechen extends geisterjagd_abbrechen&#10;    where&#10;      @grd401 in_bewegung = TRUE&#10;      @grd402 leben &gt; 0&#10;    then&#10;      @act401 gejagte_geister ≔  ∅&#10;  end&#10;&#10;  event game_over extends game_over&#10;  &#9;when&#10;  &#9;&#9;@grd401 leben = 0&#10;  &#9;&#9;@grd402 gameover = FALSE&#10;  &#9;then&#10;  &#9;&#9;@act401 gameover ≔ TRUE&#10;  end&#10;end&#10;" version="5">
+<org.eventb.core.refinesMachine name="'" org.eventb.core.target="Pacman_Machine_3"/>
+<org.eventb.core.seesContext name="_OrZzwF_UEeaXYPIPRsfjNg" org.eventb.core.target="Pacman_Context_generic"/>
+<org.eventb.core.variable name="_e4Wr4BaIEeaxlIwdP2iQDA" org.eventb.core.comment="repräsentiert die aktuelle Position des Pacman" org.eventb.core.identifier="position"/>
+<org.eventb.core.variable name="_e4Wr4RaIEeaxlIwdP2iQDA" org.eventb.core.comment="repräsentiert die letzte Position des Pacman" org.eventb.core.identifier="vorherige_position"/>
+<org.eventb.core.variable name="_e4XS8BaIEeaxlIwdP2iQDA" org.eventb.core.comment="gibt an, ob der Pacman sich bereits bewegt hat" org.eventb.core.identifier="in_bewegung"/>
+<org.eventb.core.variable name="_26FiYhaPEea5wp6hXNOG2w" org.eventb.core.comment="gibt an, ob die letzte Bewegung durch den Tunnel war" org.eventb.core.identifier="getunnelt"/>
+<org.eventb.core.variable name="_tMqDICTaEeag7rHqrVAykw" org.eventb.core.comment="gibt an, ob der Pacman sich im letzten Event bewegt hat" org.eventb.core.identifier="bewegt"/>
+<org.eventb.core.variable name="_tMqDISTaEeag7rHqrVAykw" org.eventb.core.comment="aktueller Punktestand" org.eventb.core.identifier="score"/>
+<org.eventb.core.variable name="_tMqDIiTaEeag7rHqrVAykw" org.eventb.core.comment="letzter Punktestand" org.eventb.core.identifier="score_alt"/>
+<org.eventb.core.variable name="_UW9IAlmXEeaT0roG3wtL5w" org.eventb.core.comment="Punktefelder, die bisher noch nicht betreten wurden" org.eventb.core.identifier="punktefelder_aktuell"/>
+<org.eventb.core.variable name="_Ny2adFmaEeaT0roG3wtL5w" org.eventb.core.comment="Geisterfelder, die bisher noch nicht betreten wurden" org.eventb.core.identifier="geister_aktuell"/>
+<org.eventb.core.variable name="_ezgfEFmaEeaT0roG3wtL5w" org.eventb.core.comment="Anzahl gesammlter Score-Punkte" org.eventb.core.identifier="counter_scored"/>
+<org.eventb.core.variable name="_ezgfEVmaEeaT0roG3wtL5w" org.eventb.core.comment="zählt die Anzahl Bewegungen des Pacmans in der aktuellen Runde" org.eventb.core.identifier="counter"/>
+<org.eventb.core.variable name="_ezgfElmaEeaT0roG3wtL5w" org.eventb.core.comment="aktuelle Position des ersten Geistes" org.eventb.core.identifier="pos_geist_1"/>
+<org.eventb.core.variable name="_ezgfE1maEeaT0roG3wtL5w" org.eventb.core.comment="aktuelle Position des zweiten Geistes" org.eventb.core.identifier="pos_geist_2"/>
+<org.eventb.core.variable name="_ezgfFFmaEeaT0roG3wtL5w" org.eventb.core.comment="aktuelle Position des dritten Geistes" org.eventb.core.identifier="pos_geist_3"/>
+<org.eventb.core.variable name="_ezgfFVmaEeaT0roG3wtL5w" org.eventb.core.comment="aktuelle Position des vierten Geistes" org.eventb.core.identifier="pos_geist_4"/>
+<org.eventb.core.variable name="_ezgfFlmaEeaT0roG3wtL5w" org.eventb.core.comment="letzte Position des ersten Geistes" org.eventb.core.identifier="pos_geist_1_alt"/>
+<org.eventb.core.variable name="_ezgfF1maEeaT0roG3wtL5w" org.eventb.core.comment="letzte Position des zweiten Geistes" org.eventb.core.identifier="pos_geist_2_alt"/>
+<org.eventb.core.variable name="_ezhGIFmaEeaT0roG3wtL5w" org.eventb.core.comment="letzte Position des dritten Geistes" org.eventb.core.identifier="pos_geist_3_alt"/>
+<org.eventb.core.variable name="_ezhGIVmaEeaT0roG3wtL5w" org.eventb.core.comment="letzte Position des vierten Geistes" org.eventb.core.identifier="pos_geist_4_alt"/>
+<org.eventb.core.variable name="_ezhGIlmaEeaT0roG3wtL5w" org.eventb.core.comment="gibt an, ob der erste Geist sich bereits bewegt hat" org.eventb.core.identifier="in_bewegung_geist_1"/>
+<org.eventb.core.event name="_tMqDIiTaEeag7rHqrVAykx" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="INITIALISATION">
+<org.eventb.core.action name="_msm1EFsVEeabeYXD7YYpQg" org.eventb.core.assignment="leben ≔  start_leben" org.eventb.core.label="act401"/>
+<org.eventb.core.action name="_msm1EVsVEeabeYXD7YYpQg" org.eventb.core.assignment="leben_alt ≔ start_leben" org.eventb.core.label="act402"/>
+<org.eventb.core.action name="_msm1ElsVEeabeYXD7YYpQg" org.eventb.core.assignment="gejagte_geister ≔ ∅" org.eventb.core.label="act403"/>
+<org.eventb.core.action name="_x21R0FsVEeabeYXD7YYpQg" org.eventb.core.assignment="gameover ≔ FALSE" org.eventb.core.label="act404"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="_tMqDIiTaEeag7rHqrVAyky" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="bewegen_oben_score">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="bewegen_oben_score"/>
+<org.eventb.core.guard name="_jiAdIFscEeabeYXD7YYpQg" org.eventb.core.label="grd401" org.eventb.core.predicate="leben &gt; 0"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="_tMqDIiTaEeag7rHqrVAykz" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="bewegen_unten_score">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="bewegen_unten_score"/>
+<org.eventb.core.guard name="_jiAdIVscEeabeYXD7YYpQg" org.eventb.core.label="grd401" org.eventb.core.predicate="leben &gt; 0"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="_tMqDIiTaEeag7rHqrVAyk{" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="bewegen_rechts_score">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="bewegen_rechts_score"/>
+<org.eventb.core.guard name="_nPSSAFveEeabeYXD7YYpQg" org.eventb.core.label="grd401" org.eventb.core.predicate="leben &gt; 0"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="_tMqDIiTaEeag7rHqrVAyk|" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="bewegen_links_score">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="bewegen_links_score"/>
+<org.eventb.core.guard name="_nPS5EFveEeabeYXD7YYpQg" org.eventb.core.label="grd401" org.eventb.core.predicate="leben &gt; 0"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="_tMqDIiTaEeag7rHqrVAyk}" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="bewegen_oben_ghost">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="bewegen_oben_ghost"/>
+<org.eventb.core.guard name="_nPS5EVveEeabeYXD7YYpQg" org.eventb.core.label="grd401" org.eventb.core.predicate="leben &gt; 0"/>
+<org.eventb.core.action name="_bCgzMFsaEeabeYXD7YYpQg" org.eventb.core.assignment="gejagte_geister ≔ {geist_1, geist_2, geist_3, geist_4}" org.eventb.core.label="act401"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="_tMqDIiTaEeag7rHqrVAyk~" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="bewegen_unten_ghost">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="bewegen_unten_ghost"/>
+<org.eventb.core.guard name="_nPS5ElveEeabeYXD7YYpQg" org.eventb.core.label="grd401" org.eventb.core.predicate="leben &gt; 0"/>
+<org.eventb.core.action name="_bCgzMVsaEeabeYXD7YYpQg" org.eventb.core.assignment="gejagte_geister ≔ {geist_1, geist_2, geist_3, geist_4}" org.eventb.core.label="act401"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="_tMqDIiTaEeag7rHqrVAyl'" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="bewegen_rechts_ghost">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="bewegen_rechts_ghost"/>
+<org.eventb.core.guard name="_3q83YFvXEeabeYXD7YYpQg" org.eventb.core.label="grd401" org.eventb.core.predicate="leben &gt; 0"/>
+<org.eventb.core.action name="_bCgzMlsaEeabeYXD7YYpQg" org.eventb.core.assignment="gejagte_geister ≔ {geist_1, geist_2, geist_3, geist_4}" org.eventb.core.label="act401"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="_tMqDIiTaEeag7rHqrVAyl(" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="bewegen_links_ghost">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="bewegen_links_ghost"/>
+<org.eventb.core.guard name="_nPS5FFveEeabeYXD7YYpQg" org.eventb.core.label="grd401" org.eventb.core.predicate="leben &gt; 0"/>
+<org.eventb.core.action name="_bChaQFsaEeabeYXD7YYpQg" org.eventb.core.assignment="gejagte_geister ≔ {geist_1, geist_2, geist_3, geist_4}" org.eventb.core.label="act401"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="_tMqDIiTaEeag7rHqrVAyl)" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="bewegen_oben">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="bewegen_oben"/>
+<org.eventb.core.guard name="_nPS5E1veEeabeYXD7YYpQg" org.eventb.core.label="grd401" org.eventb.core.predicate="leben &gt; 0"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="_tMqDIiTaEeag7rHqrVAyl*" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="bewegen_unten">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="bewegen_unten"/>
+<org.eventb.core.guard name="_nPTgIFveEeabeYXD7YYpQg" org.eventb.core.label="grd401" org.eventb.core.predicate="leben &gt; 0"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="_tMqDIiTaEeag7rHqrVAyl+" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="bewegen_rechts">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="bewegen_rechts"/>
+<org.eventb.core.guard name="_nPS5FVveEeabeYXD7YYpQg" org.eventb.core.label="grd401" org.eventb.core.predicate="leben &gt; 0"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="_tMqDIiTaEeag7rHqrVAyl," org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="bewegen_links">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="bewegen_links"/>
+<org.eventb.core.guard name="_nPTgIlveEeabeYXD7YYpQg" org.eventb.core.label="grd401" org.eventb.core.predicate="leben &gt; 0"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="_tMqDIiTaEeag7rHqrVAyl-" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="tunneln">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="tunneln"/>
+<org.eventb.core.guard name="_nPTgIVveEeabeYXD7YYpQg" org.eventb.core.label="grd401" org.eventb.core.predicate="leben &gt; 0"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="_tMqDIiTaEeag7rHqrVAyl." org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="starte_geist_1">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="starte_geist_1"/>
+<org.eventb.core.guard name="_aimIYF1cEeaH_Yn1_tt3HQ" org.eventb.core.label="grd401" org.eventb.core.predicate="leben &gt; 0"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="_tMqDIiTaEeag7rHqrVAyl/" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="starte_geist_2">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="starte_geist_2"/>
+<org.eventb.core.guard name="_a-9S0GLDEeaVx-LJ9XlTeg" org.eventb.core.label="grd401" org.eventb.core.predicate="leben &gt; 0"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="_tMqDIiTaEeag7rHqrVAyl0" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="starte_geist_3">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="starte_geist_3"/>
+<org.eventb.core.guard name="_a-9S0WLDEeaVx-LJ9XlTeg" org.eventb.core.label="grd401" org.eventb.core.predicate="leben &gt; 0"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="_tMqDIiTaEeag7rHqrVAyl1" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="starte_geist_4">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="starte_geist_4"/>
+<org.eventb.core.guard name="_a-9S0mLDEeaVx-LJ9XlTeg" org.eventb.core.label="grd401" org.eventb.core.predicate="leben &gt; 0"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="_tMqDIiTaEeag7rHqrVAyl2" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="bewege_geist_1">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="bewege_geist_1"/>
+<org.eventb.core.guard name="_a-954GLDEeaVx-LJ9XlTeg" org.eventb.core.label="grd401" org.eventb.core.predicate="leben &gt; 0"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="_tMqDIiTaEeag7rHqrVAyl3" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="bewege_geist_2">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="bewege_geist_2"/>
+<org.eventb.core.guard name="_a-954WLDEeaVx-LJ9XlTeg" org.eventb.core.label="grd401" org.eventb.core.predicate="leben &gt; 0"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="_tMqDIiTaEeag7rHqrVAyl4" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="bewege_geist_3">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="bewege_geist_3"/>
+<org.eventb.core.guard name="_a-954mLDEeaVx-LJ9XlTeg" org.eventb.core.label="grd401" org.eventb.core.predicate="leben &gt; 0"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="_tMqDIiTaEeag7rHqrVAyl5" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="bewege_geist_4">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="bewege_geist_4"/>
+<org.eventb.core.guard name="_a-9542LDEeaVx-LJ9XlTeg" org.eventb.core.label="grd401" org.eventb.core.predicate="leben &gt; 0"/>
+</org.eventb.core.event>
+<org.eventb.core.variable name="_O8bPUFsTEeabeYXD7YYpQg" org.eventb.core.comment="gibt an, ob der zweite Geist sich bereits bewegt hat" org.eventb.core.identifier="in_bewegung_geist_2"/>
+<org.eventb.core.variable name="_cGrNoFsUEeabeYXD7YYpQg" org.eventb.core.comment="gibt an, ob der dritte Geist sich bereits bewegt hat" org.eventb.core.identifier="in_bewegung_geist_3"/>
+<org.eventb.core.variable name="_cGr0sFsUEeabeYXD7YYpQg" org.eventb.core.comment="gibt an, ob der vierte Geist sich bereits bewegt hat" org.eventb.core.identifier="in_bewegung_geist_4"/>
+<org.eventb.core.invariant name="_cGr0sVsUEeabeYXD7YYpQg" org.eventb.core.label="inv401" org.eventb.core.predicate="leben ∈ ℕ"/>
+<org.eventb.core.invariant name="_cGr0slsUEeabeYXD7YYpQg" org.eventb.core.label="inv402" org.eventb.core.predicate="leben ≤ start_leben"/>
+<org.eventb.core.invariant name="_cGr0s1sUEeabeYXD7YYpQg" org.eventb.core.label="inv403" org.eventb.core.predicate="leben_alt ∈ ℕ"/>
+<org.eventb.core.invariant name="_cGr0tFsUEeabeYXD7YYpQg" org.eventb.core.label="inv404" org.eventb.core.predicate="leben_alt ≤ start_leben"/>
+<org.eventb.core.invariant name="_-iF48FsUEeabeYXD7YYpQg" org.eventb.core.label="inv405" org.eventb.core.predicate="leben_alt − leben ∈ {0,1}"/>
+<org.eventb.core.invariant name="_msp4YVsVEeabeYXD7YYpQg" org.eventb.core.label="inv406" org.eventb.core.predicate="gejagte_geister ∈ ℙ({geist_1, geist_2, geist_3, geist_4})"/>
+<org.eventb.core.event name="_jh_2EFscEeabeYXD7YYpQg" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="pacman_fangen">
+<org.eventb.core.refinesEvent name="_zHDRYFu2EeabeYXD7YYpQg" org.eventb.core.target="pacman_fangen"/>
+<org.eventb.core.action name="_JTxEEFsbEeabeYXD7YYpQg" org.eventb.core.assignment="leben_alt ≔ leben" org.eventb.core.label="act401"/>
+<org.eventb.core.guard name="_a-_vEGLDEeaVx-LJ9XlTeg" org.eventb.core.label="grd401" org.eventb.core.predicate="leben ≥ 1"/>
+<org.eventb.core.guard name="_a-_vEWLDEeaVx-LJ9XlTeg" org.eventb.core.label="grd402" org.eventb.core.predicate="(pos_geist_1 = position) ⇒ (geist_1 ∉ gejagte_geister)"/>
+<org.eventb.core.guard name="_a-_vEmLDEeaVx-LJ9XlTeg" org.eventb.core.label="grd403" org.eventb.core.predicate="(pos_geist_2 = position) ⇒ (geist_2 ∉ gejagte_geister)"/>
+<org.eventb.core.guard name="_a-_vE2LDEeaVx-LJ9XlTeg" org.eventb.core.label="grd404" org.eventb.core.predicate="(pos_geist_3 = position) ⇒ (geist_3 ∉ gejagte_geister)"/>
+<org.eventb.core.guard name="_a-_vFGLDEeaVx-LJ9XlTeg" org.eventb.core.label="grd405" org.eventb.core.predicate="(pos_geist_4 = position) ⇒ (geist_4 ∉ gejagte_geister)"/>
+<org.eventb.core.action name="_9eJg4FveEeabeYXD7YYpQg" org.eventb.core.assignment="leben ≔ leben − 1" org.eventb.core.label="act402"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="_jiBEMFscEeabeYXD7YYpQg" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="geist_1_fangen">
+<org.eventb.core.refinesEvent name="_sGx1IFvNEeabeYXD7YYpQg" org.eventb.core.target="geist_1_fangen"/>
+<org.eventb.core.guard name="_a_AWIGLDEeaVx-LJ9XlTeg" org.eventb.core.label="grd401" org.eventb.core.predicate="geist_1 ∈ gejagte_geister"/>
+<org.eventb.core.guard name="_a_AWIWLDEeaVx-LJ9XlTeg" org.eventb.core.label="grd402" org.eventb.core.predicate="pos_geist_1 = position"/>
+<org.eventb.core.guard name="_a_AWImLDEeaVx-LJ9XlTeg" org.eventb.core.label="grd403" org.eventb.core.predicate="leben &gt; 0"/>
+<org.eventb.core.action name="_9eJg4VveEeabeYXD7YYpQg" org.eventb.core.assignment="gejagte_geister ≔  gejagte_geister∖{geist_1}" org.eventb.core.label="act401"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="_jiBEMVscEeabeYXD7YYpQg" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="geist_2_fangen">
+<org.eventb.core.refinesEvent name="_sGx1IVvNEeabeYXD7YYpQg" org.eventb.core.target="geist_2_fangen"/>
+<org.eventb.core.guard name="_a_A9MGLDEeaVx-LJ9XlTeg" org.eventb.core.label="grd401" org.eventb.core.predicate="geist_2 ∈ gejagte_geister"/>
+<org.eventb.core.guard name="_a_A9MWLDEeaVx-LJ9XlTeg" org.eventb.core.label="grd402" org.eventb.core.predicate="pos_geist_2 = position"/>
+<org.eventb.core.guard name="_a_A9MmLDEeaVx-LJ9XlTeg" org.eventb.core.label="grd403" org.eventb.core.predicate="leben &gt; 0"/>
+<org.eventb.core.action name="_9eKH8FveEeabeYXD7YYpQg" org.eventb.core.assignment="gejagte_geister ≔  gejagte_geister∖{geist_2}" org.eventb.core.label="act401"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="_jiBEMlscEeabeYXD7YYpQg" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="geist_3_fangen">
+<org.eventb.core.refinesEvent name="_sGx1IlvNEeabeYXD7YYpQg" org.eventb.core.target="geist_3_fangen"/>
+<org.eventb.core.guard name="_a_BkQGLDEeaVx-LJ9XlTeg" org.eventb.core.label="grd401" org.eventb.core.predicate="geist_3 ∈ gejagte_geister"/>
+<org.eventb.core.guard name="_a_BkQWLDEeaVx-LJ9XlTeg" org.eventb.core.label="grd402" org.eventb.core.predicate="pos_geist_3 = position"/>
+<org.eventb.core.guard name="_a_BkQmLDEeaVx-LJ9XlTeg" org.eventb.core.label="grd403" org.eventb.core.predicate="leben &gt; 0"/>
+<org.eventb.core.action name="_9eKH8VveEeabeYXD7YYpQg" org.eventb.core.assignment="gejagte_geister ≔  gejagte_geister∖{geist_3}" org.eventb.core.label="act401"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="_jiBEM1scEeabeYXD7YYpQg" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="geist_4_fangen">
+<org.eventb.core.refinesEvent name="_sGx1I1vNEeabeYXD7YYpQg" org.eventb.core.target="geist_4_fangen"/>
+<org.eventb.core.guard name="_a_BkQ2LDEeaVx-LJ9XlTeg" org.eventb.core.label="grd401" org.eventb.core.predicate="geist_4 ∈ gejagte_geister"/>
+<org.eventb.core.guard name="_a_BkRGLDEeaVx-LJ9XlTeg" org.eventb.core.label="grd402" org.eventb.core.predicate="pos_geist_4 = position"/>
+<org.eventb.core.guard name="_a_BkRWLDEeaVx-LJ9XlTeg" org.eventb.core.label="grd403" org.eventb.core.predicate="leben &gt; 0"/>
+<org.eventb.core.action name="_tFy6oV1YEeaH_Yn1_tt3HQ" org.eventb.core.assignment="gejagte_geister ≔  gejagte_geister∖{geist_4}" org.eventb.core.label="act401"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="_tFy6oF1YEeaH_Yn1_tt3HQ" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="geisterjagd_abbrechen">
+<org.eventb.core.refinesEvent name="_cMv3kGOzEeaXFt-2KDAgKw" org.eventb.core.target="geisterjagd_abbrechen"/>
+<org.eventb.core.guard name="_a_CLUGLDEeaVx-LJ9XlTeg" org.eventb.core.label="grd401" org.eventb.core.predicate="in_bewegung = TRUE"/>
+<org.eventb.core.guard name="_a_CLUWLDEeaVx-LJ9XlTeg" org.eventb.core.label="grd402" org.eventb.core.predicate="leben &gt; 0"/>
+<org.eventb.core.action name="_a_CyY2LDEeaVx-LJ9XlTeg" org.eventb.core.assignment="gejagte_geister ≔  ∅" org.eventb.core.label="act401"/>
+</org.eventb.core.event>
+<org.eventb.core.variable name="_SsNRQF7YEeaOhZURaCbBZA" org.eventb.core.comment="aktuelle Anzahl übriger Leben" org.eventb.core.identifier="leben"/>
+<org.eventb.core.variable name="_a_CLUmLDEeaVx-LJ9XlTeg" org.eventb.core.comment="letzte Anzahl übriger Leben" org.eventb.core.identifier="leben_alt"/>
+<org.eventb.core.invariant name="_a_CyYGLDEeaVx-LJ9XlTeg" org.eventb.core.label="inv407" org.eventb.core.predicate="gameover ∈ BOOL"/>
+<org.eventb.core.event name="_a_CyYWLDEeaVx-LJ9XlTeg" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="game_over">
+<org.eventb.core.refinesEvent name="_cMv3kWOzEeaXFt-2KDAgKw" org.eventb.core.target="game_over"/>
+<org.eventb.core.guard name="_a_CyYmLDEeaVx-LJ9XlTeg" org.eventb.core.label="grd401" org.eventb.core.predicate="leben = 0"/>
+<org.eventb.core.action name="_enHsUGLDEeaVx-LJ9XlTeg" org.eventb.core.assignment="gameover ≔ TRUE" org.eventb.core.label="act401"/>
+<org.eventb.core.guard name="_6mvC8GLxEeauotEjyF6fig" org.eventb.core.label="grd402" org.eventb.core.predicate="gameover = FALSE"/>
+</org.eventb.core.event>
+<org.eventb.core.variable name="_VA_bgGOzEeaXFt-2KDAgKw" org.eventb.core.comment="Menge der gejagten Geister" org.eventb.core.identifier="gejagte_geister"/>
+<org.eventb.core.variable name="_WbZhoGhhEea9OYFzDboMmw" org.eventb.core.comment="gibt an, ob das Spiel verloren ist oder nicht" org.eventb.core.identifier="gameover"/>
+</org.eventb.core.machineFile>

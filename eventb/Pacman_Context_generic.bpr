@@ -1,0 +1,387 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.prFile version="1">
+<org.eventb.core.prProof name="axm04/WD" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="">
+<org.eventb.core.lang name="L"/>
+<org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p1">
+<org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="type rewrites" org.eventb.core.prGoal="p1" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p2">
+<org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prGoal="p2" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p3">
+<org.eventb.core.prRule name="r2" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="⊤ goal" org.eventb.core.prGoal="p3" org.eventb.core.prHyps=""/>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+<org.eventb.core.prIdent name="spielfeld_tmp" org.eventb.core.type="ℙ(ℤ×ℤ)"/>
+<org.eventb.core.prPred name="p3" org.eventb.core.predicate="⊤"/>
+<org.eventb.core.prPred name="p2" org.eventb.core.predicate="∀p⦂ℤ×ℤ·p∈spielfeld_tmp⇒⊤"/>
+<org.eventb.core.prPred name="p0" org.eventb.core.predicate="∀p⦂ℤ×ℤ·p∈spielfeld_tmp⇒p∈dom(prj1 ⦂ ℙ(ℤ×ℤ×ℤ))∧(prj1 ⦂ ℙ(ℤ×ℤ×ℤ))∈ℤ × ℤ ⇸ ℤ∧p∈dom(prj2 ⦂ ℙ(ℤ×ℤ×ℤ))∧(prj2 ⦂ ℙ(ℤ×ℤ×ℤ))∈ℤ × ℤ ⇸ ℤ"/>
+<org.eventb.core.prPred name="p1" org.eventb.core.predicate="∀p⦂ℤ×ℤ·p∈spielfeld_tmp⇒p∈ℤ × ℤ"/>
+<org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.trueGoal"/>
+<org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
+<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL4:0"/>
+</org.eventb.core.prProof>
+<org.eventb.core.prProof name="axm12/WD" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="">
+<org.eventb.core.lang name="L"/>
+<org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p3">
+<org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p1" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p2"/>
+<org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="type rewrites" org.eventb.core.prGoal="p3" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p5">
+<org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p2" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p4"/>
+<org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prGoal="p5" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p6">
+<org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p4"/>
+<org.eventb.core.prRule name="r2" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="⊤ goal" org.eventb.core.prGoal="p6" org.eventb.core.prHyps=""/>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+<org.eventb.core.prIdent name="punktfelder_tmp" org.eventb.core.type="ℙ(ℤ×ℤ)"/>
+<org.eventb.core.prPred name="p5" org.eventb.core.predicate="∀p⦂ℤ×ℤ·p∈punktfelder_tmp⇒⊤"/>
+<org.eventb.core.prPred name="p6" org.eventb.core.predicate="⊤"/>
+<org.eventb.core.prPred name="p4" org.eventb.core.predicate="∀p⦂ℤ×ℤ·p∈spielfeld_tmp⇒⊤">
+<org.eventb.core.prIdent name="spielfeld_tmp" org.eventb.core.type="ℙ(ℤ×ℤ)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p1" org.eventb.core.predicate="∀p⦂ℤ×ℤ·p∈spielfeld_tmp⇒p∈dom(prj1 ⦂ ℙ(ℤ×ℤ×ℤ))∧(prj1 ⦂ ℙ(ℤ×ℤ×ℤ))∈ℤ × ℤ ⇸ ℤ∧p∈dom(prj2 ⦂ ℙ(ℤ×ℤ×ℤ))∧(prj2 ⦂ ℙ(ℤ×ℤ×ℤ))∈ℤ × ℤ ⇸ ℤ">
+<org.eventb.core.prIdent name="spielfeld_tmp" org.eventb.core.type="ℙ(ℤ×ℤ)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p2" org.eventb.core.predicate="∀p⦂ℤ×ℤ·p∈spielfeld_tmp⇒p∈ℤ × ℤ">
+<org.eventb.core.prIdent name="spielfeld_tmp" org.eventb.core.type="ℙ(ℤ×ℤ)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p3" org.eventb.core.predicate="∀p⦂ℤ×ℤ·p∈punktfelder_tmp⇒p∈ℤ × ℤ"/>
+<org.eventb.core.prPred name="p0" org.eventb.core.predicate="∀p⦂ℤ×ℤ·p∈punktfelder_tmp⇒p∈dom(prj1 ⦂ ℙ(ℤ×ℤ×ℤ))∧(prj1 ⦂ ℙ(ℤ×ℤ×ℤ))∈ℤ × ℤ ⇸ ℤ∧p∈dom(prj2 ⦂ ℙ(ℤ×ℤ×ℤ))∧(prj2 ⦂ ℙ(ℤ×ℤ×ℤ))∈ℤ × ℤ ⇸ ℤ"/>
+<org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.trueGoal"/>
+<org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
+<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL4:0"/>
+</org.eventb.core.prProof>
+<org.eventb.core.prProof name="axm09/WD" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="">
+<org.eventb.core.lang name="L"/>
+<org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p3">
+<org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p1" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p2"/>
+<org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="type rewrites" org.eventb.core.prGoal="p3" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p5">
+<org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p2" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p4"/>
+<org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prGoal="p5" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p6">
+<org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p4"/>
+<org.eventb.core.prRule name="r2" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="⊤ goal" org.eventb.core.prGoal="p6" org.eventb.core.prHyps=""/>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+<org.eventb.core.prIdent name="begehbar_tmp" org.eventb.core.type="ℙ(ℤ×ℤ)"/>
+<org.eventb.core.prPred name="p6" org.eventb.core.predicate="⊤"/>
+<org.eventb.core.prPred name="p5" org.eventb.core.predicate="∀p⦂ℤ×ℤ·p∈begehbar_tmp⇒⊤"/>
+<org.eventb.core.prPred name="p0" org.eventb.core.predicate="∀p⦂ℤ×ℤ·p∈begehbar_tmp⇒p∈dom(prj1 ⦂ ℙ(ℤ×ℤ×ℤ))∧(prj1 ⦂ ℙ(ℤ×ℤ×ℤ))∈ℤ × ℤ ⇸ ℤ∧p∈dom(prj2 ⦂ ℙ(ℤ×ℤ×ℤ))∧(prj2 ⦂ ℙ(ℤ×ℤ×ℤ))∈ℤ × ℤ ⇸ ℤ"/>
+<org.eventb.core.prPred name="p4" org.eventb.core.predicate="∀point⦂ℤ×ℤ·point∈spielfeld_tmp⇒⊤">
+<org.eventb.core.prIdent name="spielfeld_tmp" org.eventb.core.type="ℙ(ℤ×ℤ)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p3" org.eventb.core.predicate="∀p⦂ℤ×ℤ·p∈begehbar_tmp⇒p∈ℤ × ℤ"/>
+<org.eventb.core.prPred name="p1" org.eventb.core.predicate="∀point⦂ℤ×ℤ·point∈spielfeld_tmp⇒point∈dom(prj1 ⦂ ℙ(ℤ×ℤ×ℤ))∧(prj1 ⦂ ℙ(ℤ×ℤ×ℤ))∈ℤ × ℤ ⇸ ℤ∧point∈dom(prj2 ⦂ ℙ(ℤ×ℤ×ℤ))∧(prj2 ⦂ ℙ(ℤ×ℤ×ℤ))∈ℤ × ℤ ⇸ ℤ">
+<org.eventb.core.prIdent name="spielfeld_tmp" org.eventb.core.type="ℙ(ℤ×ℤ)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p2" org.eventb.core.predicate="∀point⦂ℤ×ℤ·point∈spielfeld_tmp⇒point∈ℤ × ℤ">
+<org.eventb.core.prIdent name="spielfeld_tmp" org.eventb.core.type="ℙ(ℤ×ℤ)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.trueGoal"/>
+<org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
+<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL4:0"/>
+</org.eventb.core.prProof>
+<org.eventb.core.prProof name="axm14/WD" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="">
+<org.eventb.core.lang name="L"/>
+<org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p5">
+<org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p1" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p2"/>
+<org.eventb.core.prHypAction name="REWRITE1" org.eventb.core.prHidden="p3" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p4"/>
+<org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="type rewrites" org.eventb.core.prGoal="p5" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p8">
+<org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p2" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p6"/>
+<org.eventb.core.prHypAction name="REWRITE1" org.eventb.core.prHidden="p4" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p7"/>
+<org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prGoal="p8" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p9">
+<org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p6"/>
+<org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p7"/>
+<org.eventb.core.prRule name="r2" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="⊤ goal" org.eventb.core.prGoal="p9" org.eventb.core.prHyps=""/>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+<org.eventb.core.prIdent name="punktfelder_tmp" org.eventb.core.type="ℙ(ℤ×ℤ)"/>
+<org.eventb.core.prPred name="p8" org.eventb.core.predicate="∀p⦂ℤ×ℤ·p∈punktfelder_tmp⇒⊤"/>
+<org.eventb.core.prPred name="p9" org.eventb.core.predicate="⊤"/>
+<org.eventb.core.prPred name="p7" org.eventb.core.predicate="∀p⦂ℤ×ℤ·p∈begehbar_tmp⇒⊤">
+<org.eventb.core.prIdent name="begehbar_tmp" org.eventb.core.type="ℙ(ℤ×ℤ)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p3" org.eventb.core.predicate="∀p⦂ℤ×ℤ·p∈begehbar_tmp⇒p∈dom(prj1 ⦂ ℙ(ℤ×ℤ×ℤ))∧(prj1 ⦂ ℙ(ℤ×ℤ×ℤ))∈ℤ × ℤ ⇸ ℤ∧p∈dom(prj2 ⦂ ℙ(ℤ×ℤ×ℤ))∧(prj2 ⦂ ℙ(ℤ×ℤ×ℤ))∈ℤ × ℤ ⇸ ℤ">
+<org.eventb.core.prIdent name="begehbar_tmp" org.eventb.core.type="ℙ(ℤ×ℤ)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p6" org.eventb.core.predicate="∀point⦂ℤ×ℤ·point∈spielfeld_tmp⇒⊤">
+<org.eventb.core.prIdent name="spielfeld_tmp" org.eventb.core.type="ℙ(ℤ×ℤ)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p4" org.eventb.core.predicate="∀p⦂ℤ×ℤ·p∈begehbar_tmp⇒p∈ℤ × ℤ">
+<org.eventb.core.prIdent name="begehbar_tmp" org.eventb.core.type="ℙ(ℤ×ℤ)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p1" org.eventb.core.predicate="∀point⦂ℤ×ℤ·point∈spielfeld_tmp⇒point∈dom(prj1 ⦂ ℙ(ℤ×ℤ×ℤ))∧(prj1 ⦂ ℙ(ℤ×ℤ×ℤ))∈ℤ × ℤ ⇸ ℤ∧point∈dom(prj2 ⦂ ℙ(ℤ×ℤ×ℤ))∧(prj2 ⦂ ℙ(ℤ×ℤ×ℤ))∈ℤ × ℤ ⇸ ℤ">
+<org.eventb.core.prIdent name="spielfeld_tmp" org.eventb.core.type="ℙ(ℤ×ℤ)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p2" org.eventb.core.predicate="∀point⦂ℤ×ℤ·point∈spielfeld_tmp⇒point∈ℤ × ℤ">
+<org.eventb.core.prIdent name="spielfeld_tmp" org.eventb.core.type="ℙ(ℤ×ℤ)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p5" org.eventb.core.predicate="∀p⦂ℤ×ℤ·p∈punktfelder_tmp⇒p∈ℤ × ℤ"/>
+<org.eventb.core.prPred name="p0" org.eventb.core.predicate="∀p⦂ℤ×ℤ·p∈punktfelder_tmp⇒p∈dom(prj1 ⦂ ℙ(ℤ×ℤ×ℤ))∧(prj1 ⦂ ℙ(ℤ×ℤ×ℤ))∈ℤ × ℤ ⇸ ℤ∧p∈dom(prj2 ⦂ ℙ(ℤ×ℤ×ℤ))∧(prj2 ⦂ ℙ(ℤ×ℤ×ℤ))∈ℤ × ℤ ⇸ ℤ"/>
+<org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.trueGoal"/>
+<org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
+<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL4:0"/>
+</org.eventb.core.prProof>
+<org.eventb.core.prProof name="axm108/WD" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="">
+<org.eventb.core.lang name="L"/>
+<org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p1">
+<org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="type rewrites" org.eventb.core.prGoal="p1" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p2">
+<org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prGoal="p2" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p3">
+<org.eventb.core.prRule name="r2" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="⊤ goal" org.eventb.core.prGoal="p3" org.eventb.core.prHyps=""/>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+<org.eventb.core.prIdent name="begehbar_tmp" org.eventb.core.type="ℙ(ℤ×ℤ)"/>
+<org.eventb.core.prPred name="p3" org.eventb.core.predicate="⊤"/>
+<org.eventb.core.prPred name="p2" org.eventb.core.predicate="∀p⦂ℤ×ℤ·p∈begehbar_tmp⇒⊤"/>
+<org.eventb.core.prPred name="p0" org.eventb.core.predicate="∀p⦂ℤ×ℤ·p∈begehbar_tmp⇒p∈dom(prj1 ⦂ ℙ(ℤ×ℤ×ℤ))∧(prj1 ⦂ ℙ(ℤ×ℤ×ℤ))∈ℤ × ℤ ⇸ ℤ∧p∈dom(prj2 ⦂ ℙ(ℤ×ℤ×ℤ))∧(prj2 ⦂ ℙ(ℤ×ℤ×ℤ))∈ℤ × ℤ ⇸ ℤ"/>
+<org.eventb.core.prPred name="p1" org.eventb.core.predicate="∀p⦂ℤ×ℤ·p∈begehbar_tmp⇒p∈ℤ × ℤ"/>
+<org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.trueGoal"/>
+<org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
+<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL4:0"/>
+</org.eventb.core.prProof>
+<org.eventb.core.prProof name="axm113/WD" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="">
+<org.eventb.core.lang name="L"/>
+<org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p3">
+<org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p1" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p2"/>
+<org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="type rewrites" org.eventb.core.prGoal="p3" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p5">
+<org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p2" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p4"/>
+<org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prGoal="p5" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p6">
+<org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p4"/>
+<org.eventb.core.prRule name="r2" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="⊤ goal" org.eventb.core.prGoal="p6" org.eventb.core.prHyps=""/>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+<org.eventb.core.prIdent name="punktfelder_tmp" org.eventb.core.type="ℙ(ℤ×ℤ)"/>
+<org.eventb.core.prPred name="p5" org.eventb.core.predicate="∀p⦂ℤ×ℤ·p∈punktfelder_tmp⇒⊤"/>
+<org.eventb.core.prPred name="p6" org.eventb.core.predicate="⊤"/>
+<org.eventb.core.prPred name="p4" org.eventb.core.predicate="∀p⦂ℤ×ℤ·p∈begehbar_tmp⇒⊤">
+<org.eventb.core.prIdent name="begehbar_tmp" org.eventb.core.type="ℙ(ℤ×ℤ)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p1" org.eventb.core.predicate="∀p⦂ℤ×ℤ·p∈begehbar_tmp⇒p∈dom(prj1 ⦂ ℙ(ℤ×ℤ×ℤ))∧(prj1 ⦂ ℙ(ℤ×ℤ×ℤ))∈ℤ × ℤ ⇸ ℤ∧p∈dom(prj2 ⦂ ℙ(ℤ×ℤ×ℤ))∧(prj2 ⦂ ℙ(ℤ×ℤ×ℤ))∈ℤ × ℤ ⇸ ℤ">
+<org.eventb.core.prIdent name="begehbar_tmp" org.eventb.core.type="ℙ(ℤ×ℤ)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p2" org.eventb.core.predicate="∀p⦂ℤ×ℤ·p∈begehbar_tmp⇒p∈ℤ × ℤ">
+<org.eventb.core.prIdent name="begehbar_tmp" org.eventb.core.type="ℙ(ℤ×ℤ)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p3" org.eventb.core.predicate="∀p⦂ℤ×ℤ·p∈punktfelder_tmp⇒p∈ℤ × ℤ"/>
+<org.eventb.core.prPred name="p0" org.eventb.core.predicate="∀p⦂ℤ×ℤ·p∈punktfelder_tmp⇒p∈dom(prj1 ⦂ ℙ(ℤ×ℤ×ℤ))∧(prj1 ⦂ ℙ(ℤ×ℤ×ℤ))∈ℤ × ℤ ⇸ ℤ∧p∈dom(prj2 ⦂ ℙ(ℤ×ℤ×ℤ))∧(prj2 ⦂ ℙ(ℤ×ℤ×ℤ))∈ℤ × ℤ ⇸ ℤ"/>
+<org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.trueGoal"/>
+<org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
+<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL4:0"/>
+</org.eventb.core.prProof>
+<org.eventb.core.prProof name="axm_generic07/WD" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="">
+<org.eventb.core.lang name="L"/>
+<org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p7">
+<org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p1" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p2,p3"/>
+<org.eventb.core.prHypAction name="REWRITE1" org.eventb.core.prHidden="p4" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p5,p6"/>
+<org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="type rewrites" org.eventb.core.prGoal="p7" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p8">
+<org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prGoal="p8" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p9">
+<org.eventb.core.prRule name="r2" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="⊤ goal" org.eventb.core.prGoal="p9" org.eventb.core.prHyps=""/>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+<org.eventb.core.prIdent name="begehbar_tmp" org.eventb.core.type="ℙ(ℤ×ℤ)"/>
+<org.eventb.core.prPred name="p6" org.eventb.core.predicate="begehbar⊂spielfeld">
+<org.eventb.core.prIdent name="begehbar" org.eventb.core.type="ℙ(ℤ×ℤ)"/>
+<org.eventb.core.prIdent name="spielfeld" org.eventb.core.type="ℙ(ℤ×ℤ)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p9" org.eventb.core.predicate="⊤"/>
+<org.eventb.core.prPred name="p8" org.eventb.core.predicate="∀p⦂ℤ×ℤ·p∈begehbar_tmp⇒⊤"/>
+<org.eventb.core.prPred name="p0" org.eventb.core.predicate="∀p⦂ℤ×ℤ·p∈begehbar_tmp⇒p∈dom(prj1 ⦂ ℙ(ℤ×ℤ×ℤ))∧(prj1 ⦂ ℙ(ℤ×ℤ×ℤ))∈ℤ × ℤ ⇸ ℤ∧p∈dom(prj2 ⦂ ℙ(ℤ×ℤ×ℤ))∧(prj2 ⦂ ℙ(ℤ×ℤ×ℤ))∈ℤ × ℤ ⇸ ℤ"/>
+<org.eventb.core.prPred name="p3" org.eventb.core.predicate="begehbar_vertikal⊂spielfeld">
+<org.eventb.core.prIdent name="begehbar_vertikal" org.eventb.core.type="ℙ(ℤ×ℤ)"/>
+<org.eventb.core.prIdent name="spielfeld" org.eventb.core.type="ℙ(ℤ×ℤ)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p7" org.eventb.core.predicate="∀p⦂ℤ×ℤ·p∈begehbar_tmp⇒p∈ℤ × ℤ"/>
+<org.eventb.core.prPred name="p2" org.eventb.core.predicate="begehbar_horizontal⊂spielfeld">
+<org.eventb.core.prIdent name="begehbar_horizontal" org.eventb.core.type="ℙ(ℤ×ℤ)"/>
+<org.eventb.core.prIdent name="spielfeld" org.eventb.core.type="ℙ(ℤ×ℤ)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p1" org.eventb.core.predicate="begehbar_horizontal⊂spielfeld∧begehbar_vertikal⊂spielfeld">
+<org.eventb.core.prIdent name="begehbar_horizontal" org.eventb.core.type="ℙ(ℤ×ℤ)"/>
+<org.eventb.core.prIdent name="begehbar_vertikal" org.eventb.core.type="ℙ(ℤ×ℤ)"/>
+<org.eventb.core.prIdent name="spielfeld" org.eventb.core.type="ℙ(ℤ×ℤ)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p4" org.eventb.core.predicate="begehbar_tmp⊂spielfeld∧begehbar⊂spielfeld">
+<org.eventb.core.prIdent name="begehbar" org.eventb.core.type="ℙ(ℤ×ℤ)"/>
+<org.eventb.core.prIdent name="spielfeld" org.eventb.core.type="ℙ(ℤ×ℤ)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p5" org.eventb.core.predicate="begehbar_tmp⊂spielfeld">
+<org.eventb.core.prIdent name="spielfeld" org.eventb.core.type="ℙ(ℤ×ℤ)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.trueGoal"/>
+<org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
+<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL4:0"/>
+</org.eventb.core.prProof>
+<org.eventb.core.prProof name="axm_generic11/WD" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="">
+<org.eventb.core.lang name="L"/>
+<org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p12">
+<org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p1" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p2,p3"/>
+<org.eventb.core.prHypAction name="REWRITE1" org.eventb.core.prHidden="p4" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p5,p6"/>
+<org.eventb.core.prHypAction name="REWRITE2" org.eventb.core.prHidden="p7" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p8"/>
+<org.eventb.core.prHypAction name="REWRITE3" org.eventb.core.prHidden="p9" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p10,p11"/>
+<org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="type rewrites" org.eventb.core.prGoal="p12" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p14">
+<org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p8" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p13"/>
+<org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prGoal="p14" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p15">
+<org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p13"/>
+<org.eventb.core.prRule name="r2" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="⊤ goal" org.eventb.core.prGoal="p15" org.eventb.core.prHyps=""/>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+<org.eventb.core.prIdent name="punktfelder_tmp" org.eventb.core.type="ℙ(ℤ×ℤ)"/>
+<org.eventb.core.prPred name="p14" org.eventb.core.predicate="∀p⦂ℤ×ℤ·p∈punktfelder_tmp⇒⊤"/>
+<org.eventb.core.prPred name="p9" org.eventb.core.predicate="punktfelder⊂spielfeld∧punktfelder_tmp⊂spielfeld">
+<org.eventb.core.prIdent name="punktfelder" org.eventb.core.type="ℙ(ℤ×ℤ)"/>
+<org.eventb.core.prIdent name="spielfeld" org.eventb.core.type="ℙ(ℤ×ℤ)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p15" org.eventb.core.predicate="⊤"/>
+<org.eventb.core.prPred name="p11" org.eventb.core.predicate="punktfelder_tmp⊂spielfeld">
+<org.eventb.core.prIdent name="spielfeld" org.eventb.core.type="ℙ(ℤ×ℤ)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p13" org.eventb.core.predicate="∀p⦂ℤ×ℤ·p∈begehbar_tmp⇒⊤">
+<org.eventb.core.prIdent name="begehbar_tmp" org.eventb.core.type="ℙ(ℤ×ℤ)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p3" org.eventb.core.predicate="begehbar_vertikal⊂spielfeld">
+<org.eventb.core.prIdent name="begehbar_vertikal" org.eventb.core.type="ℙ(ℤ×ℤ)"/>
+<org.eventb.core.prIdent name="spielfeld" org.eventb.core.type="ℙ(ℤ×ℤ)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p2" org.eventb.core.predicate="begehbar_horizontal⊂spielfeld">
+<org.eventb.core.prIdent name="begehbar_horizontal" org.eventb.core.type="ℙ(ℤ×ℤ)"/>
+<org.eventb.core.prIdent name="spielfeld" org.eventb.core.type="ℙ(ℤ×ℤ)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p12" org.eventb.core.predicate="∀p⦂ℤ×ℤ·p∈punktfelder_tmp⇒p∈ℤ × ℤ"/>
+<org.eventb.core.prPred name="p0" org.eventb.core.predicate="∀p⦂ℤ×ℤ·p∈punktfelder_tmp⇒p∈dom(prj1 ⦂ ℙ(ℤ×ℤ×ℤ))∧(prj1 ⦂ ℙ(ℤ×ℤ×ℤ))∈ℤ × ℤ ⇸ ℤ∧p∈dom(prj2 ⦂ ℙ(ℤ×ℤ×ℤ))∧(prj2 ⦂ ℙ(ℤ×ℤ×ℤ))∈ℤ × ℤ ⇸ ℤ"/>
+<org.eventb.core.prPred name="p5" org.eventb.core.predicate="begehbar_tmp⊂spielfeld">
+<org.eventb.core.prIdent name="begehbar_tmp" org.eventb.core.type="ℙ(ℤ×ℤ)"/>
+<org.eventb.core.prIdent name="spielfeld" org.eventb.core.type="ℙ(ℤ×ℤ)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p6" org.eventb.core.predicate="begehbar⊂spielfeld">
+<org.eventb.core.prIdent name="begehbar" org.eventb.core.type="ℙ(ℤ×ℤ)"/>
+<org.eventb.core.prIdent name="spielfeld" org.eventb.core.type="ℙ(ℤ×ℤ)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p7" org.eventb.core.predicate="∀p⦂ℤ×ℤ·p∈begehbar_tmp⇒p∈dom(prj1 ⦂ ℙ(ℤ×ℤ×ℤ))∧(prj1 ⦂ ℙ(ℤ×ℤ×ℤ))∈ℤ × ℤ ⇸ ℤ∧p∈dom(prj2 ⦂ ℙ(ℤ×ℤ×ℤ))∧(prj2 ⦂ ℙ(ℤ×ℤ×ℤ))∈ℤ × ℤ ⇸ ℤ">
+<org.eventb.core.prIdent name="begehbar_tmp" org.eventb.core.type="ℙ(ℤ×ℤ)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p8" org.eventb.core.predicate="∀p⦂ℤ×ℤ·p∈begehbar_tmp⇒p∈ℤ × ℤ">
+<org.eventb.core.prIdent name="begehbar_tmp" org.eventb.core.type="ℙ(ℤ×ℤ)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p1" org.eventb.core.predicate="begehbar_horizontal⊂spielfeld∧begehbar_vertikal⊂spielfeld">
+<org.eventb.core.prIdent name="begehbar_horizontal" org.eventb.core.type="ℙ(ℤ×ℤ)"/>
+<org.eventb.core.prIdent name="begehbar_vertikal" org.eventb.core.type="ℙ(ℤ×ℤ)"/>
+<org.eventb.core.prIdent name="spielfeld" org.eventb.core.type="ℙ(ℤ×ℤ)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p4" org.eventb.core.predicate="begehbar_tmp⊂spielfeld∧begehbar⊂spielfeld">
+<org.eventb.core.prIdent name="begehbar" org.eventb.core.type="ℙ(ℤ×ℤ)"/>
+<org.eventb.core.prIdent name="begehbar_tmp" org.eventb.core.type="ℙ(ℤ×ℤ)"/>
+<org.eventb.core.prIdent name="spielfeld" org.eventb.core.type="ℙ(ℤ×ℤ)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p10" org.eventb.core.predicate="punktfelder⊂spielfeld">
+<org.eventb.core.prIdent name="punktfelder" org.eventb.core.type="ℙ(ℤ×ℤ)"/>
+<org.eventb.core.prIdent name="spielfeld" org.eventb.core.type="ℙ(ℤ×ℤ)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.trueGoal"/>
+<org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
+<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL4:0"/>
+</org.eventb.core.prProof>
+<org.eventb.core.prProof name="axm_generic09/WD" org.eventb.core.confidence="0" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1">
+<org.eventb.core.lang name="L"/>
+<org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="simplification rewrites" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'">
+<org.eventb.core.prHypAction name="REWRITE0" org.eventb.core.prHidden="p2" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p3,p4"/>
+<org.eventb.core.prHypAction name="REWRITE1" org.eventb.core.prHidden="p5" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p6,p7"/>
+<org.eventb.core.prHypAction name="REWRITE2" org.eventb.core.prHidden="p8" org.eventb.core.prHyps="" org.eventb.core.prInfHyps="p9,p10"/>
+<org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="⇒ goal" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'" org.eventb.core.prGoal="p12" org.eventb.core.prHyps="p11">
+<org.eventb.core.prRule name="r2" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="eh with spielfeld=0 ‥ breite × 0 ‥ höhe" org.eventb.core.prHyps="p1">
+<org.eventb.core.prAnte name="'">
+<org.eventb.core.prHypAction name="FORWARD_INF0" org.eventb.core.prHyps="p3" org.eventb.core.prInfHyps="p13"/>
+<org.eventb.core.prHypAction name="DESELECT1" org.eventb.core.prHyps="p3"/>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+<org.eventb.core.prIdent name="begehbar" org.eventb.core.type="ℙ(ℤ×ℤ)"/>
+<org.eventb.core.prIdent name="breite" org.eventb.core.type="ℤ"/>
+<org.eventb.core.prIdent name="höhe" org.eventb.core.type="ℤ"/>
+<org.eventb.core.prIdent name="spielfeld" org.eventb.core.type="ℙ(ℤ×ℤ)"/>
+<org.eventb.core.prIdent name="tunnel" org.eventb.core.type="ℙ(ℤ×ℤ)"/>
+<org.eventb.core.prPred name="p9" org.eventb.core.predicate="punktfelder⊂begehbar">
+<org.eventb.core.prIdent name="punktfelder" org.eventb.core.type="ℙ(ℤ×ℤ)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p4" org.eventb.core.predicate="¬begehbar=(∅ ⦂ ℙ(ℤ×ℤ))"/>
+<org.eventb.core.prPred name="p2" org.eventb.core.predicate="begehbar⊂spielfeld∧begehbar≠(∅ ⦂ ℙ(ℤ×ℤ))"/>
+<org.eventb.core.prPred name="p6" org.eventb.core.predicate="geisterfelder⊂begehbar">
+<org.eventb.core.prIdent name="geisterfelder" org.eventb.core.type="ℙ(ℤ×ℤ)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p1" org.eventb.core.predicate="spielfeld=0 ‥ breite × 0 ‥ höhe"/>
+<org.eventb.core.prPred name="p3" org.eventb.core.predicate="begehbar⊂spielfeld"/>
+<org.eventb.core.prPred name="p5" org.eventb.core.predicate="geisterfelder⊂begehbar∧geisterfelder≠(∅ ⦂ ℙ(ℤ×ℤ))">
+<org.eventb.core.prIdent name="geisterfelder" org.eventb.core.type="ℙ(ℤ×ℤ)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p8" org.eventb.core.predicate="punktfelder⊂begehbar∧punktfelder≠(∅ ⦂ ℙ(ℤ×ℤ))">
+<org.eventb.core.prIdent name="punktfelder" org.eventb.core.type="ℙ(ℤ×ℤ)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p10" org.eventb.core.predicate="¬punktfelder=(∅ ⦂ ℙ(ℤ×ℤ))">
+<org.eventb.core.prIdent name="punktfelder" org.eventb.core.type="ℙ(ℤ×ℤ)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p11" org.eventb.core.predicate="tunnel⊂begehbar"/>
+<org.eventb.core.prPred name="p7" org.eventb.core.predicate="¬geisterfelder=(∅ ⦂ ℙ(ℤ×ℤ))">
+<org.eventb.core.prIdent name="geisterfelder" org.eventb.core.type="ℙ(ℤ×ℤ)"/>
+</org.eventb.core.prPred>
+<org.eventb.core.prPred name="p12" org.eventb.core.predicate="finite(tunnel)"/>
+<org.eventb.core.prPred name="p0" org.eventb.core.predicate="tunnel⊂begehbar⇒finite(tunnel)"/>
+<org.eventb.core.prPred name="p13" org.eventb.core.predicate="begehbar⊂0 ‥ breite × 0 ‥ höhe"/>
+<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL4:0"/>
+<org.eventb.core.prReas name="r2" org.eventb.core.prRID="org.eventb.core.seqprover.eq:1"/>
+<org.eventb.core.prReas name="r1" org.eventb.core.prRID="org.eventb.core.seqprover.impI"/>
+</org.eventb.core.prProof>
+</org.eventb.core.prFile>

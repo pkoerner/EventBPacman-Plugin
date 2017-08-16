@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.machineFile org.eventb.core.configuration="org.eventb.core.fwd;de.prob.units.mchBase" org.eventb.texttools.text_lastmodified="1471942938773" org.eventb.texttools.text_representation="machine Pacman_Machine_1 sees Pacman_Context_generic&#10;&#10;variables&#10;&#9;position&#9;&#9;&#9;&#9;//repräsentiert die aktuelle Position des Pacman&#10;&#9;vorherige_position&#9;&#9;//repräsentiert die letzte Position des Pacman&#10;&#9;in_bewegung&#9;&#9;&#9;&#9;//gibt an, ob der Pacman sich bereits bewegt hat&#10;&#9;getunnelt &#9;&#9;&#9;&#9;//gibt an, ob die letzte Bewegung durch den Tunnel war&#10;&#9;bewegt&#9;&#9;&#9;&#9;&#9;//gibt an, ob der Pacman sich im letzten Event bewegt hat&#10;&#10;invariants&#10;  @inv101 position ∈ begehbar&#10;  @inv102 vorherige_position ∈ begehbar&#10;  @inv103 in_bewegung ∈ BOOL&#10;  @inv104 (in_bewegung = FALSE ∧ getunnelt = FALSE) ⇒ position = startposition ∧ vorherige_position = startposition&#10;  @inv105 (in_bewegung = TRUE ∧ getunnelt = FALSE) ⇒  (prj1(position)−prj1(vorherige_position) ∈ {2,−2} ∧ prj2(position)=prj2(vorherige_position)) ∨ (prj2(position)−prj2(vorherige_position) ∈ {2,−2} ∧ prj1(position)=prj1(vorherige_position))&#10;  @inv106 getunnelt ∈ BOOL&#10;  @inv107 getunnelt = TRUE ⇔ {position, vorherige_position} = tunnel&#10;  @inv108 getunnelt = TRUE ⇒ in_bewegung = TRUE&#10;  @inv109 bewegt ∈ BOOL&#10;  @inv110 in_bewegung = FALSE ⇒ bewegt = FALSE&#10;&#10;&#10;events&#10;  event INITIALISATION&#10;    then&#10;      @act101 position ≔ startposition&#10;      @act102 vorherige_position ≔ startposition&#10;      @act103 in_bewegung ≔ FALSE&#10;      @act104 getunnelt ≔ FALSE&#10;      @act105 bewegt ≔ FALSE&#10;  end&#10;&#10;  event bewegen_oben&#10;    any p&#10;    where&#10;      @grd101 p ∈ begehbar&#10;      @grd102 (prj1(position)=prj1(p))∧ (prj2(position)−prj2(p)) = 2&#10;      @grd103 position ∈ tunnel ⇒ p ∉ tunnel&#10;    then&#10;      @act101 vorherige_position ≔ position&#10;      @act102 position ≔ p&#10;      @act103 in_bewegung ≔ TRUE&#10;      @act104 getunnelt ≔ FALSE&#10;      @act105 bewegt ≔ TRUE&#10;&#10;  end&#10;&#10;  event bewegen_unten&#10;    any p&#10;    where&#10;      @grd101 p ∈ begehbar&#10;      @grd102 (prj1(position)=prj1(p)) ∧ (prj2(position)−prj2(p)) = −2&#10;      @grd103 position ∈ tunnel ⇒ p ∉ tunnel&#10;    then&#10;      @act101 vorherige_position ≔ position&#10;      @act102 position ≔ p&#10;      @act103 in_bewegung ≔ TRUE&#10;      @act104 getunnelt ≔ FALSE&#10;      @act105 bewegt ≔ TRUE&#10;  end&#10;&#10;  event bewegen_rechts&#10;    any p&#10;    where&#10;      @grd101 p ∈ begehbar&#10;      @grd102 (prj1(position)−prj1(p)) = −2 ∧ (prj2(position)=prj2(p))&#10;      @grd103 position ∈ tunnel ⇒ p ∉ tunnel&#10;    then&#10;      @act101 vorherige_position ≔ position&#10;      @act102 position ≔ p&#10;      @act103 in_bewegung ≔ TRUE&#10;      @act104 getunnelt ≔ FALSE&#10;      @act105 bewegt ≔ TRUE&#10;  end&#10;&#10;  event bewegen_links&#10;    any p&#10;    where&#10;      @grd101 p ∈ begehbar&#10;      @grd102 (prj1(position)−prj1(p)) = 2 ∧ (prj2(position)=prj2(p))&#10;      @grd103 position ∈ tunnel ⇒ p ∉ tunnel&#10;    then&#10;      @act101 vorherige_position ≔ position&#10;      @act102 position ≔ p&#10;      @act103 in_bewegung ≔ TRUE&#10;      @act104 getunnelt ≔ FALSE&#10;      @act105 bewegt ≔ TRUE&#10;  end&#10;&#10;  event tunneln&#10;    any p&#10;    where&#10;      @grd101 p ∈ tunnel&#10;      @grd102 position ∈ tunnel&#10;      @grd103 p ≠ position&#10;    then&#10;      @act101 vorherige_position ≔ position&#10;      @act102 position ≔ p&#10;      @act103 getunnelt ≔ TRUE&#10;      @act104 bewegt ≔ TRUE&#10;      @act105 in_bewegung ≔ TRUE&#10;  end&#10;&#10;   event starte_geist_1&#10;    then&#10;      @act101 bewegt ≔ FALSE&#10;  end&#10;&#10;  event starte_geist_2&#10;    then&#10;      @act101 bewegt ≔ FALSE&#10;  end&#10;&#10;  event starte_geist_3&#10;    then&#10;      @act101 bewegt ≔ FALSE&#10;  end&#10;&#10;  event starte_geist_4&#10;    then&#10;      @act101 bewegt ≔ FALSE&#10;  end&#10;&#10;  event bewege_geist_1&#10;    then&#10;      @act101 bewegt ≔ FALSE&#10;  end&#10;&#10;  event bewege_geist_2&#10;    then&#10;      @act101 bewegt ≔ FALSE&#10;  end&#10;&#10;  event bewege_geist_3&#10;    then&#10;      @act101 bewegt ≔ FALSE&#10;  end&#10;&#10;  event bewege_geist_4&#10;    then&#10;      @act101 bewegt ≔ FALSE&#10;  end&#10;&#10;  event pacman_fangen&#10;    then&#10;      @act101 position ≔ startposition&#10;      @act102 in_bewegung ≔ FALSE&#10;      @act103 vorherige_position ≔ startposition&#10;      @act104 getunnelt ≔ FALSE&#10;      @act105 bewegt ≔ FALSE&#10;  end&#10;&#10;  event geist_1_fangen&#10;    then&#10;      @act101 bewegt ≔ FALSE&#10;  end&#10;&#10;  event geist_2_fangen&#10;    then&#10;      @act101 bewegt ≔ FALSE&#10;  end&#10;&#10;  event geist_3_fangen&#10;    then&#10;      @act101 bewegt ≔ FALSE&#10;  end&#10;&#10;  event geist_4_fangen&#10;    then&#10;      @act101 bewegt ≔ FALSE&#10;  end&#10;&#10;  event geisterjagd_abbrechen&#10;    then&#10;      @act101 bewegt ≔ FALSE&#10;  end&#10;&#10;  event game_over&#10;  &#9;then&#10;  &#9;  @act101 bewegt ≔ FALSE&#10;  end&#10;&#10;end&#10;" version="5">
+<org.eventb.core.seesContext name="_wkFjQBaHEeaxlIwdP2iQDA" org.eventb.core.target="Pacman_Context_generic"/>
+<org.eventb.core.event name="'" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="INITIALISATION">
+<org.eventb.core.action name="_6y91QBaLEea5wp6hXNOG2w" org.eventb.core.assignment="position ≔ startposition" org.eventb.core.label="act101"/>
+<org.eventb.core.action name="_6y-cUBaLEea5wp6hXNOG2w" org.eventb.core.assignment="vorherige_position ≔ startposition" org.eventb.core.label="act102"/>
+<org.eventb.core.action name="_6y_qcBaLEea5wp6hXNOG2w" org.eventb.core.assignment="in_bewegung ≔ FALSE" org.eventb.core.label="act103"/>
+<org.eventb.core.action name="_6zD74BaLEea5wp6hXNOG2w" org.eventb.core.assignment="getunnelt ≔ FALSE" org.eventb.core.label="act104"/>
+<org.eventb.core.action name="_6zEi8BaLEea5wp6hXNOG2w" org.eventb.core.assignment="bewegt ≔ FALSE" org.eventb.core.label="act105"/>
+</org.eventb.core.event>
+<org.eventb.core.variable name="_e4Wr4BaIEeaxlIwdP2iQDA" org.eventb.core.comment="repräsentiert die aktuelle Position des Pacman" org.eventb.core.identifier="position"/>
+<org.eventb.core.variable name="_e4Wr4RaIEeaxlIwdP2iQDA" org.eventb.core.comment="repräsentiert die letzte Position des Pacman" org.eventb.core.identifier="vorherige_position"/>
+<org.eventb.core.variable name="_e4XS8BaIEeaxlIwdP2iQDA" org.eventb.core.comment="gibt an, ob der Pacman sich bereits bewegt hat" org.eventb.core.identifier="in_bewegung"/>
+<org.eventb.core.invariant name="_6zBfoBaLEea5wp6hXNOG2w" org.eventb.core.label="inv101" org.eventb.core.predicate="position ∈ begehbar"/>
+<org.eventb.core.invariant name="_6zCGsBaLEea5wp6hXNOG2w" org.eventb.core.label="inv102" org.eventb.core.predicate="vorherige_position ∈ begehbar"/>
+<org.eventb.core.invariant name="_6zCGsRaLEea5wp6hXNOG2w" org.eventb.core.label="inv103" org.eventb.core.predicate="in_bewegung ∈ BOOL"/>
+<org.eventb.core.invariant name="_6zCtwBaLEea5wp6hXNOG2w" org.eventb.core.label="inv104" org.eventb.core.predicate="(in_bewegung = FALSE ∧ getunnelt = FALSE) ⇒ position = startposition ∧ vorherige_position = startposition"/>
+<org.eventb.core.invariant name="_6zCtwRaLEea5wp6hXNOG2w" org.eventb.core.label="inv105" org.eventb.core.predicate="(in_bewegung = TRUE ∧ getunnelt = FALSE) ⇒  (prj1(position)−prj1(vorherige_position) ∈ {2,−2} ∧ prj2(position)=prj2(vorherige_position)) ∨ (prj2(position)−prj2(vorherige_position) ∈ {2,−2} ∧ prj1(position)=prj1(vorherige_position))"/>
+<org.eventb.core.event name="_6zCtwhaLEea5wp6hXNOG2w" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="bewegen_oben">
+<org.eventb.core.parameter name="_6zDU0BaLEea5wp6hXNOG2w" org.eventb.core.identifier="p"/>
+<org.eventb.core.guard name="_6zDU0RaLEea5wp6hXNOG2w" org.eventb.core.label="grd101" org.eventb.core.predicate="p ∈ begehbar"/>
+<org.eventb.core.guard name="_EK4m4BaMEea5wp6hXNOG2w" org.eventb.core.label="grd102" org.eventb.core.predicate="(prj1(position)=prj1(p))∧ (prj2(position)−prj2(p)) = 2"/>
+<org.eventb.core.action name="_6zEi8RaLEea5wp6hXNOG2w" org.eventb.core.assignment="vorherige_position ≔ position" org.eventb.core.label="act101"/>
+<org.eventb.core.action name="_26FiYBaPEea5wp6hXNOG2w" org.eventb.core.assignment="position ≔ p" org.eventb.core.label="act102"/>
+<org.eventb.core.action name="_26FiYRaPEea5wp6hXNOG2w" org.eventb.core.assignment="in_bewegung ≔ TRUE" org.eventb.core.label="act103"/>
+<org.eventb.core.action name="_26GJdxaPEea5wp6hXNOG2w" org.eventb.core.assignment="getunnelt ≔ FALSE" org.eventb.core.label="act104"/>
+<org.eventb.core.action name="_26GJeBaPEea5wp6hXNOG2w" org.eventb.core.assignment="bewegt ≔ TRUE" org.eventb.core.label="act105"/>
+<org.eventb.core.guard name="_26GJdBaPEea5wp6hXNOG2w" org.eventb.core.label="grd103" org.eventb.core.predicate="position ∈ tunnel ⇒ p ∉ tunnel"/>
+</org.eventb.core.event>
+<org.eventb.core.variable name="_26FiYhaPEea5wp6hXNOG2w" org.eventb.core.comment="gibt an, ob die letzte Bewegung durch den Tunnel war" org.eventb.core.identifier="getunnelt"/>
+<org.eventb.core.invariant name="_26GJcBaPEea5wp6hXNOG2w" org.eventb.core.label="inv106" org.eventb.core.predicate="getunnelt ∈ BOOL"/>
+<org.eventb.core.invariant name="_26GJcRaPEea5wp6hXNOG2w" org.eventb.core.label="inv107" org.eventb.core.predicate="getunnelt = TRUE ⇔ {position, vorherige_position} = tunnel"/>
+<org.eventb.core.event name="_26GJchaPEea5wp6hXNOG2w" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="bewegen_unten">
+<org.eventb.core.parameter name="_26GJcxaPEea5wp6hXNOG2w" org.eventb.core.identifier="p"/>
+<org.eventb.core.guard name="_26GJdRaPEea5wp6hXNOG2w" org.eventb.core.label="grd101" org.eventb.core.predicate="p ∈ begehbar"/>
+<org.eventb.core.action name="_26GJeRaPEea5wp6hXNOG2w" org.eventb.core.assignment="vorherige_position ≔ position" org.eventb.core.label="act101"/>
+<org.eventb.core.action name="_R-vXcFlrEeawGt8rLp0IIg" org.eventb.core.assignment="position ≔ p" org.eventb.core.label="act102"/>
+<org.eventb.core.action name="_R-v-gFlrEeawGt8rLp0IIg" org.eventb.core.assignment="in_bewegung ≔ TRUE" org.eventb.core.label="act103"/>
+<org.eventb.core.action name="_R-v-gVlrEeawGt8rLp0IIg" org.eventb.core.assignment="getunnelt ≔ FALSE" org.eventb.core.label="act104"/>
+<org.eventb.core.action name="_R-v-gllrEeawGt8rLp0IIg" org.eventb.core.assignment="bewegt ≔ TRUE" org.eventb.core.label="act105"/>
+<org.eventb.core.guard name="_26GJdhaPEea5wp6hXNOG2w" org.eventb.core.label="grd102" org.eventb.core.predicate="(prj1(position)=prj1(p)) ∧ (prj2(position)−prj2(p)) = −2"/>
+<org.eventb.core.guard name="_R-vXc1lrEeawGt8rLp0IIg" org.eventb.core.label="grd103" org.eventb.core.predicate="position ∈ tunnel ⇒ p ∉ tunnel"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="_R-vXcVlrEeawGt8rLp0IIg" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="bewegen_rechts">
+<org.eventb.core.parameter name="_R-vXcllrEeawGt8rLp0IIg" org.eventb.core.identifier="p"/>
+<org.eventb.core.action name="_R-v-g1lrEeawGt8rLp0IIg" org.eventb.core.assignment="vorherige_position ≔ position" org.eventb.core.label="act101"/>
+<org.eventb.core.action name="_R-wlk1lrEeawGt8rLp0IIg" org.eventb.core.assignment="position ≔ p" org.eventb.core.label="act102"/>
+<org.eventb.core.action name="_R-wllFlrEeawGt8rLp0IIg" org.eventb.core.assignment="in_bewegung ≔ TRUE" org.eventb.core.label="act103"/>
+<org.eventb.core.action name="_R-wllVlrEeawGt8rLp0IIg" org.eventb.core.assignment="getunnelt ≔ FALSE" org.eventb.core.label="act104"/>
+<org.eventb.core.action name="_R-wllllrEeawGt8rLp0IIg" org.eventb.core.assignment="bewegt ≔ TRUE" org.eventb.core.label="act105"/>
+<org.eventb.core.guard name="_R-wlkVlrEeawGt8rLp0IIg" org.eventb.core.label="grd101" org.eventb.core.predicate="p ∈ begehbar"/>
+<org.eventb.core.guard name="_R-wlkllrEeawGt8rLp0IIg" org.eventb.core.label="grd102" org.eventb.core.predicate="(prj1(position)−prj1(p)) = −2 ∧ (prj2(position)=prj2(p))"/>
+<org.eventb.core.guard name="_R-xMollrEeawGt8rLp0IIg" org.eventb.core.label="grd103" org.eventb.core.predicate="position ∈ tunnel ⇒ p ∉ tunnel"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="_R-v-hFlrEeawGt8rLp0IIg" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="bewegen_links">
+<org.eventb.core.parameter name="_R-wlkFlrEeawGt8rLp0IIg" org.eventb.core.identifier="p"/>
+<org.eventb.core.action name="_R-xzsVlrEeawGt8rLp0IIg" org.eventb.core.assignment="vorherige_position ≔ position" org.eventb.core.label="act101"/>
+<org.eventb.core.action name="_R-xzsllrEeawGt8rLp0IIg" org.eventb.core.assignment="position ≔ p" org.eventb.core.label="act102"/>
+<org.eventb.core.action name="_R-xzs1lrEeawGt8rLp0IIg" org.eventb.core.assignment="in_bewegung ≔ TRUE" org.eventb.core.label="act103"/>
+<org.eventb.core.action name="_dJz-AVu2EeabeYXD7YYpQg" org.eventb.core.assignment="getunnelt ≔ FALSE" org.eventb.core.label="act104"/>
+<org.eventb.core.action name="_dJz-Alu2EeabeYXD7YYpQg" org.eventb.core.assignment="bewegt ≔ TRUE" org.eventb.core.label="act105"/>
+<org.eventb.core.guard name="_R-xMo1lrEeawGt8rLp0IIg" org.eventb.core.label="grd101" org.eventb.core.predicate="p ∈ begehbar"/>
+<org.eventb.core.guard name="_R-xzsFlrEeawGt8rLp0IIg" org.eventb.core.label="grd102" org.eventb.core.predicate="(prj1(position)−prj1(p)) = 2 ∧ (prj2(position)=prj2(p))"/>
+<org.eventb.core.guard name="_9PVHQGkPEeabpYv7sQK2OA" org.eventb.core.label="grd103" org.eventb.core.predicate="position ∈ tunnel ⇒ p ∉ tunnel"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="_R-xMoFlrEeawGt8rLp0IIg" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="tunneln">
+<org.eventb.core.parameter name="_R-xMoVlrEeawGt8rLp0IIg" org.eventb.core.identifier="p"/>
+<org.eventb.core.action name="_m0_eEGOyEeaXFt-2KDAgKw" org.eventb.core.assignment="vorherige_position ≔ position" org.eventb.core.label="act101"/>
+<org.eventb.core.action name="_m0_eEWOyEeaXFt-2KDAgKw" org.eventb.core.assignment="position ≔ p" org.eventb.core.label="act102"/>
+<org.eventb.core.action name="_dJz-A1u2EeabeYXD7YYpQg" org.eventb.core.assignment="getunnelt ≔ TRUE" org.eventb.core.label="act103"/>
+<org.eventb.core.action name="_KqgUoFu3EeabeYXD7YYpQg" org.eventb.core.assignment="bewegt ≔ TRUE" org.eventb.core.label="act104"/>
+<org.eventb.core.action name="_m0_eEmOyEeaXFt-2KDAgKw" org.eventb.core.assignment="in_bewegung ≔ TRUE" org.eventb.core.label="act105"/>
+<org.eventb.core.guard name="_S4JCwGkQEeabpYv7sQK2OA" org.eventb.core.label="grd101" org.eventb.core.predicate="p ∈ tunnel"/>
+<org.eventb.core.guard name="_S4JCwWkQEeabpYv7sQK2OA" org.eventb.core.label="grd102" org.eventb.core.predicate="position ∈ tunnel"/>
+<org.eventb.core.guard name="_S4JCwmkQEeabpYv7sQK2OA" org.eventb.core.label="grd103" org.eventb.core.predicate="p ≠ position"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="_dJz-AFu2EeabeYXD7YYpQg" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="starte_geist_1">
+<org.eventb.core.action name="_m1AFIGOyEeaXFt-2KDAgKw" org.eventb.core.assignment="bewegt ≔ FALSE" org.eventb.core.label="act101"/>
+</org.eventb.core.event>
+<org.eventb.core.variable name="_arhK0GOyEeaXFt-2KDAgKw" org.eventb.core.comment="gibt an, ob der Pacman sich im letzten Event bewegt hat" org.eventb.core.identifier="bewegt"/>
+<org.eventb.core.invariant name="_m1AFJGOyEeaXFt-2KDAgKw" org.eventb.core.label="inv108" org.eventb.core.predicate="getunnelt = TRUE ⇒ in_bewegung = TRUE"/>
+<org.eventb.core.event name="_B7DscGOzEeaXFt-2KDAgKw" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="starte_geist_2">
+<org.eventb.core.action name="_m1AFIWOyEeaXFt-2KDAgKw" org.eventb.core.assignment="bewegt ≔ FALSE" org.eventb.core.label="act101"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="_B7ETgWOzEeaXFt-2KDAgKw" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="starte_geist_3">
+<org.eventb.core.action name="_m1AFImOyEeaXFt-2KDAgKw" org.eventb.core.assignment="bewegt ≔ FALSE" org.eventb.core.label="act101"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="_B7ETg2OzEeaXFt-2KDAgKw" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="starte_geist_4">
+<org.eventb.core.action name="_m1AFI2OyEeaXFt-2KDAgKw" org.eventb.core.assignment="bewegt ≔ FALSE" org.eventb.core.label="act101"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="_B7EThWOzEeaXFt-2KDAgKw" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="bewege_geist_1">
+<org.eventb.core.action name="_B7ETgGOzEeaXFt-2KDAgKw" org.eventb.core.assignment="bewegt ≔ FALSE" org.eventb.core.label="act101"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="_Q1NXkGOzEeaXFt-2KDAgKw" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="bewege_geist_2">
+<org.eventb.core.action name="_B7ETgmOzEeaXFt-2KDAgKw" org.eventb.core.assignment="bewegt ≔ FALSE" org.eventb.core.label="act101"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="_Q1NXkmOzEeaXFt-2KDAgKw" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="bewege_geist_3">
+<org.eventb.core.action name="_B7EThGOzEeaXFt-2KDAgKw" org.eventb.core.assignment="bewegt ≔ FALSE" org.eventb.core.label="act101"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="_vO_kAGO0EeaXFt-2KDAgKw" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="bewege_geist_4">
+<org.eventb.core.action name="_B7EThmOzEeaXFt-2KDAgKw" org.eventb.core.assignment="bewegt ≔ FALSE" org.eventb.core.label="act101"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="_vO_kAWO0EeaXFt-2KDAgKw" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="pacman_fangen">
+<org.eventb.core.action name="_Q1NXkWOzEeaXFt-2KDAgKw" org.eventb.core.assignment="position ≔ startposition" org.eventb.core.label="act101"/>
+<org.eventb.core.action name="_Q1NXk2OzEeaXFt-2KDAgKw" org.eventb.core.assignment="in_bewegung ≔ FALSE" org.eventb.core.label="act102"/>
+<org.eventb.core.action name="_vO_kAmO0EeaXFt-2KDAgKw" org.eventb.core.assignment="vorherige_position ≔ startposition" org.eventb.core.label="act103"/>
+<org.eventb.core.action name="_vO_kA2O0EeaXFt-2KDAgKw" org.eventb.core.assignment="getunnelt ≔ FALSE" org.eventb.core.label="act104"/>
+<org.eventb.core.action name="_vO_kBWO0EeaXFt-2KDAgKw" org.eventb.core.assignment="bewegt ≔ FALSE" org.eventb.core.label="act105"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="_vO_kBGO0EeaXFt-2KDAgKw" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="geist_1_fangen">
+<org.eventb.core.action name="_vPALEWO0EeaXFt-2KDAgKw" org.eventb.core.assignment="bewegt ≔ FALSE" org.eventb.core.label="act101"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="_vPALEGO0EeaXFt-2KDAgKw" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="geist_2_fangen">
+<org.eventb.core.action name="_vPALE2O0EeaXFt-2KDAgKw" org.eventb.core.assignment="bewegt ≔ FALSE" org.eventb.core.label="act101"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="_vPALEmO0EeaXFt-2KDAgKw" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="geist_3_fangen">
+<org.eventb.core.action name="_vPALFWO0EeaXFt-2KDAgKw" org.eventb.core.assignment="bewegt ≔ FALSE" org.eventb.core.label="act101"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="_vPALFGO0EeaXFt-2KDAgKw" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="geist_4_fangen">
+<org.eventb.core.action name="_vPALF2O0EeaXFt-2KDAgKw" org.eventb.core.assignment="bewegt ≔ FALSE" org.eventb.core.label="act101"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="_vPALFmO0EeaXFt-2KDAgKw" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="geisterjagd_abbrechen">
+<org.eventb.core.action name="_vPALGWO0EeaXFt-2KDAgKw" org.eventb.core.assignment="bewegt ≔ FALSE" org.eventb.core.label="act101"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="_vPALGGO0EeaXFt-2KDAgKw" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="game_over">
+<org.eventb.core.action name="_UeDxUGkIEeabpYv7sQK2OA" org.eventb.core.assignment="bewegt ≔ FALSE" org.eventb.core.label="act101"/>
+</org.eventb.core.event>
+<org.eventb.core.invariant name="_jDpS8GkOEeabpYv7sQK2OA" org.eventb.core.label="inv109" org.eventb.core.predicate="bewegt ∈ BOOL"/>
+<org.eventb.core.invariant name="_jDpS8WkOEeabpYv7sQK2OA" org.eventb.core.label="inv110" org.eventb.core.predicate="in_bewegung = FALSE ⇒ bewegt = FALSE"/>
+</org.eventb.core.machineFile>
