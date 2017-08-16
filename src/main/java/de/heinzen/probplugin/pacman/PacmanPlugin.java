@@ -10,7 +10,6 @@ import javafx.scene.control.Tab;
 import javafx.scene.input.KeyEvent;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import ro.fortsoft.pf4j.PluginException;
 import ro.fortsoft.pf4j.PluginWrapper;
 
 
@@ -45,6 +44,7 @@ public class PacmanPlugin extends ProBPlugin {
 
         if (currentTrace.getCurrentState() != null && currentTrace.getCurrentState().isInitialised()) {
             gui.createGui(pacmanTab);
+            gui.update(currentTrace.get());
         }
 
         currentTraceChangeListener = (observable, oldValue, newValue) -> {
@@ -55,18 +55,14 @@ public class PacmanPlugin extends ProBPlugin {
                     && newValue.getCurrentState().isInitialised()) {
                 //animator.setCurrentTrace(observable);
                 gui.createGui(pacmanTab);
+                gui.update(newValue);
             } else if ( newValue != null && newValue.getCurrentState() != null
                     && newValue.getCurrentState().isInitialised()) {
                 gui.update(newValue);
             }
         };
 
-        keyListener = event -> {
-            System.out.print("Moving the pacman: ");
-            long start = System.currentTimeMillis();
-            logic.movePacman(event.getCode());
-            System.out.println((System.currentTimeMillis() - start)/1000.0 + "s");
-        };
+        keyListener = event -> logic.movePacman(event.getCode());
 
         proBConnection.addTab(pacmanTab);
         currentTrace.addListener(currentTraceChangeListener);
