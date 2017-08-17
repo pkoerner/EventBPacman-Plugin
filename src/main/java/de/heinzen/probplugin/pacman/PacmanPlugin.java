@@ -12,7 +12,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import ro.fortsoft.pf4j.PluginWrapper;
 
-
 /**
  * Created by Christoph Heinzen on 14.08.17.
  */
@@ -30,7 +29,7 @@ public class PacmanPlugin extends ProBPlugin {
 
     @Override
     public void startPlugin() {
-        System.out.println("Stopping " + getName());
+        System.out.println("Starting " + getName());
         ProBConnection proBConnection = getProBConnection();
         CurrentTrace currentTrace = proBConnection.getCurrentTrace();
 
