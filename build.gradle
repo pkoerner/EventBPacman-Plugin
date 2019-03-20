@@ -39,6 +39,9 @@ jar {
 }
 
 dependencies {
-    compileOnly project(':prob2-ui') // compileOnly important!!! We do not want to put the api into the jar file since the main program has it already!
+    // Note: The ProB 2 UI is not actually available on Maven Central or Sonatype (yet), so currently this dependency can only be resolved via the multi-project build configuration in settings.gradle.
+    // For this to work, the EventBPacman-Plugin and prob2-ui directories must have the same parent directory.
+    // compileOnly important!!! We do not want to put the api into the jar file since the main program has it already!
+    compileOnly group: 'de.hhu.stups', name: 'prob2-ui', version: '1.0.0-SNAPSHOT'
     testCompile group: 'junit', name: 'junit', version: '4.+'
 }
