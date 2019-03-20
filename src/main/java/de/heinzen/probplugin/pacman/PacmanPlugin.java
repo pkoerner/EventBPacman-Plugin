@@ -1,16 +1,19 @@
 package de.heinzen.probplugin.pacman;
 
 import de.prob.statespace.Trace;
-import de.prob2.ui.plugin.ProBConnection;
 import de.prob2.ui.plugin.ProBPlugin;
+import de.prob2.ui.plugin.ProBPluginHelper;
+import de.prob2.ui.plugin.ProBPluginManager;
 import de.prob2.ui.prob2fx.CurrentTrace;
+
 import javafx.beans.value.ChangeListener;
 import javafx.event.EventHandler;
 import javafx.scene.control.Tab;
 import javafx.scene.input.KeyEvent;
+
+import org.pf4j.PluginWrapper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import ro.fortsoft.pf4j.PluginWrapper;
 
 /**
  * Created by Christoph Heinzen on 14.08.17.
@@ -23,15 +26,14 @@ public class PacmanPlugin extends ProBPlugin {
     private ChangeListener<Trace> currentTraceChangeListener;
     private EventHandler<? super KeyEvent> keyListener;
 
-    public PacmanPlugin(PluginWrapper pluginWrapper) {
-        super(pluginWrapper);
+    public PacmanPlugin(final PluginWrapper pluginWrapper, final ProBPluginManager proBPluginManager, final ProBPluginHelper proBPluginHelper) {
+        super(pluginWrapper, proBPluginManager, proBPluginHelper);
     }
 
     @Override
     public void startPlugin() {
         System.out.println("Starting " + getName());
-        ProBConnection proBConnection = getProBConnection();
-        CurrentTrace currentTrace = proBConnection.getCurrentTrace();
+        CurrentTrace currentTrace = getProBPluginHelper().getCurrentTrace();
 
         //create GUI
         pacmanTab = new Tab("Pacman");
@@ -60,17 +62,17 @@ public class PacmanPlugin extends ProBPlugin {
 
         keyListener = event -> logic.movePacman(event.getCode());
 
-        proBConnection.addTab(pacmanTab);
+        getProBPluginHelper().addTab(pacmanTab);
         currentTrace.addListener(currentTraceChangeListener);
-        proBConnection.getStageManager().getMainStage().getScene().addEventFilter(KeyEvent.KEY_PRESSED, keyListener);
+        getProBPluginHelper().getStageManager().getMainStage().getScene().addEventFilter(KeyEvent.KEY_PRESSED, keyListener);
     }
 
     @Override
     public void stopPlugin() {
         System.out.println("Stopping " + getName());
-        getProBConnection().getCurrentTrace().removeListener(currentTraceChangeListener);
-        getProBConnection().removeTab(pacmanTab);
-        getProBConnection().getStageManager().getMainStage().getScene().removeEventFilter(KeyEvent.KEY_PRESSED, keyListener);
+        getProBPluginHelper().getCurrentTrace().removeListener(currentTraceChangeListener);
+        getProBPluginHelper().removeTab(pacmanTab);
+        getProBPluginHelper().getStageManager().getMainStage().getScene().removeEventFilter(KeyEvent.KEY_PRESSED, keyListener);
     }
 
     @Override
