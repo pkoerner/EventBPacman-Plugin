@@ -1,15 +1,12 @@
 package de.heinzen.probplugin.pacman;
 
-import de.prob.cli.ProBInstanceProvider;
+import java.util.HashMap;
+import java.util.List;
+
 import de.prob.statespace.Trace;
-import de.prob.statespace.Transition;
-import javafx.application.Application;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
+
 import javafx.scene.Group;
 import javafx.scene.Node;
-import javafx.scene.Scene;
-import javafx.scene.control.ListView;
 import javafx.scene.control.Tab;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Background;
@@ -20,9 +17,6 @@ import javafx.scene.shape.Rectangle;
 import javafx.scene.shape.SVGPath;
 import javafx.scene.text.Font;
 import javafx.scene.text.Text;
-
-import java.util.HashMap;
-import java.util.List;
 
 /**
  * Created by Christoph Heinzen on 15.08.17.
@@ -93,7 +87,7 @@ public class PacmanGui {
         return new Circle(toImagePos(pos.getX()), toImagePos(pos.getY()), radius, Color.WHITE);
     }
 
-    public void createGui(Tab tab) {
+    public void createGui(Trace trace, Tab tab) {
 
         //create GUI
         AnchorPane pane = new AnchorPane();
@@ -102,9 +96,9 @@ public class PacmanGui {
         pane.setBackground(new Background(new BackgroundFill(Color.BLACK, null, null)));
 
         Group root = new Group();
-        List<Position> black = animator.getPositions("begehbar \\/ geisterhof \\/ geisterhof_zugang");
-        List<Position> scoreDots = animator.getPositions("punktefelder_aktuell");
-        List<Position> ghostDots = animator.getPositions("geister_aktuell");
+        List<Position> black = animator.getPositions(trace, "begehbar \\/ geisterhof \\/ geisterhof_zugang");
+        List<Position> scoreDots = animator.getPositions(trace, "punktefelder_aktuell");
+        List<Position> ghostDots = animator.getPositions(trace, "geister_aktuell");
 
         Node backgroundBlue = createRectangle(0,0,640,580,BACKGROUND_BLUE);
         root.getChildren().add(backgroundBlue);
@@ -162,12 +156,12 @@ public class PacmanGui {
             root.getChildren().add(c);
         }
 
-        Position pacStart = animator.getPosition("startposition");
+        Position pacStart = animator.getPosition(trace, "startposition");
         pacman = createPacman(toImagePos(pacStart.getX()), toImagePos(pacStart.getY()));
         root.getChildren().add(pacman);
 
         for (int i = 0; i < 4; i++) {
-            ghosts[i] = createGhost(GHOST_COLORS[i], animator.getPosition("startpos_geist_" + (i+1)));
+            ghosts[i] = createGhost(GHOST_COLORS[i], animator.getPosition(trace, "startpos_geist_" + (i+1)));
         }
         root.getChildren().addAll(ghosts);
 
@@ -178,21 +172,21 @@ public class PacmanGui {
         tab.setClosable(false);
         tab.setContent(pane);
 
-        update();
+        update(trace);
     }
 
-    public void updateScoreValue() {
+    public void updateScoreValue(Trace trace) {
         if (scoreValueText != null) {
-            scoreValueText.setText(animator.getNumber("score") + "");
+            scoreValueText.setText(animator.getNumber(trace, "score") + "");
             scoreValueText.setX(318 - scoreValueText.getLayoutBounds().getWidth());
         }
     }
 
-    public void updatePacman() {
+    public void updatePacman(Trace trace) {
         if (pacman != null) {
-            Position pacmanPos = animator.getPosition("position");
-            Position pacmanPosOld = animator.getPosition("vorherige_position");
-            Position start = animator.getPosition("startposition");
+            Position pacmanPos = animator.getPosition(trace, "position");
+            Position pacmanPosOld = animator.getPosition(trace, "vorherige_position");
+            Position start = animator.getPosition(trace, "startposition");
             if (!pacmanPos.equals(pacmanPosOld)) {
                 int deltaX = pacmanPosOld.getX() - pacmanPos.getX();
                 int deltaY = pacmanPosOld.getY() - pacmanPos.getY();
@@ -217,10 +211,10 @@ public class PacmanGui {
         }
     }
 
-    public void updateGhost(int i) {
+    public void updateGhost(Trace trace, int i) {
         if (ghosts[i] != null) {
-            Position ghostPos = animator.getPosition("pos_geist_" + (i+1));
-            boolean hunted = animator.check("geist_"  + (i+1) + " : gejagte_geister");
+            Position ghostPos = animator.getPosition(trace, "pos_geist_" + (i+1));
+            boolean hunted = animator.check(trace, "geist_"  + (i+1) + " : gejagte_geister");
             Color bodyColor = hunted ? BACKGROUND_BLUE : GHOST_COLORS[i];
 
             ghosts[i].setLayoutX(ghostPos.getX() * 10 + 40);
@@ -235,8 +229,8 @@ public class PacmanGui {
         }
     }
 
-    public void updateLives() {
-        int lives = animator.getNumber("leben");
+    public void updateLives(Trace trace) {
+        int lives = animator.getNumber(trace, "leben");
         for (Node pac : livePacmans) {
             pac.setOpacity(0);
         }
@@ -247,15 +241,15 @@ public class PacmanGui {
         }
     }
 
-    public void updateScoreDots() {
-        List<Position> scores = animator.getPositions("punktefelder_aktuell");
+    public void updateScoreDots(Trace trace) {
+        List<Position> scores = animator.getPositions(trace, "punktefelder_aktuell");
         for(Position p : scoreDots.keySet()) {
             scoreDots.get(p).setOpacity(scores.contains(p) ? 1.0 : 0.0);
         }
     }
 
-    public void updateGhostDots() {
-        List<Position> ghosts = animator.getPositions("geister_aktuell");
+    public void updateGhostDots(Trace trace) {
+        List<Position> ghosts = animator.getPositions(trace, "geister_aktuell");
         for(Position p : ghostDots.keySet()) {
             ghostDots.get(p).setOpacity(ghosts.contains(p) ? 1.0 : 0.0);
         }
@@ -265,14 +259,14 @@ public class PacmanGui {
         return pos * 10 + 40;
     }
 
-    public void update() {
-        updateScoreValue();
-        updateGhostDots();
-        updateScoreDots();
-        updateLives();
-        updatePacman();
+    public void update(Trace trace) {
+        updateScoreValue(trace);
+        updateGhostDots(trace);
+        updateScoreDots(trace);
+        updateLives(trace);
+        updatePacman(trace);
         for (int i = 0; i < 3; i++) {
-            updateGhost(i);
+            updateGhost(trace, i);
         }
     }
 }

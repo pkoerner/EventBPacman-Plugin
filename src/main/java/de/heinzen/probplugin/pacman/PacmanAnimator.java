@@ -14,29 +14,15 @@ import de.prob.translator.types.BObject;
 import de.prob.translator.types.BigInteger;
 import de.prob.translator.types.Set;
 import de.prob.translator.types.Tuple;
-import de.prob2.ui.prob2fx.CurrentTrace;
 
 /**
  * Created by Christoph Heinzen on 15.08.17.
  */
 public class PacmanAnimator {
+    public PacmanAnimator() {}
 
-    private CurrentTrace currentTrace;
-
-    public PacmanAnimator(CurrentTrace currentTrace) {
-        this.currentTrace = currentTrace;
-    }
-
-    private Trace getTrace() {
-        return currentTrace.getValue();
-    }
-
-    private void setTrace(Trace trace) {
-        currentTrace.set(trace);
-    }
-
-    public Position getPosition(String eventbFormula) {
-        EvalResult result = (EvalResult) getTrace().evalCurrent(eventbFormula, FormulaExpand.EXPAND);
+    public Position getPosition(Trace trace, String eventbFormula) {
+        EvalResult result = (EvalResult) trace.evalCurrent(eventbFormula, FormulaExpand.EXPAND);
         Tuple value;
         try {
             value = (Tuple) result.translate().getValue();
@@ -46,9 +32,9 @@ public class PacmanAnimator {
         return new Position(((BigInteger)value.get(0)).intValue(), ((BigInteger)value.get(1)).intValue());
     }
 
-    public List<Position> getPositions(String eventbFormula) {
+    public List<Position> getPositions(Trace trace, String eventbFormula) {
         EventB begehbar = new EventB(eventbFormula, Collections.emptySet(), FormulaExpand.EXPAND);
-        EvalResult result = (EvalResult) getTrace().evalCurrent(begehbar);
+        EvalResult result = (EvalResult) trace.evalCurrent(begehbar);
         Set translatedSet;
         try {
             translatedSet = (Set) result.translate().getValue();
@@ -63,16 +49,16 @@ public class PacmanAnimator {
         return positions;
     }
 
-    public boolean checkPosition(Position pos) {
-        return checkPosition(pos.getX(), pos.getY());
+    public boolean checkPosition(Trace trace, Position pos) {
+        return checkPosition(trace, pos.getX(), pos.getY());
     }
 
-    public boolean checkPosition(int x, int y) {
-        return check("(" + x + "|->" + y + ") : begehbar");
+    public boolean checkPosition(Trace trace, int x, int y) {
+        return check(trace, "(" + x + "|->" + y + ") : begehbar");
     }
 
-    public int getNumber(String eventbFormula) {
-        EvalResult result = (EvalResult) getTrace().evalCurrent(eventbFormula, FormulaExpand.EXPAND);
+    public int getNumber(Trace trace, String eventbFormula) {
+        EvalResult result = (EvalResult) trace.evalCurrent(eventbFormula, FormulaExpand.EXPAND);
         try {
             return ((BigInteger) result.translate().getValue()).intValue();
         } catch (BCompoundException e) {
@@ -80,8 +66,8 @@ public class PacmanAnimator {
         }
     }
 
-    public boolean check(String eventbFormula) {
-        EvalResult result = (EvalResult) getTrace().evalCurrent(eventbFormula, FormulaExpand.EXPAND);
+    public boolean check(Trace trace, String eventbFormula) {
+        EvalResult result = (EvalResult) trace.evalCurrent(eventbFormula, FormulaExpand.EXPAND);
         try {
             return ((de.prob.translator.types.Boolean) result.translate().getValue()).booleanValue();
         } catch (BCompoundException e) {
@@ -89,19 +75,19 @@ public class PacmanAnimator {
         }
     }
 
-    public boolean checkEvent(String event) {
-        return getTrace().canExecuteEvent(event);
+    public boolean checkEvent(Trace trace, String event) {
+        return trace.canExecuteEvent(event);
     }
 
-    public boolean checkEvent(String event, String parameter) {
-        return getTrace().canExecuteEvent(event, parameter);
+    public boolean checkEvent(Trace trace, String event, String parameter) {
+        return trace.canExecuteEvent(event, parameter);
     }
 
-    public void execute(String event) {
-        setTrace(getTrace().execute(event));
+    public Trace execute(Trace trace, String event) {
+        return trace.execute(event);
     }
 
-    public void execute(String event, String parameter) {
-        setTrace(getTrace().execute(event, parameter));
+    public Trace execute(Trace trace, String event, String parameter) {
+        return trace.execute(event, parameter);
     }
 }

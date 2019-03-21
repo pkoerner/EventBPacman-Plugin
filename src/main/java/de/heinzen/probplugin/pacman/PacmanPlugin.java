@@ -38,13 +38,13 @@ public class PacmanPlugin extends ProBPlugin {
         //create GUI
         pacmanTab = new Tab("Pacman");
 
-        PacmanAnimator animator = new PacmanAnimator(currentTrace);
+        PacmanAnimator animator = new PacmanAnimator();
         PacmanGui gui = new PacmanGui(animator);
         PacmanLogic logic = new PacmanLogic(gui, animator);
 
 
         if (currentTrace.getCurrentState() != null && currentTrace.getCurrentState().isInitialised()) {
-            gui.createGui(pacmanTab);
+            gui.createGui(currentTrace.get(), pacmanTab);
         }
 
         currentTraceChangeListener = (observable, oldValue, newValue) -> {
@@ -53,14 +53,14 @@ public class PacmanPlugin extends ProBPlugin {
                     && newValue != null && newValue.getCurrentState() != null
                     && !oldValue.getCurrentState().isInitialised()
                     && newValue.getCurrentState().isInitialised()) {
-                gui.createGui(pacmanTab);
+                gui.createGui(newValue, pacmanTab);
             } else if ( newValue != null && newValue.getCurrentState() != null
                     && newValue.getCurrentState().isInitialised()) {
-                gui.update();
+                gui.update(newValue);
             }
         };
 
-        keyListener = event -> logic.movePacman(event.getCode());
+        keyListener = event -> currentTrace.set(logic.movePacman(currentTrace.get(), event.getCode()));
 
         getProBPluginHelper().addTab(pacmanTab);
         currentTrace.addListener(currentTraceChangeListener);
