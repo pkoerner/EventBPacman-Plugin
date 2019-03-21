@@ -74,20 +74,4 @@ public class PacmanAnimator {
             throw new ProBError(e);
         }
     }
-
-    public boolean checkEvent(Trace trace, String event) {
-        return trace.canExecuteEvent(event);
-    }
-
-    public boolean checkEvent(Trace trace, String event, String parameter) {
-        return trace.canExecuteEvent(event, parameter);
-    }
-
-    public Trace execute(Trace trace, String event) {
-        return trace.execute(event);
-    }
-
-    public Trace execute(Trace trace, String event, String parameter) {
-        return trace.execute(event, parameter);
-    }
 }
