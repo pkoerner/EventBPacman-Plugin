@@ -1,9 +1,6 @@
 package de.heinzen.probplugin.pacman;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 import de.be4.classicalb.core.parser.exceptions.BCompoundException;
 import de.prob.animator.domainobjects.AbstractEvalResult;
@@ -24,6 +21,7 @@ import org.jetbrains.annotations.NotNull;
  */
 public class PacmanAnimator {
     public java.util.Set<String> subscribed = new java.util.HashSet<>();
+ //   public Map<String, IEvalElement> nameToEvalElement = new HashMap<>();
     public PacmanAnimator() {}
 
     public EvalResult getValueOfVariable(Trace trace, String name) {
@@ -32,10 +30,16 @@ public class PacmanAnimator {
             subscribed.add(name);
         }
 
+
         Map<IEvalElement, AbstractEvalResult> values = trace.getCurrentState().getValues();
+   //     if (nameToEvalElement.containsKey(name)) {
+   //         return (EvalResult) values.get(nameToEvalElement.get(name));
+   //     }
 
         for (IEvalElement ele : values.keySet()) {
             if (ele.getCode().equals(name)) {
+                System.out.println(ele + " " + System.identityHashCode(ele));
+     //           nameToEvalElement.put(name, ele);
                 return (EvalResult) values.get(ele);
             }
         }
@@ -46,15 +50,6 @@ public class PacmanAnimator {
     public BigInteger getIntVariable(Trace trace, String name) {
         try {
             return (BigInteger) getValueOfVariable(trace, name).translate().getValue();
-        } catch (BCompoundException e) {
-            throw new ProBError(e);
-        }
-    }
-
-    public static BigInteger evalIntConstant(Trace trace, String name) {
-        EvalResult result = (EvalResult) trace.evalCurrent(name, FormulaExpand.EXPAND);
-        try {
-            return (BigInteger) result.translate().getValue();
         } catch (BCompoundException e) {
             throw new ProBError(e);
         }
@@ -115,16 +110,6 @@ public class PacmanAnimator {
 
     public boolean checkPosition(Trace trace, int x, int y) {
         return getSetVariable(trace, "begehbar").contains(new Tuple(BigInteger.build(x), BigInteger.build(y)));
-        //return check(trace, "(" + x + "|->" + y + ") : begehbar");
     }
 
-
-    public boolean check(Trace trace, String eventbFormula) {
-        EvalResult result = (EvalResult) trace.evalCurrent(eventbFormula, FormulaExpand.EXPAND);
-        try {
-            return ((de.prob.translator.types.Boolean) result.translate().getValue()).booleanValue();
-        } catch (BCompoundException e) {
-            throw new ProBError(e);
-        }
-    }
 }

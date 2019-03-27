@@ -58,9 +58,6 @@ public class PacmanLogic {
     }
 
     public Trace movePacman(Trace trace, KeyCode code) {
-        System.out.println("#####");
-        System.out.println(trace.getCurrentState().getValues());
-        System.out.println("#####");
         Trace newTrace = trace;
         final String direction = KEY_TO_DIRECTION.get(code);
         if (direction != null) {
@@ -117,7 +114,7 @@ public class PacmanLogic {
             gui.updateGhost(newTrace, ghost);
         }
         if (ghost > 1 && animator.getIntVariable(newTrace,"counter_scored").intValue()
-                < animator.getIntVariable(newTrace, "counter_geist_" + (ghost + 1)).intValue()) { //.check(newTrace, "counter_scored < counter_geist_" + (ghost + 1))) {
+                       < animator.getIntVariable(newTrace, "counter_geist_" + (ghost + 1)).intValue()) {
             return newTrace;
         }
         Position next = computePosition(newTrace, ghost);

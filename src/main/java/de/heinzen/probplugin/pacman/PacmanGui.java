@@ -1,10 +1,13 @@
 package de.heinzen.probplugin.pacman;
 
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 
 import de.prob.statespace.Trace;
 
+import de.prob.translator.types.Atom;
 import javafx.scene.Group;
 import javafx.scene.Node;
 import javafx.scene.control.Tab;
@@ -97,7 +100,13 @@ public class PacmanGui {
         pane.setBackground(new Background(new BackgroundFill(Color.BLACK, null, null)));
 
         Group root = new Group();
-        List<Position> black = animator.getPositions(trace, "begehbar \\/ geisterhof \\/ geisterhof_zugang");
+        List<Position> black1 = animator.getPositions(trace, "begehbar");
+        List<Position> black2 = animator.getPositions(trace, "geisterhof");
+        List<Position> black3 = animator.getPositions(trace, "geisterhof_zugang");
+        List<Position> black =  new ArrayList<>();
+        black.addAll(black1);
+        black.addAll(black2);
+        black.addAll(black3);
         List<Position> scoreDots = animator.getPositions(trace, "punktefelder_aktuell");
         List<Position> ghostDots = animator.getPositions(trace, "geister_aktuell");
 
@@ -215,8 +224,7 @@ public class PacmanGui {
     public void updateGhost(Trace trace, int i) {
         if (ghosts[i] != null) {
             Position ghostPos = animator.getPosition(trace, "pos_geist_" + (i+1));
-            boolean hunted = animator.getSetVariable(trace,"gejagte_geister").contains("geist_"  + (i+1)); // TODO: yikes
-            //boolean hunted = animator.check(trace, "geist_"  + (i+1) + " : gejagte_geister");
+            boolean hunted = animator.getSetVariable(trace,"gejagte_geister").contains(new Atom("geist_"  + (i+1)));
             Color bodyColor = hunted ? BACKGROUND_BLUE : GHOST_COLORS[i];
 
             ghosts[i].setLayoutX(ghostPos.getX() * 10 + 40);
