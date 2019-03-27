@@ -8,7 +8,9 @@ import java.util.List;
 import java.util.Optional;
 import java.util.stream.IntStream;
 
+import de.prob.statespace.State;
 import de.prob.statespace.Trace;
+import de.prob.statespace.Transition;
 
 import javafx.scene.input.KeyCode;
 
@@ -45,7 +47,20 @@ public class PacmanLogic {
         this.animator = animator;
     }
 
+    public static boolean isOperationEnabled(Trace trace, String name) {
+        State state = trace.getCurrentState();
+        List<Transition> transitions = state.getTransitions();
+        for (Transition t : transitions) {
+            if (t.getName().equals(name))
+                return true;
+        }
+        return false;
+    }
+
     public Trace movePacman(Trace trace, KeyCode code) {
+        System.out.println("#####");
+        System.out.println(trace.getCurrentState().getValues());
+        System.out.println("#####");
         Trace newTrace = trace;
         final String direction = KEY_TO_DIRECTION.get(code);
         if (direction != null) {
@@ -55,28 +70,28 @@ public class PacmanLogic {
             if (newTrace2.isPresent()) {
                 newTrace = newTrace2.get();
             } else {
-                if (newTrace.canExecuteEvent("bewegen_" + direction + "_score")) {
+                if (isOperationEnabled(newTrace, "bewegen_" + direction + "_score")) {
                     newTrace = newTrace.execute("bewegen_" + direction + "_score");
                     gui.updateScoreDots(newTrace);
                     gui.updateScoreValue(newTrace);
                     gui.updatePacman(newTrace);
-                } else if (newTrace.canExecuteEvent("bewegen_" + direction + "_ghost")) {
+                } else if (isOperationEnabled(newTrace, "bewegen_" + direction + "_ghost")) {
                     newTrace = newTrace.execute("bewegen_" + direction + "_ghost");
                     for (int i = 0; i < 4; i++) {
                         gui.updateGhost(newTrace, i);
                     }
                     gui.updateGhostDots(newTrace);
                     gui.updatePacman(newTrace);
-                } else if (newTrace.canExecuteEvent("bewegen_" + direction)) {
+                } else if (isOperationEnabled(newTrace, "bewegen_" + direction)) {
                     newTrace = newTrace.execute("bewegen_" + direction);
                     gui.updatePacman(newTrace);
-                } else if (newTrace.canExecuteEvent("tunneln")) {
+                } else if (isOperationEnabled(newTrace, "tunneln")) {
                     newTrace = newTrace.execute("tunneln");
                     gui.updatePacman(newTrace);
                 }
                 newTrace = tryToCatchGhosts(newTrace);
                 newTrace = tryToCatchPacman(newTrace).orElse(newTrace);
-                if (newTrace.canExecuteEvent("geisterjagd_abbrechen")) {
+                if (isOperationEnabled(newTrace,"geisterjagd_abbrechen")) {
                     newTrace = newTrace.execute("geisterjagd_abbrechen");
                     for (int i = 0; i < 4; i++) {
                         gui.updateGhost(newTrace, i);
@@ -97,11 +112,12 @@ public class PacmanLogic {
 
     private Trace moveGhost(Trace trace, int ghost) {
         Trace newTrace = trace;
-        if (newTrace.canExecuteEvent("starte_geist_" + (ghost + 1))) {
+        if (isOperationEnabled(newTrace, "starte_geist_" + (ghost + 1))) {
             newTrace = newTrace.execute("starte_geist_" + (ghost + 1));
             gui.updateGhost(newTrace, ghost);
         }
-        if (ghost > 1 && animator.check(newTrace, "counter_scored < counter_geist_" + (ghost + 1))) {
+        if (ghost > 1 && animator.getIntVariable(newTrace,"counter_scored").intValue()
+                < animator.getIntVariable(newTrace, "counter_geist_" + (ghost + 1)).intValue()) { //.check(newTrace, "counter_scored < counter_geist_" + (ghost + 1))) {
             return newTrace;
         }
         Position next = computePosition(newTrace, ghost);
@@ -114,7 +130,7 @@ public class PacmanLogic {
 
     private Position computePosition(Trace trace, int ghost) {
         final Position ghostPosOld = animator.getPosition(trace, "pos_geist_" + (ghost + 1) + "_alt");
-        int counter = animator.getNumber(trace, "geist_" + (ghost + 1) + "_counter");
+        int counter = animator.getIntVariable(trace, "geist_" + (ghost + 1) + "_counter").intValue();
         if (IntStream.of(GHOST_TURNING_POINTS).anyMatch(x -> x == counter)) {
             return ghostPosOld;
         }
@@ -210,7 +226,7 @@ public class PacmanLogic {
     private Trace tryToCatchGhosts(Trace trace) {
         Trace newTrace = trace;
         for (int i = 1; i <= 4; i++) {
-            if (newTrace.canExecuteEvent("geist_" + i + "_fangen")) {
+            if (isOperationEnabled(newTrace, "geist_" + i + "_fangen")) {
                 newTrace = newTrace.execute("geist_" + i + "_fangen");
                 gui.updateGhost(newTrace, i-1);
                 gui.updateScoreValue(newTrace);
@@ -221,7 +237,7 @@ public class PacmanLogic {
     }
     
     private Optional<Trace> tryToCatchPacman(Trace trace) {
-        if (trace.canExecuteEvent("pacman_fangen")) {
+        if (isOperationEnabled(trace, "pacman_fangen")) {
             Trace newTrace = trace;
             newTrace = newTrace.execute("pacman_fangen");
             gui.updatePacman(newTrace);

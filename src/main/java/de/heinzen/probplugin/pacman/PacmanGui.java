@@ -40,6 +40,7 @@ public class PacmanGui {
     private HashMap<Position, Node> scoreDots;
     private HashMap<Position, Node> ghostDots;
 
+    Position pacStart = null;
     public PacmanGui(PacmanAnimator animator) {
         this.animator = animator;
     }
@@ -156,7 +157,7 @@ public class PacmanGui {
             root.getChildren().add(c);
         }
 
-        Position pacStart = animator.getPosition(trace, "startposition");
+        pacStart = animator.getPosition(trace, "startposition");
         pacman = createPacman(toImagePos(pacStart.getX()), toImagePos(pacStart.getY()));
         root.getChildren().add(pacman);
 
@@ -177,7 +178,7 @@ public class PacmanGui {
 
     public void updateScoreValue(Trace trace) {
         if (scoreValueText != null) {
-            scoreValueText.setText(animator.getNumber(trace, "score") + "");
+            scoreValueText.setText(animator.getIntVariable(trace, "score") + "");
             scoreValueText.setX(318 - scoreValueText.getLayoutBounds().getWidth());
         }
     }
@@ -186,7 +187,7 @@ public class PacmanGui {
         if (pacman != null) {
             Position pacmanPos = animator.getPosition(trace, "position");
             Position pacmanPosOld = animator.getPosition(trace, "vorherige_position");
-            Position start = animator.getPosition(trace, "startposition");
+
             if (!pacmanPos.equals(pacmanPosOld)) {
                 int deltaX = pacmanPosOld.getX() - pacmanPos.getX();
                 int deltaY = pacmanPosOld.getY() - pacmanPos.getY();
@@ -199,8 +200,8 @@ public class PacmanGui {
                 } else {
                     pacman.setRotate(0);
                 }
-                int startDeltaX = start.getX() - pacmanPos.getX();
-                int startDeltaY = start.getY() - pacmanPos.getY();
+                int startDeltaX = pacStart.getX() - pacmanPos.getX();
+                int startDeltaY = pacStart.getY() - pacmanPos.getY();
                 pacman.setLayoutX(0 - startDeltaX * 10);
                 pacman.setLayoutY(0 - startDeltaY * 10);
             } else {
@@ -214,7 +215,8 @@ public class PacmanGui {
     public void updateGhost(Trace trace, int i) {
         if (ghosts[i] != null) {
             Position ghostPos = animator.getPosition(trace, "pos_geist_" + (i+1));
-            boolean hunted = animator.check(trace, "geist_"  + (i+1) + " : gejagte_geister");
+            boolean hunted = animator.getSetVariable(trace,"gejagte_geister").contains("geist_"  + (i+1)); // TODO: yikes
+            //boolean hunted = animator.check(trace, "geist_"  + (i+1) + " : gejagte_geister");
             Color bodyColor = hunted ? BACKGROUND_BLUE : GHOST_COLORS[i];
 
             ghosts[i].setLayoutX(ghostPos.getX() * 10 + 40);
@@ -230,7 +232,7 @@ public class PacmanGui {
     }
 
     public void updateLives(Trace trace) {
-        int lives = animator.getNumber(trace, "leben");
+        int lives = animator.getIntVariable(trace, "leben").intValue();
         for (Node pac : livePacmans) {
             pac.setOpacity(0);
         }

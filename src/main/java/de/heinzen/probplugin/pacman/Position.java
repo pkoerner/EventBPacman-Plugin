@@ -1,6 +1,9 @@
 package de.heinzen.probplugin.pacman;
 
 
+import de.prob.translator.types.BigInteger;
+import de.prob.translator.types.Tuple;
+
 /**
  * Created by Christoph Heinzen on 15.08.17.
  */
@@ -11,6 +14,10 @@ public class Position {
     public Position(int x, int y) {
         this.x = x;
         this.y = y;
+    }
+
+    public Position(Tuple value) {
+        this(((BigInteger) value.get(0)).intValue(), ((BigInteger) value.get(1)).intValue());
     }
 
     public int getX() {
