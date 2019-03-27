@@ -118,10 +118,14 @@ public class PacmanLogic {
             return newTrace;
         }
         Position next = computePosition(newTrace, ghost);
-        if (newTrace.canExecuteEvent("bewege_geist_" + (ghost + 1), "pos = (" + next.getX() + "|->" + next.getY() + ")")) {
+
+        try {
             newTrace = newTrace.execute("bewege_geist_" + (ghost + 1), "pos = (" + next.getX() + "|->" + next.getY() + ")");
             gui.updateGhost(newTrace, ghost);
+        } catch (Exception e) {
+            // lul
         }
+
         return newTrace;
     }
 

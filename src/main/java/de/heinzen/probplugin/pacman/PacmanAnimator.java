@@ -21,30 +21,21 @@ import org.jetbrains.annotations.NotNull;
  */
 public class PacmanAnimator {
     public java.util.Set<String> subscribed = new java.util.HashSet<>();
- //   public Map<String, IEvalElement> nameToEvalElement = new HashMap<>();
+    public Map<String, IEvalElement> nameToEvalElement = new HashMap<>();
     public PacmanAnimator() {}
 
     public EvalResult getValueOfVariable(Trace trace, String name) {
-        if (!subscribed.contains(name)) {
-            trace.getStateSpace().subscribe(this, new EventB(name));
-            subscribed.add(name);
+        IEvalElement maybe = nameToEvalElement.get(name);
+        if (maybe != null) {
+            Map<IEvalElement, AbstractEvalResult> values = trace.getCurrentState().getValues();
+            return (EvalResult) values.get(maybe);
+        } else {
+            EventB formulaOfInterest = new EventB(name, FormulaExpand.EXPAND);
+            nameToEvalElement.put(name, formulaOfInterest);
+            trace.getStateSpace().subscribe(this, formulaOfInterest);
+            Map<IEvalElement, AbstractEvalResult> values = trace.getCurrentState().getValues();
+            return (EvalResult) values.get(nameToEvalElement.get(name));
         }
-
-
-        Map<IEvalElement, AbstractEvalResult> values = trace.getCurrentState().getValues();
-   //     if (nameToEvalElement.containsKey(name)) {
-   //         return (EvalResult) values.get(nameToEvalElement.get(name));
-   //     }
-
-        for (IEvalElement ele : values.keySet()) {
-            if (ele.getCode().equals(name)) {
-                System.out.println(ele + " " + System.identityHashCode(ele));
-     //           nameToEvalElement.put(name, ele);
-                return (EvalResult) values.get(ele);
-            }
-        }
-
-        throw new RuntimeException("oop oop oop!");
     }
 
     public BigInteger getIntVariable(Trace trace, String name) {
@@ -81,21 +72,10 @@ public class PacmanAnimator {
         return new Position(value);
     }
 
-    public Position evalPosition(Trace trace, String eventbFormula) {
-        EvalResult result = (EvalResult) trace.evalCurrent(eventbFormula, FormulaExpand.EXPAND);
-        return resultToPosition(result);
-    }
-
 
     public List<Position> getPositions(Trace trace, String eventbFormula) {
-        EventB begehbar = new EventB(eventbFormula, Collections.emptySet(), FormulaExpand.EXPAND);
-        EvalResult result = (EvalResult) trace.evalCurrent(begehbar);
-        Set translatedSet;
-        try {
-            translatedSet = (Set) result.translate().getValue();
-        } catch (BCompoundException e) {
-            throw new ProBError(e);
-        }
+        Set translatedSet = getSetVariable(trace, eventbFormula);
+
         List<Position> positions = new ArrayList<>(translatedSet.size());
         for (BObject tuple : translatedSet) {
             Tuple object = (Tuple) tuple;
