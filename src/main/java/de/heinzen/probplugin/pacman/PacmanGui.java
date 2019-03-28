@@ -1,16 +1,17 @@
 package de.heinzen.probplugin.pacman;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 
 import de.prob.statespace.Trace;
-
 import de.prob.translator.types.Atom;
+
+import javafx.event.EventHandler;
 import javafx.scene.Group;
 import javafx.scene.Node;
 import javafx.scene.control.Tab;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Background;
 import javafx.scene.layout.BackgroundFill;
@@ -91,13 +92,20 @@ public class PacmanGui {
         return new Circle(toImagePos(pos.getX()), toImagePos(pos.getY()), radius, Color.WHITE);
     }
 
-    public void createGui(Trace trace, Tab tab) {
+    public void createGui(Trace trace, Tab tab, EventHandler<? super KeyEvent> keyPressHandler) {
 
         //create GUI
         AnchorPane pane = new AnchorPane();
         pane.setMinWidth(580);
         pane.setMinHeight(740);
         pane.setBackground(new Background(new BackgroundFill(Color.BLACK, null, null)));
+        // Make the pane focusable so that it can receive key events
+        pane.setFocusTraversable(true);
+        pane.setOnMousePressed(event -> {
+            pane.requestFocus();
+            event.consume();
+        });
+        pane.setOnKeyPressed(keyPressHandler);
 
         Group root = new Group();
         List<Position> black1 = animator.getPositions(trace, "begehbar");

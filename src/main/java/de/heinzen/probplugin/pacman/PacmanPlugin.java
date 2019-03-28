@@ -24,7 +24,6 @@ public class PacmanPlugin extends ProBPlugin {
 
     private Tab pacmanTab;
     private ChangeListener<Trace> currentTraceChangeListener;
-    private EventHandler<? super KeyEvent> keyListener;
 
     public PacmanPlugin(final PluginWrapper pluginWrapper, final ProBPluginManager proBPluginManager, final ProBPluginHelper proBPluginHelper) {
         super(pluginWrapper, proBPluginManager, proBPluginHelper);
@@ -42,9 +41,10 @@ public class PacmanPlugin extends ProBPlugin {
         PacmanGui gui = new PacmanGui(animator);
         PacmanLogic logic = new PacmanLogic(gui, animator);
 
+        final EventHandler<KeyEvent> keyListener = event -> currentTrace.set(logic.movePacman(currentTrace.get(), event.getCode()));
 
         if (currentTrace.getCurrentState() != null && currentTrace.getCurrentState().isInitialised()) {
-            gui.createGui(currentTrace.get(), pacmanTab);
+            gui.createGui(currentTrace.get(), pacmanTab, keyListener);
         }
 
         currentTraceChangeListener = (observable, oldValue, newValue) -> {
@@ -53,18 +53,15 @@ public class PacmanPlugin extends ProBPlugin {
                     && newValue != null && newValue.getCurrentState() != null
                     && !oldValue.getCurrentState().isInitialised()
                     && newValue.getCurrentState().isInitialised()) {
-                gui.createGui(newValue, pacmanTab);
+                gui.createGui(newValue, pacmanTab, keyListener);
             } else if ( newValue != null && newValue.getCurrentState() != null
                     && newValue.getCurrentState().isInitialised()) {
                 gui.update(newValue);
             }
         };
 
-        keyListener = event -> currentTrace.set(logic.movePacman(currentTrace.get(), event.getCode()));
-
         getProBPluginHelper().addTab(pacmanTab);
         currentTrace.addListener(currentTraceChangeListener);
-        getProBPluginHelper().getStageManager().getMainStage().getScene().addEventFilter(KeyEvent.KEY_PRESSED, keyListener);
     }
 
     @Override
@@ -72,7 +69,6 @@ public class PacmanPlugin extends ProBPlugin {
         System.out.println("Stopping " + getName());
         getProBPluginHelper().getCurrentTrace().removeListener(currentTraceChangeListener);
         getProBPluginHelper().removeTab(pacmanTab);
-        getProBPluginHelper().getStageManager().getMainStage().getScene().removeEventFilter(KeyEvent.KEY_PRESSED, keyListener);
     }
 
     @Override
