@@ -27,6 +27,7 @@ public class PacmanAnimator {
     public EvalResult getValueOfVariable(Trace trace, String name) {
         IEvalElement maybe = nameToEvalElement.get(name);
         if (maybe != null) {
+            trace.getStateSpace().subscribe(this, maybe);
             Map<IEvalElement, AbstractEvalResult> values = trace.getCurrentState().getValues();
             return (EvalResult) values.get(maybe);
         } else {
