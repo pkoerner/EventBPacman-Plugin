@@ -31,7 +31,6 @@ public class PacmanPlugin extends ProBPlugin {
 
     @Override
     public void startPlugin() {
-        System.out.println("Starting " + getName());
         CurrentTrace currentTrace = getProBPluginHelper().getCurrentTrace();
 
         //create GUI
@@ -66,7 +65,6 @@ public class PacmanPlugin extends ProBPlugin {
 
     @Override
     public void stopPlugin() {
-        System.out.println("Stopping " + getName());
         getProBPluginHelper().getCurrentTrace().removeListener(currentTraceChangeListener);
         getProBPluginHelper().removeTab(pacmanTab);
     }
