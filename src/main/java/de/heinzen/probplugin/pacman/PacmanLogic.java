@@ -113,8 +113,8 @@ public class PacmanLogic {
             newTrace = newTrace.execute("starte_geist_" + (ghost + 1));
             gui.updateGhost(newTrace, ghost);
         }
-        if (ghost > 1 && animator.getIntVariable(newTrace,"counter_scored").intValue()
-                       < animator.getIntVariable(newTrace, "counter_geist_" + (ghost + 1)).intValue()) {
+        if (ghost > 1 && animator.getIntVariable(newTrace, PacmanFormulas.COUNTER_SCORED).intValue()
+                       < animator.getIntVariable(newTrace, PacmanFormulas.COUNTER_GEIST[ghost]).intValue()) {
             return newTrace;
         }
         Position next = computePosition(newTrace, ghost);
@@ -130,13 +130,13 @@ public class PacmanLogic {
     }
 
     private Position computePosition(Trace trace, int ghost) {
-        final Position ghostPosOld = animator.getPosition(trace, "pos_geist_" + (ghost + 1) + "_alt");
-        int counter = animator.getIntVariable(trace, "geist_" + (ghost + 1) + "_counter").intValue();
+        final Position ghostPosOld = animator.getPosition(trace, PacmanFormulas.POS_GEIST_ALT[ghost]);
+        int counter = animator.getIntVariable(trace, PacmanFormulas.GEIST_COUNTER[ghost]).intValue();
         if (IntStream.of(GHOST_TURNING_POINTS).anyMatch(x -> x == counter)) {
             return ghostPosOld;
         }
 
-        final Position ghostPos = animator.getPosition(trace, "pos_geist_" + (ghost + 1));
+        final Position ghostPos = animator.getPosition(trace, PacmanFormulas.POS_GEIST[ghost]);
 
         List<Position> neighbours = getNeighbours(trace, ghostPos, ghostPosOld);
         if (neighbours.size() == 1) {
@@ -188,8 +188,8 @@ public class PacmanLogic {
                     return new Position(-2,66);
             }
         }
-        final Position pacmanPos = animator.getPosition(trace, "position");
-        final Position pacmanPosOld = animator.getPosition(trace, "vorherige_position");
+        final Position pacmanPos = animator.getPosition(trace, PacmanFormulas.POSITION);
+        final Position pacmanPosOld = animator.getPosition(trace, PacmanFormulas.VORHERIGE_POSITION);
         switch(ghost){
             case 0:
                 return pacmanPos;
@@ -209,12 +209,12 @@ public class PacmanLogic {
                 }else{
                     targetTmp = new Position(pacmanPos.getX() - 4, pacmanPos.getY() - 4);
                 }
-                Position ghost1Pos = animator.getPosition(trace, "pos_geist_1");
+                Position ghost1Pos = animator.getPosition(trace, PacmanFormulas.POS_GEIST[0]);
                 int deltaX = targetTmp.getX() - ghost1Pos.getX();
                 int deltaY = targetTmp.getY() - ghost1Pos.getY();
                 return new Position(ghost1Pos.getX() + 2 * deltaX, ghost1Pos.getY() + 2 * deltaY);
             case 3:
-                double dist = animator.getPosition(trace, "pos_geist_4").getDistance(pacmanPos);
+                double dist = animator.getPosition(trace, PacmanFormulas.POS_GEIST[3]).getDistance(pacmanPos);
                 if(dist < 8.0){
                     return new Position(-2,66);
                 } else {

@@ -1,64 +1,49 @@
 package de.heinzen.probplugin.pacman;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
 
 import de.be4.classicalb.core.parser.exceptions.BCompoundException;
-import de.prob.animator.domainobjects.AbstractEvalResult;
 import de.prob.animator.domainobjects.EvalResult;
-import de.prob.animator.domainobjects.EventB;
-import de.prob.animator.domainobjects.FormulaExpand;
 import de.prob.animator.domainobjects.IEvalElement;
 import de.prob.exception.ProBError;
 import de.prob.statespace.Trace;
 import de.prob.translator.types.BObject;
 import de.prob.translator.types.BigInteger;
+import de.prob.translator.types.Number;
 import de.prob.translator.types.Set;
 import de.prob.translator.types.Tuple;
+
 import org.jetbrains.annotations.NotNull;
 
 /**
  * Created by Christoph Heinzen on 15.08.17.
  */
 public class PacmanAnimator {
-    public java.util.Set<String> subscribed = new java.util.HashSet<>();
-    public Map<String, IEvalElement> nameToEvalElement = new HashMap<>();
     public PacmanAnimator() {}
 
-    public EvalResult getValueOfVariable(Trace trace, String name) {
-        IEvalElement maybe = nameToEvalElement.get(name);
-        if (maybe != null) {
-            trace.getStateSpace().subscribe(this, maybe);
-            Map<IEvalElement, AbstractEvalResult> values = trace.getCurrentState().getValues();
-            return (EvalResult) values.get(maybe);
-        } else {
-            EventB formulaOfInterest = new EventB(name, FormulaExpand.EXPAND);
-            nameToEvalElement.put(name, formulaOfInterest);
-            trace.getStateSpace().subscribe(this, formulaOfInterest);
-            Map<IEvalElement, AbstractEvalResult> values = trace.getCurrentState().getValues();
-            return (EvalResult) values.get(nameToEvalElement.get(name));
-        }
+    public EvalResult getValueOfVariable(Trace trace, IEvalElement formula) {
+        return (EvalResult)trace.getCurrentState().getValues().get(formula);
     }
 
-    public BigInteger getIntVariable(Trace trace, String name) {
+    public BigInteger getIntVariable(Trace trace, IEvalElement formula) {
         try {
-            return (BigInteger) getValueOfVariable(trace, name).translate().getValue();
+            return (BigInteger) getValueOfVariable(trace, formula).translate().getValue();
         } catch (BCompoundException e) {
             throw new ProBError(e);
         }
     }
 
-    public Set getSetVariable(Trace trace, String name){
+    public Set getSetVariable(Trace trace, IEvalElement formula){
         try {
-            return (Set) getValueOfVariable(trace, name).translate().getValue();
+            return (Set) getValueOfVariable(trace, formula).translate().getValue();
         } catch (BCompoundException e) {
             throw new ProBError(e);
         }
     }
 
-
-
-    public Position getPosition(Trace trace, String eventbFormula) {
-        EvalResult result = getValueOfVariable(trace, eventbFormula);
+    public Position getPosition(Trace trace, IEvalElement formula) {
+        EvalResult result = getValueOfVariable(trace, formula);
         return resultToPosition(result);
     }
 
@@ -73,9 +58,8 @@ public class PacmanAnimator {
         return new Position(value);
     }
 
-
-    public List<Position> getPositions(Trace trace, String eventbFormula) {
-        Set translatedSet = getSetVariable(trace, eventbFormula);
+    public List<Position> getPositions(Trace trace, IEvalElement formula) {
+        Set translatedSet = getSetVariable(trace, formula);
 
         List<Position> positions = new ArrayList<>(translatedSet.size());
         for (BObject tuple : translatedSet) {
@@ -90,7 +74,7 @@ public class PacmanAnimator {
     }
 
     public boolean checkPosition(Trace trace, int x, int y) {
-        return getSetVariable(trace, "begehbar").contains(new Tuple(BigInteger.build(x), BigInteger.build(y)));
+        return getSetVariable(trace, PacmanFormulas.BEGEHBAR).contains(new Tuple(Number.build(x), Number.build(y)));
     }
 
 }

@@ -29,6 +29,10 @@ public class PacmanPlugin extends ProBPlugin {
         super(pluginWrapper, proBPluginManager, proBPluginHelper);
     }
 
+    private static boolean isPacmanMachine(Trace trace) {
+        return trace != null && trace.getStateSpace().getMainComponent() instanceof Machine && ((Machine)trace.getStateSpace().getMainComponent()).getName().contains("Pacman");
+    }
+
     @Override
     public void startPlugin() {
         CurrentTrace currentTrace = getProBPluginHelper().getCurrentTrace();
@@ -41,9 +45,18 @@ public class PacmanPlugin extends ProBPlugin {
         PacmanLogic logic = new PacmanLogic(gui, animator);
 
         currentTraceChangeListener = (o, from, to) -> {
+            if (from == null || to == null || !from.getStateSpace().equals(to.getStateSpace())) {
+                if (isPacmanMachine(from)) {
+                    from.getStateSpace().unsubscribe(this, PacmanFormulas.ALL);
+                }
+                if (isPacmanMachine(to)) {
+                    to.getStateSpace().subscribe(this, PacmanFormulas.ALL);
+                }
+            }
+    
             if (to == null) {
                 pacmanTab.setContent(new Label("No model loaded"));
-            } else if (!(to.getStateSpace().getMainComponent() instanceof Machine) || !((Machine)to.getStateSpace().getMainComponent()).getName().contains("Pacman")) {
+            } else if (!isPacmanMachine(to)) {
                 pacmanTab.setContent(new Label("This is not a Pacman machine"));
             } else if (!to.getCurrentState().isInitialised()) {
                 pacmanTab.setContent(new Label("Machine not initialized"));

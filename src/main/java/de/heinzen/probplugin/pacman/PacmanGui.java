@@ -108,15 +108,15 @@ public class PacmanGui {
         pane.setOnKeyPressed(keyPressHandler);
 
         Group root = new Group();
-        List<Position> black1 = animator.getPositions(trace, "begehbar");
-        List<Position> black2 = animator.getPositions(trace, "geisterhof");
-        List<Position> black3 = animator.getPositions(trace, "geisterhof_zugang");
+        List<Position> black1 = animator.getPositions(trace, PacmanFormulas.BEGEHBAR);
+        List<Position> black2 = animator.getPositions(trace, PacmanFormulas.GEISTERHOF);
+        List<Position> black3 = animator.getPositions(trace, PacmanFormulas.GEISTERHOF_ZUGANG);
         List<Position> black =  new ArrayList<>();
         black.addAll(black1);
         black.addAll(black2);
         black.addAll(black3);
-        List<Position> scoreDots = animator.getPositions(trace, "punktefelder_aktuell");
-        List<Position> ghostDots = animator.getPositions(trace, "geister_aktuell");
+        List<Position> scoreDots = animator.getPositions(trace, PacmanFormulas.PUNKTEFELDER_AKTUELL);
+        List<Position> ghostDots = animator.getPositions(trace, PacmanFormulas.GEISTER_AKTUELL);
 
         Node backgroundBlue = createRectangle(0,0,640,580,BACKGROUND_BLUE);
         root.getChildren().add(backgroundBlue);
@@ -174,12 +174,12 @@ public class PacmanGui {
             root.getChildren().add(c);
         }
 
-        pacStart = animator.getPosition(trace, "startposition");
+        pacStart = animator.getPosition(trace, PacmanFormulas.STARTPOSITION);
         pacman = createPacman(toImagePos(pacStart.getX()), toImagePos(pacStart.getY()));
         root.getChildren().add(pacman);
 
         for (int i = 0; i < 4; i++) {
-            ghosts[i] = createGhost(GHOST_COLORS[i], animator.getPosition(trace, "startpos_geist_" + (i+1)));
+            ghosts[i] = createGhost(GHOST_COLORS[i], animator.getPosition(trace, PacmanFormulas.STARTPOS_GEIST[i]));
         }
         root.getChildren().addAll(ghosts);
 
@@ -195,15 +195,15 @@ public class PacmanGui {
 
     public void updateScoreValue(Trace trace) {
         if (scoreValueText != null) {
-            scoreValueText.setText(animator.getIntVariable(trace, "score") + "");
+            scoreValueText.setText(animator.getIntVariable(trace, PacmanFormulas.SCORE) + "");
             scoreValueText.setX(318 - scoreValueText.getLayoutBounds().getWidth());
         }
     }
 
     public void updatePacman(Trace trace) {
         if (pacman != null) {
-            Position pacmanPos = animator.getPosition(trace, "position");
-            Position pacmanPosOld = animator.getPosition(trace, "vorherige_position");
+            Position pacmanPos = animator.getPosition(trace, PacmanFormulas.POSITION);
+            Position pacmanPosOld = animator.getPosition(trace, PacmanFormulas.VORHERIGE_POSITION);
 
             if (!pacmanPos.equals(pacmanPosOld)) {
                 int deltaX = pacmanPosOld.getX() - pacmanPos.getX();
@@ -231,8 +231,8 @@ public class PacmanGui {
 
     public void updateGhost(Trace trace, int i) {
         if (ghosts[i] != null) {
-            Position ghostPos = animator.getPosition(trace, "pos_geist_" + (i+1));
-            boolean hunted = animator.getSetVariable(trace,"gejagte_geister").contains(new Atom("geist_"  + (i+1)));
+            Position ghostPos = animator.getPosition(trace, PacmanFormulas.POS_GEIST[i]);
+            boolean hunted = animator.getSetVariable(trace, PacmanFormulas.GEJAGTE_GEISTER).contains(new Atom("geist_"  + (i+1)));
             Color bodyColor = hunted ? BACKGROUND_BLUE : GHOST_COLORS[i];
 
             ghosts[i].setLayoutX(ghostPos.getX() * 10 + 40);
@@ -248,7 +248,7 @@ public class PacmanGui {
     }
 
     public void updateLives(Trace trace) {
-        int lives = animator.getIntVariable(trace, "leben").intValue();
+        int lives = animator.getIntVariable(trace, PacmanFormulas.LEBEN).intValue();
         for (Node pac : livePacmans) {
             pac.setOpacity(0);
         }
@@ -260,14 +260,14 @@ public class PacmanGui {
     }
 
     public void updateScoreDots(Trace trace) {
-        List<Position> scores = animator.getPositions(trace, "punktefelder_aktuell");
+        List<Position> scores = animator.getPositions(trace, PacmanFormulas.PUNKTEFELDER_AKTUELL);
         for(Position p : scoreDots.keySet()) {
             scoreDots.get(p).setOpacity(scores.contains(p) ? 1.0 : 0.0);
         }
     }
 
     public void updateGhostDots(Trace trace) {
-        List<Position> ghosts = animator.getPositions(trace, "geister_aktuell");
+        List<Position> ghosts = animator.getPositions(trace, PacmanFormulas.GEISTER_AKTUELL);
         for(Position p : ghostDots.keySet()) {
             ghostDots.get(p).setOpacity(ghosts.contains(p) ? 1.0 : 0.0);
         }
