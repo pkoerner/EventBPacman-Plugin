@@ -1,0 +1,32 @@
+{
+  "name": "Pacman",
+  "description": "",
+  "machines": [
+    {
+      "name": "Pacman_Machine_game",
+      "description": "",
+      "location": "Pacman_Machine_game.bum",
+      "type": "EVENTB",
+      "lastUsed": {
+        "name": "long timeout",
+        "preferences": {
+          "TIME_OUT": "5000"
+        }
+      },
+      "ltlFormulas": [],
+      "ltlPatterns": [],
+      "symbolicCheckingFormulas": [],
+      "symbolicAnimationFormulas": [],
+      "traces": [],
+      "modelcheckingItems": []
+    }
+  ],
+  "preferences": [
+    {
+      "name": "long timeout",
+      "preferences": {
+        "TIME_OUT": "5000"
+      }
+    }
+  ]
+}
